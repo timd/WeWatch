@@ -13,12 +13,29 @@
 #import "DrillDownAppDelegate.h"
 
 #import "Programme.h"
+#import "ProgrammeDetailViewController.h"
 
 @implementation RootViewController
 
 @synthesize tweetsArray;
 @synthesize cleanScheduleArray;
 @synthesize loadPublicTimelineOperation;
+
+@synthesize detailViewController;
+@synthesize nibLoadedCell;
+
+// Define custom cell content identifiers
+#define PROG_TITLE_LABEL ((UILabel *)[cell viewWithTag:1010])
+#define PROG_DESCRIPTION_LABEL ((UILabel *)[cell viewWithTag:1020])
+#define PROG_CHANNEL_LABEL ((UILabel *)[cell viewWithTag:1030])
+#define PROG_TIME_LABEL ((UILabel *)[cell viewWithTag:1040])
+#define PROG_DURATION_LABEL ((UILabel *)[cell viewWithTag:1050])
+#define PROG_WATCHERS_LABEL ((UILabel *)[cell viewWithTag:1060])
+
+// Define table section headers
+#define HEADING_ARRAY [NSArray arrayWithObjects:@"7pm", @"8pm", @"9pm", @"10pm", nil]
+
+
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -104,20 +121,96 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // Check for a reusable cell first, and use that if it exists
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgrammeCell"];
+    
+    // If there isn't a free cell, then create one
+    if (cell == nil) {
+        // Create a standard cell
+        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ProgrammeCell"] autorelease];
+        
+        // Create a custom cell from a nib
+        [[NSBundle mainBundle] loadNibNamed:@"BaseCell" owner:self options:NULL];
+        cell = nibLoadedCell;
+    }
+    
+/*    
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
+ 
+*/
     
-	// Configure the cell.
-    NSArray *nthElement = [self.tweetsArray objectAtIndex:indexPath.section];
+    // CONFIGURE THE CELL
+    // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     
-	Programme *p = [nthElement objectAtIndex:indexPath.row];
+    // the section is the nth array, where n is the section number
+    NSArray *nthArray = [tweetsArray objectAtIndex:indexPath.section];
     
-    NSLog(@"object = %@", p);
-	
+    // and the programme is the mth element in the nth array, where m is the row
+    Programme *p = [nthArray objectAtIndex:indexPath.row];
+    NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
+    NSLog(@"Programme title = %@", p.title);
+    NSLog(@"Programme timeslot = %d", p.timeSlot);
+
+    // Extract the programme item from the dictionary
+    
+    // channel (sub-content)
+    // title
+    // subtitle
+    // description
+    // duration
+    // start
+    // end
+    // watchers
+    
+    
+    // Configure the cell using built-in labels
+    // [[cell textLabel] setText:[p title]];
+    // [[cell detailTextLabel] setText:[p blurb]];
+    
+    // Configure the cell using custom labelling
+    
+    // Get references to the cell view's labels
+    UILabel *titleLabel = PROG_TITLE_LABEL;
+    UILabel *descriptionLabel = PROG_DESCRIPTION_LABEL;
+    UILabel *channelLabel = PROG_CHANNEL_LABEL;
+    UILabel *timeLabel = PROG_TIME_LABEL;
+    UILabel *durationLabel = PROG_DURATION_LABEL;
+    UILabel *watchersLabel = PROG_WATCHERS_LABEL;
+
+    // Configure the programme title
+    titleLabel.text = p.title;
+    
+    // Configure the programme blurb
+    descriptionLabel.text = p.description;
+    
+    // Configure the channel
+    channelLabel.text = [p channel];
+    
+    // Configure the time label
+    timeLabel.text = [p time];
+    
+    // Configure the duration label
+    durationLabel.text = [p duration];
+    
+    // Configure the watchers label
+    watchersLabel.text = [NSString stringWithFormat:@"%d", [p watchers]];
+    
+    // Set up the cell accessory type
+    // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    // return the new cell
+    return cell;
+    
+    // Don't need to release the cell; it was created autoreleased
+    
+/*
+ 
     NSString *tweetString = p.title;
 
     // NSString *tweetString = [programmeDictionary objectForKey:@"title"];
@@ -138,8 +231,18 @@
 	//cell.detailTextLabel.text = userName;
 						  
     return cell;
+*/ 
+ 
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Set the standard row height for the cells
+    return 100;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [NSString stringWithFormat:@"%@", [HEADING_ARRAY objectAtIndex:section]];
+}
 
 /*
 // Override to support conditional editing of the table view.
