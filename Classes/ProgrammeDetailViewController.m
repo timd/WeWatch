@@ -62,9 +62,9 @@
     [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
     
      // Change the navigation item
-    [[self navigationItem] setTitle:[NSString stringWithFormat:@"WeWatch"]];
-    
-    // Set the background colour
+     //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
+     
+        // Set the background colour
     [self.view setBackgroundColor:[UIColor whiteColor]];
      
 }
@@ -76,6 +76,16 @@
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
+	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
+	[label setBackgroundColor:[UIColor clearColor]];
+	[label setTextColor:[UIColor whiteColor]];
+	[label setText:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel],[displayProgramme time]]];
+	[self.navigationController.navigationBar.topItem setTitleView:label];
+	[label release];
+    
+
 }
 
 - (void)viewDidUnload

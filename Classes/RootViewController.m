@@ -148,10 +148,14 @@
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     
     // the section is the nth array, where n is the section number
-    NSArray *nthArray = [tweetsArray objectAtIndex:indexPath.section];
+    NSMutableArray *nthMutableArray = [tweetsArray objectAtIndex:indexPath.section];
+    
+    // Sort the nthArray so that it's in channel order
+    //NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"Programme.channel" ascending:YES];
+    //[nthMutableArray sortUsingDescriptors:[NSArray arrayWithObject:sorter]];
     
     // and the programme is the mth element in the nth array, where m is the row
-    Programme *p = [nthArray objectAtIndex:indexPath.row];
+    Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
     NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
     NSLog(@"Programme title = %@", p.title);
     NSLog(@"Programme timeslot = %d", p.timeSlot);
@@ -289,13 +293,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	NSDictionary *tweet = [self.tweetsArray objectAtIndex:indexPath.row];
-	
-	TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc] initWithNibName:@"TweetDetailViewController" bundle:nil tweet:tweet];
-	
-	[self.navigationController pushViewController:tweetDetailViewController animated:YES];
-	
-	[tweetDetailViewController release];
+    // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
+    // the section is the nth array, where n is the section number
+    NSArray *nthArray = [tweetsArray objectAtIndex:indexPath.section];
+    
+    // and the programme is the mth element in the nth array, where m is the row
+    Programme *p = [nthArray objectAtIndex:indexPath.row];
+    
+    NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
+    NSLog(@"Programme title = %@", p.title);
+    NSLog(@"Programme timeslot = %d", p.timeSlot);
+    
+    // Do I need to create the instance of ItemDetailController?
+	if (!programmeDetailViewController) {
+		programmeDetailViewController = [[ProgrammeDetailViewController alloc] init];
+	}
+    
+    // Give the detail view controller a pointer to the programme object at this row
+    [programmeDetailViewController setDisplayProgramme:p];
+    
+    // Push the view controller onto the stack
+    [self.navigationController pushViewController:programmeDetailViewController animated:YES];
+    
+    //[programmeDetailViewController release];
+    
+    /*
+     NSDictionary *tweet = [self.tweetsArray objectAtIndex:indexPath.row];
+     
+     TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc] initWithNibName:@"TweetDetailViewController" bundle:nil tweet:tweet];
+     
+     [self.navigationController pushViewController:tweetDetailViewController animated:YES];
+     
+     [tweetDetailViewController release];
+     */
 }
 
 
