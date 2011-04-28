@@ -1,0 +1,87 @@
+TDrillDown
+v7
+r1
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/MainWindow.xib
+c000000004C4713710000000000005FFC
+t1279726449
+s24572
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/RootViewController.xib
+c000000004C4713710000000000004454
+t1279726449
+s17492
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/TweetDetailViewController.xib
+c000000004C471F820000000000007B77
+t1279729538
+s31607
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Info.plist
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Resources/MainWindow.nib
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Resources/RootViewController.nib
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Resources/TweetDetailViewController.nib
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Resources/overlay.png
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Resources/public_timeline.json
+t2
+s0
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/overlay.png
+c000000004B85C2000000000000000A9A
+t1267057152
+s2714
+
+N/Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/public_timeline.json
+c000000004C471523000000000000766B
+t1279726883
+s30315
+
+NDrillDown-Info.plist
+c000000004C471371000000000000038D
+t1279726449
+s909
+
+CCompileXIB /Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/MainWindow.xib
+r0
+
+CCompileXIB /Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/RootViewController.xib
+r0
+
+CCompileXIB /Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/TweetDetailViewController.xib
+r0
+
+CCpResource build/Debug/DrillDown.app/Contents/Resources/overlay.png overlay.png
+r0
+
+CCpResource build/Debug/DrillDown.app/Contents/Resources/public_timeline.json public_timeline.json
+r0
+
+CProcessInfoPlistFile /Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app/Contents/Info.plist DrillDown-Info.plist
+r0
+
+CTouch /Users/aral/Desktop/CourseMaterialsSeptember2010/projects/DrillDownKeyPaths/build/Debug/DrillDown.app
+r0
+

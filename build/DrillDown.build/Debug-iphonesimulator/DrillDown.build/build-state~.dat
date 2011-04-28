@@ -1,0 +1,905 @@
+TDrillDown
+v7
+r0
+t301422931.585657
+cCheck dependencies
+cProcessInfoPlistFile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/Info.plist" DrillDown-Info.plist
+cCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib"
+cCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib"
+cCpResource build/Debug-iphonesimulator/DrillDown.app/public_timeline.json public_timeline.json
+cCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib"
+cCpResource build/Debug-iphonesimulator/DrillDown.app/overlay.png overlay.png
+cProcessPCH /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch.pth DrillDown_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o "/Users/aral/Desktop/Course Materials/work/DrillDown/main.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown" normal i386
+cGenerateDSYMFile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app.dSYM" "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown"
+cTouch "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.h
+c000000004C47137100000000000001D0
+t1279726449
+s464
+i<UIKit/UIKit.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m
+c000000004C4713710000000000000A9C
+t1279726449
+s2716
+i"DrillDownAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.h
+c000000004C471B1F0000000000000119
+t1279728415
+s281
+i<UIKit/UIKit.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m
+c000000004C471DA100000000000013CF
+t1279729057
+s5071
+i"RootViewController.h"
+i"CJSONDeserializer.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.h
+c000000004C4721AD00000000000002FA
+t1279730093
+s762
+i<UIKit/UIKit.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m
+c000000004C471FDD0000000000000628
+t1279729629
+s1576
+i"TweetDetailViewController.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch
+c000000004C4713710000000000000144
+t1279726449
+s324
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib
+c000000004C4713710000000000005FFC
+t1279726449
+s24572
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib
+c000000004C4713710000000000004454
+t1279726449
+s17492
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.h
+c000000004B27F9A0000000000000095B
+t1260911008
+s2395
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m
+c000000004B27F9A00000000000001674
+t1260911008
+s5748
+i"CDataScanner.h"
+i"CDataScanner_Extensions.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.h
+c000000004B27F9A000000000000005AD
+t1260911008
+s1453
+i"CDataScanner.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m
+c000000004B27F9A000000000000009EC
+t1260911008
+s2540
+i"CDataScanner_Extensions.h"
+i"NSCharacterSet_Extensions.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.h
+c000000004B27F9A0000000000000057A
+t1260911008
+s1402
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m
+c000000004B27F9A00000000000000731
+t1260911008
+s1841
+i"NSCharacterSet_Extensions.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.h
+c000000004B27F9A00000000000000598
+t1260911008
+s1432
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m
+c000000004B27F9A00000000000000613
+t1260911008
+s1555
+i"NSDictionary_JSONExtensions.h"
+i"CJSONDeserializer.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.h
+c000000004B27F9A00000000000000656
+t1260911008
+s1622
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m
+c000000004B27F9A00000000000000D65
+t1260911008
+s3429
+i"NSScanner_Extensions.h"
+i"NSCharacterSet_Extensions.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.h
+c000000004B27F9A00000000000000716
+t1260911008
+s1814
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m
+c000000004B27F9A00000000000001AB2
+t1260911008
+s6834
+i"CJSONDataSerializer.h"
+i"CSerializedJSONData.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.h
+c000000004B27F9A00000000000000681
+t1260911008
+s1665
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m
+c000000004B27F9A00000000000000B3A
+t1260911008
+s2874
+i"CJSONDeserializer.h"
+i"CJSONScanner.h"
+i"CDataScanner.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.h
+c000000004B27F9A000000000000007C2
+t1260911008
+s1986
+i"CDataScanner.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m
+c000000004B27F9A00000000000003937
+t1260911008
+s14647
+i"CJSONScanner.h"
+i"NSCharacterSet_Extensions.h"
+i"CDataScanner_Extensions.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.h
+c000000004B27F9A00000000000000787
+t1260911008
+s1927
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m
+c000000004B27F9A000000000000008C6
+t1260911008
+s2246
+i"CJSONSerializer.h"
+i"CJSONDataSerializer.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.h
+c000000004B27F9A000000000000005A9
+t1260911008
+s1449
+i<Foundation/Foundation.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m
+c000000004B27F9A000000000000005FB
+t1260911008
+s1531
+i"CSerializedJSONData.h"
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib
+c000000004C471F820000000000007B77
+t1279729538
+s31607
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app
+t1279730131
+s340
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app.dSYM
+t1279730131
+s102
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown
+t1279730131
+s77872
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/Info.plist
+t1279730128
+s599
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/MainWindow.nib
+t1279730129
+s1511
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/PkgInfo
+t1279730128
+s8
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/RootViewController.nib
+t1279730129
+s979
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/TweetDetailViewController.nib
+t1279730130
+s4165
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/overlay.png
+t1279730129
+s2714
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/public_timeline.json
+t1279730129
+s30315
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o
+t1279730130
+s25784
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o
+t1279730131
+s7032
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o
+t1279730131
+s22088
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o
+t1279730131
+s8908
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o
+t1279730131
+s29724
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o
+t1279730131
+s8716
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o
+t1279730131
+s5472
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDown.LinkFileList
+c000000004C4721D00000000000000862
+t1279730128
+s2146
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o
+t1279730130
+s46340
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o
+t1279730131
+s4064
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
+t1279730131
+s3944
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o
+t1279730131
+s11444
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o
+t1279730130
+s38776
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o
+t1279730131
+s45524
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o
+t1279730130
+s3040
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/main.m
+c000000004C4713710000000000000162
+t1279726449
+s354
+i<UIKit/UIKit.h>
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/overlay.png
+c000000004B85C2000000000000000A9A
+t1267057152
+s2714
+
+N/Users/aral/Desktop/Course Materials/work/DrillDown/public_timeline.json
+c000000004C471523000000000000766B
+t1279726883
+s30315
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C1FEF180000000000000132
+t1277161240
+s306
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/Availability.h
+c000000004BF4CBF90000000000001A3B
+t1274334201
+s6715
+
+N/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch.gch
+t1279728736
+s15227920
+
+N/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch.pth
+t1279730130
+s2689592
+
+N/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-dpfowgqbzmquhxdemwulzrbcoest/DrillDown_Prefix.pch.gch
+t2
+s0
+
+NDrillDown-Info.plist
+c000000004C471371000000000000038D
+t1279726449
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies301422928#301422928#0(0"0(0#1#0"8629504800#0"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.421118
+e301421536.548337
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m301421536#301421536#0(0"0(0#0#73"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m8628422496#2157"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.797274
+e301422930.915003
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@81"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m301422930#301422930#0(0"0(0#0#73"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m8605327040#2224"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/CDataScanner.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.467492
+e301421536.560107
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@103"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m301421536#301421536#0(0"0(0#0#95"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m8627371360#2190"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.905108
+e301422931.125861
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@103"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m301422930#301422931#0(0"0(0#0#95"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m8629489024#2257"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/CDataScanner_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CDataScanner_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.632505
+e301421536.735563
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m301421536#301421536#0(0"0(0#0#85"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m8627911840#2176"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.181197
+e301422931.309280
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@93"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m301422931#301422931#0(0"0(0#0#85"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m8627376736#2243"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDataSerializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDataSerializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.706584
+e301421536.782564
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@91"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m301421536#301421536#0(0"0(0#0#83"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m8626309760#2172"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.187397
+e301422931.233363
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@91"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m301422931#301422931#0(0"0(0#0#83"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m8626920032#2239"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONDeserializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONDeserializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.735746
+e301421536.868018
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@86"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m301421536#301421536#0(0"0(0#0#78"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m8618243616#2162"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.233466
+e301422931.380507
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@86"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m301422931#301422931#0(0"0(0#0#78"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m8626466528#2229"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONScanner.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONScanner.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.782672
+e301421536.841955
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m301421536#301421536#0(0"0(0#0#81"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m8612566432#2168"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.309406
+e301422931.372489
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@89"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m301422931#301422931#0(0"0(0#0#81"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m8629520032#2235"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CJSONSerializer.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CJSONSerializer.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.842060
+e301421536.900999
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m301421536#301421536#0(0"0(0#0#85"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m8601324384#2176"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.372596
+e301422931.424968
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@93"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m301422931#301422931#0(0"0(0#0#85"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m8628210976#2243"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/JSON/CSerializedJSONData.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/CSerializedJSONData.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.316479
+e301421536.421014
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m301421536#301421536#0(0"0(0#0#82"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m8612591168#2174"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.697556
+e301422930.797143
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@90"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m301422930#301422930#0(0"0(0#0#82"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m8629126560#2241"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/DrillDownAppDelegate.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDownAppDelegate.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.548444
+e301421536.632412
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@105"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m301421536#301421536#0(0"0(0#0#97"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m8625086496#2194"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.915104
+e301422931.130627
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@105"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m301422930#301422931#0(0"0(0#0#97"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m8628793376#2261"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSCharacterSet_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSCharacterSet_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.560213
+e301421536.629487
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@107"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m301421536#301421536#0(0"0(0#0#99"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m8610254560#2198"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.125966
+e301422931.187302
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@107"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m301422931#301422931#0(0"0(0#0#99"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m8607906560#2265"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSDictionary_JSONExtensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSDictionary_JSONExtensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.629585
+e301421536.706468
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m301421536#301421536#0(0"0(0#0#92"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m8629477664#2184"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.130728
+e301422931.181058
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@100"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m301422931#301422931#0(0"0(0#0#92"/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m8628293120#2251"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Source/Extensions/NSScanner_Extensions.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/NSScanner_Extensions.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421886.863136
+e301421887.013993
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m301421886#301421887#0(0"0(0#0#80"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m8626467936#2170"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.758479
+e301422930.905003
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@88"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m301422930#301422930#0(0"0(0#0#80"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m8626000096#2237"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/RootViewController.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/RootViewController.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301422568.554648
+e301422568.615642
+r0
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+occ1obj: warnings being treated as errors
+o/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m:64: warning: property 'nameLabel' requires method '-nameLabel' to be defined - use @synthesize, @dynamic or provide a method implementation
+o/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m:64: warning: property 'nameLabel' requires the method 'setNameLabel:' to be defined - use @synthesize, @dynamic or provide a method implementation
+o{standard input}:122:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_2" minus "L00000000003$pb"
+o{standard input}:122:symbol: "L_OBJC_SELECTOR_REFERENCES_2" can't be undefined in a subtraction expression
+o{standard input}:118:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000003$pb"
+o{standard input}:118:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression
+o{standard input}:89:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_1" minus "L00000000002$pb"
+o{standard input}:89:symbol: "L_OBJC_SELECTOR_REFERENCES_1" can't be undefined in a subtraction expression
+o{standard input}:85:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000002$pb"
+o{standard input}:85:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression
+o{standard input}:56:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000001$pb"
+o{standard input}:56:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression
+o{standard input}:52:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000001$pb"
+o{standard input}:52:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression
+o{standard input}:unknown:Undefined local symbol L_OBJC_CLASSLIST_SUP_REFS_$_0
+o{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_0
+o{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_1
+o{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_2
+lSLF07#2@95"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m301422568#301422568#0(2149"cc1obj: warnings being treated as errors/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m:64: warning: property 'nameLabel' requires method '-nameLabel' to be defined - use @synthesize, @dynamic or provide a method implementation/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m:64: warning: property 'nameLabel' requires the method 'setNameLabel:' to be defined - use @synthesize, @dynamic or provide a method implementation{standard input}:122:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_2" minus "L00000000003$pb"{standard input}:122:symbol: "L_OBJC_SELECTOR_REFERENCES_2" can't be undefined in a subtraction expression{standard input}:118:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000003$pb"{standard input}:118:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression{standard input}:89:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_1" minus "L00000000002$pb"{standard input}:89:symbol: "L_OBJC_SELECTOR_REFERENCES_1" can't be undefined in a subtraction expression{standard input}:85:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000002$pb"{standard input}:85:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression{standard input}:56:non-relocatable subtraction expression, "L_OBJC_SELECTOR_REFERENCES_0" minus "L00000000001$pb"{standard input}:56:symbol: "L_OBJC_SELECTOR_REFERENCES_0" can't be undefined in a subtraction expression{standard input}:52:non-relocatable subtraction expression, "L_OBJC_CLASSLIST_SUP_REFS_$_0" minus "L00000000001$pb"{standard input}:52:symbol: "L_OBJC_CLASSLIST_SUP_REFS_$_0" can't be undefined in a subtraction expression{standard input}:unknown:Undefined local symbol L_OBJC_CLASSLIST_SUP_REFS_$_0{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_0{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_1{standard input}:unknown:Undefined local symbol L_OBJC_SELECTOR_REFERENCES_22(4@126"Property 'nameLabel' requires method '-nameLabel' to be defined - use @synthesize, @dynamic or provide a method implementation301422568#41#228#0(6@87"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m301422429#64#0#64#0#0"0(4@133"Property 'nameLabel' requires the method 'setNameLabel:' to be defined - use @synthesize, @dynamic or provide a method implementation301422568#269#235#0(6@87"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m301422429#64#0#64#0#0"0(0#0#87"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m8628415264#2184"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o"1#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422931.380606
+e301422931.480914
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@95"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m301422931#301422931#0(0"0(0#0#87"/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m8627192512#2251"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/Classes/TweetDetailViewController.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/TweetDetailViewController.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o "/Users/aral/Desktop/Course Materials/work/DrillDown/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421536.284893
+e301421536.381567
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/main.m301421536#301421536#0(0"0(0#0#58"/Users/aral/Desktop/Course Materials/work/DrillDown/main.m8616218752#2134"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/main.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o"0#
+
+CCompileC build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o "/Users/aral/Desktop/Course Materials/work/DrillDown/main.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.696476
+e301422930.758368
+r1
+xCompileC
+xbuild/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o
+x/Users/aral/Desktop/Course Materials/work/DrillDown/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@66"Compile /Users/aral/Desktop/Course Materials/work/DrillDown/main.m301422930#301422930#0(0"0(0#0#58"/Users/aral/Desktop/Course Materials/work/DrillDown/main.m8631035616#2201"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -include /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/main.m" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/main.o"0#
+
+CCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib"
+s301422928.941005
+e301422929.501554
+r1
+xCompileXIB
+x/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib301422928#301422929#0(0"0(0#0#66"/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib8626530720#637"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/MainWindow.nib" "/Users/aral/Desktop/Course Materials/work/DrillDown/MainWindow.xib" --sdk /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib"
+s301422928.941732
+e301422929.480913
+r1
+xCompileXIB
+x/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib301422928#301422929#0(0"0(0#0#74"/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib8626079968#653"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/RootViewController.nib" "/Users/aral/Desktop/Course Materials/work/DrillDown/RootViewController.xib" --sdk /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB "/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib"
+s301422929.481787
+e301422930.283336
+r1
+xCompileXIB
+x/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib
+o/* com.apple.ibtool.document.warnings */
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'nameLabel' outlet of 'File's Owner' is connected to 'Label (Name label)' but 'nameLabel' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'screenName' outlet of 'File's Owner' is connected to 'Label (@name)' but 'screenName' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'followersCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followersCount' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'descriptionView' outlet of 'File's Owner' is connected to 'Text View' but 'descriptionView' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'followingCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followingCount' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'latestTweet' outlet of 'File's Owner' is connected to 'Text View' but 'latestTweet' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'backgroundImageView' outlet of 'File's Owner' is connected to 'Image View' but 'backgroundImageView' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on TweetDetailViewController.
+o/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'profileImageView' outlet of 'File's Owner' is connected to 'Image View' but 'profileImageView' is no longer defined on TweetDetailViewController.
+lSLF07#2@40"CompileXIB TweetDetailViewController.xib301422929#301422930#0(2200"/* com.apple.ibtool.document.warnings *//Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'nameLabel' outlet of 'File's Owner' is connected to 'Label (Name label)' but 'nameLabel' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'screenName' outlet of 'File's Owner' is connected to 'Label (@name)' but 'screenName' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'followersCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followersCount' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'descriptionView' outlet of 'File's Owner' is connected to 'Text View' but 'descriptionView' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'followingCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followingCount' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'latestTweet' outlet of 'File's Owner' is connected to 'Text View' but 'latestTweet' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'backgroundImageView' outlet of 'File's Owner' is connected to 'Image View' but 'backgroundImageView' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on TweetDetailViewController./Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib:-1: warning: The 'profileImageView' outlet of 'File's Owner' is connected to 'Image View' but 'profileImageView' is no longer defined on TweetDetailViewController.9(22@144"The 'nameLabel' outlet of 'File's Owner' is connected to 'Label (Name label)' but 'nameLabel' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@141"The 'screenName' outlet of 'File's Owner' is connected to 'Label (@name)' but 'screenName' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@149"The 'followersCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followersCount' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@147"The 'descriptionView' outlet of 'File's Owner' is connected to 'Text View' but 'descriptionView' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@149"The 'followingCount' outlet of 'File's Owner' is connected to 'Label (Count)' but 'followingCount' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@139"The 'latestTweet' outlet of 'File's Owner' is connected to 'Text View' but 'latestTweet' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@156"The 'backgroundImageView' outlet of 'File's Owner' is connected to 'Image View' but 'backgroundImageView' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@120"The 'view' outlet of 'File's Owner' is connected to 'View' but 'view' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(22@150"The 'profileImageView' outlet of 'File's Owner' is connected to 'Image View' but 'profileImageView' is no longer defined on TweetDetailViewController.301422930#18446744073709551615#0#0(6@81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib301422338#18446744073709551615#0#18446744073709551615#0#0"0(0#0#81"/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib8627429408#667"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/TweetDetailViewController.nib" "/Users/aral/Desktop/Course Materials/work/DrillDown/TweetDetailViewController.xib" --sdk /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCpResource build/Debug-iphonesimulator/DrillDown.app/overlay.png overlay.png
+s301422929.575770
+e301422929.581433
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/DrillDown.app/overlay.png
+xoverlay.png
+lSLF07#2@16"Copy overlay.png301422929#301422929#0(0"0(0#0#63"/Users/aral/Desktop/Course Materials/work/DrillDown/overlay.png8629732352#517"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/aral/Desktop/Course Materials/work/DrillDown/overlay.png" "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app"0#
+
+CCpResource build/Debug-iphonesimulator/DrillDown.app/public_timeline.json public_timeline.json
+s301422929.481037
+e301422929.575659
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/DrillDown.app/public_timeline.json
+xpublic_timeline.json
+lSLF07#2@25"Copy public_timeline.json301422929#301422929#0(0"0(0#0#72"/Users/aral/Desktop/Course Materials/work/DrillDown/public_timeline.json8627736928#526"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/aral/Desktop/Course Materials/work/DrillDown/public_timeline.json" "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app"0#
+
+CGenerateDSYMFile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app.dSYM" "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown"
+s301422931.526498
+e301422931.582280
+r1
+xGenerateDSYMFile
+x/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app.dSYM
+x/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown
+lSLF07#2@115"GenerateDSYMFile build/Debug-iphonesimulator/DrillDown.app.dSYM build/Debug-iphonesimulator/DrillDown.app/DrillDown301422931#301422931#0(0"0(0#0#103"/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown8627582944#449"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/usr/bin/dsymutil "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown" -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app.dSYM"0#
+
+CLd "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown" normal i386
+s301422931.481022
+e301422931.526400
+r1
+xLd
+x/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown
+xnormal
+xi386
+lSLF07#2@108"Link /Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown301422931#301422931#0(0"0(0#0#0"8625921088#1003"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk "-L/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" -filelist "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/Objects-normal/i386/DrillDown.LinkFileList" -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/DrillDown"0#
+
+CProcessInfoPlistFile "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/Info.plist" DrillDown-Info.plist
+s301422928.868493
+e301422928.940912
+r1
+xProcessInfoPlistFile
+x/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/Info.plist
+xDrillDown-Info.plist
+lSLF07#2@28"Process DrillDown-Info.plist301422928#301422928#0(0"0(0#0#72"/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown-Info.plist8627854816#540"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility DrillDown-Info.plist -genpkginfo "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app/Info.plist"0#
+
+CProcessPCH /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch.gch DrillDown_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s301421534.865110
+e301421536.284775
+r1
+xProcessPCH
+x/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch.gch
+xDrillDown_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile DrillDown_Prefix.pch301421534#301421536#0(0"0(0#0#72"/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch8627884864#2009"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -c "/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch" -o /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-bxmbrriulrcyyzbwkmsynnpwkxkm/DrillDown_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch.pth DrillDown_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s301422930.283454
+e301422930.696282
+r1
+xProcessPCH
+x/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch.pth
+xDrillDown_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF07#2@31"Precompile DrillDown_Prefix.pch301422930#301422930#0(0"0(0#0#72"/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch8629462208#2076"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -pipe -fdiagnostics-print-source-range-info -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fvisibility=hidden -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -c "/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch" -o /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-crqukvolayrobkdmeuefpddlpmmc/DrillDown_Prefix.pch.pth0#
+
+CProcessPCH /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-dpfowgqbzmquhxdemwulzrbcoest/DrillDown_Prefix.pch.gch DrillDown_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s301422637.672917
+e301422637.735363
+r0
+xProcessPCH
+x/var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-dpfowgqbzmquhxdemwulzrbcoest/DrillDown_Prefix.pch.gch
+xDrillDown_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+occ1obj: error: unrecognized command line option "-fobjc-nonfragile-abi2"
+lSLF07#2@31"Precompile DrillDown_Prefix.pch301422637#301422637#0(73"cc1obj: error: unrecognized command line option "-fobjc-nonfragile-abi2"1(4@57"Unrecognized command line option "-fobjc-nonfragile-abi2"301422637#0#73#0(6@0"301422637#0#0#0#0#0"0(0#0#72"/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch8604927648#2040"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv LANG en_US.US-ASCII    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Werror -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-generated-files.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-own-target-headers.hmap" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-all-target-headers.hmap" -iquote "/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DrillDown-project-headers.hmap" "-F/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/include" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources/i386" "-I/Users/aral/Desktop/Course Materials/work/DrillDown/build/DrillDown.build/Debug-iphonesimulator/DrillDown.build/DerivedSources" -Xclang -fobjc-nonfragile-abi2 -c "/Users/aral/Desktop/Course Materials/work/DrillDown/DrillDown_Prefix.pch" -o /var/folders/bz/bzDU030xHXK-jKYLMXnTzk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/DrillDown_Prefix-dpfowgqbzmquhxdemwulzrbcoest/DrillDown_Prefix.pch.gch1#
+
+CTouch "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app"
+s301422931.582529
+e301422931.585625
+r1
+xTouch
+x/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app
+lSLF07#2@99"Touch /Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app301422931#301422931#0(0"0(0#0#0"8627327232#320"    cd "/Users/aral/Desktop/Course Materials/work/DrillDown"    setenv PATH "/Xcode3.2.3iOS4/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Xcode3.2.3iOS4/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/aral/Desktop/Course Materials/work/DrillDown/build/Debug-iphonesimulator/DrillDown.app"0#
+
