@@ -1,16 +1,16 @@
 //
 //  RootViewController.m
-//  DrillDown
+//  WeWatch
 //
-//  Created by Aral Balkan on 21/07/2010.
-//  Copyright Naklab 2010. All rights reserved.
+//  Created by Tim Duckett on 28/04/2011.
+//  Copyright Charismatic Megafauna Ltd 2011. All rights reserved.
 //
 
 #import "RootViewController.h"
 #import "CJSONDeserializer.h"
 #import "TweetDetailViewController.h"
 #import "LoadPublicTimelineOperation.h"
-#import "DrillDownAppDelegate.h"
+#import "WeWatchAppDelegate.h"
 
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
@@ -52,7 +52,7 @@
 	self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
 	self.loadPublicTimelineOperation.delegate = self;
 	
-	NSOperationQueue *operationQueue = [(DrillDownAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
 	[operationQueue addOperation:self.loadPublicTimelineOperation];
 }
 
@@ -311,6 +311,16 @@
     
     // Give the detail view controller a pointer to the programme object at this row
     [programmeDetailViewController setDisplayProgramme:p];
+/*    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
+	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
+	[label setBackgroundColor:[UIColor clearColor]];
+	[label setTextColor:[UIColor whiteColor]];
+	[label setText:[NSString stringWithFormat:@"%@ %@", p.channel,p.time]];
+    
+	[self.navigationController.navigationBar.topItem setTitleView:label];
+	[label release];
+*/
     
     // Push the view controller onto the stack
     [self.navigationController pushViewController:programmeDetailViewController animated:YES];

@@ -1,9 +1,9 @@
 //
 //  main.m
-//  DrillDown
+//  WeWatch
 //
-//  Created by Aral Balkan on 21/07/2010.
-//  Copyright Naklab 2010. All rights reserved.
+//  Created by Tim Duckett on 28/04/2011.
+//  Copyright Charismatic Megafauna Ltd 2011. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

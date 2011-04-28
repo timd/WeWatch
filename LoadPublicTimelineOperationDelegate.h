@@ -1,9 +1,9 @@
 //
 //  LoadPublicTimelineOperationDelegate.h
-//  DrillDown
+//  WeWatch
 //
-//  Created by Aral Balkan on 22/07/2010.
-//  Copyright 2010 Naklab. All rights reserved.
+//  Created by Tim Duckett on 28/04/2011.
+//  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
