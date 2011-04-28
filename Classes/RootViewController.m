@@ -8,7 +8,6 @@
 
 #import "RootViewController.h"
 #import "CJSONDeserializer.h"
-#import "TweetDetailViewController.h"
 #import "LoadPublicTimelineOperation.h"
 #import "WeWatchAppDelegate.h"
 

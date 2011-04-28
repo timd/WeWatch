@@ -23,6 +23,7 @@
 		22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE61369D5D8004B299B /* upperBackgroundView.png */; };
 		22BB5AEA1369D979004B299B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE81369D979004B299B /* Icon.png */; };
 		22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE91369D979004B299B /* Icon@2x.png */; };
+		22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D4EAE11369F5FB00FE81CD /* Entitlements.plist */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
@@ -71,6 +72,7 @@
 		22BB5AE61369D5D8004B299B /* upperBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperBackgroundView.png; sourceTree = "<group>"; };
 		22BB5AE81369D979004B299B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		22BB5AE91369D979004B299B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		22D4EAE11369F5FB00FE81CD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* WeWatch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeWatch_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				A7F23C4B11F756A600E3722F /* overlay.png */,
 				A7F23C0611F74D4200E3722F /* public_timeline.json */,
 				8D1107310486CEB800E47090 /* WeWatch-Info.plist */,
+				22D4EAE11369F5FB00FE81CD /* Entitlements.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */,
 				22BB5AEA1369D979004B299B /* Icon.png in Resources */,
 				22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */,
+				22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WeWatch_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "WeWatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = WeWatch;
@@ -427,6 +432,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WeWatch_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "WeWatch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = WeWatch;
@@ -434,6 +440,46 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		22D4EAE31369F61500FE81CD /* Ad Hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = (
+					"-Xclang",
+					"-fobjc-nonfragile-abi2",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = "Ad Hoc distribution";
+		};
+		22D4EAE41369F61500FE81CD /* Ad Hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Duckett";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = WeWatch_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "WeWatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = WeWatch;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "91177441-C76B-4825-8E0C-86FF4A6E825B";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc distribution";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -445,6 +491,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -460,6 +507,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = (
 					"-Xclang",
 					"-fobjc-nonfragile-abi2",
@@ -477,6 +525,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				22D4EAE41369F61500FE81CD /* Ad Hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -486,6 +535,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				22D4EAE31369F61500FE81CD /* Ad Hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
