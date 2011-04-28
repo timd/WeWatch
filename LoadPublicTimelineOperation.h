@@ -15,6 +15,8 @@
 
 @property (nonatomic, assign) id <LoadPublicTimelineOperationDelegate> delegate;
 
+-(NSArray *)parseRawScheduleWith:(NSArray *)rawData;
+
 @end
 
 
