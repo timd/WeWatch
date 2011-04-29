@@ -70,7 +70,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Ad Hoc distribution"
+      buildConfiguration = "Ad Hoc Distribution"
+      customArchiveName = "WeWatch"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
