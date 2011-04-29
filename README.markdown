@@ -8,7 +8,8 @@ http://www.wewatch.co.uk
 ===================================================
 
 Version :   0.8
-Branch  :   twitter-integration
+Branch  :   master
+Merged  :   twitter-integration
 Date    :   29/04/2011
 
 ===================================================
