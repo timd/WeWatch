@@ -1,5 +1,3 @@
-===================================================
-
 # WeWatchTabled
 
 Table-driven version of the WeWatch iPhone app.

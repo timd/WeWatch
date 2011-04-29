@@ -13,7 +13,6 @@
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme;
-@synthesize testString;
 @synthesize twitterEngine;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

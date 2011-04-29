@@ -15,7 +15,7 @@
 @class ProgrammeDetailViewController;
 @class SA_OAuthTwitterController;
 
-@interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate, SA_OAuthTwitterControllerDelegate> {
+@interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate, SA_OAuthTwitterControllerDelegate, UIAlertViewDelegate> {
 	
 	LoadPublicTimelineOperation *loadPublicTimelineOperation;
     

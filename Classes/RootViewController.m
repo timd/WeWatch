@@ -355,10 +355,7 @@
     
     // Give the detail view controller a pointer to the programme object at this row
     [programmeDetailViewController setDisplayProgramme:p];
-    
-    // Pass in the test string
-    [programmeDetailViewController setTestString:@"test string is foo!"];
-    
+        
     // Pass in the current Twitter engine
     [programmeDetailViewController setTwitterEngine:_engine];
 /*    
@@ -488,11 +485,22 @@
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle: @"Settings"
                           message: alertString
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
+                          delegate: self
+                          cancelButtonTitle:@"Cancel"
                           otherButtonTitles:nil];
+    
+    [alert addButtonWithTitle:@"Logout"];
+    
     [alert show];
     [alert release];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) { // Clicked the logout button
+        // End the Twitter session
+        [_engine clearAccessToken];
+    }
 }
 
 //=============================================================================================================================
