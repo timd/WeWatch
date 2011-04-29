@@ -1,22 +1,23 @@
 ===================================================
 
-WeWatchTabled
+# WeWatchTabled
 
 Table-driven version of the WeWatch iPhone app.
 http://www.wewatch.co.uk
 
 ===================================================
 
-Version :   0.8
-Branch  :   master
-Merged  :   twitter-integration
-Date    :   29/04/2011
+### Version         :   0.8
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   twitter-integration
+### Date            :   29/04/2011
 
 ===================================================
 
-NOTES
+# NOTES
 
-Completed:
+### Completed:
 
 - initial commit to project
 - skeleton XCode project
@@ -30,11 +31,11 @@ Completed:
 - implemented basic pull refresh functions
 - implemented basic Twitter login
 
-In progress:
+### In progress:
 
 - 
 
-Todo:
+### Todo:
 
 - cleaning up title labels
 - update class diagrams
@@ -60,20 +61,18 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 
 ===================================================
 
-REQUIREMENTS
+# REQUIREMENTS
 
 - XCode 4.0 (Rev 4A304a) and above
 - iPhone running iOS 4.3 and above
 
-DEPENDENCIES
+#DEPENDENCIES
 
-- MWFeedParser (partial)
-https://github.com/mwaterfall/MWFeedParser.git
-
-- GMHTTPFetcher
-
+- MWFeedParser (partial) https://github.com/mwaterfall/MWFeedParser.git
+- MGTwitterEngine
+- SA_OAuthTwitterEngine
 - TouchJSON
-
-- Tim Duckett's ActivityIndicator
+- Aral Balkan's ActivityIndicator
+- QuartzCore
 
 ===================================================
