@@ -53,9 +53,6 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
-		A7346B02129DC81700181146 /* background-image-error.png in Resources */ = {isa = PBXBuildFile; fileRef = A7346B00129DC81700181146 /* background-image-error.png */; };
-		A7346B03129DC81700181146 /* profile-image-error.png in Resources */ = {isa = PBXBuildFile; fileRef = A7346B01129DC81700181146 /* profile-image-error.png */; };
-		A7F23C0711F74D4200E3722F /* public_timeline.json in Resources */ = {isa = PBXBuildFile; fileRef = A7F23C0611F74D4200E3722F /* public_timeline.json */; };
 		A7F23C1F11F74DF400E3722F /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23C0A11F74DF400E3722F /* CDataScanner.m */; };
 		A7F23C2011F74DF400E3722F /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23C0D11F74DF400E3722F /* CDataScanner_Extensions.m */; };
 		A7F23C2111F74DF400E3722F /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23C0F11F74DF400E3722F /* NSCharacterSet_Extensions.m */; };
@@ -67,7 +64,6 @@
 		A7F23C2711F74DF400E3722F /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23C1C11F74DF400E3722F /* CJSONSerializer.m */; };
 		A7F23C2811F74DF400E3722F /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23C1E11F74DF400E3722F /* CSerializedJSONData.m */; };
 		A7F23C4911F7561500E3722F /* TweetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */; };
-		A7F23C4C11F756A600E3722F /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F23C4B11F756A600E3722F /* overlay.png */; };
 		A7F23D5511F859CD00E3722F /* LoadImagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23D5411F859CD00E3722F /* LoadImagesOperation.m */; };
 		A7F23DDB11F8866D00E3722F /* LoadPublicTimelineOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23DDA11F8866D00E3722F /* LoadPublicTimelineOperation.m */; };
 		A7F23E0511F8959400E3722F /* NSOperation+ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F23E0411F8959400E3722F /* NSOperation+ActivityIndicator.m */; };
@@ -168,9 +164,6 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8D1107310486CEB800E47090 /* WeWatch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WeWatch-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		A7346B00129DC81700181146 /* background-image-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image-error.png"; sourceTree = "<group>"; };
-		A7346B01129DC81700181146 /* profile-image-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-image-error.png"; sourceTree = "<group>"; };
-		A7F23C0611F74D4200E3722F /* public_timeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_timeline.json; sourceTree = "<group>"; };
 		A7F23C0911F74DF400E3722F /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
 		A7F23C0A11F74DF400E3722F /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
 		A7F23C0C11F74DF400E3722F /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
@@ -192,7 +185,6 @@
 		A7F23C1D11F74DF400E3722F /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSerializedJSONData.h; sourceTree = "<group>"; };
 		A7F23C1E11F74DF400E3722F /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSerializedJSONData.m; sourceTree = "<group>"; };
 		A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetDetailViewController.xib; sourceTree = "<group>"; };
-		A7F23C4B11F756A600E3722F /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		A7F23D5311F859CD00E3722F /* LoadImagesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LoadImagesOperation.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A7F23D5411F859CD00E3722F /* LoadImagesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LoadImagesOperation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A7F23D5611F85B4B00E3722F /* LoadImagesOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LoadImagesOperationDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -407,10 +399,6 @@
 				22BB5AE91369D979004B299B /* Icon@2x.png */,
 				22BB5AE61369D5D8004B299B /* upperBackgroundView.png */,
 				22BB5AE11369CC1B004B299B /* listview-arrow.png */,
-				A7346B00129DC81700181146 /* background-image-error.png */,
-				A7346B01129DC81700181146 /* profile-image-error.png */,
-				A7F23C4B11F756A600E3722F /* overlay.png */,
-				A7F23C0611F74D4200E3722F /* public_timeline.json */,
 				8D1107310486CEB800E47090 /* WeWatch-Info.plist */,
 				22D4EAE11369F5FB00FE81CD /* Entitlements.plist */,
 			);
@@ -559,11 +547,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
-				A7F23C0711F74D4200E3722F /* public_timeline.json in Resources */,
 				A7F23C4911F7561500E3722F /* TweetDetailViewController.xib in Resources */,
-				A7F23C4C11F756A600E3722F /* overlay.png in Resources */,
-				A7346B02129DC81700181146 /* background-image-error.png in Resources */,
-				A7346B03129DC81700181146 /* profile-image-error.png in Resources */,
 				22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */,
 				22BB5AD21369BA71004B299B /* BaseCell.xib in Resources */,
 				22BB5AE21369CC1B004B299B /* listview-arrow.png in Resources */,
