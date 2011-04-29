@@ -7,8 +7,8 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-Version :   0.7
-Branch  :   pull-refresh
+Version :   0.8
+Branch  :   twitter-integration
 Date    :   29/04/2011
 
 ===================================================
@@ -30,12 +30,12 @@ Completed:
 
 In progress:
 
-- cleaning up title labels
+- implementing Twitter login
 
 Todo:
 
+- cleaning up title labels
 - update class diagrams
-- implement Twitter login
 - figure out how threading is managed
 - refactor Programme model to handle dates/times
   durations properly
