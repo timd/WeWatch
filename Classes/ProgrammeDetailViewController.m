@@ -8,10 +8,13 @@
 
 #import "ProgrammeDetailViewController.h"
 #import "Programme.h"
+#import "SA_OAuthTwitterEngine.h"
 
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme;
+@synthesize testString;
+@synthesize twitterEngine;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,7 +56,9 @@
 
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
+
     [subtitleLabel setText:[displayProgramme subtitle]];
+    
     [descriptionLabel setText:[displayProgramme description]];
     [channelLabel setText:[displayProgramme channel]];
     [timeLabel setText:[displayProgramme time]];
@@ -62,9 +67,9 @@
     [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
     
      // Change the navigation item
-    [[self navigationItem] setTitle:[NSString stringWithFormat:@"WeWatch"]];
-    
-    // Set the background colour
+     //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
+     
+        // Set the background colour
     [self.view setBackgroundColor:[UIColor whiteColor]];
      
 }
@@ -76,6 +81,9 @@
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
+    
+
 }
 
 - (void)viewDidUnload
@@ -113,6 +121,25 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -
+#pragma mark Watch programme methods
+
+-(void)watchProgramme{
+    NSLog(@"Fired watchProgramme method");
+    
+    // Set up the string with the username in it
+    NSString *alertString = [NSString stringWithFormat:@"The current Twitter user is %@", [twitterEngine username]];
+
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Watching..."
+                          message: alertString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 @end

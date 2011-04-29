@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SA_OAuthTwitterEngine.h"
 
+@class SA_OAuthTwitterController;
 @class Programme;
 
 @interface ProgrammeDetailViewController : UIViewController {
@@ -20,11 +22,22 @@
     IBOutlet UILabel *durationLabel;
     IBOutlet UILabel *watchersLabel;
     IBOutlet UIImageView *programmeImage;
-    
+
+    // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
+    
+    // ivar to hold a test variable
+    NSString *testString;
+    
+    // ivar to hold an instance of the Twitter engine
+    SA_OAuthTwitterEngine *twitterEngine;
     
 }
 
 @property (nonatomic, assign) Programme *displayProgramme;
+@property (nonatomic, retain) NSString *testString;
+@property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
+
+-(IBAction)watchProgramme;
 
 @end

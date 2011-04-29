@@ -1,0 +1,53 @@
+//
+//  Programme.h
+//  WeWatchTabled
+//
+//  Created by Tim Duckett on 15/04/2011.
+//  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
+//
+
+//
+//  Class for Programme object
+
+#import <Foundation/Foundation.h>
+
+
+@interface Programme : NSObject {
+    
+    int programmeID;            // Programme id
+    NSString *title;            // Programme title, e.g. Lambing Live
+    NSString *subtitle;         // Programme subtitle, if available (blank if not)
+    NSString *channel;          // Broadcast channel, e.g. BBC1
+    NSString *time;             // Tx time e.g. 1400
+    int timeSlot;               // The timeslot for the programme (7, 8, 9 or 10)
+    NSString *description;            // Programme blurb, e.g.g "Ooh! Ickle pretty lambs!"
+    NSString *duration;         // Programme duration in minutes e.g. 90
+    int watchers;               // Current number of watchers e.g. 10
+    NSString *programmeImage;   // Programme image filename
+}
+
+@property (nonatomic) int programmeID;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *channel;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic) int timeSlot;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *duration;
+@property (nonatomic) int watchers;
+@property (nonatomic, copy) NSString *programmeImage;
+
++(id)randomProgramme;
+
+- (id)initWithProgrammeID:(int)programmeID
+                 andTitle:(NSString *)iTitle
+              andSubtitle:(NSString *)subtitle
+               andChannel:(NSString *)iChannel
+                  andTime:(NSString *)iTime
+              andTimeslot:(int)iTimeSlot
+           andDescription:(NSString *)iDescription
+              andDuration:(NSString *)iDuration
+              andWatchers:(int)iWatchers
+                 andImage:(NSString *)programmeImage;
+
+@end
