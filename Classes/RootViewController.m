@@ -10,9 +10,10 @@
 #import "CJSONDeserializer.h"
 #import "LoadPublicTimelineOperation.h"
 #import "WeWatchAppDelegate.h"
-
+#import "SA_OAuthTwitterEngine.h"
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
+
 
 @implementation RootViewController
 
@@ -34,6 +35,10 @@
 // Define table section headers
 #define HEADING_ARRAY [NSArray arrayWithObjects:@"7pm", @"8pm", @"9pm", @"10pm", nil]
 
+// Define Twitter OAuth settings
+#define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
+#define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
+
 
 
 #pragma mark -
@@ -45,7 +50,24 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	self.title = @"WeWatch";
+	// Set the title of the nav bar
+    self.title = @"WeWatch";
+    
+    // Set up a right-hand button on the nav bar
+    //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
+    //[image release];
+    
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] 
+                                   initWithTitle:@"Settings"
+                                   style:UIBarButtonItemStyleBordered 
+                                   target:self 
+                                   action:@selector(showTwitterUser)];
+    
+    //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
+    
+    self.navigationItem.rightBarButtonItem = flipButton;
+    [flipButton release];
+    
 	
 	// Load public timeline from the web.
 	self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
@@ -61,11 +83,32 @@
     [super viewWillAppear:animated];
 }
 */
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    // Fire Twitter OAuth engine
+    if (!_engine) {
+        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        _engine.consumerKey = kOAuthConsumerKey;
+        _engine.consumerSecret = kOAuthConsumerSecret;
+    }
+    
+    
+    // Check if the user is already authorised
+    if (![_engine isAuthorized]) {
+        
+        // There isn't an authorised user, so it makes sense to present the Twitter login page
+        UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
+    
+        // If there is a controller present, display the OAuthController's modal window
+        if (OAuthController) {
+            [self presentModalViewController:OAuthController animated:YES];
+        }
+    }
 }
-*/
+
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -312,6 +355,12 @@
     
     // Give the detail view controller a pointer to the programme object at this row
     [programmeDetailViewController setDisplayProgramme:p];
+    
+    // Pass in the test string
+    [programmeDetailViewController setTestString:@"test string is foo!"];
+    
+    // Pass in the current Twitter engine
+    [programmeDetailViewController setTwitterEngine:_engine];
 /*    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
 	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
@@ -361,7 +410,10 @@
 
 - (void)dealloc {
 	[self.loadPublicTimelineOperation release];
-	
+	[_engine release];
+    
+    [self.tweetsArray release];
+    [self.cleanScheduleArray release];
     [super dealloc];
 }
 
@@ -380,7 +432,9 @@
 #pragma mark -
 #pragma mark PullRefresh methods
 
--(void)refresh {
+-(void)refresh{
+    
+    // Refresh method to support pull-to-refresh functionality
     
     NSLog(@"Running refresh method");
     
@@ -398,6 +452,62 @@
     NSLog(@"Stopped running refresh");
     
 }
+
+//=============================================================================================================================
+#pragma mark -
+#pragma mark SA_OAuthTwitterEngineDelegate
+
+- (void)storeCachedTwitterOAuthData:(NSString *)data forUsername:(NSString *)username {
+    
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject: data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
+    
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+
+//=============================================================================================================================
+#pragma mark -
+#pragma mark Twitter methods
+
+-(BOOL)sendTweet:(NSString *)tweetText {
+    [_engine sendUpdate:tweetText];
+    return true;
+}
+
+-(void)showTwitterUser{
+    NSLog(@"Running showTwitterUser method");
+    
+    // Set up the string with the username in it
+    NSString *alertString = [NSString stringWithFormat:@"The current user is %@", [_engine username]];
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Settings"
+                          message: alertString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+}
+
+//=============================================================================================================================
+#pragma mark -
+#pragma mark TwitterEngineDelegate
+
+- (void)requestSucceeded:(NSString *)requestIdentifier {
+	NSLog(@"Request %@ succeeded", requestIdentifier);
+}
+
+- (void)requestFailed:(NSString *)requestIdentifier withError:(NSError *)error {
+	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
+}
+
+
 
 @end
 

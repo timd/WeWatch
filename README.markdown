@@ -27,18 +27,20 @@ Completed:
 - rewrote ProgrammesViewController init method to create array of programme objects from JSON-derived dictionary
 - overhauled app based on Aral Balkan's Tweet Timeline browser
 - implemented basic pull refresh functions
+- implemented basic Twitter login
 
 In progress:
 
-- implementing Twitter login
+- 
 
 Todo:
 
 - cleaning up title labels
 - update class diagrams
 - figure out how threading is managed
-- refactor Programme model to handle dates/times
-  durations properly
+- clean up Twitter login:
+  - add some narrative to explain what's going on
+  - handle failure to authenticate more gracefully
 
 ===================================================
 

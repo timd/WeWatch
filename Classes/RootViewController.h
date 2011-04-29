@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "LoadPublicTimelineOperationDelegate.h"
 #import "PullRefreshTableViewController.h"
+#import "SA_OAuthTwitterController.h"
 
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
+@class SA_OAuthTwitterController;
 
-@interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate> {
+@interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate, SA_OAuthTwitterControllerDelegate> {
 	
 	LoadPublicTimelineOperation *loadPublicTimelineOperation;
     
@@ -22,6 +24,9 @@
     
     // ivar to hold reference to a custom cell
     UITableViewCell *nibLoadedCell;
+    
+    // ivar to hold reference to Twitter OAuth engine
+    SA_OAuthTwitterEngine *_engine;
 
 }
 
@@ -33,6 +38,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *nibLoadedCell;
 
 -(void)refresh;
+-(BOOL)sendTweet:(NSString *)tweetText;
+-(void)showTwitterUser;
 
 @end
 
