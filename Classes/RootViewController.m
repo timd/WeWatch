@@ -375,6 +375,28 @@
 	[self.tableView reloadData];
 }
 
+#pragma mark -
+#pragma mark PullRefresh methods
+
+-(void)refresh {
+    
+    NSLog(@"Running refresh method");
+    
+    // Load public timeline from the web.
+	self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
+	self.loadPublicTimelineOperation.delegate = self;
+	
+	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+	[operationQueue addOperation:self.loadPublicTimelineOperation];
+    
+    [self.tableView reloadData];
+    
+    [self stopLoading];
+    
+    NSLog(@"Stopped running refresh");
+    
+}
+
 @end
 
 

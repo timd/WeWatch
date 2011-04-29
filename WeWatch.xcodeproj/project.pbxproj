@@ -11,6 +11,9 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231827B136ADA730027F597 /* PullRefreshTableViewController.m */; };
+		2231827E136ADA870027F597 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2231827D136ADA870027F597 /* arrow.png */; };
+		22318280136ADA970027F597 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2231827F136ADA970027F597 /* QuartzCore.framework */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -54,6 +57,10 @@
 		1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = WeWatchAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1D6058910D05DD3D006BFB54 /* WeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2231827A136ADA730027F597 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		2231827B136ADA730027F597 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		2231827D136ADA870027F597 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		2231827F136ADA970027F597 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22318280136ADA970027F597 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -153,9 +161,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		22318278136ADA590027F597 /* Pull Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				2231827A136ADA730027F597 /* PullRefreshTableViewController.h */,
+				2231827B136ADA730027F597 /* PullRefreshTableViewController.m */,
+			);
+			name = "Pull Refresh";
+			sourceTree = "<group>";
+		};
 		22BB5AE01369BF8D004B299B /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
+				22318278136ADA590027F597 /* Pull Refresh */,
 				22BB5AD71369BF89004B299B /* GTMNSString+HTML.h */,
 				22BB5AD81369BF89004B299B /* GTMNSString+HTML.m */,
 				22BB5AD91369BF89004B299B /* NSString+HTML.h */,
@@ -183,6 +201,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				2231827F136ADA970027F597 /* QuartzCore.framework */,
 				22BB5AE01369BF8D004B299B /* MWFeedParser */,
 				A7F23D5211F8599300E3722F /* Operations */,
 				A7F23C2A11F74DFC00E3722F /* Libraries */,
@@ -208,6 +227,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2231827D136ADA870027F597 /* arrow.png */,
 				22BB5AE81369D979004B299B /* Icon.png */,
 				22BB5AE91369D979004B299B /* Icon@2x.png */,
 				22BB5AE61369D5D8004B299B /* upperBackgroundView.png */,
@@ -372,6 +392,7 @@
 				22BB5AEA1369D979004B299B /* Icon.png in Resources */,
 				22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */,
 				22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */,
+				2231827E136ADA870027F597 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +424,7 @@
 				22BB5ADD1369BF89004B299B /* GTMNSString+HTML.m in Sources */,
 				22BB5ADE1369BF89004B299B /* NSString+HTML.m in Sources */,
 				22BB5ADF1369BF89004B299B /* NSString+XMLEntities.m in Sources */,
+				2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

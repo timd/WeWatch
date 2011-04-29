@@ -19,9 +19,12 @@
 
 -(void)main
 {
+    
+    NSLog(@"Running data retrieval method from LoadPublicTimelineOperation");
+    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	////////////////////////////////////////////////////////////////
-
+    
 	[self setNetworkActivityIndicatorVisible:YES];
 	
 	NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://wewatch.co.uk/today.json"]];
@@ -38,6 +41,8 @@
 	
 	////////////////////////////////////////////////////////////////	
 	[pool drain];
+    
+    NSLog(@"Finished data retrieval method from LoadPublicTimelineOperation");
 }
 
 -(NSArray *)parseRawScheduleWith:(NSArray *)rawData {

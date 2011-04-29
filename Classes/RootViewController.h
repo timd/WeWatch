@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadPublicTimelineOperationDelegate.h"
+#import "PullRefreshTableViewController.h"
 
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
 
-@interface RootViewController : UITableViewController <LoadPublicTimelineOperationDelegate> {
+@interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate> {
 	
 	LoadPublicTimelineOperation *loadPublicTimelineOperation;
     
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) IBOutlet ProgrammeDetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet UITableViewCell *nibLoadedCell;
 
+-(void)refresh;
 
 @end
 
