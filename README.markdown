@@ -7,9 +7,9 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-Version :   0.6
-Branch  :   ww-refactor
-Date    :   28/04/2011
+Version :   0.7
+Branch  :   pull-refresh
+Date    :   29/04/2011
 
 ===================================================
 
@@ -25,17 +25,18 @@ Completed:
 - implementing subclassed cells to tweak table display
 - overhauled detail view
 - rewrote ProgrammesViewController init method to create array of programme objects from JSON-derived dictionary
-- overhauled app based on Tim Duckett's Tweet Timeline browser
+- overhauled app based on Aral Balkan's Tweet Timeline browser
+- implemented basic pull refresh functions
 
 In progress:
 
-- cleaning up grouped tableview
+- cleaning up title labels
 
 Todo:
 
-- 
 - update class diagrams
-- implement pull refresh
+- implement Twitter login
+- figure out how threading is managed
 - refactor Programme model to handle dates/times
   durations properly
 

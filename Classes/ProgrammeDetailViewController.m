@@ -53,7 +53,9 @@
 
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
+
     [subtitleLabel setText:[displayProgramme subtitle]];
+    
     [descriptionLabel setText:[displayProgramme description]];
     [channelLabel setText:[displayProgramme channel]];
     [timeLabel setText:[displayProgramme time]];

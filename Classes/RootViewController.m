@@ -186,7 +186,9 @@
     UILabel *watchersLabel = PROG_WATCHERS_LABEL;
 
     // Configure the programme title
+    //titleLabel.numberOfLines=0;
     titleLabel.text = p.title;
+    //[titleLabel sizeToFit];
     
     // Configure the programme blurb
     descriptionLabel.text = p.description;
@@ -240,7 +242,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Set the standard row height for the cells
-    return 100;
+    return 120;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -389,7 +391,7 @@
 	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
 	[operationQueue addOperation:self.loadPublicTimelineOperation];
     
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
     
     [self stopLoading];
     

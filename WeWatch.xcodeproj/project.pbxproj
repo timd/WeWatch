@@ -181,7 +181,6 @@
 				22BB5ADB1369BF89004B299B /* NSString+XMLEntities.h */,
 				22BB5ADC1369BF89004B299B /* NSString+XMLEntities.m */,
 				22BB5AD61369BF89004B299B /* GTMDefines.h */,
-				22BB5AE31369D40B004B299B /* README.markdown */,
 			);
 			name = MWFeedParser;
 			sourceTree = "<group>";
@@ -201,6 +200,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				22BB5AE31369D40B004B299B /* README.markdown */,
 				2231827F136ADA970027F597 /* QuartzCore.framework */,
 				22BB5AE01369BF8D004B299B /* MWFeedParser */,
 				A7F23D5211F8599300E3722F /* Operations */,
