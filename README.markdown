@@ -32,10 +32,12 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- adding friend names to views
+- adding friend names to views (need to clean up display and formatting of multiple names)
+  [Need Frankie to add a test feed that returns more watcher names]
 
 ### Todo:
 
+- add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
 - update class diagrams
 - figure out how threading is managed
