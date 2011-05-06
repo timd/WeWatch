@@ -28,10 +28,11 @@ http://www.wewatch.co.uk
 - overhauled app based on Aral Balkan's Tweet Timeline browser
 - implemented basic pull refresh functions
 - implemented basic Twitter login
+- retrieval of friend names from Twitter
 
 ### In progress:
 
-- Retrieving live details of watchers
+- adding friend names to views
 
 ### Todo:
 

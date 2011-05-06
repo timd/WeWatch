@@ -57,7 +57,7 @@
     //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
     //[image release];
     
-    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc] 
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] 
                                    initWithTitle:@"Settings"
                                    style:UIBarButtonItemStyleBordered 
                                    target:self 
@@ -65,8 +65,8 @@
     
     //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
     
-    self.navigationItem.rightBarButtonItem = flipButton;
-    [flipButton release];
+    self.navigationItem.rightBarButtonItem = settingsButton;
+    [settingsButton release];
     
 	
 	// Load public timeline from the web.
@@ -105,6 +105,7 @@
         if (OAuthController) {
             [self presentModalViewController:OAuthController animated:YES];
         }
+        NSLog(@"Finished with oAuth");
     }
 }
 
@@ -436,7 +437,9 @@
     NSLog(@"Running refresh method");
     
     // Load public timeline from the web.
-	self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
+	// self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
+    
+    self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:@"timd"];
 	self.loadPublicTimelineOperation.delegate = self;
 	
 	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
@@ -464,6 +467,12 @@
 - (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
     
 	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+	NSLog(@"Authenticated with user %@", username);
+    [self refresh];
+    
 }
 
 

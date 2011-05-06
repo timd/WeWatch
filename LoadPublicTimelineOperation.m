@@ -16,6 +16,22 @@
 @implementation LoadPublicTimelineOperation
 
 @synthesize delegate;
+@synthesize twitterName;
+
+-(id)initWithTwitterName:(NSString *)name {
+    
+    NSLog(@"Running initWithTwitterName");
+    
+    if (![super init]) {
+        return nil;
+    }
+    
+    NSLog(@"Name passed in = %@", name);
+    
+    [self setTwitterName: name];
+    return self;
+    
+}
 
 -(void)main
 {
@@ -27,7 +43,19 @@
     
 	[self setNetworkActivityIndicatorVisible:YES];
 	
-	NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://wewatch.co.uk/today.json"]];
+    // Construct retrieval URL
+    NSString *weWatchURL = @"http://wewatch.co.uk/today.json";
+    
+    // If there is a twitter name passed into the method, append this to the end of the URL
+    if ([self twitterName]) {
+        weWatchURL = [weWatchURL stringByAppendingString:[NSString stringWithFormat:@"?username=%@", [self twitterName]]];
+    }
+    
+    
+    NSLog(@"URL = %@", weWatchURL);
+    
+	//NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://wewatch.co.uk/today.json"]];
+	NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:weWatchURL]];
 	
 	NSArray *rawScheduleArray = [[CJSONDeserializer deserializer] deserializeAsArray:json error:nil];
     
@@ -85,6 +113,7 @@
             // watchers
             // timeslot
             // programmeImage
+            // watcherNames
             
             // Set programme ID
             NSInteger programmeID = [[currentProgrammesFromJSON objectForKey:@"id"] intValue];
@@ -115,6 +144,12 @@
             NSDictionary *channelHolder = [currentProgrammesFromJSON objectForKey:@"channel"];
             NSString *channel = [channelHolder objectForKey:@"name"];
             NSLog(@"Channel = %@", channel);
+            
+            // Set watcher names, checking for nil values
+            NSDictionary *watcherNamesHolder = [currentProgrammesFromJSON objectForKey:@"friends_watching"];
+            NSLog(@"*****");
+            NSLog(@"Friends_watching = %@", watcherNamesHolder);
+            NSLog(@"*****");
             
             // Set start time & timeslot
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
@@ -179,7 +214,8 @@
                                                                andDescription:description 
                                                                   andDuration:duration 
                                                                   andWatchers:watchers 
-                                                                     andImage:programmeImage];
+                                                                     andImage:programmeImage
+                                                              andWatcherNames:nil];
             
             // Figure out which timeslot we're dealing with, and load the Programme object into the appropriate one
             if (timeSlot == 7) {
@@ -218,6 +254,12 @@
 		[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
 	}
 }
+-(void)dealloc {
+    [twitterName release];
+    twitterName = nil;
+    [super dealloc];
+}
+
 @end
 
 

@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2217899F13742140009656A7 /* JSON example source in Resources */ = {isa = PBXBuildFile; fileRef = 2217899E13742140009656A7 /* JSON example source */; };
 		2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231827B136ADA730027F597 /* PullRefreshTableViewController.m */; };
 		2231827E136ADA870027F597 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2231827D136ADA870027F597 /* arrow.png */; };
 		22318280136ADA970027F597 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2231827F136ADA970027F597 /* QuartzCore.framework */; };
@@ -75,6 +76,7 @@
 		1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = WeWatchAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1D6058910D05DD3D006BFB54 /* WeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2217899E13742140009656A7 /* JSON example source */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON example source"; sourceTree = "<group>"; };
 		2231827A136ADA730027F597 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		2231827B136ADA730027F597 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		2231827D136ADA870027F597 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
@@ -235,6 +237,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2217899C1374211F009656A7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				2217899E13742140009656A7 /* JSON example source */,
+			);
+			name = Notes;
+			sourceTree = "<group>";
+		};
 		22318278136ADA590027F597 /* Pull Refresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				22BB5AE31369D40B004B299B /* README.markdown */,
+				2217899C1374211F009656A7 /* Notes */,
 				A7F23D5211F8599300E3722F /* Operations */,
 				A7F23C2A11F74DFC00E3722F /* Libraries */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -561,6 +572,7 @@
 				223182C9136AEF750027F597 /* jQueryInjectLandscape.txt in Resources */,
 				223182DB136AEF750027F597 /* twitter_load.png in Resources */,
 				223182E1136AFBA30027F597 /* gearButton.png in Resources */,
+				2217899F13742140009656A7 /* JSON example source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
