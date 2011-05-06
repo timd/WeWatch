@@ -149,7 +149,17 @@
             NSDictionary *watcherNamesHolder = [currentProgrammesFromJSON objectForKey:@"friends_watching"];
             NSLog(@"*****");
             NSLog(@"Friends_watching = %@", watcherNamesHolder);
+            NSLog(@"count = %d", [watcherNamesHolder count]);
             NSLog(@"*****");
+            
+            // iterate across the friends array
+            NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
+            
+            for (id nameElement in watcherNamesHolder) {
+                NSString *name = [nameElement objectForKey:@"username"];
+                NSLog(@"Username = %@", name);
+                [localNamesArray addObject:name];
+            }
             
             // Set start time & timeslot
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
@@ -215,7 +225,10 @@
                                                                   andDuration:duration 
                                                                   andWatchers:watchers 
                                                                      andImage:programmeImage
-                                                              andWatcherNames:nil];
+                                                              andWatcherNames:localNamesArray];
+            
+            // Release the local objects we created
+            [localNamesArray release];
             
             // Figure out which timeslot we're dealing with, and load the Programme object into the appropriate one
             if (timeSlot == 7) {

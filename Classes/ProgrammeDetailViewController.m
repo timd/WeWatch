@@ -65,6 +65,21 @@
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
     [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
     
+   // Extract the names from the watchers names array
+    if ([[displayProgramme watcherNames] count] != 0) {
+        NSMutableString *watchersNamesLabelText = [[NSMutableString alloc] init];
+        // there is some content in the watcherNames array
+        for (NSString *name in [displayProgramme watcherNames]) {
+            NSLog(@"Watcher name = %@", name);
+            [watchersNamesLabelText appendString:name];
+            NSLog(@"Watcher name 2 = %@", watchersNamesLabelText);
+        }
+        NSLog(@"List of watchers: %@", watchersNamesLabelText);
+        [watchersNamesLabel setText:watchersNamesLabelText];
+    } else {
+        [watchersNamesLabel setText:@""];
+    }
+    
      // Change the navigation item
      //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
      

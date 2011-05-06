@@ -234,6 +234,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
+						<int key="IBUITag">1080</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">@jamesb, @andrewpendrick, @monkeyhelpr, @timd, @frankieroberto</string>
@@ -427,6 +428,14 @@
 					</object>
 					<int key="connectionID">53</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">watchersNamesLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="507209106"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -510,6 +519,7 @@
 						<int key="objectID">39</int>
 						<reference key="object" ref="507209106"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">watchersNamesLabel</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">40</int>
@@ -621,7 +631,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">53</int>
+			<int key="maxID">54</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -652,6 +662,7 @@
 							<string>timeLabel</string>
 							<string>titleLabel</string>
 							<string>watchersLabel</string>
+							<string>watchersNamesLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -659,6 +670,7 @@
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UIImageView</string>
+							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -677,6 +689,7 @@
 							<string>timeLabel</string>
 							<string>titleLabel</string>
 							<string>watchersLabel</string>
+							<string>watchersNamesLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -710,6 +723,10 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">watchersLabel</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">watchersNamesLabel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 						</object>

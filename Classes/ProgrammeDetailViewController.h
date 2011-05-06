@@ -22,6 +22,7 @@
     IBOutlet UILabel *durationLabel;
     IBOutlet UILabel *watchersLabel;
     IBOutlet UIImageView *programmeImage;
+    IBOutlet UILabel *watchersNamesLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
