@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.8
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   twitter-integration
-### Date            :   29/04/2011
+### Version         :   0.9
+### Branch          :   get_watchers
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   06/05/2011
 
 ===================================================
 
@@ -31,7 +31,7 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- 
+- Retrieving live details of watchers
 
 ### Todo:
 
