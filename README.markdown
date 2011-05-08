@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.9
+### Version         :   0.10
 ### Branch          :   get_watchers
 ### Branched from   :   master
 ### Merged from     :   n/a
-### Date            :   06/05/2011
+### Date            :   08/05/2011
 
 ===================================================
 
@@ -28,15 +28,13 @@ http://www.wewatch.co.uk
 - overhauled app based on Aral Balkan's Tweet Timeline browser
 - implemented basic pull refresh functions
 - implemented basic Twitter login
-- retrieval of friend names from Twitter
+- retrieval & display of friends who are watching
 
 ### In progress:
 
-- adding friend names to views (need to clean up display and formatting of multiple names)
-  [Need Frankie to add a test feed that returns more watcher names]
-
 ### Todo:
-
+- clean up display and formatting of multiple friend name
+  [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
 - update class diagrams

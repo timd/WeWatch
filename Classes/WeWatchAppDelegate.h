@@ -12,7 +12,7 @@
     
     UIWindow *window;
     UINavigationController *navigationController;
-	
+    
 	NSOperationQueue *operationQueue;
 }
 

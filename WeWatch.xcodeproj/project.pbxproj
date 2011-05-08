@@ -703,7 +703,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = WeWatch;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "91177441-C76B-4825-8E0C-86FF4A6E825B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6EF98A-71C2-4971-A7DA-7206200485F1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

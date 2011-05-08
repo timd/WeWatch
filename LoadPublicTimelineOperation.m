@@ -152,13 +152,21 @@
             NSLog(@"count = %d", [watcherNamesHolder count]);
             NSLog(@"*****");
             
+            
             // iterate across the friends array
             NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
             
-            for (id nameElement in watcherNamesHolder) {
-                NSString *name = [nameElement objectForKey:@"username"];
-                NSLog(@"Username = %@", name);
-                [localNamesArray addObject:name];
+            if ([watcherNamesHolder count] == 0) {
+                // Nobody's watching this programme
+                [localNamesArray addObject:@"Nobody's currently planning to watch this programme."];
+            } else {
+
+                // Iterate across the names and load them into the localNamesArray
+                for (id nameElement in watcherNamesHolder) {
+                    NSString *name = [nameElement objectForKey:@"username"];
+                    NSLog(@"Username = %@", name);
+                    [localNamesArray addObject:name];
+                }
             }
             
             // Set start time & timeslot
