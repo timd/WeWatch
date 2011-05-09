@@ -11,12 +11,17 @@
 
 @interface LoadPublicTimelineOperation : NSOperation {
 	id <LoadPublicTimelineOperationDelegate> delegate;
+
+    // ivar to hold twitter name passed in from calling methods
+    NSString *twitterName;
 }
 
 @property (nonatomic, assign) id <LoadPublicTimelineOperationDelegate> delegate;
+@property (retain) NSString *twitterName;
+
+-(id)initWithTwitterName:(NSString *)name;
 
 -(NSArray *)parseRawScheduleWith:(NSArray *)rawData;
-
 @end
 
 

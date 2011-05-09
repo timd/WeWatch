@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SA_OAuthTwitterEngine.h"
+#import "Reachability.h"
 
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -22,6 +23,7 @@
     IBOutlet UILabel *durationLabel;
     IBOutlet UILabel *watchersLabel;
     IBOutlet UIImageView *programmeImage;
+    IBOutlet UILabel *watchersNamesLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
@@ -35,5 +37,6 @@
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 
 -(IBAction)watchProgramme;
+-(BOOL)reachable;
 
 @end

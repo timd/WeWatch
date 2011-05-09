@@ -1,0 +1,157 @@
+[
+-{
+watchers: 0
+friends_watching: [ ]
+-image: {
+thumb: "/system/images/35550/thumb.jpg?1304648191"
+}
+title: "Gardeners&#39; World"
+duration: 1800
+end: "2011-05-06T20:00:00Z"
+subtitle: "2011/2012, Episode 8"
+-channel: {
+name: "BBC Two"
+}
+start: "2011-05-06T19:30:00Z"
+description: "Monty Don recommends plants which thrive in dry soil, and demonstrates his &#39;damp garden&#39;."
+id: 35550
+}
+-{
+watchers: 1
+-friends_watching: [
+-{
+username: "jamesb"
+}
+]
+-image: {
+thumb: "/system/images/35626/thumb.jpg?1304648217"
+}
+title: "Classic Albums"
+duration: 3600
+end: "2011-05-06T21:00:00Z"
+subtitle: "Primal Scream: Screamadelica"
+-channel: {
+name: "BBC Four"
+}
+start: "2011-05-06T20:00:00Z"
+description: "A look at the creation of Primal Scream&#39;s seminal 1991 album, Screamadelica."
+id: 35626
+}
+-{
+watchers: 1
+-friends_watching: [
+-{
+username: "frankieroberto"
+}
+]
+-image: {
+thumb: "/system/images/35552/thumb.jpg?1304648192"
+}
+title: "Monty Don&#39;s Italian Gardens"
+duration: 3600
+end: "2011-05-06T21:00:00Z"
+subtitle: "The Veneto, Lucca and The Lakes"
+-channel: {
+name: "BBC Two"
+}
+start: "2011-05-06T20:00:00Z"
+description: "Monty Don concludes his garden tour of Italy in the wealthy north."
+id: 35552
+}
+-{
+watchers: 0
+friends_watching: [ ]
+-image: {
+thumb: "/system/images/35628/thumb.jpg?1304648218"
+}
+title: "Movin&#39; on Up: Pop Hits from 1991"
+duration: 3600
+end: "2011-05-06T22:00:00Z"
+-channel: {
+name: "BBC Four"
+}
+start: "2011-05-06T21:00:00Z"
+description: "With Primal Scream, Ride, Ned&#39;s Atomic Dustbin, Pop Will Eat Itself and Massive Attack."
+id: 35628
+}
+-{
+watchers: 0
+friends_watching: [ ]
+-image: {
+thumb: "/system/images/35452/thumb.jpg?1304648144"
+}
+title: "The Graham Norton Show"
+duration: 2700
+end: "2011-05-06T22:30:00Z"
+subtitle: "Series 9, Episode 4"
+-channel: {
+name: "BBC One"
+}
+start: "2011-05-06T21:45:00Z"
+description: "Graham Norton chats to Robert Pattinson, Reese Witherspoon and Hugh Laurie."
+id: 35452
+}
+-{
+watchers: 2
+-friends_watching: [
+-{
+username: "frankieroberto"
+}
+-{
+username: "jamesb"
+}
+]
+-image: {
+thumb: "/system/images/35558/thumb.jpg?1304648194"
+}
+title: "Later... with Jools Holland"
+duration: 3900
+end: "2011-05-06T23:40:00Z"
+subtitle: "Series 38, Episode 5"
+-channel: {
+name: "BBC Two"
+}
+start: "2011-05-06T22:35:00Z"
+description: "Featuring Adele, R Kelly and Californian five-piece Young the Giant."
+id: 35558
+}
+-{
+watchers: 2
+-friends_watching: [
+-{
+username: "frankieroberto"
+}
+-{
+username: "jamesb"
+}
+]
+-image: {
+thumb: "/system/images/35458/thumb.jpg?1304648146"
+}
+title: "Assault on Precinct 13"
+duration: 5100
+end: "2011-05-07T01:05:00Z"
+-channel: {
+name: "BBC One"
+}
+start: "2011-05-06T23:40:00Z"
+description: "A violent stand-off in ensues following the killing of six members of a tough street gang."
+id: 35458
+}
+-{
+watchers: 0
+friends_watching: [ ]
+-image: {
+thumb: "/system/images/35560/thumb.jpg?1304648195"
+}
+title: "Lawn Dogs"
+duration: 5700
+end: "2011-05-07T01:15:00Z"
+-channel: {
+name: "BBC Two"
+}
+start: "2011-05-06T23:40:00Z"
+description: "Trouble brews when a young girl forms a friendship with the local gardener."
+id: 35560
+}
+]

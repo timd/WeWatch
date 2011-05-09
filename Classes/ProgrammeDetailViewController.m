@@ -10,6 +10,11 @@
 #import "Programme.h"
 #import "SA_OAuthTwitterEngine.h"
 
+// Define Twitter OAuth settings
+#define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
+#define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
+
+
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme;
@@ -46,6 +51,18 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+#pragma mark -
+#pragma mark Reachability methods
+
+-(BOOL)reachable {
+    Reachability *r = [Reachability reachabilityWithHostName:@"wewatch.co.uk"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(internetStatus == NotReachable) {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - View lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -63,12 +80,45 @@
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
-    [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+    
+    // Check if the network is reachable:
+    if ([self reachable]) {
+        // Download the programme image
+        [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+    } else {
+        // Can't get to the network; use a canned image
+        NSLog(@"Unable to download the image");
+        // [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
+        [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+    }
+    
+   // Extract the names from the watchers names array
+    if ([[displayProgramme watcherNames] count] != 0) {
+        
+        NSMutableString *watchersNamesLabelText = [[NSMutableString alloc] init];
+        
+        // there is some content in the watcherNames array
+        for (NSString *name in [displayProgramme watcherNames]) {
+            NSLog(@"Watcher name = %@", name);
+            [watchersNamesLabelText appendString:name];
+            NSLog(@"Watcher name 2 = %@", watchersNamesLabelText);
+        }
+        NSLog(@"List of watchers: %@", watchersNamesLabelText);
+        
+        [watchersNamesLabel setText:watchersNamesLabelText];
+        
+        [watchersNamesLabelText release];
+        
+    } else {
+        [watchersNamesLabel setText:@""];
+    }
+    
+
     
      // Change the navigation item
      //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
      
-        // Set the background colour
+    // Set the background colour
     [self.view setBackgroundColor:[UIColor whiteColor]];
      
 }
@@ -80,8 +130,6 @@
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-    
-    
 
 }
 
@@ -122,13 +170,38 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+//=============================================================================================================================
+#pragma mark -
+#pragma mark SA_OAuthTwitterEngineDelegate
+
+- (void)storeCachedTwitterOAuthData:(NSString *)data forUsername:(NSString *)username {
+    
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject: data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
+    
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+	NSLog(@"Authenticated with user %@", username);
+    
+}
+
+
+//=============================================================================================================================
+
+
 #pragma mark -
 #pragma mark Watch programme methods
 
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
-    // Set up the string with the username in it
+        // Set up the string with the username in it
     NSString *alertString = [NSString stringWithFormat:@"The current Twitter user is %@", [twitterEngine username]];
 
     UIAlertView *alert = [[UIAlertView alloc]

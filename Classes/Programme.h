@@ -24,6 +24,7 @@
     NSString *duration;         // Programme duration in minutes e.g. 90
     int watchers;               // Current number of watchers e.g. 10
     NSString *programmeImage;   // Programme image filename
+    NSArray *watcherNames;     // Array of Twitter contacts who are watching this programme
 }
 
 @property (nonatomic) int programmeID;
@@ -36,8 +37,7 @@
 @property (nonatomic, copy) NSString *duration;
 @property (nonatomic) int watchers;
 @property (nonatomic, copy) NSString *programmeImage;
-
-+(id)randomProgramme;
+@property (nonatomic, copy) NSArray *watcherNames;
 
 - (id)initWithProgrammeID:(int)programmeID
                  andTitle:(NSString *)iTitle
@@ -48,6 +48,7 @@
            andDescription:(NSString *)iDescription
               andDuration:(NSString *)iDuration
               andWatchers:(int)iWatchers
-                 andImage:(NSString *)programmeImage;
+                 andImage:(NSString *)programmeImage
+          andWatcherNames:(NSArray *)watcherNames;
 
 @end
