@@ -60,6 +60,8 @@
 	
 	NSArray *rawScheduleArray = [[CJSONDeserializer deserializer] deserializeAsArray:json error:nil];
     
+    [json release];
+    
     // Parse the raw schedule array into usable form
     NSArray *tweetsArray = [self parseRawScheduleWith:rawScheduleArray];
     //NSLog(@"cleanScheduleArrray = %@", tweetsArray);
@@ -85,10 +87,10 @@
     NSLog(@"Running parseRawSchedule");
     
     // First, create the timeslot arrays
-    NSMutableArray *timeslot7 = [[NSMutableArray alloc] initWithObjects: nil];
-    NSMutableArray *timeslot8 = [[NSMutableArray alloc] initWithObjects: nil];
-    NSMutableArray *timeslot9 = [[NSMutableArray alloc] initWithObjects: nil];
-    NSMutableArray *timeslot10 = [[NSMutableArray alloc] initWithObjects: nil];
+    NSMutableArray *timeslot7 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
+    NSMutableArray *timeslot8 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
+    NSMutableArray *timeslot9 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
+    NSMutableArray *timeslot10 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     
     // Display the tweets that we've got
     // NSLog(@"Raw schedules = %@", rawData);

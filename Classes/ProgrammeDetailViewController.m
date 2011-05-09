@@ -88,13 +88,15 @@
     } else {
         // Can't get to the network; use a canned image
         NSLog(@"Unable to download the image");
-        //        [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
+        // [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
         [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
     }
     
    // Extract the names from the watchers names array
     if ([[displayProgramme watcherNames] count] != 0) {
+        
         NSMutableString *watchersNamesLabelText = [[NSMutableString alloc] init];
+        
         // there is some content in the watcherNames array
         for (NSString *name in [displayProgramme watcherNames]) {
             NSLog(@"Watcher name = %@", name);
@@ -102,15 +104,21 @@
             NSLog(@"Watcher name 2 = %@", watchersNamesLabelText);
         }
         NSLog(@"List of watchers: %@", watchersNamesLabelText);
+        
         [watchersNamesLabel setText:watchersNamesLabelText];
+        
+        [watchersNamesLabelText release];
+        
     } else {
         [watchersNamesLabel setText:@""];
     }
     
+
+    
      // Change the navigation item
      //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
      
-        // Set the background colour
+    // Set the background colour
     [self.view setBackgroundColor:[UIColor whiteColor]];
      
 }
@@ -122,8 +130,6 @@
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-    
-    
 
 }
 
