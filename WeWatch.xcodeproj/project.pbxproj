@@ -53,6 +53,7 @@
 		22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EEA9E4137827B900435B7F /* SystemConfiguration.framework */; };
 		22EEA9E9137827FA00435B7F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9E8137827FA00435B7F /* Reachability.m */; };
 		22EEA9F4137832C800435B7F /* wewatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EEA9F3137832C800435B7F /* wewatch.png */; };
+		22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
@@ -165,6 +166,9 @@
 		22EEA9E7137827FA00435B7F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Libraries/Reachability/Classes/Reachability.h; sourceTree = "<group>"; };
 		22EEA9E8137827FA00435B7F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Libraries/Reachability/Classes/Reachability.m; sourceTree = "<group>"; };
 		22EEA9F3137832C800435B7F /* wewatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wewatch.png; sourceTree = "<group>"; };
+		22EEA9F5137846C200435B7F /* LoadProgrammeImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperation.h; sourceTree = "<group>"; };
+		22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadProgrammeImageOperation.m; sourceTree = "<group>"; };
+		22EEA9F81378470100435B7F /* LoadProgrammeImageOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperationDelegate.h; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* WeWatch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeWatch_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -383,6 +387,36 @@
 			name = "Nib files";
 			sourceTree = "<group>";
 		};
+		22EEA9FB13784D3900435B7F /* Programme image load */ = {
+			isa = PBXGroup;
+			children = (
+				22EEA9F5137846C200435B7F /* LoadProgrammeImageOperation.h */,
+				22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */,
+				22EEA9F81378470100435B7F /* LoadProgrammeImageOperationDelegate.h */,
+			);
+			name = "Programme image load";
+			sourceTree = "<group>";
+		};
+		22EEA9FC13784D4C00435B7F /* Timeline load */ = {
+			isa = PBXGroup;
+			children = (
+				A7F23DD911F8866D00E3722F /* LoadPublicTimelineOperation.h */,
+				A7F23DDA11F8866D00E3722F /* LoadPublicTimelineOperation.m */,
+				A7F23DDC11F886B600E3722F /* LoadPublicTimelineOperationDelegate.h */,
+			);
+			name = "Timeline load";
+			sourceTree = "<group>";
+		};
+		22EEA9FD13784D5C00435B7F /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				A7F23D5311F859CD00E3722F /* LoadImagesOperation.h */,
+				A7F23D5411F859CD00E3722F /* LoadImagesOperation.m */,
+				A7F23D5611F85B4B00E3722F /* LoadImagesOperationDelegate.h */,
+			);
+			name = Legacy;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,12 +533,9 @@
 		A7F23D5211F8599300E3722F /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				A7F23D5311F859CD00E3722F /* LoadImagesOperation.h */,
-				A7F23D5411F859CD00E3722F /* LoadImagesOperation.m */,
-				A7F23D5611F85B4B00E3722F /* LoadImagesOperationDelegate.h */,
-				A7F23DD911F8866D00E3722F /* LoadPublicTimelineOperation.h */,
-				A7F23DDA11F8866D00E3722F /* LoadPublicTimelineOperation.m */,
-				A7F23DDC11F886B600E3722F /* LoadPublicTimelineOperationDelegate.h */,
+				22EEA9FD13784D5C00435B7F /* Legacy */,
+				22EEA9FC13784D4C00435B7F /* Timeline load */,
+				22EEA9FB13784D3900435B7F /* Programme image load */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -635,6 +666,7 @@
 				223182D9136AEF750027F597 /* SA_OAuthTwitterController.m in Sources */,
 				223182DA136AEF750027F597 /* SA_OAuthTwitterEngine.m in Sources */,
 				22EEA9E9137827FA00435B7F /* Reachability.m in Sources */,
+				22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

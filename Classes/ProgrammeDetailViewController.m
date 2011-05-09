@@ -195,7 +195,7 @@
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
-    // Set up the string with the username in it
+        // Set up the string with the username in it
     NSString *alertString = [NSString stringWithFormat:@"The current Twitter user is %@", [twitterEngine username]];
 
     UIAlertView *alert = [[UIAlertView alloc]
