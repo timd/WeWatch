@@ -29,8 +29,11 @@ http://www.wewatch.co.uk
 - implemented basic pull refresh functions
 - implemented basic Twitter login
 - retrieval & display of friends who are watching
+- implemented Reachability on data retrieval methods
 
 ### In progress:
+
+- move Twitter network login to more appropriate place
 
 ### Todo:
 - clean up display and formatting of multiple friend name

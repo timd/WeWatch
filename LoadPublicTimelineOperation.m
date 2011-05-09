@@ -26,12 +26,14 @@
         return nil;
     }
     
-    NSLog(@"Name passed in = %@", name);
-    
     [self setTwitterName: name];
+    
     return self;
     
 }
+
+#pragma mark -
+#pragma mark Retrieval methods
 
 -(void)main
 {
@@ -54,14 +56,13 @@
     
     NSLog(@"URL = %@", weWatchURL);
     
-	//NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://wewatch.co.uk/today.json"]];
 	NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:weWatchURL]];
 	
 	NSArray *rawScheduleArray = [[CJSONDeserializer deserializer] deserializeAsArray:json error:nil];
     
     // Parse the raw schedule array into usable form
     NSArray *tweetsArray = [self parseRawScheduleWith:rawScheduleArray];
-    NSLog(@"cleanScheduleArrray = %@", tweetsArray);
+    //NSLog(@"cleanScheduleArrray = %@", tweetsArray);
 
 	[self performSelectorOnMainThread:@selector(publicTimelineDidLoad:) withObject:tweetsArray waitUntilDone:YES];
 	
@@ -90,10 +91,9 @@
     NSMutableArray *timeslot10 = [[NSMutableArray alloc] initWithObjects: nil];
     
     // Display the tweets that we've got
-    NSLog(@"Raw schedules = %@", rawData);
+    // NSLog(@"Raw schedules = %@", rawData);
         
         // Create the programme objects from the array
-        
         
         // Iterate across the array
         for (id arrayElement in rawData) {
@@ -121,7 +121,7 @@
             
             // Set title
             NSString *title = [[currentProgrammesFromJSON objectForKey:@"title"] stringByConvertingHTMLToPlainText];
-            NSLog(@"Title = %@", title);
+            //NSLog(@"Title = %@", title);
             
             // Set subtitle, checking for potential null value
             
@@ -134,24 +134,21 @@
                 // The subtitle value is empty, therefore we need to pad it with an empty string
                 subtitle = @"";
             }
-            NSLog(@"Subtitle = %@", subtitle);
+            //NSLog(@"Subtitle = %@", subtitle);
             
             // Set description
             NSString *description = [[currentProgrammesFromJSON objectForKey:@"description"] stringByConvertingHTMLToPlainText];
-            NSLog(@"Description = %@", description);
+            //NSLog(@"Description = %@", description);
             
             // Set channel
             NSDictionary *channelHolder = [currentProgrammesFromJSON objectForKey:@"channel"];
             NSString *channel = [channelHolder objectForKey:@"name"];
-            NSLog(@"Channel = %@", channel);
+            //NSLog(@"Channel = %@", channel);
             
             // Set watcher names, checking for nil values
             NSDictionary *watcherNamesHolder = [currentProgrammesFromJSON objectForKey:@"friends_watching"];
-            NSLog(@"*****");
-            NSLog(@"Friends_watching = %@", watcherNamesHolder);
-            NSLog(@"count = %d", [watcherNamesHolder count]);
-            NSLog(@"*****");
-            
+            //NSLog(@"Friends_watching = %@", watcherNamesHolder);
+            //NSLog(@"count = %d", [watcherNamesHolder count]);
             
             // iterate across the friends array
             NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
@@ -164,7 +161,7 @@
                 // Iterate across the names and load them into the localNamesArray
                 for (id nameElement in watcherNamesHolder) {
                     NSString *name = [nameElement objectForKey:@"username"];
-                    NSLog(@"Username = %@", name);
+                    //NSLog(@"Username = %@", name);
                     [localNamesArray addObject:name];
                 }
             }
@@ -173,11 +170,11 @@
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
             
             NSInteger timeSlot = [[startTimeFromJSON substringWithRange:NSMakeRange(11, 2)] intValue] - 12;
-            NSLog(@"Timeslot = %d", timeSlot);
+            //NSLog(@"Timeslot = %d", timeSlot);
             
             NSString *startMin = [startTimeFromJSON substringWithRange:NSMakeRange(14, 2)];
             NSString *startTime = [NSString stringWithFormat:@"%@:%@pm",[NSString stringWithFormat:@"%d", timeSlot], startMin]; 
-            NSLog(@"StartTime = %@", startTime);
+            //NSLog(@"StartTime = %@", startTime);
                         
             // Set duration
             NSInteger durationInMins = [[currentProgrammesFromJSON objectForKey:@"duration"] intValue] / 60;
@@ -194,11 +191,11 @@
                 duration = [NSString stringWithFormat:@"%d mins", durationInMins];
             }
             
-            NSLog(@"Duration = %@", duration);
+            //NSLog(@"Duration = %@", duration);
             
             // Set watchers
             NSInteger watchers = [[currentProgrammesFromJSON objectForKey:@"watchers"] intValue];
-            NSLog(@"Watchers = %d", watchers);
+            //NSLog(@"Watchers = %d", watchers);
             
             // Set programme image
             NSString *programmeImage;
@@ -211,14 +208,14 @@
                 if ( [[imageHolder allKeys] containsObject:@"thumb"] ) {
                     
                     programmeImage = [NSString stringWithFormat:@"http://wewatch.co.uk%@", [imageHolder objectForKey:@"thumb"]];
-                    NSLog(@"Prog image = %@", programmeImage);
+                    //NSLog(@"Prog image = %@", programmeImage);
                     
                 }
                 
             } else {
                 
                 programmeImage = @"http://www.adoptioncurve.net/wewatch.png";                        
-                NSLog(@"Prog image = %@", programmeImage);
+                //NSLog(@"Prog image = %@", programmeImage);
                 
             }
             

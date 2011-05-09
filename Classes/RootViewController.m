@@ -14,7 +14,6 @@
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 
-
 @implementation RootViewController
 
 @synthesize tweetsArray;
@@ -38,7 +37,6 @@
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
 #define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
-
 
 
 #pragma mark -
@@ -68,13 +66,35 @@
     self.navigationItem.rightBarButtonItem = settingsButton;
     [settingsButton release];
     
+	if ([self reachable]) {
+        NSLog(@"Reachable");
+        
+        // Load public timeline from the web.
+        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
+        self.loadPublicTimelineOperation.delegate = self;
 	
-	// Load public timeline from the web.
-	self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
-	self.loadPublicTimelineOperation.delegate = self;
-	
-	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
-	[operationQueue addOperation:self.loadPublicTimelineOperation];
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:self.loadPublicTimelineOperation];
+    
+    } else {
+        
+        NSLog(@"Not Reachable");
+        
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        
+        [self stopLoading];
+        
+    }
 }
 
 
@@ -96,16 +116,35 @@
     
     
     // Check if the user is already authorised
-    if (![_engine isAuthorized]) {
-        
-        // There isn't an authorised user, so it makes sense to present the Twitter login page
-        UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
     
-        // If there is a controller present, display the OAuthController's modal window
-        if (OAuthController) {
-            [self presentModalViewController:OAuthController animated:YES];
+    if ([self reachable]) {
+        // Able to reach the network, therefore attempt to login via Twitter
+    
+        if (![_engine isAuthorized]) {
+            
+            // There isn't an authorised user, so it makes sense to present the Twitter login page
+            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
+        
+            // If there is a controller present, display the OAuthController's modal window
+            if (OAuthController) {
+                [self presentModalViewController:OAuthController animated:YES];
+            }
+            NSLog(@"Finished with oAuth");
         }
-        NSLog(@"Finished with oAuth");
+        
+    } else  {
+        // Unable to reach Twitter - display an error
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
     }
 }
 
@@ -152,8 +191,6 @@
     // Get the nth array from programmeSchedule
     NSArray *nthElement = [tweetsArray objectAtIndex:section];
     
-    NSLog(@"There are %d rows in section %d", [nthElement count], section);
-    
     // Count how many elements are in this nth array, and return it
     return [nthElement count];    
     
@@ -199,9 +236,9 @@
     
     // and the programme is the mth element in the nth array, where m is the row
     Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
-    NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
-    NSLog(@"Programme title = %@", p.title);
-    NSLog(@"Programme timeslot = %d", p.timeSlot);
+    //NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
+    //NSLog(@"Programme title = %@", p.title);
+    //NSLog(@"Programme timeslot = %d", p.timeSlot);
 
     // Extract the programme item from the dictionary
     
@@ -258,30 +295,6 @@
     
     // Don't need to release the cell; it was created autoreleased
     
-/*
- 
-    NSString *tweetString = p.title;
-
-    // NSString *tweetString = [programmeDictionary objectForKey:@"title"];
-	
-	//NSDictionary *user = [tweetDictionary objectForKey:@"user"];
-	//NSString *userName = [user objectForKey:@"name"];
-	
-	// NSString *userName = [tweetDictionary valueForKeyPath:@"user.name"];
-	
-	// Play
-	
-	//NSArray *allNames = [self.tweetsArray valueForKeyPath:@"user.name"];
-	//NSLog(@"All names = %@", allNames);
-	
-	///////
-	
-	cell.textLabel.text = tweetString;
-	//cell.detailTextLabel.text = userName;
-						  
-    return cell;
-*/ 
- 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -345,9 +358,9 @@
     // and the programme is the mth element in the nth array, where m is the row
     Programme *p = [nthArray objectAtIndex:indexPath.row];
     
-    NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
-    NSLog(@"Programme title = %@", p.title);
-    NSLog(@"Programme timeslot = %d", p.timeSlot);
+    //NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
+    //NSLog(@"Programme title = %@", p.title);
+    //NSLog(@"Programme timeslot = %d", p.timeSlot);
     
     // Do I need to create the instance of ItemDetailController?
 	if (!programmeDetailViewController) {
@@ -359,31 +372,12 @@
         
     // Pass in the current Twitter engine
     [programmeDetailViewController setTwitterEngine:_engine];
-/*    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
-	[label setFont:[UIFont boldSystemFontOfSize:16.0]];
-	[label setBackgroundColor:[UIColor clearColor]];
-	[label setTextColor:[UIColor whiteColor]];
-	[label setText:[NSString stringWithFormat:@"%@ %@", p.channel,p.time]];
-    
-	[self.navigationController.navigationBar.topItem setTitleView:label];
-	[label release];
-*/
     
     // Push the view controller onto the stack
     [self.navigationController pushViewController:programmeDetailViewController animated:YES];
     
     //[programmeDetailViewController release];
     
-    /*
-     NSDictionary *tweet = [self.tweetsArray objectAtIndex:indexPath.row];
-     
-     TweetDetailViewController *tweetDetailViewController = [[TweetDetailViewController alloc] initWithNibName:@"TweetDetailViewController" bundle:nil tweet:tweet];
-     
-     [self.navigationController pushViewController:tweetDetailViewController animated:YES];
-     
-     [tweetDetailViewController release];
-     */
 }
 
 
@@ -420,11 +414,23 @@
 
 -(void)loadPublicTimelineOperation:(NSOperation *)theOperation publicTimelineDidLoad:(NSArray *)thePublicTimeline
 {
-	NSLog(@"Tweets: %@", thePublicTimeline);
+	//NSLog(@"Tweets: %@", thePublicTimeline);
 	
 	self.tweetsArray = thePublicTimeline;
 	
 	[self.tableView reloadData];
+}
+
+#pragma mark -
+#pragma mark Reachability methods
+
+-(BOOL)reachable {
+    Reachability *r = [Reachability reachabilityWithHostName:@"wewatch.co.uk"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(internetStatus == NotReachable) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark -
@@ -439,17 +445,37 @@
     // Load public timeline from the web.
 	// self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
     
-    self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:@"timd"];
-	self.loadPublicTimelineOperation.delegate = self;
-	
-	NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
-	[operationQueue addOperation:self.loadPublicTimelineOperation];
-    
-    //[self.tableView reloadData];
-    
-    [self stopLoading];
-    
-    NSLog(@"Stopped running refresh");
+    // Check if network is reachable
+    if ([self reachable]) {
+        NSLog(@"Reachable");
+        
+        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:@"timd"];
+        self.loadPublicTimelineOperation.delegate = self;
+        
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:self.loadPublicTimelineOperation];
+  
+        [self stopLoading];
+        
+        NSLog(@"Stopped running refresh");
+    }
+    else {
+        NSLog(@"Not Reachable");
+        
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        
+        [self stopLoading];
+    }
     
 }
 

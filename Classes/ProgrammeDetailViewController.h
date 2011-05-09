@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SA_OAuthTwitterEngine.h"
+#import "Reachability.h"
 
 @class SA_OAuthTwitterController;
 @class Programme;
@@ -36,5 +37,6 @@
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 
 -(IBAction)watchProgramme;
+-(BOOL)reachable;
 
 @end
