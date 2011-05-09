@@ -106,7 +106,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+
+/*    
     // Fire Twitter OAuth engine
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
@@ -146,6 +147,8 @@
         [alert show];
         [alert release];
     }
+*/ 
+
 }
 
 

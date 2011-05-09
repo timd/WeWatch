@@ -10,6 +10,11 @@
 #import "Programme.h"
 #import "SA_OAuthTwitterEngine.h"
 
+// Define Twitter OAuth settings
+#define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
+#define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
+
+
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme;
@@ -158,6 +163,31 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+//=============================================================================================================================
+#pragma mark -
+#pragma mark SA_OAuthTwitterEngineDelegate
+
+- (void)storeCachedTwitterOAuthData:(NSString *)data forUsername:(NSString *)username {
+    
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setObject: data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username {
+    
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+	NSLog(@"Authenticated with user %@", username);
+    
+}
+
+
+//=============================================================================================================================
+
 
 #pragma mark -
 #pragma mark Watch programme methods

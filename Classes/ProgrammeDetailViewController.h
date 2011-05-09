@@ -13,7 +13,7 @@
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
