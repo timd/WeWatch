@@ -164,7 +164,7 @@
                 
                 for (id nameElement in watcherNamesHolder) {
                     
-                    // Clean up format of name so it's in the form @username_
+                    // Clean up format of name so it's in the form @username_””’
                     NSString *cleanedTwitterName = [NSString stringWithFormat:@"@%@ ", [nameElement objectForKey:@"username"]];
                     
                     //NSString *name = [nameElement objectForKey:@"username"];

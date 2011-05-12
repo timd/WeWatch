@@ -85,24 +85,30 @@
 
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
-
     [subtitleLabel setText:[displayProgramme subtitle]];
-    
     [descriptionLabel setText:[displayProgramme description]];
     [channelLabel setText:[displayProgramme channel]];
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
+
+    // Set the programme image to the generic one, so that when the detail view loads
+    // it doesn't load with the previously-viewed programme's image
+    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
     
     // Check if the network is reachable:
     if ([self reachable]) {
-        
-        // TODO: Need to replace this with a call out to LoadProgrammeImageOperation
+
         NSLog(@"Firing queued image retrieval");
         
-        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] init];
+        [NSURL URLWithString:[displayProgramme programmeImage]];
+
+        // Fire off loadProgrammeImageOperation
+        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
+        
         self.loadProgrammeImageOperation.delegate = self;
         
+        // Create queue and add retrieval job
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadProgrammeImageOperation];
         
@@ -138,8 +144,6 @@
     } else {
         [watchersNamesLabel setText:@""];
     }
-    
-
     
      // Change the navigation item
      //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
@@ -217,15 +221,16 @@
     
 }
 
-
-//=============================================================================================================================
-
-
 #pragma mark -
 #pragma mark Watch programme methods
 
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
+    
+    // TODO: Build and send request to WeWatch to update the watcher count
+    
+    
+    // Set up temporary alert view
     
     NSString *alertString;
     

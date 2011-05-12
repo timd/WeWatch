@@ -27,6 +27,18 @@
     return self;
 }
 
+-(id)initWithProgrammeImageURL:(NSURL *)imageURL {
+    if (![super init]) {
+        return nil;
+    }
+    
+    
+    self.programmeImageURL = imageURL;
+    
+    return self;
+    
+}
+
 -(void)main
 {
     
@@ -38,6 +50,8 @@
 	[self setNetworkActivityIndicatorVisible:YES];
 	
     // Retrieve NSImage containing the programme image
+    
+    NSLog(@"programmeImageURL = %@", programmeImageURL);
     
     UIImage *retrievedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:programmeImageURL]];
         
@@ -51,11 +65,12 @@
     NSLog(@"Finished data retrieval method from LoadPublicImageOperation");
 }
 
--(void)programmeImageRetrievalDidLoad:(NSArray *)publicTimeline
+-(void)programmeImageRetrievalDidLoad:(UIImage *)retrievedImage
 {
 	if (![self isCancelled])
       {
-        //		[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
+        [self.delegate LoadProgrammeImageOperation:self didLoadProgrammeImage:retrievedImage];
+        //[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
       }
 }
 -(void)dealloc {

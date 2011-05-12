@@ -33,7 +33,8 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- ensuring that programme image load is non-blocking [REQUIRES TESTING]
+- amend programme image load to cancel if detail view is removed
+  - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
 - moved Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
 
