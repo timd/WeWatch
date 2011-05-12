@@ -33,12 +33,11 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- ensuring that programme image load is non-blocking
-- REQUIRES TESTING
+- ensuring that programme image load is non-blocking [REQUIRES TESTING]
+- clean up display and formatting of multiple friend name [REQUIRES TESTING]
 
 ### Todo:
 - move Twitter network login to more appropriate place
-- clean up display and formatting of multiple friend name
   [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels

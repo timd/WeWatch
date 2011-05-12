@@ -161,10 +161,17 @@
             } else {
 
                 // Iterate across the names and load them into the localNamesArray
+                
                 for (id nameElement in watcherNamesHolder) {
-                    NSString *name = [nameElement objectForKey:@"username"];
+                    
+                    // Clean up format of name so it's in the form @username_
+                    NSString *cleanedTwitterName = [NSString stringWithFormat:@"@%@ ", [nameElement objectForKey:@"username"]];
+                    
+                    //NSString *name = [nameElement objectForKey:@"username"];
+                    //NSString *twitterName = [@"@" stringByAppendingString:name];
+                    //NSString *cleanTwitterName = [twitterName stringByAppendingString:@" "];
                     //NSLog(@"Username = %@", name);
-                    [localNamesArray addObject:name];
+                    [localNamesArray addObject:cleanedTwitterName];
                 }
             }
             
