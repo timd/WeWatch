@@ -157,7 +157,7 @@
             
             if ([watcherNamesHolder count] == 0) {
                 // Nobody's watching this programme
-                [localNamesArray addObject:@"Nobody's currently planning to watch this programme."];
+                [localNamesArray addObject:@"None of your friends are currently planning to watch this programme."];
             } else {
 
                 // Iterate across the names and load them into the localNamesArray

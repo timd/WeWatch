@@ -40,6 +40,7 @@ http://www.wewatch.co.uk
 
 ### Todo:
 - fix broken Twitter login
+- amend display of friends names 
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
