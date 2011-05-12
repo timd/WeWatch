@@ -516,6 +516,8 @@
 
 -(void)logIntoTwitter {
     
+    NSLog(@"Firing logIntoTwitter method");
+    
     // Fire Twitter OAuth engine
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
@@ -524,6 +526,9 @@
     }
     
     // Check if the user is already authorised
+    
+    NSLog(@"User = %@", [_engine username]);
+    //NSLog(@"Authorized = %@", [_engine isAuthorized]);
     
     if ([self reachable]) {
         // Able to reach the network, therefore attempt to login via Twitter

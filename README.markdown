@@ -39,6 +39,7 @@ http://www.wewatch.co.uk
 - moved Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
 
 ### Todo:
+- fix broken Twitter login
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
