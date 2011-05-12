@@ -230,9 +230,9 @@
     NSString *alertString;
     
     if ([twitterEngine username] != NULL) {
-        alertString = [NSString stringWithFormat:@"You are logged in as %@", [twitterEngine username]];
+        alertString = [NSString stringWithFormat:@"Not yet built - you are logged in as %@", [twitterEngine username]];
     } else {
-        alertString = @"Nobody is logged in at the moment";
+        alertString = @"Not yet built - nobody is logged in at the moment";
     }
     
     // Set up the string with the username in it
