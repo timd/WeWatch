@@ -13,6 +13,6 @@
 
 @required
 
--(void)LoadProgrammeImageOperation:(NSOperation *)theProgrammeImageOperation didLoadProgrammeImage:(UIImage *)programmeImage;
+-(void)LoadProgrammeImageOperation:(NSOperation *)theProgrammeImageOperation didLoadProgrammeImage:(UIImage *)retrievedImage;
 
 @end

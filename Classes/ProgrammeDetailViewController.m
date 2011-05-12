@@ -9,6 +9,8 @@
 #import "ProgrammeDetailViewController.h"
 #import "Programme.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "LoadProgrammeImageOperation.h"
+#import "WeWatchAppDelegate.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -19,6 +21,7 @@
 
 @synthesize displayProgramme;
 @synthesize twitterEngine;
+@synthesize loadProgrammeImageOperation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,6 +66,16 @@
     return YES;
 }
 
+#pragma mark -
+#pragma mark LoadProgrammeImageOperationDelegate methods
+
+-(void)LoadProgrammeImageOperation:(NSOperation *)theProgrammeImageOperation didLoadProgrammeImage:(UIImage *)retrievedImage;
+{
+	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
+    NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
+    [programmeImage setImage:retrievedImage];
+}
+
 #pragma mark - View lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -83,8 +96,21 @@
     
     // Check if the network is reachable:
     if ([self reachable]) {
+        
+        // TODO: Need to replace this with a call out to LoadProgrammeImageOperation
+        NSLog(@"Firing queued image retrieval");
+        
+        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] init];
+        self.loadProgrammeImageOperation.delegate = self;
+        
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:self.loadProgrammeImageOperation];
+        
+        NSLog(@"Called queued image retrieval");
+        
         // Download the programme image
-        [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+        // [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+                                            
     } else {
         // Can't get to the network; use a canned image
         NSLog(@"Unable to download the image");

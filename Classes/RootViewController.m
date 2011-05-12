@@ -405,7 +405,7 @@
 
 - (void)dealloc {
 	[self.loadPublicTimelineOperation release];
-	[_engine release];
+	//[_engine release];
     
     [self.tweetsArray release];
     [self.cleanScheduleArray release];

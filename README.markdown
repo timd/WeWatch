@@ -33,7 +33,8 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- ensure that programme image load is non-blocking
+- ensuring that programme image load is non-blocking
+- REQUIRES TESTING
 
 ### Todo:
 - move Twitter network login to more appropriate place

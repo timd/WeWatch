@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SA_OAuthTwitterEngine.h"
 #import "Reachability.h"
+#import "LoadProgrammeImageOperationDelegate.h"
+#import "PullRefreshTableViewController.h"
 
+@class LoadProgrammeImageOperation;
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate> {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, LoadProgrammeImageOperationDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -31,10 +34,13 @@
     // ivar to hold an instance of the Twitter engine
     SA_OAuthTwitterEngine *twitterEngine;
     
+    LoadProgrammeImageOperation *loadProgrammeImageOperation;
+    
 }
 
 @property (nonatomic, assign) Programme *displayProgramme;
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
+@property (nonatomic, retain) LoadProgrammeImageOperation *loadProgrammeImageOperation;
 
 -(IBAction)watchProgramme;
 -(BOOL)reachable;
