@@ -35,17 +35,17 @@ http://www.wewatch.co.uk
 
 - ensuring that programme image load is non-blocking [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
+- moved Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
 
 ### Todo:
-- move Twitter network login to more appropriate place
-  [Need Frankie to add a test feed that returns more watcher names]
+- test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
 - update class diagrams
-- figure out how threading is managed
 - clean up Twitter login:
   - add some narrative to explain what's going on
   - handle failure to authenticate more gracefully
+- improve text handling in alert views
 
 ===================================================
 

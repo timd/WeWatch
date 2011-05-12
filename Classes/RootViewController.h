@@ -41,6 +41,7 @@
 -(void)refresh;
 -(BOOL)sendTweet:(NSString *)tweetText;
 -(void)showTwitterUser;
+-(void)logIntoTwitter;
 
 -(BOOL)reachable;
 

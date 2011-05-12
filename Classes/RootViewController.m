@@ -55,16 +55,16 @@
     //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
     //[image release];
     
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] 
-                                   initWithTitle:@"Settings"
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
+                                   initWithTitle:@"Login"
                                    style:UIBarButtonItemStyleBordered 
                                    target:self 
-                                   action:@selector(showTwitterUser)];
+                                   action:@selector(logIntoTwitter)];
     
     //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
     
-    self.navigationItem.rightBarButtonItem = settingsButton;
-    [settingsButton release];
+    self.navigationItem.rightBarButtonItem = loginButton;
+    [loginButton release];
     
 	if ([self reachable]) {
         NSLog(@"Reachable");
@@ -80,7 +80,7 @@
         
         NSLog(@"Not Reachable");
         
-        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information. Please try later..."];
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
         
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle: @"Sorry!"
@@ -512,6 +512,48 @@
 -(BOOL)sendTweet:(NSString *)tweetText {
     [_engine sendUpdate:tweetText];
     return true;
+}
+
+-(void)logIntoTwitter {
+    
+    // Fire Twitter OAuth engine
+    if (!_engine) {
+        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        _engine.consumerKey = kOAuthConsumerKey;
+        _engine.consumerSecret = kOAuthConsumerSecret;
+    }
+    
+    // Check if the user is already authorised
+    
+    if ([self reachable]) {
+        // Able to reach the network, therefore attempt to login via Twitter
+        
+        if (![_engine isAuthorized]) {
+            
+            // There isn't an authorised user, so it makes sense to present the Twitter login page
+            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
+            
+            // If there is a controller present, display the OAuthController's modal window
+            if (OAuthController) {
+                [self presentModalViewController:OAuthController animated:YES];
+            }
+            NSLog(@"Finished with oAuth");
+        }
+        
+    } else  {
+        // Unable to reach Twitter - display an error
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
 }
 
 -(void)showTwitterUser{
