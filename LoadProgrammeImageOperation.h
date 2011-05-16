@@ -25,4 +25,6 @@
 @property (retain) NSURL *programmeImageURL;
 @property (nonatomic, retain) UIImage *programmeImage;
 
+-(id)initWithProgrammeImageURL:(NSURL *)imageURL;
+
 @end

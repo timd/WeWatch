@@ -16,7 +16,7 @@
 
 @implementation RootViewController
 
-@synthesize tweetsArray;
+@synthesize scheduleArray;
 @synthesize cleanScheduleArray;
 @synthesize loadPublicTimelineOperation;
 
@@ -32,7 +32,7 @@
 #define PROG_WATCHERS_LABEL ((UILabel *)[cell viewWithTag:1060])
 
 // Define table section headers
-#define HEADING_ARRAY [NSArray arrayWithObjects:@"7pm", @"8pm", @"9pm", @"10pm", nil]
+#define HEADING_ARRAY [NSArray arrayWithObjects:@"6pm", @"7pm", @"8pm", @"9pm", @"10pm", nil]
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -55,16 +55,16 @@
     //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
     //[image release];
     
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] 
-                                   initWithTitle:@"Settings"
+    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
+                                   initWithTitle:@"Login"
                                    style:UIBarButtonItemStyleBordered 
                                    target:self 
-                                   action:@selector(showTwitterUser)];
+                                   action:@selector(logIntoTwitter)];
     
     //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
     
-    self.navigationItem.rightBarButtonItem = settingsButton;
-    [settingsButton release];
+    self.navigationItem.rightBarButtonItem = loginButton;
+    [loginButton release];
     
 	if ([self reachable]) {
         NSLog(@"Reachable");
@@ -80,7 +80,7 @@
         
         NSLog(@"Not Reachable");
         
-        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information. Please try later..."];
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
         
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle: @"Sorry!"
@@ -107,7 +107,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-/*    
+    
     // Fire Twitter OAuth engine
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
@@ -147,7 +147,7 @@
         [alert show];
         [alert release];
     }
-*/ 
+ 
 
 }
 
@@ -180,8 +180,8 @@
     
     // Number of sections is dependent on the number of timeslot arrays in the cleanScheduleArray
     
-    NSLog(@"There are %d sections in tweetsArray", [tweetsArray count]);
-    return [tweetsArray count];
+    NSLog(@"There are %d sections in scheduleArray", [scheduleArray count]);
+    return [scheduleArray count];
 }
 
 
@@ -192,12 +192,12 @@
     // The rows come from the number of elements in the nth array in the programmeSchedule array
     
     // Get the nth array from programmeSchedule
-    NSArray *nthElement = [tweetsArray objectAtIndex:section];
+    NSArray *nthElement = [scheduleArray objectAtIndex:section];
     
     // Count how many elements are in this nth array, and return it
     return [nthElement count];    
     
-    //return [self.tweetsArray count];
+    //return [self.scheduleArray count];
 }
 
 
@@ -231,7 +231,7 @@
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     
     // the section is the nth array, where n is the section number
-    NSMutableArray *nthMutableArray = [tweetsArray objectAtIndex:indexPath.section];
+    NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
     
     // Sort the nthArray so that it's in channel order
     //NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"Programme.channel" ascending:YES];
@@ -356,7 +356,7 @@
     
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     // the section is the nth array, where n is the section number
-    NSArray *nthArray = [tweetsArray objectAtIndex:indexPath.section];
+    NSArray *nthArray = [scheduleArray objectAtIndex:indexPath.section];
     
     // and the programme is the mth element in the nth array, where m is the row
     Programme *p = [nthArray objectAtIndex:indexPath.row];
@@ -405,9 +405,9 @@
 
 - (void)dealloc {
 	[self.loadPublicTimelineOperation release];
-	[_engine release];
+	//[_engine release];
     
-    [self.tweetsArray release];
+    [self.scheduleArray release];
     [self.cleanScheduleArray release];
     [super dealloc];
 }
@@ -419,7 +419,7 @@
 {
 	//NSLog(@"Tweets: %@", thePublicTimeline);
 	
-	self.tweetsArray = thePublicTimeline;
+	self.scheduleArray = thePublicTimeline;
 	
 	[self.tableView reloadData];
 }
@@ -512,6 +512,66 @@
 -(BOOL)sendTweet:(NSString *)tweetText {
     [_engine sendUpdate:tweetText];
     return true;
+}
+
+-(void)logIntoTwitter {
+    
+    NSLog(@"Firing logIntoTwitter method");
+    
+    // Fire Twitter OAuth engine
+    if (!_engine) {
+        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        _engine.consumerKey = kOAuthConsumerKey;
+        _engine.consumerSecret = kOAuthConsumerSecret;
+    }
+    
+    // Check if the user is already authorised
+    
+    NSLog(@"User = %@", [_engine username]);
+    //NSLog(@"Authorized = %@", [_engine isAuthorized]);
+    
+    if ([self reachable]) {
+        // Able to reach the network, therefore attempt to login via Twitter
+    /*    
+        if (![_engine isAuthorized]) {
+            
+            // There isn't an authorised user, so it makes sense to present the Twitter login page
+            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
+            
+            // If there is a controller present, display the OAuthController's modal window
+            if (OAuthController) {
+                [self presentModalViewController:OAuthController animated:YES];
+            }
+            NSLog(@"Finished with oAuth");
+     
+     */
+        
+        NSString *alertString = [NSString stringWithFormat:@"You are logged in as %@", [_engine username]];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Hello!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        
+    } else {
+        // Unable to reach Twitter - display an error
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
 }
 
 -(void)showTwitterUser{

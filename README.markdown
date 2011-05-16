@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.10
-### Branch          :   get_watchers
+### Version         :   0.12
+### Branch          :   async_images
 ### Branched from   :   master
 ### Merged from     :   n/a
-### Date            :   08/05/2011
+### Date            :   16/05/2011
 
 ===================================================
 
@@ -33,19 +33,22 @@ http://www.wewatch.co.uk
 
 ### In progress:
 
-- ensure that programme image load is non-blocking
+- amend programme image load to cancel if detail view is removed
+  - need to check async cancel format [REQUIRES TESTING]
+- clean up display and formatting of multiple friend name [REQUIRES TESTING]
+
 
 ### Todo:
-- move Twitter network login to more appropriate place
-- clean up display and formatting of multiple friend name
-  [Need Frankie to add a test feed that returns more watcher names]
+- move Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
+- amend display of friends names 
+- test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
 - update class diagrams
-- figure out how threading is managed
 - clean up Twitter login:
   - add some narrative to explain what's going on
   - handle failure to authenticate more gracefully
+- improve text handling in alert views
 
 ===================================================
 

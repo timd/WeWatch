@@ -9,6 +9,8 @@
 #import "ProgrammeDetailViewController.h"
 #import "Programme.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "LoadProgrammeImageOperation.h"
+#import "WeWatchAppDelegate.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -19,6 +21,7 @@
 
 @synthesize displayProgramme;
 @synthesize twitterEngine;
+@synthesize loadProgrammeImageOperation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,6 +66,16 @@
     return YES;
 }
 
+#pragma mark -
+#pragma mark LoadProgrammeImageOperationDelegate methods
+
+-(void)LoadProgrammeImageOperation:(NSOperation *)theProgrammeImageOperation didLoadProgrammeImage:(UIImage *)retrievedImage;
+{
+	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
+    NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
+    [programmeImage setImage:retrievedImage];
+}
+
 #pragma mark - View lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -72,19 +85,38 @@
 
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
-
     [subtitleLabel setText:[displayProgramme subtitle]];
-    
     [descriptionLabel setText:[displayProgramme description]];
     [channelLabel setText:[displayProgramme channel]];
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
+
+    // Set the programme image to the generic one, so that when the detail view loads
+    // it doesn't load with the previously-viewed programme's image
+    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
     
     // Check if the network is reachable:
     if ([self reachable]) {
+
+        NSLog(@"Firing queued image retrieval");
+        
+        [NSURL URLWithString:[displayProgramme programmeImage]];
+
+        // Fire off loadProgrammeImageOperation
+        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
+        
+        self.loadProgrammeImageOperation.delegate = self;
+        
+        // Create queue and add retrieval job
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:self.loadProgrammeImageOperation];
+        
+        NSLog(@"Called queued image retrieval");
+        
         // Download the programme image
-        [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+        // [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+                                            
     } else {
         // Can't get to the network; use a canned image
         NSLog(@"Unable to download the image");
@@ -112,8 +144,6 @@
     } else {
         [watchersNamesLabel setText:@""];
     }
-    
-
     
      // Change the navigation item
      //[[self navigationItem] setTitle:[NSString stringWithFormat:@"%@ %@", [displayProgramme channel], [displayProgramme time]]];
@@ -191,19 +221,26 @@
     
 }
 
-
-//=============================================================================================================================
-
-
 #pragma mark -
 #pragma mark Watch programme methods
 
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
-        // Set up the string with the username in it
-    NSString *alertString = [NSString stringWithFormat:@"The current Twitter user is %@", [twitterEngine username]];
-
+    // TODO: Build and send request to WeWatch to update the watcher count
+    
+    
+    // Set up temporary alert view
+    
+    NSString *alertString;
+    
+    if ([twitterEngine username] != NULL) {
+        alertString = [NSString stringWithFormat:@"Not yet built - you are logged in as %@", [twitterEngine username]];
+    } else {
+        alertString = @"Not yet built - nobody is logged in at the moment";
+    }
+    
+    // Set up the string with the username in it
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle: @"Watching..."
                           message: alertString

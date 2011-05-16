@@ -63,10 +63,10 @@
     [json release];
     
     // Parse the raw schedule array into usable form
-    NSArray *tweetsArray = [self parseRawScheduleWith:rawScheduleArray];
-    //NSLog(@"cleanScheduleArrray = %@", tweetsArray);
+    NSArray *scheduleArray = [self parseRawScheduleWith:rawScheduleArray];
+    NSLog(@"cleanScheduleArrray = %@", scheduleArray);
 
-	[self performSelectorOnMainThread:@selector(publicTimelineDidLoad:) withObject:tweetsArray waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(publicTimelineDidLoad:) withObject:scheduleArray waitUntilDone:YES];
 	
 	[self setNetworkActivityIndicatorVisible:NO];	
 	
@@ -87,6 +87,7 @@
     NSLog(@"Running parseRawSchedule");
     
     // First, create the timeslot arrays
+    NSMutableArray *timeslot6 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     NSMutableArray *timeslot7 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     NSMutableArray *timeslot8 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     NSMutableArray *timeslot9 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
@@ -119,11 +120,11 @@
             
             // Set programme ID
             NSInteger programmeID = [[currentProgrammesFromJSON objectForKey:@"id"] intValue];
-            // NSLog(@"ProgrammeID = %d", programmeID);
+            NSLog(@"ProgrammeID = %d", programmeID);
             
             // Set title
             NSString *title = [[currentProgrammesFromJSON objectForKey:@"title"] stringByConvertingHTMLToPlainText];
-            //NSLog(@"Title = %@", title);
+            NSLog(@"Title = %@", title);
             
             // Set subtitle, checking for potential null value
             
@@ -149,22 +150,29 @@
             
             // Set watcher names, checking for nil values
             NSDictionary *watcherNamesHolder = [currentProgrammesFromJSON objectForKey:@"friends_watching"];
-            //NSLog(@"Friends_watching = %@", watcherNamesHolder);
-            //NSLog(@"count = %d", [watcherNamesHolder count]);
+            NSLog(@"Friends_watching = %@", watcherNamesHolder);
+            NSLog(@"count = %d", [watcherNamesHolder count]);
             
             // iterate across the friends array
             NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
             
             if ([watcherNamesHolder count] == 0) {
                 // Nobody's watching this programme
-                [localNamesArray addObject:@"Nobody's currently planning to watch this programme."];
+                [localNamesArray addObject:@"None of your friends are currently planning to watch this programme."];
             } else {
 
                 // Iterate across the names and load them into the localNamesArray
+                
                 for (id nameElement in watcherNamesHolder) {
+                    
+                    // Clean up format of name so it's in the form @username_””’
+                    NSString *cleanedTwitterName = [NSString stringWithFormat:@"@%@ ", [nameElement objectForKey:@"username"]];
+                    
                     NSString *name = [nameElement objectForKey:@"username"];
-                    //NSLog(@"Username = %@", name);
-                    [localNamesArray addObject:name];
+                    //NSString *twitterName = [@"@" stringByAppendingString:name];
+                    //NSString *cleanTwitterName = [twitterName stringByAppendingString:@" "];
+                    NSLog(@"Username = %@", name);
+                    [localNamesArray addObject:cleanedTwitterName];
                 }
             }
             
@@ -172,11 +180,11 @@
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
             
             NSInteger timeSlot = [[startTimeFromJSON substringWithRange:NSMakeRange(11, 2)] intValue] - 12;
-            //NSLog(@"Timeslot = %d", timeSlot);
+            NSLog(@"Timeslot = %d", timeSlot);
             
             NSString *startMin = [startTimeFromJSON substringWithRange:NSMakeRange(14, 2)];
             NSString *startTime = [NSString stringWithFormat:@"%@:%@pm",[NSString stringWithFormat:@"%d", timeSlot], startMin]; 
-            //NSLog(@"StartTime = %@", startTime);
+            NSLog(@"StartTime = %@", startTime);
                         
             // Set duration
             NSInteger durationInMins = [[currentProgrammesFromJSON objectForKey:@"duration"] intValue] / 60;
@@ -238,7 +246,10 @@
             [localNamesArray release];
             
             // Figure out which timeslot we're dealing with, and load the Programme object into the appropriate one
-            if (timeSlot == 7) {
+            if (timeSlot == 6) {
+                // put the programme object in array 6
+                [timeslot6 addObject:tempProgramme];
+            } else if (timeSlot == 7) {
                 // put the programme object in array 7
                 [timeslot7 addObject:tempProgramme];
             } else if (timeSlot == 8) {
@@ -258,7 +269,7 @@
         }
     
     // Load up the timeslot arrays into the schedule array ready for return
-    NSArray *cleanScheduleArray = [[[NSMutableArray alloc] initWithObjects:timeslot7, timeslot8, timeslot9, timeslot10, nil] autorelease];
+    NSArray *cleanScheduleArray = [[[NSMutableArray alloc] initWithObjects:timeslot6, timeslot7, timeslot8, timeslot9, timeslot10, nil] autorelease];
     
     NSLog(@"Finished parseSchedules");    
 
