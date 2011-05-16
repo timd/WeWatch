@@ -31,7 +31,7 @@
 
 }
 
-@property (nonatomic, retain) NSArray *tweetsArray;
+@property (nonatomic, retain) NSArray *scheduleArray;
 @property (nonatomic, retain) NSArray *cleanScheduleArray;
 @property (nonatomic, retain) LoadPublicTimelineOperation *loadPublicTimelineOperation;
 
