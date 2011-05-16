@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.12
-### Branch          :   async_images
-### Branched from   :   master
-### Merged from     :   n/a
+### Version         :   0.2
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   async_images
 ### Date            :   16/05/2011
 
 ===================================================
