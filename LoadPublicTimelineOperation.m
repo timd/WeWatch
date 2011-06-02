@@ -39,6 +39,7 @@
 {
     
     NSLog(@"Running data retrieval method from LoadPublicTimelineOperation");
+    NSLog(@"Twitter name = %@", [self twitterName]);
     
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	////////////////////////////////////////////////////////////////
@@ -94,7 +95,7 @@
     NSMutableArray *timeslot10 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     
     // Display the tweets that we've got
-    // NSLog(@"Raw schedules = %@", rawData);
+    NSLog(@"Raw schedules = %@", rawData);
         
         // Create the programme objects from the array
         
@@ -117,6 +118,7 @@
             // timeslot
             // programmeImage
             // watcherNames
+            // amWatching
             
             // Set programme ID
             NSInteger programmeID = [[currentProgrammesFromJSON objectForKey:@"id"] intValue];
@@ -229,6 +231,12 @@
                 
             }
             
+            // Set watching status
+            NSNumber *val = [currentProgrammesFromJSON objectForKey:@"watching"];
+            BOOL amWatching = [val boolValue];
+            
+            NSLog(@"amWatchingFlag = %d", amWatching);
+                      
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
                                                                      andTitle:title 
@@ -240,7 +248,8 @@
                                                                   andDuration:duration 
                                                                   andWatchers:watchers 
                                                                      andImage:programmeImage
-                                                              andWatcherNames:localNamesArray];
+                                                              andWatcherNames:localNamesArray
+                                                                andAmWatching:amWatching];
             
             // Release the local objects we created
             [localNamesArray release];

@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.2
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   async_images
-### Date            :   16/05/2011
+### Version         :   0.3
+### Branch          :   mark_watched
+### Branched from   :   develop
+### Merged from     :   n/a
+### Date            :   02/06/2011
 
 ===================================================
 
@@ -32,13 +32,15 @@ http://www.wewatch.co.uk
 - implemented Reachability on data retrieval methods
 
 ### In progress:
-
-- amend programme image load to cancel if detail view is removed
-  - need to check async cancel format [REQUIRES TESTING]
-- clean up display and formatting of multiple friend name [REQUIRES TESTING]
+- mark programmes I'm watching
+- TOFIX:    figure out why the Twitter name isn't set at the first programme load
+- TODO:     add a tick mark to the list view for watched programmes
 
 
 ### Todo:
+- amend programme image load to cancel if detail view is removed
+- need to check async cancel format [REQUIRES TESTING]
+- clean up display and formatting of multiple friend name [REQUIRES TESTING]
 - move Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
 - amend display of friends names 
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]

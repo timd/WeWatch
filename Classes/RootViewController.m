@@ -72,7 +72,14 @@
         // Load public timeline from the web.
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
         self.loadPublicTimelineOperation.delegate = self;
-	
+
+        // Check if there's a valid Twitter name; if so, set the twitterName ivar
+        if ([_engine username]) {
+           NSLog(@"RootViewController: twitter name = %@", [_engine username]);
+        } else {
+            NSLog(@"Can't retrieve twitter name");
+        }
+        
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadPublicTimelineOperation];
     
@@ -293,6 +300,8 @@
     // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.accessoryType = UITableViewCellAccessoryNone;
     
+    
+    
     // return the new cell
     return cell;
     
@@ -307,6 +316,19 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [NSString stringWithFormat:@"%@", [HEADING_ARRAY objectAtIndex:section]];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    // Grab the current cell for row at index path
+    NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
+    Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
+
+    // Check whether I'm watching this programme
+    if ([p amWatching]) {
+        cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
+    }
+
 }
 
 /*
