@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.3
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   mark_watched
+### Version         :   0.4
+### Branch          :   post_watching
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   03/06/2011
 
 ===================================================
@@ -33,6 +33,7 @@ http://www.wewatch.co.uk
 - mark programmes I'm flagged as watching
 
 ### In progress:
+- flag programme as watching via the app
 
 
 ### Todo:
