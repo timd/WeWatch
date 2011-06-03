@@ -6,9 +6,9 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.3
-### Branch          :   mark_watched
-### Branched from   :   develop
-### Merged from     :   n/a
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   mark_watched
 ### Date            :   03/06/2011
 
 ===================================================
