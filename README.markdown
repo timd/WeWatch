@@ -9,7 +9,7 @@ http://www.wewatch.co.uk
 ### Branch          :   mark_watched
 ### Branched from   :   develop
 ### Merged from     :   n/a
-### Date            :   02/06/2011
+### Date            :   03/06/2011
 
 ===================================================
 
@@ -30,11 +30,9 @@ http://www.wewatch.co.uk
 - implemented basic Twitter login
 - retrieval & display of friends who are watching
 - implemented Reachability on data retrieval methods
+- mark programmes I'm flagged as watching
 
 ### In progress:
-- mark programmes I'm watching
-- TOFIX:    figure out why the Twitter name isn't set at the first programme load
-- TODO:     add a tick mark to the list view for watched programmes
 
 
 ### Todo:

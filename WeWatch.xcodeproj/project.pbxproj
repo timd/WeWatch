@@ -44,7 +44,6 @@
 		22BB5ADD1369BF89004B299B /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AD81369BF89004B299B /* GTMNSString+HTML.m */; };
 		22BB5ADE1369BF89004B299B /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ADA1369BF89004B299B /* NSString+HTML.m */; };
 		22BB5ADF1369BF89004B299B /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ADC1369BF89004B299B /* NSString+XMLEntities.m */; };
-		22BB5AE21369CC1B004B299B /* listview-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE11369CC1B004B299B /* listview-arrow.png */; };
 		22BB5AE41369D40B004B299B /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE31369D40B004B299B /* README.markdown */; };
 		22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE61369D5D8004B299B /* upperBackgroundView.png */; };
 		22BB5AEA1369D979004B299B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE81369D979004B299B /* Icon.png */; };
@@ -54,6 +53,8 @@
 		22EEA9E9137827FA00435B7F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9E8137827FA00435B7F /* Reachability.m */; };
 		22EEA9F4137832C800435B7F /* wewatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EEA9F3137832C800435B7F /* wewatch.png */; };
 		22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */; };
+		22F21E3D1399165100F77712 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F21E3C1399165100F77712 /* checkbox.png */; };
+		22F21E3F139917CC00F77712 /* listview-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F21E3E139917CC00F77712 /* listview-arrow.png */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
@@ -156,7 +157,6 @@
 		22BB5ADA1369BF89004B299B /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		22BB5ADB1369BF89004B299B /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		22BB5ADC1369BF89004B299B /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
-		22BB5AE11369CC1B004B299B /* listview-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listview-arrow.png"; sourceTree = "<group>"; };
 		22BB5AE31369D40B004B299B /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		22BB5AE61369D5D8004B299B /* upperBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperBackgroundView.png; sourceTree = "<group>"; };
 		22BB5AE81369D979004B299B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -169,6 +169,8 @@
 		22EEA9F5137846C200435B7F /* LoadProgrammeImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperation.h; sourceTree = "<group>"; };
 		22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadProgrammeImageOperation.m; sourceTree = "<group>"; };
 		22EEA9F81378470100435B7F /* LoadProgrammeImageOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperationDelegate.h; sourceTree = "<group>"; };
+		22F21E3C1399165100F77712 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		22F21E3E139917CC00F77712 /* listview-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listview-arrow.png"; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* WeWatch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeWatch_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -446,13 +448,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22F21E3E139917CC00F77712 /* listview-arrow.png */,
+				22F21E3C1399165100F77712 /* checkbox.png */,
 				22EEA9F3137832C800435B7F /* wewatch.png */,
 				223182E0136AFBA30027F597 /* gearButton.png */,
 				2231827D136ADA870027F597 /* arrow.png */,
 				22BB5AE81369D979004B299B /* Icon.png */,
 				22BB5AE91369D979004B299B /* Icon@2x.png */,
 				22BB5AE61369D5D8004B299B /* upperBackgroundView.png */,
-				22BB5AE11369CC1B004B299B /* listview-arrow.png */,
 				8D1107310486CEB800E47090 /* WeWatch-Info.plist */,
 				22D4EAE11369F5FB00FE81CD /* Entitlements.plist */,
 			);
@@ -604,7 +607,6 @@
 				A7F23C4911F7561500E3722F /* TweetDetailViewController.xib in Resources */,
 				22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */,
 				22BB5AD21369BA71004B299B /* BaseCell.xib in Resources */,
-				22BB5AE21369CC1B004B299B /* listview-arrow.png in Resources */,
 				22BB5AE41369D40B004B299B /* README.markdown in Resources */,
 				22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */,
 				22BB5AEA1369D979004B299B /* Icon.png in Resources */,
@@ -617,6 +619,8 @@
 				223182E1136AFBA30027F597 /* gearButton.png in Resources */,
 				2217899F13742140009656A7 /* JSON example source in Resources */,
 				22EEA9F4137832C800435B7F /* wewatch.png in Resources */,
+				22F21E3D1399165100F77712 /* checkbox.png in Resources */,
+				22F21E3F139917CC00F77712 /* listview-arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

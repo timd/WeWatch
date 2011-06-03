@@ -17,6 +17,7 @@
 
 @synthesize delegate;
 @synthesize twitterName;
+@synthesize _engine;
 
 -(id)initWithTwitterName:(NSString *)name {
     
@@ -65,7 +66,7 @@
     
     // Parse the raw schedule array into usable form
     NSArray *scheduleArray = [self parseRawScheduleWith:rawScheduleArray];
-    NSLog(@"cleanScheduleArrray = %@", scheduleArray);
+    // NSLog(@"cleanScheduleArrray = %@", scheduleArray);
 
 	[self performSelectorOnMainThread:@selector(publicTimelineDidLoad:) withObject:scheduleArray waitUntilDone:YES];
 	
@@ -95,7 +96,7 @@
     NSMutableArray *timeslot10 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     
     // Display the tweets that we've got
-    NSLog(@"Raw schedules = %@", rawData);
+    // NSLog(@"Raw schedules = %@", rawData);
         
         // Create the programme objects from the array
         
@@ -207,7 +208,7 @@
             
             // Set watchers
             NSInteger watchers = [[currentProgrammesFromJSON objectForKey:@"watchers"] intValue];
-            //NSLog(@"Watchers = %d", watchers);
+            NSLog(@"Watchers = %d", watchers);
             
             // Set programme image
             NSString *programmeImage;
