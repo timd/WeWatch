@@ -576,7 +576,7 @@
         NSString *alertString = [NSString stringWithFormat:@"You are logged in as %@", [_engine username]];
         
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Hello!"
+                              initWithTitle: @"Not built yet..."
                               message: alertString
                               delegate: nil
                               cancelButtonTitle:@"Cancel"
@@ -590,7 +590,7 @@
         NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
         
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Sorry!"
+                              initWithTitle: @"Not built yet..."
                               message: alertString
                               delegate: nil
                               cancelButtonTitle:@"Cancel"

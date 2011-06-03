@@ -22,6 +22,7 @@
 @synthesize displayProgramme;
 @synthesize twitterEngine;
 @synthesize loadProgrammeImageOperation;
+@synthesize retrievedProgrammeImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +44,7 @@
     [durationLabel release];
     [watchersLabel release];
     [programmeImage release];
+    [retrievedProgrammeImage release];
     [super dealloc];
 }
 
@@ -74,6 +76,9 @@
 	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
     NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
     [programmeImage setImage:retrievedImage];
+    
+    // Set the ivar for the programme image to the retrieved one
+    retrievedProgrammeImage = retrievedImage;
 }
 
 #pragma mark - View lifecycle
@@ -94,14 +99,25 @@
     
     // Set up the watching flag, depending on whether I'm going to watch the programme or not
     if ([displayProgramme amWatching] == TRUE) {
+
+        // Set the watching flag status
         watchingFlag.hidden = FALSE;
+        
+        // Set the text of the 'watch' button
+        [watchButton setTitle:@"Unwatch" forState:UIControlStateNormal];
+        
     } else {
         watchingFlag.hidden = TRUE;
+        // Set the text of the 'watch' button
+        [watchButton setTitle:@"Watch" forState:UIControlStateNormal];
     }
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
     [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+    
+    // Set the programme image held in the ivar to the default
+    retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
     
     // Check if the network is reachable:
     if ([self reachable]) {
@@ -199,6 +215,16 @@
     [programmeImage release];
     programmeImage = nil;
     
+    [watchersNamesLabel release];
+    watchersNamesLabel = nil;
+    
+    [watchingFlag release];
+    watchingFlag = nil;
+    
+    [watchButton release];
+    watchButton = nil;
+
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -234,29 +260,60 @@
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
-    // TODO: Build and send request to WeWatch to update the watcher count
+/*    
+    UIView *modalView = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    modalView.opaque = NO;
+    modalView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
+    UILabel *label = [[[UILabel alloc] init] autorelease];
+    label.text = @"Modal View";
+    label.textColor = [UIColor whiteColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.opaque = NO;
+    [label sizeToFit];
+    [modalView addSubview:label];
     
-    // Set up temporary alert view
+    [self.view addSubview:modalView];
+*/    
     
-    NSString *alertString;
-    
-    if ([twitterEngine username] != NULL) {
+    // Check to see if we're already watching the programme: if we are, fire off the unwatch action
+    // Otherwise, load the modal view
+
+    if ([displayProgramme amWatching] == TRUE) {
         
-        alertString = [NSString stringWithFormat:@"Not yet built - you are logged in as %@", [twitterEngine username]];
+        // TODO: Build the watch action
+        
+        NSLog(@"Firing the unwatch action");
+
+        NSString *alertString = [NSString stringWithFormat:@"No built yet..."];
+        
+        // Set up the string with the username in it
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Unwatching..."
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+
     } else {
-        alertString = @"Not yet built - nobody is logged in at the moment";
+    
+        // Create the modal view controller
+        WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
+        modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        
+        // Pass in the Programme to the modalViewController
+        [modalViewController setDisplayProgramme:displayProgramme];
+        
+        // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
+        [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+        
+        // Present the modalViewController with a horizontal flip
+        [self presentModalViewController:modalViewController animated:YES];
+        [modalViewController release];
     }
     
-    // Set up the string with the username in it
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Watching..."
-                          message: alertString
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
 }
 
 @end

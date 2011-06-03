@@ -48,13 +48,18 @@
 		22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE61369D5D8004B299B /* upperBackgroundView.png */; };
 		22BB5AEA1369D979004B299B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE81369D979004B299B /* Icon.png */; };
 		22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE91369D979004B299B /* Icon@2x.png */; };
+		22D364171399290C00093989 /* button_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364161399290C00093989 /* button_bar.png */; };
+		22D3641A13992A2F00093989 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641913992A2F00093989 /* green_button.png */; };
+		22D3642013992C6500093989 /* WatchModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D3641E13992C6500093989 /* WatchModalViewController.m */; };
+		22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641F13992C6500093989 /* WatchModalViewController.xib */; };
+		22D364231399343600093989 /* fake_nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364221399343600093989 /* fake_nav_bar.png */; };
 		22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D4EAE11369F5FB00FE81CD /* Entitlements.plist */; };
 		22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EEA9E4137827B900435B7F /* SystemConfiguration.framework */; };
 		22EEA9E9137827FA00435B7F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9E8137827FA00435B7F /* Reachability.m */; };
-		22EEA9F4137832C800435B7F /* wewatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EEA9F3137832C800435B7F /* wewatch.png */; };
 		22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */; };
 		22F21E3D1399165100F77712 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F21E3C1399165100F77712 /* checkbox.png */; };
 		22F21E3F139917CC00F77712 /* listview-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F21E3E139917CC00F77712 /* listview-arrow.png */; };
+		22FB8BC813993A6700DC5A4B /* wewatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FB8BC713993A6700DC5A4B /* wewatch.png */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
@@ -161,16 +166,22 @@
 		22BB5AE61369D5D8004B299B /* upperBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperBackgroundView.png; sourceTree = "<group>"; };
 		22BB5AE81369D979004B299B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		22BB5AE91369D979004B299B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		22D364161399290C00093989 /* button_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar.png; sourceTree = "<group>"; };
+		22D3641913992A2F00093989 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
+		22D3641D13992C6500093989 /* WatchModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchModalViewController.h; sourceTree = "<group>"; };
+		22D3641E13992C6500093989 /* WatchModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchModalViewController.m; sourceTree = "<group>"; };
+		22D3641F13992C6500093989 /* WatchModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WatchModalViewController.xib; path = Classes/WatchModalViewController.xib; sourceTree = "<group>"; };
+		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D4EAE11369F5FB00FE81CD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		22EEA9E4137827B900435B7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22EEA9E7137827FA00435B7F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Libraries/Reachability/Classes/Reachability.h; sourceTree = "<group>"; };
 		22EEA9E8137827FA00435B7F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Libraries/Reachability/Classes/Reachability.m; sourceTree = "<group>"; };
-		22EEA9F3137832C800435B7F /* wewatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wewatch.png; sourceTree = "<group>"; };
 		22EEA9F5137846C200435B7F /* LoadProgrammeImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperation.h; sourceTree = "<group>"; };
 		22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadProgrammeImageOperation.m; sourceTree = "<group>"; };
 		22EEA9F81378470100435B7F /* LoadProgrammeImageOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadProgrammeImageOperationDelegate.h; sourceTree = "<group>"; };
 		22F21E3C1399165100F77712 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
 		22F21E3E139917CC00F77712 /* listview-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listview-arrow.png"; sourceTree = "<group>"; };
+		22FB8BC713993A6700DC5A4B /* wewatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wewatch.png; sourceTree = "<group>"; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* WeWatch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeWatch_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -239,6 +250,8 @@
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* WeWatchAppDelegate.h */,
 				1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */,
+				22D3641D13992C6500093989 /* WatchModalViewController.h */,
+				22D3641E13992C6500093989 /* WatchModalViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -380,6 +393,7 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
 				22BB5AD11369BA71004B299B /* BaseCell.xib */,
 				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -448,9 +462,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22FB8BC713993A6700DC5A4B /* wewatch.png */,
+				22D364221399343600093989 /* fake_nav_bar.png */,
+				22D3641913992A2F00093989 /* green_button.png */,
+				22D364161399290C00093989 /* button_bar.png */,
 				22F21E3E139917CC00F77712 /* listview-arrow.png */,
 				22F21E3C1399165100F77712 /* checkbox.png */,
-				22EEA9F3137832C800435B7F /* wewatch.png */,
 				223182E0136AFBA30027F597 /* gearButton.png */,
 				2231827D136ADA870027F597 /* arrow.png */,
 				22BB5AE81369D979004B299B /* Icon.png */,
@@ -618,9 +635,13 @@
 				223182DB136AEF750027F597 /* twitter_load.png in Resources */,
 				223182E1136AFBA30027F597 /* gearButton.png in Resources */,
 				2217899F13742140009656A7 /* JSON example source in Resources */,
-				22EEA9F4137832C800435B7F /* wewatch.png in Resources */,
 				22F21E3D1399165100F77712 /* checkbox.png in Resources */,
 				22F21E3F139917CC00F77712 /* listview-arrow.png in Resources */,
+				22D364171399290C00093989 /* button_bar.png in Resources */,
+				22D3641A13992A2F00093989 /* green_button.png in Resources */,
+				22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */,
+				22D364231399343600093989 /* fake_nav_bar.png in Resources */,
+				22FB8BC813993A6700DC5A4B /* wewatch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +692,7 @@
 				223182DA136AEF750027F597 /* SA_OAuthTwitterEngine.m in Sources */,
 				22EEA9E9137827FA00435B7F /* Reachability.m in Sources */,
 				22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */,
+				22D3642013992C6500093989 /* WatchModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tim Duckett (KM4NF2P463)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tim Duckett";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -732,6 +755,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-Xclang";
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "F5B43FD6-8FC1-4965-A6EC-5A7EEBB8FD77";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B5E61A6-EE3F-4968-BB7C-3FAA20E5E421";
 				SDKROOT = iphoneos3.1.3;
 			};
@@ -754,7 +778,7 @@
 					"\"$(SRCROOT)/Twitter+OAuth/Libraries & Headers\"",
 				);
 				PRODUCT_NAME = WeWatch;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AF6EF98A-71C2-4971-A7DA-7206200485F1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83827FF6-C7B1-4604-AC0E-057D949358A0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -34,7 +34,8 @@ http://www.wewatch.co.uk
 
 ### In progress:
 - flag programme as watching via the app
-
+- TODO: implement in-app watching
+        implement in-app unwatching
 
 ### Todo:
 - amend programme image load to cancel if detail view is removed
