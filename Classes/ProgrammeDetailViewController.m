@@ -91,6 +91,13 @@
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
+    
+    // Set up the watching flag, depending on whether I'm going to watch the programme or not
+    if ([displayProgramme amWatching] == TRUE) {
+        watchingFlag.hidden = FALSE;
+    } else {
+        watchingFlag.hidden = TRUE;
+    }
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
@@ -160,7 +167,7 @@
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-
+    
 }
 
 - (void)viewDidUnload
@@ -235,6 +242,7 @@
     NSString *alertString;
     
     if ([twitterEngine username] != NULL) {
+        
         alertString = [NSString stringWithFormat:@"Not yet built - you are logged in as %@", [twitterEngine username]];
     } else {
         alertString = @"Not yet built - nobody is logged in at the moment";

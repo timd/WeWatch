@@ -17,6 +17,7 @@
 
 @synthesize delegate;
 @synthesize twitterName;
+@synthesize _engine;
 
 -(id)initWithTwitterName:(NSString *)name {
     
@@ -39,6 +40,7 @@
 {
     
     NSLog(@"Running data retrieval method from LoadPublicTimelineOperation");
+    NSLog(@"Twitter name = %@", [self twitterName]);
     
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	////////////////////////////////////////////////////////////////
@@ -64,7 +66,7 @@
     
     // Parse the raw schedule array into usable form
     NSArray *scheduleArray = [self parseRawScheduleWith:rawScheduleArray];
-    NSLog(@"cleanScheduleArrray = %@", scheduleArray);
+    // NSLog(@"cleanScheduleArrray = %@", scheduleArray);
 
 	[self performSelectorOnMainThread:@selector(publicTimelineDidLoad:) withObject:scheduleArray waitUntilDone:YES];
 	
@@ -117,6 +119,7 @@
             // timeslot
             // programmeImage
             // watcherNames
+            // amWatching
             
             // Set programme ID
             NSInteger programmeID = [[currentProgrammesFromJSON objectForKey:@"id"] intValue];
@@ -205,7 +208,7 @@
             
             // Set watchers
             NSInteger watchers = [[currentProgrammesFromJSON objectForKey:@"watchers"] intValue];
-            //NSLog(@"Watchers = %d", watchers);
+            NSLog(@"Watchers = %d", watchers);
             
             // Set programme image
             NSString *programmeImage;
@@ -229,6 +232,12 @@
                 
             }
             
+            // Set watching status
+            NSNumber *val = [currentProgrammesFromJSON objectForKey:@"watching"];
+            BOOL amWatching = [val boolValue];
+            
+            NSLog(@"amWatchingFlag = %d", amWatching);
+                      
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
                                                                      andTitle:title 
@@ -240,7 +249,8 @@
                                                                   andDuration:duration 
                                                                   andWatchers:watchers 
                                                                      andImage:programmeImage
-                                                              andWatcherNames:localNamesArray];
+                                                              andWatcherNames:localNamesArray
+                                                                andAmWatching:amWatching];
             
             // Release the local objects we created
             [localNamesArray release];

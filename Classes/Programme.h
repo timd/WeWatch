@@ -25,6 +25,7 @@
     int watchers;               // Current number of watchers e.g. 10
     NSString *programmeImage;   // Programme image filename
     NSArray *watcherNames;     // Array of Twitter contacts who are watching this programme
+    Boolean amWatching;        // Flag to indicate I'm watching the programme
 }
 
 @property (nonatomic) int programmeID;
@@ -38,6 +39,7 @@
 @property (nonatomic) int watchers;
 @property (nonatomic, copy) NSString *programmeImage;
 @property (nonatomic, copy) NSArray *watcherNames;
+@property (nonatomic) Boolean amWatching;
 
 - (id)initWithProgrammeID:(int)programmeID
                  andTitle:(NSString *)iTitle
@@ -49,6 +51,7 @@
               andDuration:(NSString *)iDuration
               andWatchers:(int)iWatchers
                  andImage:(NSString *)programmeImage
-          andWatcherNames:(NSArray *)watcherNames;
+          andWatcherNames:(NSArray *)watcherNames
+            andAmWatching:(Boolean)iAmWatching;
 
 @end

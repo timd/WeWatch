@@ -30,6 +30,7 @@
 #define PROG_TIME_LABEL ((UILabel *)[cell viewWithTag:1040])
 #define PROG_DURATION_LABEL ((UILabel *)[cell viewWithTag:1050])
 #define PROG_WATCHERS_LABEL ((UILabel *)[cell viewWithTag:1060])
+#define PROG_WATCHING_FLAG ((UIImageView *)[cell viewWithTag:1070])
 
 // Define table section headers
 #define HEADING_ARRAY [NSArray arrayWithObjects:@"6pm", @"7pm", @"8pm", @"9pm", @"10pm", nil]
@@ -48,6 +49,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
+    // Fire Twitter OAuth engine, if it's not already in existence
+    if (!_engine) {
+        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        _engine.consumerKey = kOAuthConsumerKey;
+        _engine.consumerSecret = kOAuthConsumerSecret;
+    }
+    
 	// Set the title of the nav bar
     self.title = @"WeWatch";
     
@@ -55,77 +63,35 @@
     //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
     //[image release];
     
+    NSString *titleString;
+    
+    if ([_engine isAuthorized]) {
+        titleString = [NSString stringWithFormat:@"Log out"];
+    } else {
+        titleString = [NSString stringWithFormat:@"Log in"];
+    }
+    
     UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
-                                   initWithTitle:@"Login"
+                                   initWithTitle:titleString
                                    style:UIBarButtonItemStyleBordered 
                                    target:self 
-                                   action:@selector(logIntoTwitter)];
+                                   action:@selector(changeTwitterLoginStatus)];
     
     //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
     
     self.navigationItem.rightBarButtonItem = loginButton;
     [loginButton release];
     
-	if ([self reachable]) {
-        NSLog(@"Reachable");
-        
-        // Load public timeline from the web.
-        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
-        self.loadPublicTimelineOperation.delegate = self;
-	
-        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
-        [operationQueue addOperation:self.loadPublicTimelineOperation];
-    
-    } else {
-        
-        NSLog(@"Not Reachable");
-        
-        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
-        
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Sorry!"
-                              message: alertString
-                              delegate: nil
-                              cancelButtonTitle:@"Cancel"
-                              otherButtonTitles:nil];
-        
-        [alert show];
-        [alert release];
-        
-        [self stopLoading];
-        
-    }
-}
-
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    
-    // Fire Twitter OAuth engine
-    if (!_engine) {
-        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
-        _engine.consumerKey = kOAuthConsumerKey;
-        _engine.consumerSecret = kOAuthConsumerSecret;
-    }
-    
-    
     // Check if the user is already authorised
     
     if ([self reachable]) {
         // Able to reach the network, therefore attempt to login via Twitter
-    
+        
         if (![_engine isAuthorized]) {
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
-        
+            
             // If there is a controller present, display the OAuthController's modal window
             if (OAuthController) {
                 [self presentModalViewController:OAuthController animated:YES];
@@ -147,7 +113,56 @@
         [alert show];
         [alert release];
     }
- 
+    
+    if ([self reachable]) {
+        NSLog(@"Reachable");
+        NSLog(@"Twitter name = %@", [_engine username]);
+        
+        // Load public timeline from the web.
+        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
+        self.loadPublicTimelineOperation.delegate = self;
+        
+        // Check if there's a valid Twitter name; if so, set the twitterName ivar
+        if ([_engine username]) {
+            NSLog(@"RootViewController: twitter name = %@", [_engine username]);
+        } else {
+            NSLog(@"Can't retrieve twitter name");
+        }
+        
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:self.loadPublicTimelineOperation];
+        
+    } else {
+        
+        NSLog(@"Not Reachable");
+        
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        
+        [self stopLoading];
+        
+    }
+
+}
+
+
+/*
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+*/
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 
 }
 
@@ -209,23 +224,10 @@
     
     // If there isn't a free cell, then create one
     if (cell == nil) {
-        // Create a standard cell
-        //cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ProgrammeCell"] autorelease];
-        
         // Create a custom cell from a nib
         [[NSBundle mainBundle] loadNibNamed:@"BaseCell" owner:self options:NULL];
         cell = nibLoadedCell;
     }
-    
-/*    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
- 
-*/
     
     // CONFIGURE THE CELL
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
@@ -268,6 +270,7 @@
     UILabel *timeLabel = PROG_TIME_LABEL;
     UILabel *durationLabel = PROG_DURATION_LABEL;
     UILabel *watchersLabel = PROG_WATCHERS_LABEL;
+    UIImageView *watchingFlagImage = PROG_WATCHING_FLAG;
 
     // Configure the programme title
     //titleLabel.numberOfLines=0;
@@ -293,6 +296,16 @@
     // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.accessoryType = UITableViewCellAccessoryNone;
     
+    // If the programme is being watched, set up the watching flag as visible
+    if (p.amWatching == TRUE) {
+        // Flip the visibility to ON
+        watchingFlagImage.hidden = FALSE;
+    } else {
+        // Need to explicitly state that image should be hidden,
+        // otherwise it'll show up if the cell gets reused
+        watchingFlagImage.hidden = TRUE;
+    }
+    
     // return the new cell
     return cell;
     
@@ -307,6 +320,19 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [NSString stringWithFormat:@"%@", [HEADING_ARRAY objectAtIndex:section]];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    // Grab the current cell for row at index path
+    NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
+    Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
+
+    // Check whether I'm watching this programme
+    if ([p amWatching]) {
+        cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
+    }
+
 }
 
 /*
@@ -452,8 +478,9 @@
     if ([self reachable]) {
         NSLog(@"Reachable");
         
-        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:@"timd"];
+        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
         self.loadPublicTimelineOperation.delegate = self;
+        self.loadPublicTimelineOperation.twitterName = [_engine username];
         
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadPublicTimelineOperation];
@@ -514,7 +541,7 @@
     return true;
 }
 
--(void)logIntoTwitter {
+-(void)changeTwitterLoginStatus {
     
     NSLog(@"Firing logIntoTwitter method");
     
