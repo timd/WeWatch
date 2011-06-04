@@ -60,6 +60,8 @@
         _engine.consumerSecret = kOAuthConsumerSecret;
     }
     
+
+    
 	// Set the title of the nav bar
     self.title = @"WeWatch";
     
@@ -518,6 +520,8 @@
     // Update the title of the button bar item
     self.navigationItem.rightBarButtonItem.title = @"Logout";
     
+    
+    
     // Now fire the reload method to pull down an updated watch list
     // This is necessary to ensure that we're displaying the current watching status
     [self refresh];
@@ -559,7 +563,7 @@
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             // Clear cookies first:
             
-            [_engine clearsCookies];
+            [_engine setClearsCookies:YES];
             
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
             
@@ -614,9 +618,6 @@
         // Able to reach the network, therefore attempt to switch the Twitter login status
        
         if (![self checkTwitterLoginStatus]) {
-            
-            // Clear the cookies to prevent the Woah! problem
-            [_engine clearsCookies];
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];

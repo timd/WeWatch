@@ -278,6 +278,7 @@
             
             // Clear the cookies to stop the Woah! error
             [twitterEngine clearsCookies];
+            [twitterEngine clearAccessToken];
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:twitterEngine delegate:self];

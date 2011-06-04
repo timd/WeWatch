@@ -37,6 +37,10 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
+		225EA67B139AE0960044B22E /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225EA67A139AE0960044B22E /* libRestKitJSONParserYAJL.a */; };
+		225EA67F139AE1090044B22E /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225EA67C139AE1090044B22E /* libRestKitNetwork.a */; };
+		225EA680139AE1090044B22E /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225EA67D139AE1090044B22E /* libRestKitObjectMapping.a */; };
+		225EA681139AE1090044B22E /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225EA67E139AE1090044B22E /* libRestKitSupport.a */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -54,10 +58,6 @@
 		22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641F13992C6500093989 /* WatchModalViewController.xib */; };
 		22D364231399343600093989 /* fake_nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364221399343600093989 /* fake_nav_bar.png */; };
 		22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D4EAE11369F5FB00FE81CD /* Entitlements.plist */; };
-		22E450A8139A6B39000D31A8 /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */; };
-		22E450A9139A6B39000D31A8 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */; };
-		22E450AA139A6B39000D31A8 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450A6139A6B39000D31A8 /* libRestKitObjectMapping.a */; };
-		22E450AB139A6B39000D31A8 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450A7139A6B39000D31A8 /* libRestKitSupport.a */; };
 		22E450AF139A6B39000D31A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AC139A6B39000D31A8 /* CFNetwork.framework */; };
 		22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */; };
 		22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E450B2139A8F5A000D31A8 /* Reachable.m */; };
@@ -88,6 +88,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		225EA678139AE0830044B22E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteInfo = RestKit;
+		};
 		22E4508D139A6A3D000D31A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */;
@@ -157,13 +164,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
 			remoteInfo = UISpec;
-		};
-		22E450A2139A6AF2000D31A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
-			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -236,6 +236,18 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
+		225EA66E139AD43A0044B22E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		225EA670139AD44E0044B22E /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
+		225EA672139AD4590044B22E /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitObjectMapping.a; sourceTree = SOURCE_ROOT; };
+		225EA674139AD4630044B22E /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
+		225EA676139AD4740044B22E /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserJSONKit.a; sourceTree = SOURCE_ROOT; };
+		225EA67A139AE0960044B22E /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
+		225EA67C139AE1090044B22E /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
+		225EA67D139AE1090044B22E /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitObjectMapping.a; sourceTree = SOURCE_ROOT; };
+		225EA67E139AE1090044B22E /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
+		225EA682139AE1090044B22E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		225EA683139AE1090044B22E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		225EA684139AE1090044B22E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -261,10 +273,6 @@
 		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D4EAE11369F5FB00FE81CD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
-		22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
-		22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
-		22E450A6139A6B39000D31A8 /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitObjectMapping.a; sourceTree = SOURCE_ROOT; };
-		22E450A7139A6B39000D31A8 /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
 		22E450AC139A6B39000D31A8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -326,10 +334,10 @@
 				22E450AF139A6B39000D31A8 /* CFNetwork.framework in Frameworks */,
 				22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */,
 				22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */,
-				22E450A8139A6B39000D31A8 /* libRestKitJSONParserYAJL.a in Frameworks */,
-				22E450A9139A6B39000D31A8 /* libRestKitNetwork.a in Frameworks */,
-				22E450AA139A6B39000D31A8 /* libRestKitObjectMapping.a in Frameworks */,
-				22E450AB139A6B39000D31A8 /* libRestKitSupport.a in Frameworks */,
+				225EA67F139AE1090044B22E /* libRestKitNetwork.a in Frameworks */,
+				225EA680139AE1090044B22E /* libRestKitObjectMapping.a in Frameworks */,
+				225EA681139AE1090044B22E /* libRestKitSupport.a in Frameworks */,
+				225EA67B139AE0960044B22E /* libRestKitJSONParserYAJL.a in Frameworks */,
 				223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */,
 				22318280136ADA970027F597 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -558,13 +566,21 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				225EA682139AE1090044B22E /* CFNetwork.framework */,
+				225EA683139AE1090044B22E /* MobileCoreServices.framework */,
+				225EA684139AE1090044B22E /* SystemConfiguration.framework */,
+				225EA67C139AE1090044B22E /* libRestKitNetwork.a */,
+				225EA67D139AE1090044B22E /* libRestKitObjectMapping.a */,
+				225EA67E139AE1090044B22E /* libRestKitSupport.a */,
+				225EA67A139AE0960044B22E /* libRestKitJSONParserYAJL.a */,
+				225EA676139AD4740044B22E /* libRestKitJSONParserJSONKit.a */,
+				225EA674139AD4630044B22E /* libRestKitNetwork.a */,
+				225EA672139AD4590044B22E /* libRestKitObjectMapping.a */,
+				225EA670139AD44E0044B22E /* libRestKitSupport.a */,
+				225EA66E139AD43A0044B22E /* CoreData.framework */,
 				22E450AC139A6B39000D31A8 /* CFNetwork.framework */,
 				22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */,
 				22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */,
-				22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */,
-				22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */,
-				22E450A6139A6B39000D31A8 /* libRestKitObjectMapping.a */,
-				22E450A7139A6B39000D31A8 /* libRestKitSupport.a */,
 				22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
 				2217899C1374211F009656A7 /* Notes */,
@@ -713,7 +729,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				22E450A3139A6AF2000D31A8 /* PBXTargetDependency */,
+				225EA679139AE0830044B22E /* PBXTargetDependency */,
 			);
 			name = WeWatch;
 			productName = DrillDown;
@@ -910,10 +926,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		22E450A3139A6AF2000D31A8 /* PBXTargetDependency */ = {
+		225EA679139AE0830044B22E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RestKit;
-			targetProxy = 22E450A2139A6AF2000D31A8 /* PBXContainerItemProxy */;
+			targetProxy = 225EA678139AE0830044B22E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
