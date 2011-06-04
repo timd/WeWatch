@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Programme.h"
+#import "RestKit/RestKit.h"
 
 @class Programme;
 
-@interface WatchModalViewController : UIViewController <UITextViewDelegate> {
+@interface WatchModalViewController : UIViewController <UITextViewDelegate, RKRequestDelegate> {
  
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;

@@ -8,6 +8,7 @@
 
 #import "WeWatchAppDelegate.h"
 #import "RootViewController.h"
+#import <RestKit/RestKit.h>
 
 @implementation WeWatchAppDelegate
 
@@ -21,6 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
+    
+    // Create RestKit client singleton with the WeWatch URL preloaded
+    RKClient* client = [RKClient clientWithBaseURL:@"http://wewatch.co.uk"];
+    NSLog(@"Dummy log to stop compiler complaining! %@", client);
     
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];

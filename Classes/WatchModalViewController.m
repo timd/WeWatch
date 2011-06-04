@@ -9,11 +9,26 @@
 #import "WatchModalViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-
 @implementation WatchModalViewController
 
 @synthesize displayProgramme;
 @synthesize providedProgrammeImage;
+
+#pragma mark -
+#pragma mark RestKit delegate methods
+
+- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
+    // Delegate method for RestKit to handle responses
+    
+    if ([response isOK]) {  
+        
+        NSLog(@"Response = %d", response.statusCode);
+        NSLog(@"URL = %@", response.URL);
+        NSLog(@"Request = %@", request.resourcePath);
+    }
+    
+}
+
 
 #pragma mark -
 #pragma mark Custom methods
@@ -25,6 +40,13 @@
 -(IBAction)watchProgramme{
     
     NSLog(@"Firing the watchProgramme action");
+    NSLog(@"Tweet text = %@", tweetText.text);
+    
+    // Set up some temporary params to fire at the wewatch end
+    NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:@"44997", @"intention[broadcast_id]", @"timd", @"username", @"", @"intention[comment]", @"0", @"intention[tweet]", nil];
+    
+    // Hit the wewatch server with a POST
+    [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
 
     // Get rid of the keyboard
     [tweetText resignFirstResponder];
@@ -42,8 +64,9 @@
     [alert show];
     [alert release];
     
-    [self dismissView];
+    //[self dismissView];
 }
+
 
 - (BOOL)textFieldShouldReturn:(UITextView *)textField {
     [tweetText resignFirstResponder];

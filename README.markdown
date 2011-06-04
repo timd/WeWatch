@@ -34,7 +34,7 @@ http://www.wewatch.co.uk
 
 ### In progress:
 - flag programme as watching via the app
-- TODO: implement in-app watching
+- WIP:  implement in-app watching
         implement in-app unwatching
 
 ### Todo:
@@ -82,5 +82,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 - TouchJSON
 - Aral Balkan's ActivityIndicator
 - QuartzCore
+- RestKit (http://restkit.org/ & https://github.com/twotoasters/RestKit)
 
 ===================================================
