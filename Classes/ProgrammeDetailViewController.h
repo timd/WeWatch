@@ -12,12 +12,15 @@
 #import "LoadProgrammeImageOperationDelegate.h"
 #import "PullRefreshTableViewController.h"
 #import "WatchModalViewController.h"
+#import "SA_OAuthTwitterController.h"
+#import "SA_OAuthTwitterEngine.h"
+#import "Reachable.h"
 
 @class LoadProgrammeImageOperation;
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, LoadProgrammeImageOperationDelegate> {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, LoadProgrammeImageOperationDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -49,6 +52,6 @@
 @property (nonatomic, retain) UIImage *retrievedProgrammeImage;
 
 -(IBAction)watchProgramme;
--(BOOL)reachable;
+-(void)flipModalWatchPage;
 
 @end

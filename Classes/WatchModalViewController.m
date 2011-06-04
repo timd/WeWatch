@@ -30,12 +30,13 @@
     
 }
 
-
 #pragma mark -
 #pragma mark Custom methods
 
 -(IBAction)dismissView {
+    
     [self dismissModalViewControllerAnimated:YES];
+
 }
 
 -(IBAction)watchProgramme{
@@ -171,6 +172,8 @@
     
     // Set the image view to display the image that was passed in
     [programmeImage setImage:providedProgrammeImage];
+    
+    NSLog(@"The modal view has finished loading!");
 
 }
 
