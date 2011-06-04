@@ -60,6 +60,7 @@
 		22E450AB139A6B39000D31A8 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450A7139A6B39000D31A8 /* libRestKitSupport.a */; };
 		22E450AF139A6B39000D31A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AC139A6B39000D31A8 /* CFNetwork.framework */; };
 		22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */; };
+		22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E450B2139A8F5A000D31A8 /* Reachable.m */; };
 		22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EEA9E4137827B900435B7F /* SystemConfiguration.framework */; };
 		22EEA9E9137827FA00435B7F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9E8137827FA00435B7F /* Reachability.m */; };
 		22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */; };
@@ -267,6 +268,8 @@
 		22E450AC139A6B39000D31A8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22E450B1139A8F5A000D31A8 /* Reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachable.h; sourceTree = "<group>"; };
+		22E450B2139A8F5A000D31A8 /* Reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachable.m; sourceTree = "<group>"; };
 		22EEA9E4137827B900435B7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22EEA9E7137827FA00435B7F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Libraries/Reachability/Classes/Reachability.h; sourceTree = "<group>"; };
 		22EEA9E8137827FA00435B7F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Libraries/Reachability/Classes/Reachability.m; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */,
 				22D3641D13992C6500093989 /* WatchModalViewController.h */,
 				22D3641E13992C6500093989 /* WatchModalViewController.m */,
+				22E450B1139A8F5A000D31A8 /* Reachable.h */,
+				22E450B2139A8F5A000D31A8 /* Reachable.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -898,6 +903,7 @@
 				22EEA9E9137827FA00435B7F /* Reachability.m in Sources */,
 				22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */,
 				22D3642013992C6500093989 /* WatchModalViewController.m in Sources */,
+				22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

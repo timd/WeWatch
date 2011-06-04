@@ -11,6 +11,7 @@
 #import "PullRefreshTableViewController.h"
 #import "SA_OAuthTwitterController.h"
 #import "RestKit/RestKit.h"
+#import "Reachable.h"
 
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
@@ -42,8 +43,6 @@
 -(BOOL)sendTweet:(NSString *)tweetText;
 -(void)showTwitterUser;
 -(void)changeTwitterLoginStatus;
-
--(BOOL)reachable;
 
 @end
 

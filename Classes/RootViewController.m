@@ -46,9 +46,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
     // Fire Twitter OAuth engine, if it's not already in existence
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
@@ -84,7 +81,9 @@
     
     // Check if the user is already authorised
     
-    if ([self reachable]) {
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
         // Able to reach the network, therefore attempt to login via Twitter
         
         if (![_engine isAuthorized]) {
@@ -114,7 +113,8 @@
         [alert release];
     }
     
-    if ([self reachable]) {
+    
+    if ([reachable isReachable]) {
         NSLog(@"Reachable");
         NSLog(@"Twitter name = %@", [_engine username]);
         
@@ -151,6 +151,8 @@
         [self stopLoading];
         
     }
+    
+    [reachable release];
 
 }
 
@@ -451,22 +453,6 @@
 }
 
 #pragma mark -
-#pragma mark Reachability methods
-
--(BOOL)reachable {
-    
-    // First off, create a RestKit reachability observer based on the RKClient singleton
-    RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
-    
-    // Check if we can see the network before we try and update anything
-    if ([networkStatusObserver isNetworkReachable]) {
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-#pragma mark -
 #pragma mark PullRefresh methods
 
 -(void)refresh{
@@ -479,8 +465,9 @@
 	// self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
     
     // Check if network is reachable
-    if ([self reachable]) {
-        NSLog(@"Reachable");
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
         
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
         self.loadPublicTimelineOperation.delegate = self;
@@ -510,6 +497,8 @@
         
         [self stopLoading];
     }
+    
+    [reachable release];
     
 }
 
@@ -561,7 +550,9 @@
     NSLog(@"User = %@", [_engine username]);
     //NSLog(@"Authorized = %@", [_engine isAuthorized]);
     
-    if ([self reachable]) {
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
         // Able to reach the network, therefore attempt to login via Twitter
     /*    
         if (![_engine isAuthorized]) {

@@ -8,6 +8,7 @@
 
 #import "WatchModalViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Reachable.h"
 
 @implementation WatchModalViewController
 
@@ -43,10 +44,12 @@
     NSLog(@"Tweet text = %@", tweetText.text);
     
     // First off, create a RestKit reachability observer based on the RKClient singleton
-    RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
+    // RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
     
     // Check if we can see the network before we try and update anything
-    if ([networkStatusObserver isNetworkReachable]) {
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
         NSLog(@"Huzzah, we can see the network!");
 
         // Set up some temporary params to fire at the wewatch end
@@ -88,6 +91,8 @@
         [alert show];
         [alert release];
     }
+    
+    [reachable release];
 }
 
 
@@ -156,8 +161,6 @@
     tweetText.layer.cornerRadius = 8.0f;
     tweetText.layer.borderWidth = 1.0f;
     tweetText.layer.masksToBounds = YES;
-    
-    
     
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
