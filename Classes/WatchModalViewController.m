@@ -42,29 +42,52 @@
     NSLog(@"Firing the watchProgramme action");
     NSLog(@"Tweet text = %@", tweetText.text);
     
-    // Set up some temporary params to fire at the wewatch end
-    NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:@"44997", @"intention[broadcast_id]", @"timd", @"username", @"", @"intention[comment]", @"0", @"intention[tweet]", nil];
+    // First off, create a RestKit reachability observer based on the RKClient singleton
+    RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
     
-    // Hit the wewatch server with a POST
-    [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
+    // Check if we can see the network before we try and update anything
+    if ([networkStatusObserver isNetworkReachable]) {
+        NSLog(@"Huzzah, we can see the network!");
 
-    // Get rid of the keyboard
-    [tweetText resignFirstResponder];
-    
-    // As an interim measure, pop up an alert
-    NSString *alertString = [NSString stringWithFormat:@"No built yet..."];
-    
-    // Set up the string with the username in it
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Watching..."
-                          message: alertString
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    
-    //[self dismissView];
+        // Set up some temporary params to fire at the wewatch end
+        NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:@"44997", @"intention[broadcast_id]", @"timd", @"username", @"", @"intention[comment]", @"0", @"intention[tweet]", nil];
+        
+        // Hit the wewatch server with a POST
+        [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
+
+        // Get rid of the keyboard
+        [tweetText resignFirstResponder];
+        
+        // As an interim measure, pop up an alert
+        NSString *alertString = [NSString stringWithFormat:@"No built yet..."];
+        
+        // Set up the string with the username in it
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Watching..."
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+        
+        //[self dismissView];
+    } else {
+        NSLog(@"Dammit, the network's not available :(");
+        
+        // As an interim measure, pop up an alert
+        NSString *alertString = [NSString stringWithFormat:@"I can't reach the WeWatch servers. Please try later..."];
+        
+        // Set up the string with the username in it
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry..."
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 

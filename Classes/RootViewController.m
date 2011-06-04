@@ -454,12 +454,16 @@
 #pragma mark Reachability methods
 
 -(BOOL)reachable {
-    Reachability *r = [Reachability reachabilityWithHostName:@"wewatch.co.uk"];
-    NetworkStatus internetStatus = [r currentReachabilityStatus];
-    if(internetStatus == NotReachable) {
+    
+    // First off, create a RestKit reachability observer based on the RKClient singleton
+    RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
+    
+    // Check if we can see the network before we try and update anything
+    if ([networkStatusObserver isNetworkReachable]) {
+        return YES;
+    } else {
         return NO;
     }
-    return YES;
 }
 
 #pragma mark -

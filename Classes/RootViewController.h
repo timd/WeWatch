@@ -10,7 +10,7 @@
 #import "LoadPublicTimelineOperationDelegate.h"
 #import "PullRefreshTableViewController.h"
 #import "SA_OAuthTwitterController.h"
-#import "Reachability.h"
+#import "RestKit/RestKit.h"
 
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
