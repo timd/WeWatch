@@ -615,7 +615,8 @@
        
         if (![self checkTwitterLoginStatus]) {
             
-            // NSLog(@"No authorised Twitter user found");
+            // Clear the cookies to prevent the Woah! problem
+            [_engine clearsCookies];
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
@@ -624,7 +625,6 @@
             if (OAuthController) {
                 [self presentModalViewController:OAuthController animated:YES];
             }
-            // NSLog(@"Finished with oAuth");
      
         } else {
             
