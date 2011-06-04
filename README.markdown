@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.4
-### Branch          :   post_watching
-### Branched from   :   master
+### Branch          :   move_twitter_login
+### Branched from   :   post_watching
 ### Merged from     :   n/a
-### Date            :   03/06/2011
+### Date            :   04/06/2011
 
 ===================================================
 
@@ -33,11 +33,13 @@ http://www.wewatch.co.uk
 - mark programmes I'm flagged as watching
 
 ### In progress:
+- move Twitter login out into better place
+
+### Todo:
+
 - flag programme as watching via the app
 - WIP:  implement in-app watching
         implement in-app unwatching
-
-### Todo:
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]

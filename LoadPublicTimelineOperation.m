@@ -21,7 +21,7 @@
 
 -(id)initWithTwitterName:(NSString *)name {
     
-    NSLog(@"Running initWithTwitterName");
+    NSLog(@"Running initWithTwitterName: %@", name);
     
     if (![super init]) {
         return nil;
@@ -123,11 +123,11 @@
             
             // Set programme ID
             NSInteger programmeID = [[currentProgrammesFromJSON objectForKey:@"id"] intValue];
-            NSLog(@"ProgrammeID = %d", programmeID);
+            //NSLog(@"ProgrammeID = %d", programmeID);
             
             // Set title
             NSString *title = [[currentProgrammesFromJSON objectForKey:@"title"] stringByConvertingHTMLToPlainText];
-            NSLog(@"Title = %@", title);
+            //NSLog(@"Title = %@", title);
             
             // Set subtitle, checking for potential null value
             
@@ -153,8 +153,8 @@
             
             // Set watcher names, checking for nil values
             NSDictionary *watcherNamesHolder = [currentProgrammesFromJSON objectForKey:@"friends_watching"];
-            NSLog(@"Friends_watching = %@", watcherNamesHolder);
-            NSLog(@"count = %d", [watcherNamesHolder count]);
+            //NSLog(@"Friends_watching = %@", watcherNamesHolder);
+            //NSLog(@"count = %d", [watcherNamesHolder count]);
             
             // iterate across the friends array
             NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
@@ -183,11 +183,11 @@
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
             
             NSInteger timeSlot = [[startTimeFromJSON substringWithRange:NSMakeRange(11, 2)] intValue] - 12;
-            NSLog(@"Timeslot = %d", timeSlot);
+            //NSLog(@"Timeslot = %d", timeSlot);
             
             NSString *startMin = [startTimeFromJSON substringWithRange:NSMakeRange(14, 2)];
             NSString *startTime = [NSString stringWithFormat:@"%@:%@pm",[NSString stringWithFormat:@"%d", timeSlot], startMin]; 
-            NSLog(@"StartTime = %@", startTime);
+            //NSLog(@"StartTime = %@", startTime);
                         
             // Set duration
             NSInteger durationInMins = [[currentProgrammesFromJSON objectForKey:@"duration"] intValue] / 60;
@@ -208,7 +208,7 @@
             
             // Set watchers
             NSInteger watchers = [[currentProgrammesFromJSON objectForKey:@"watchers"] intValue];
-            NSLog(@"Watchers = %d", watchers);
+            //NSLog(@"Watchers = %d", watchers);
             
             // Set programme image
             NSString *programmeImage;
@@ -236,7 +236,7 @@
             NSNumber *val = [currentProgrammesFromJSON objectForKey:@"watching"];
             BOOL amWatching = [val boolValue];
             
-            NSLog(@"amWatchingFlag = %d", amWatching);
+            //NSLog(@"amWatchingFlag = %d", amWatching);
                       
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
