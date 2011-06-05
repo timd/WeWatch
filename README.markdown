@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.4
-### Branch          :   move_twitter_login
-### Branched from   :   post_watching
+### Branch          :   moved_twitter_login
+### Branched from   :   move_twitter_login
 ### Merged from     :   n/a
-### Date            :   04/06/2011
+### Date            :   05/06/2011
 
 ===================================================
 
