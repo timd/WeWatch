@@ -979,8 +979,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Duckett";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Tim Duckett";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = "";
@@ -1000,8 +1000,8 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "83827FF6-C7B1-4604-AC0E-057D949358A0";
-				"PROVISIONING_PROFILE[sdk=*]" = "2B5E61A6-EE3F-4968-BB7C-3FAA20E5E421";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = "Ad Hoc Distribution";
