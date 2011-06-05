@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Programme.h"
-#import "RestKit/RestKit.h"
+#import <RestKit/RestKit.h>
 
 @class Programme;
 

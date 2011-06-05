@@ -7,8 +7,6 @@
 //
 
 #import "Reachable.h"
-#import "RestKit/RestKit.h"
-
 
 @implementation Reachable
 

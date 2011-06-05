@@ -8,7 +8,6 @@
 
 #import "WeWatchAppDelegate.h"
 #import "RootViewController.h"
-#import <RestKit/RestKit.h>
 
 @implementation WeWatchAppDelegate
 

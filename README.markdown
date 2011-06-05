@@ -15,6 +15,11 @@ http://www.wewatch.co.uk
 
 # NOTES
 
+- appears to have fixed the compilation problems:
+  - installed RestKit as per instructions at http://liebke.github.com/restkit-github-client-example/
+  - created new scheme from scratch, then reimported ad-hoc distribution certificate
+  - created archive as per normal
+
 ### Completed:
 
 - initial commit to project
