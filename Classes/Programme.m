@@ -15,6 +15,7 @@
 @synthesize subtitle;
 @synthesize channel;
 @synthesize time;
+@synthesize fullTime;
 @synthesize timeSlot;
 @synthesize description;
 @synthesize duration;
@@ -29,6 +30,7 @@
               andSubtitle:(NSString *)isubtitle 
                andChannel:(NSString *)iChannel
                   andTime:(NSString *)iTime
+              andFullTime:(NSString *)iFullTime
               andTimeslot:(int)iTimeSlot 
            andDescription:(NSString *)iDescription
               andDuration:(NSString *)iDuration
@@ -50,6 +52,7 @@
     [self setSubtitle:isubtitle];
     [self setChannel:iChannel];
     [self setTime:iTime];
+    [self setFullTime:iFullTime];
     [self setTimeSlot:iTimeSlot];
     [self setDescription:iDescription];
     [self setDuration:iDuration];

@@ -16,6 +16,78 @@
 @synthesize providedProgrammeImage;
 
 #pragma mark -
+#pragma mark Notification methods
+
+/**
+ * Timezones are returned to us in the format +nn:nn
+ * The date formatter currently does not support IS 8601 dates, so
+ * we convert timezone from the format "+07:30" to "+0730" (removing the colon) which
+ * can then be parsed properly.
+ *
+ * 2011-06-06T21:00:00+01:00
+ *
+ */
+- (NSString *)applyTimezoneFixForDate:(NSString *)date {
+    NSRange colonRange = [date rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@":"] options:NSBackwardsSearch];
+    return [date stringByReplacingCharactersInRange:colonRange withString:@""];
+}
+
+-(void)setNotification:(Programme *)programme {
+
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+
+    if (localNotification == nil) {
+        return;
+    }
+    
+    // Set the current time
+    NSDate *timeNow = [NSDate date];
+    
+    // Figure out the time for the programme
+    NSLog(@"Prog time = %@", programme.fullTime);
+
+    // Fix the date colon issue
+    NSString *fixedDateString = [self applyTimezoneFixForDate:programme.fullTime];
+    NSLog(@"Fixed prog time = %@", fixedDateString);
+    
+    // Create a date formatter to create a date from the string
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+
+    // Create the fireDateTime object, and release the formatter
+    NSDate* fireDateTime = [formatter dateFromString:fixedDateString];
+    [formatter release];
+    
+    NSLog(@"Actual prog time = %@", fireDateTime);
+    
+    // Create a time 5 mins before the prog start time
+    // NSDate *fireTime = [fireDateTime addTimeInterval:(-(5*60))];
+    
+    // Create a dummy time 10 secs in the future for testing purposes
+    NSDate *fireTime = [timeNow addTimeInterval:10];
+    NSLog(@"timeNow = %@", timeNow);
+    NSLog(@"fireDate = %@", fireTime);
+    
+    // Specify custom data for the notification
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    localNotification.userInfo = infoDict;
+    
+    localNotification.fireDate = fireTime;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotification.alertBody = [NSString stringWithFormat:@"%@ will start in 5 mins", [displayProgramme title]];
+    localNotification.alertAction = NSLocalizedString(@"Show me", nil);
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    
+    NSLog(@"Setting reminder");
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    [localNotification release];
+    
+}
+
+#pragma mark -
 #pragma mark RestKit delegate methods
 
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
@@ -40,6 +112,8 @@
 }
 
 -(IBAction)watchProgramme{
+    
+    // Action to handle flagging a programme as being watched, and setting a notification
     
     NSLog(@"Firing the watchProgramme action");
     NSLog(@"Tweet text = %@", tweetText.text);
@@ -74,6 +148,13 @@
                               otherButtonTitles:nil];
         [alert show];
         [alert release];
+        
+        // Fire the createNotification action if the switch is set
+        if (reminderSwitch.on) {
+            [self setNotification:[self displayProgramme]];
+        }
+        
+
         
         //[self dismissView];
     } else {

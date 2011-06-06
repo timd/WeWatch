@@ -19,6 +19,7 @@
     NSString *subtitle;         // Programme subtitle, if available (blank if not)
     NSString *channel;          // Broadcast channel, e.g. BBC1
     NSString *time;             // Tx time e.g. 1400
+    NSString *fullTime;         // Full tx time string
     int timeSlot;               // The timeslot for the programme (7, 8, 9 or 10)
     NSString *description;            // Programme blurb, e.g.g "Ooh! Ickle pretty lambs!"
     NSString *duration;         // Programme duration in minutes e.g. 90
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *channel;
 @property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *fullTime;
 @property (nonatomic) int timeSlot;
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *duration;
@@ -46,6 +48,7 @@
               andSubtitle:(NSString *)subtitle
                andChannel:(NSString *)iChannel
                   andTime:(NSString *)iTime
+              andFullTime:(NSString *)iFullTime
               andTimeslot:(int)iTimeSlot
            andDescription:(NSString *)iDescription
               andDuration:(NSString *)iDuration

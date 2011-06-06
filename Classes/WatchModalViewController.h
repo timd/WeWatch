@@ -22,6 +22,7 @@
     IBOutlet UIImageView *programmeImage;
     IBOutlet UIImageView *watchingFlag;
     IBOutlet UITextView *tweetText;
+    IBOutlet UISwitch *reminderSwitch;
     
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
