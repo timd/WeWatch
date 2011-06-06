@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.5
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   notifications
+### Version         :   0.6
+### Branch          :   settings_page
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   06/06/2011
 
 ===================================================
@@ -40,6 +40,7 @@ http://www.wewatch.co.uk
 - creating reminder notifications (currently in test mode)
 
 ### In progress:
+- implementing modal settings window
 
 ### Todo:
 

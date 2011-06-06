@@ -58,6 +58,12 @@
 		22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641F13992C6500093989 /* WatchModalViewController.xib */; };
 		22D364231399343600093989 /* fake_nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364221399343600093989 /* fake_nav_bar.png */; };
 		22D4EAE21369F5FB00FE81CD /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D4EAE11369F5FB00FE81CD /* Entitlements.plist */; };
+		22E081CD139CEB7700D1099B /* gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E081CB139CEB7700D1099B /* gear2.png */; };
+		22E081CE139CEB7700D1099B /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E081CC139CEB7700D1099B /* gear.png */; };
+		22E081D2139CEDA900D1099B /* SettingsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E081D0139CEDA900D1099B /* SettingsModalViewController.m */; };
+		22E081D3139CEDA900D1099B /* SettingsModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */; };
+		22E081D5139CEEC600D1099B /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E081D4139CEEC600D1099B /* twitter_logo.png */; };
+		22E081D7139CFC5B00D1099B /* twitter_logo_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E081D6139CFC5B00D1099B /* twitter_logo_grey.png */; };
 		22E450AF139A6B39000D31A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AC139A6B39000D31A8 /* CFNetwork.framework */; };
 		22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */; };
 		22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E450B2139A8F5A000D31A8 /* Reachable.m */; };
@@ -267,6 +273,13 @@
 		22D3641F13992C6500093989 /* WatchModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WatchModalViewController.xib; path = Classes/WatchModalViewController.xib; sourceTree = "<group>"; };
 		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D4EAE11369F5FB00FE81CD /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		22E081CB139CEB7700D1099B /* gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear2.png; sourceTree = "<group>"; };
+		22E081CC139CEB7700D1099B /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		22E081CF139CEDA900D1099B /* SettingsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsModalViewController.h; sourceTree = "<group>"; };
+		22E081D0139CEDA900D1099B /* SettingsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsModalViewController.m; sourceTree = "<group>"; };
+		22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsModalViewController.xib; path = Classes/SettingsModalViewController.xib; sourceTree = "<group>"; };
+		22E081D4139CEEC600D1099B /* twitter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_logo.png; sourceTree = "<group>"; };
+		22E081D6139CFC5B00D1099B /* twitter_logo_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_logo_grey.png; sourceTree = "<group>"; };
 		22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
 		22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
@@ -364,6 +377,8 @@
 				22D3641E13992C6500093989 /* WatchModalViewController.m */,
 				22E450B1139A8F5A000D31A8 /* Reachable.h */,
 				22E450B2139A8F5A000D31A8 /* Reachable.m */,
+				22E081CF139CEDA900D1099B /* SettingsModalViewController.h */,
+				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -505,6 +520,7 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
 				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
 				22BB5AD11369BA71004B299B /* BaseCell.xib */,
 				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
@@ -606,6 +622,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22E081D6139CFC5B00D1099B /* twitter_logo_grey.png */,
+				22E081D4139CEEC600D1099B /* twitter_logo.png */,
+				22E081CB139CEB7700D1099B /* gear2.png */,
+				22E081CC139CEB7700D1099B /* gear.png */,
 				22FB8BC713993A6700DC5A4B /* wewatch.png */,
 				22D364221399343600093989 /* fake_nav_bar.png */,
 				22D3641913992A2F00093989 /* green_button.png */,
@@ -866,6 +886,11 @@
 				22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */,
 				22D364231399343600093989 /* fake_nav_bar.png in Resources */,
 				22FB8BC813993A6700DC5A4B /* wewatch.png in Resources */,
+				22E081CD139CEB7700D1099B /* gear2.png in Resources */,
+				22E081CE139CEB7700D1099B /* gear.png in Resources */,
+				22E081D3139CEDA900D1099B /* SettingsModalViewController.xib in Resources */,
+				22E081D5139CEEC600D1099B /* twitter_logo.png in Resources */,
+				22E081D7139CFC5B00D1099B /* twitter_logo_grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +943,7 @@
 				22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */,
 				22D3642013992C6500093989 /* WatchModalViewController.m in Sources */,
 				22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */,
+				22E081D2139CEDA900D1099B /* SettingsModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

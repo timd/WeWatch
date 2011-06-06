@@ -12,6 +12,7 @@
 #import "WeWatchAppDelegate.h"
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
+#import "SettingsModalViewController.h"
 
 @implementation RootViewController
 
@@ -80,9 +81,14 @@
                                    target:self 
                                    action:@selector(changeTwitterLoginStatus)];
     
-    //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
+                                                                       style:UIBarButtonItemStylePlain 
+                                                                      target:self 
+                                                                      action:@selector(displaySettingsModalWindow)];
+    self.navigationItem.rightBarButtonItem = settingsButton;
+    [settingsButton release];
     
-    self.navigationItem.rightBarButtonItem = loginButton;
+    self.navigationItem.leftBarButtonItem = loginButton;
     [loginButton release];
     
     Reachable *reachable = [[Reachable alloc] init];
@@ -444,7 +450,7 @@
 }
 
 #pragma mark -
-#pragma mark PullRefresh methods
+#pragma mark WeWatch methods
 
 -(void)refresh{
     
@@ -492,6 +498,21 @@
     }
     
     [reachable release];
+    
+}
+
+-(void)displaySettingsModalWindow {
+    NSLog(@"Firing displaySettingsModalWindow");
+    
+    // Create the modal view controller
+    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+    settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [settingsModalViewController setTwitterEngine:_engine];
+    
+    // Present the modalViewController with a horizontal flip
+    [self presentModalViewController:settingsModalViewController animated:YES];
+    [settingsModalViewController release];
     
 }
 

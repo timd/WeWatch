@@ -46,6 +46,7 @@
 
 -(void)refresh;
 -(BOOL)sendTweet:(NSString *)tweetText;
+-(void)displaySettingsModalWindow;
 
 @end
 
