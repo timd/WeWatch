@@ -75,7 +75,7 @@
     localNotification.fireDate = fireTime;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     
-    localNotification.alertBody = [NSString stringWithFormat:@"%@ will start in 20 secs", [displayProgramme title]];
+    localNotification.alertBody = [NSString stringWithFormat:@"%@ will start in 5 mins", [displayProgramme title]];
     localNotification.alertAction = NSLocalizedString(@"Show me", nil);
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.applicationIconBadgeNumber = 1;
