@@ -10,7 +10,9 @@
 #import "LoadPublicTimelineOperationDelegate.h"
 #import "PullRefreshTableViewController.h"
 #import "SA_OAuthTwitterController.h"
-#import "Reachability.h"
+#import "SA_OAuthTwitterEngine.h"
+#import <RestKit/RestKit.h>
+#import "Reachable.h"
 
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
@@ -28,7 +30,10 @@
     
     // ivar to hold reference to Twitter OAuth engine
     SA_OAuthTwitterEngine *_engine;
-
+    
+    // ivar to hold flag to force data reload
+    BOOL forceDataReload;
+    
 }
 
 @property (nonatomic, retain) NSArray *scheduleArray;
@@ -37,13 +42,10 @@
 
 @property (nonatomic, retain) IBOutlet ProgrammeDetailViewController *detailViewController;
 @property (nonatomic, retain) IBOutlet UITableViewCell *nibLoadedCell;
+@property (nonatomic) BOOL forceDataReload;
 
 -(void)refresh;
 -(BOOL)sendTweet:(NSString *)tweetText;
--(void)showTwitterUser;
--(void)changeTwitterLoginStatus;
-
--(BOOL)reachable;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
 @interface WeWatchAppDelegate : NSObject <UIApplicationDelegate> {
     
@@ -14,6 +15,7 @@
     UINavigationController *navigationController;
     
 	NSOperationQueue *operationQueue;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -11,12 +11,16 @@
 #import "Reachability.h"
 #import "LoadProgrammeImageOperationDelegate.h"
 #import "PullRefreshTableViewController.h"
+#import "WatchModalViewController.h"
+#import "SA_OAuthTwitterController.h"
+#import "SA_OAuthTwitterEngine.h"
+#import "Reachable.h"
 
 @class LoadProgrammeImageOperation;
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, LoadProgrammeImageOperationDelegate> {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, LoadProgrammeImageOperationDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -28,6 +32,7 @@
     IBOutlet UIImageView *programmeImage;
     IBOutlet UILabel *watchersNamesLabel;
     IBOutlet UIImageView *watchingFlag;
+    IBOutlet UIButton *watchButton;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
@@ -43,7 +48,10 @@
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 @property (nonatomic, retain) LoadProgrammeImageOperation *loadProgrammeImageOperation;
 
+// ivar to hold the programme image (so that it can be passed into the modal view controller)
+@property (nonatomic, retain) UIImage *retrievedProgrammeImage;
+
 -(IBAction)watchProgramme;
--(BOOL)reachable;
+-(void)flipModalWatchPage;
 
 @end

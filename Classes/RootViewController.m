@@ -10,7 +10,6 @@
 #import "CJSONDeserializer.h"
 #import "LoadPublicTimelineOperation.h"
 #import "WeWatchAppDelegate.h"
-#import "SA_OAuthTwitterEngine.h"
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 
@@ -22,6 +21,7 @@
 
 @synthesize detailViewController;
 @synthesize nibLoadedCell;
+@synthesize forceDataReload;
 
 // Define custom cell content identifiers
 #define PROG_TITLE_LABEL ((UILabel *)[cell viewWithTag:1010])
@@ -39,17 +39,21 @@
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
 #define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
 
+-(id)init {
+
+    [super init];    
+    return self;
+    
+}
+
 
 #pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
-    // Fire Twitter OAuth engine, if it's not already in existence
+    
+    // Fire up Twitter OAuth engine, if it's not already in existence
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
         _engine.consumerKey = kOAuthConsumerKey;
@@ -60,8 +64,7 @@
     self.title = @"WeWatch";
     
     // Set up a right-hand button on the nav bar
-    //UIImage *image = [UIImage imageWithContentsOfFile:@"gearButton.png"];
-    //[image release];
+    //UIImage *buttonImage = [UIImage imageWithContentsOfFile:@"gearButton.png"];
     
     NSString *titleString;
     
@@ -82,39 +85,9 @@
     self.navigationItem.rightBarButtonItem = loginButton;
     [loginButton release];
     
-    // Check if the user is already authorised
+    Reachable *reachable = [[Reachable alloc] init];
     
-    if ([self reachable]) {
-        // Able to reach the network, therefore attempt to login via Twitter
-        
-        if (![_engine isAuthorized]) {
-            
-            // There isn't an authorised user, so it makes sense to present the Twitter login page
-            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
-            
-            // If there is a controller present, display the OAuthController's modal window
-            if (OAuthController) {
-                [self presentModalViewController:OAuthController animated:YES];
-            }
-            NSLog(@"Finished with oAuth");
-        }
-        
-    } else  {
-        // Unable to reach Twitter - display an error
-        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
-        
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Sorry!"
-                              message: alertString
-                              delegate: nil
-                              cancelButtonTitle:@"Cancel"
-                              otherButtonTitles:nil];
-        
-        [alert show];
-        [alert release];
-    }
-    
-    if ([self reachable]) {
+    if ([reachable isReachable]) {
         NSLog(@"Reachable");
         NSLog(@"Twitter name = %@", [_engine username]);
         
@@ -131,6 +104,8 @@
         
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadPublicTimelineOperation];
+        
+        NSLog(@"RootViewController::OPERATION QUEUE = %@", operationQueue);
         
     } else {
         
@@ -151,6 +126,8 @@
         [self stopLoading];
         
     }
+    
+    [reachable release];
 
 }
 
@@ -164,6 +141,22 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
+    
+    // Check if the correct title is being displayed
+    
+    // if the title is 'Log out' and the engine isn't authorised, then something's changed
+    // Need to force a reload of data
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"Log out"] && ![_engine isAuthorized] ) {
+        // Something has changed, need to update the title and force a data reload
+        self.navigationItem.rightBarButtonItem.title = @"Log in";
+        [self refresh];
+    }
+
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"Log in"] && [_engine isAuthorized] ) {
+        self.navigationItem.rightBarButtonItem.title = @"Log out";
+        [self refresh];
+    }
+    
 }
 
 
@@ -195,7 +188,7 @@
     
     // Number of sections is dependent on the number of timeslot arrays in the cleanScheduleArray
     
-    NSLog(@"There are %d sections in scheduleArray", [scheduleArray count]);
+    //NSLog(@"There are %d sections in scheduleArray", [scheduleArray count]);
     return [scheduleArray count];
 }
 
@@ -451,18 +444,6 @@
 }
 
 #pragma mark -
-#pragma mark Reachability methods
-
--(BOOL)reachable {
-    Reachability *r = [Reachability reachabilityWithHostName:@"wewatch.co.uk"];
-    NetworkStatus internetStatus = [r currentReachabilityStatus];
-    if(internetStatus == NotReachable) {
-        return NO;
-    }
-    return YES;
-}
-
-#pragma mark -
 #pragma mark PullRefresh methods
 
 -(void)refresh{
@@ -475,12 +456,15 @@
 	// self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
     
     // Check if network is reachable
-    if ([self reachable]) {
-        NSLog(@"Reachable");
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
         
-        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] init];
+        NSLog(@"Checking - the username is %@", [_engine username]);
+        
+        self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
         self.loadPublicTimelineOperation.delegate = self;
-        self.loadPublicTimelineOperation.twitterName = [_engine username];
+        //self.loadPublicTimelineOperation.twitterName = [_engine username];
         
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadPublicTimelineOperation];
@@ -507,6 +491,8 @@
         [self stopLoading];
     }
     
+    [reachable release];
+    
 }
 
 //=============================================================================================================================
@@ -526,7 +512,14 @@
 }
 
 - (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
-	NSLog(@"Authenticated with user %@", username);
+    // We've successfully authenticated against Twitter
+	NSLog(@"Successfully authenticated with Twitter as %@", username);
+    
+    // Update the title of the button bar item
+    self.navigationItem.rightBarButtonItem.title = @"Logout";
+    
+    // Now fire the reload method to pull down an updated watch list
+    // This is necessary to ensure that we're displaying the current watching status
     [self refresh];
     
 }
@@ -536,6 +529,67 @@
 #pragma mark -
 #pragma mark Twitter methods
 
+-(BOOL)checkTwitterLoginStatus {
+    
+    // Check if the user is already authorised
+    // Not going to bother checking if the network is reachable, because
+    // the calling function has already done that
+        
+    // Check if Twitter user is logged in
+    if (![_engine isAuthorized]) {
+        // They aren't
+        return FALSE;
+    } else {
+        // They are...
+        return TRUE;
+    }
+    
+}
+
+-(void)loginToTwitter {
+    
+    // Check if the user is already authorised
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
+        // Able to reach the network, therefore attempt to login via Twitter
+        
+        if (![self checkTwitterLoginStatus]) {
+            
+            // There isn't an authorised user, so it makes sense to present the Twitter login page
+            // Clear cookies first:
+            
+            [_engine clearsCookies];
+            
+            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
+            
+            // If there is a controller present, display the OAuthController's modal window
+            if (OAuthController) {
+                [self presentModalViewController:OAuthController animated:YES];
+            }
+            NSLog(@"Finished with oAuth");
+        }
+        
+    } else  {
+        // Unable to reach Twitter - display an error
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
+    
+    [reachable release];
+    
+}
+
+
 -(BOOL)sendTweet:(NSString *)tweetText {
     [_engine sendUpdate:tweetText];
     return true;
@@ -543,7 +597,7 @@
 
 -(void)changeTwitterLoginStatus {
     
-    NSLog(@"Firing logIntoTwitter method");
+    NSLog(@"Firing changeTwitterLoginStatus method");
     
     // Fire Twitter OAuth engine
     if (!_engine) {
@@ -552,15 +606,16 @@
         _engine.consumerSecret = kOAuthConsumerSecret;
     }
     
-    // Check if the user is already authorised
+    // Check if the network is reachable or now
+    Reachable *reachable = [[Reachable alloc] init];
     
-    NSLog(@"User = %@", [_engine username]);
-    //NSLog(@"Authorized = %@", [_engine isAuthorized]);
+    if ([reachable isReachable]) {
     
-    if ([self reachable]) {
-        // Able to reach the network, therefore attempt to login via Twitter
-    /*    
-        if (![_engine isAuthorized]) {
+        // Able to reach the network, therefore attempt to switch the Twitter login status
+       
+        if (![self checkTwitterLoginStatus]) {
+            
+            // NSLog(@"No authorised Twitter user found");
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:_engine delegate:self];
@@ -569,21 +624,23 @@
             if (OAuthController) {
                 [self presentModalViewController:OAuthController animated:YES];
             }
-            NSLog(@"Finished with oAuth");
+            // NSLog(@"Finished with oAuth");
      
-     */
+        } else {
+            
+            // There IS a valid twitter user around
+            // As we've found an authorised user, it makes sense to log them out...
+            [_engine clearAccessToken];
+            [_engine clearsCookies];
+            [_engine setUsername:NULL password:NULL];
+                                
+            // Change the text of the login button
+            self.navigationItem.rightBarButtonItem.title = @"Login";
+            
+            // Refresh the data
+            [self refresh];
         
-        NSString *alertString = [NSString stringWithFormat:@"You are logged in as %@", [_engine username]];
-        
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Hello!"
-                              message: alertString
-                              delegate: nil
-                              cancelButtonTitle:@"Cancel"
-                              otherButtonTitles:nil];
-        
-        [alert show];
-        [alert release];
+        }
         
     } else {
         // Unable to reach Twitter - display an error
@@ -599,6 +656,8 @@
         [alert show];
         [alert release];
     }
+    
+    [reachable release];
 }
 
 -(void)showTwitterUser{

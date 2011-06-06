@@ -22,13 +22,17 @@
     
     // Override point for customization after application launch.
     
+    // Create RestKit client singleton with the WeWatch URL preloaded
+    RKClient* client = [RKClient clientWithBaseURL:@"http://wewatch.co.uk"];
+    NSLog(@"Dummy log to stop compiler complaining! %@", client);
+    
     // Add the navigation controller's view to the window and display.
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
 	
 	// Create the operation queue
 	self.operationQueue = [[NSOperationQueue alloc] init];
-
+    
     return YES;
 }
 

@@ -5,15 +5,20 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.3
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   mark_watched
-### Date            :   03/06/2011
+### Version         :   0.4
+### Branch          :   moved_twitter_login
+### Branched from   :   move_twitter_login
+### Merged from     :   n/a
+### Date            :   05/06/2011
 
 ===================================================
 
 # NOTES
+
+- appears to have fixed the compilation problems:
+  - installed RestKit as per instructions at http://liebke.github.com/restkit-github-client-example/
+  - created new scheme from scratch, then reimported ad-hoc distribution certificate
+  - created archive as per normal
 
 ### Completed:
 
@@ -33,9 +38,13 @@ http://www.wewatch.co.uk
 - mark programmes I'm flagged as watching
 
 ### In progress:
-
+- move Twitter login out into better place
 
 ### Todo:
+
+- flag programme as watching via the app
+- WIP:  implement in-app watching
+        implement in-app unwatching
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
@@ -80,5 +89,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 - TouchJSON
 - Aral Balkan's ActivityIndicator
 - QuartzCore
+- RestKit (http://restkit.org/ & https://github.com/twotoasters/RestKit)
 
 ===================================================

@@ -16,12 +16,12 @@
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
 #define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
 
-
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme;
 @synthesize twitterEngine;
 @synthesize loadProgrammeImageOperation;
+@synthesize retrievedProgrammeImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +43,7 @@
     [durationLabel release];
     [watchersLabel release];
     [programmeImage release];
+    [retrievedProgrammeImage release];
     [super dealloc];
 }
 
@@ -54,17 +55,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark -
-#pragma mark Reachability methods
-
--(BOOL)reachable {
-    Reachability *r = [Reachability reachabilityWithHostName:@"wewatch.co.uk"];
-    NetworkStatus internetStatus = [r currentReachabilityStatus];
-    if(internetStatus == NotReachable) {
-        return NO;
-    }
-    return YES;
-}
 
 #pragma mark -
 #pragma mark LoadProgrammeImageOperationDelegate methods
@@ -74,6 +64,9 @@
 	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
     NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
     [programmeImage setImage:retrievedImage];
+    
+    // Set the ivar for the programme image to the retrieved one
+    retrievedProgrammeImage = retrievedImage;
 }
 
 #pragma mark - View lifecycle
@@ -94,17 +87,30 @@
     
     // Set up the watching flag, depending on whether I'm going to watch the programme or not
     if ([displayProgramme amWatching] == TRUE) {
+
+        // Set the watching flag status
         watchingFlag.hidden = FALSE;
+        
+        // Set the text of the 'watch' button
+        [watchButton setTitle:@"Unwatch" forState:UIControlStateNormal];
+        
     } else {
         watchingFlag.hidden = TRUE;
+        // Set the text of the 'watch' button
+        [watchButton setTitle:@"Watch" forState:UIControlStateNormal];
     }
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
     [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
     
+    // Set the programme image held in the ivar to the default
+    retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
+    
     // Check if the network is reachable:
-    if ([self reachable]) {
+    Reachable *reachable = [[Reachable alloc] init];
+
+    if ([reachable isReachable]) {
 
         NSLog(@"Firing queued image retrieval");
         
@@ -130,6 +136,8 @@
         // [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
         [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
     }
+    
+    [reachable release];
     
    // Extract the names from the watchers names array
     if ([[displayProgramme watcherNames] count] != 0) {
@@ -199,6 +207,16 @@
     [programmeImage release];
     programmeImage = nil;
     
+    [watchersNamesLabel release];
+    watchersNamesLabel = nil;
+    
+    [watchingFlag release];
+    watchingFlag = nil;
+    
+    [watchButton release];
+    watchButton = nil;
+
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -224,7 +242,11 @@
 }
 
 - (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+
+    NSLog(@"Fired OAuthTwitterController:authenticatedWithUsername:");
 	NSLog(@"Authenticated with user %@", username);
+    
+    [self flipModalWatchPage];
     
 }
 
@@ -234,29 +256,122 @@
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
-    // TODO: Build and send request to WeWatch to update the watcher count
-    
-    
-    // Set up temporary alert view
-    
-    NSString *alertString;
-    
-    if ([twitterEngine username] != NULL) {
-        
-        alertString = [NSString stringWithFormat:@"Not yet built - you are logged in as %@", [twitterEngine username]];
-    } else {
-        alertString = @"Not yet built - nobody is logged in at the moment";
+    // Check to see if we're already logged into twitter - if yes, can present the modal window
+    // directly - if no; then we have to pop up the modal Twitter login window
+    // Fire up Twitter OAuth engine, if it's not already in existence
+    if (!twitterEngine) {
+        twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        twitterEngine.consumerKey = kOAuthConsumerKey;
+        twitterEngine.consumerSecret = kOAuthConsumerSecret;
     }
     
-    // Set up the string with the username in it
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Watching..."
-                          message: alertString
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
+    // Check if the user is already authorised
+    
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ([reachable isReachable]) {
+        // Able to reach the network, therefore attempt to login via Twitter
+        
+        if (![twitterEngine isAuthorized]) {
+            
+            NSLog(@"ProgrammeDetailViewController:: is NOT logged into Twitter");
+            
+            // Clear the cookies to stop the Woah! error
+            [twitterEngine clearsCookies];
+            
+            // There isn't an authorised user, so it makes sense to present the Twitter login page
+            UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:twitterEngine delegate:self];
+            
+            // If there is a controller present, display the OAuthController's modal window
+            if (OAuthController) {
+                [self presentModalViewController:OAuthController animated:YES];
+            }
+            NSLog(@"Finished with oAuth");
+ 
+        } else {
+            
+            // There IS an authorised user
+            NSLog(@"ProgrammeDetailViewController:: is logged into Twitter");
+            
+            // As there is an authorised user, we can fire the watch/unwatch methods
+            // Check to see if we're already watching the programme: if we are, fire off the unwatch action
+            // Otherwise, load the modal view
+            
+            if ([displayProgramme amWatching] == TRUE) {
+                
+                // TODO: Build the watch action
+                
+                NSLog(@"Firing the unwatch action");
+                
+                NSString *alertString = [NSString stringWithFormat:@"Not built yet..."];
+                
+                // Set up the string with the username in it
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle: @"Unwatching..."
+                                      message: alertString
+                                      delegate: nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+                
+            } else {
+                
+                // Create the modal view controller
+                WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
+                modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                
+                // Pass in the Programme to the modalViewController
+                [modalViewController setDisplayProgramme:displayProgramme];
+                
+                // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
+                [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+                
+                // Present the modalViewController with a horizontal flip
+                [self presentModalViewController:modalViewController animated:YES];
+                [modalViewController release];
+ 
+            }
+
+            
+        }
+        
+    } else  {
+        // Unable to reach Twitter - display an error
+        NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Sorry!"
+                              message: alertString
+                              delegate: nil
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+    }
+    
+    [reachable release];
+    
+    
+}
+
+-(void)flipModalWatchPage {
+
+    // Create the modal view controller
+    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
+    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    // Pass in the Programme to the modalViewController
+    [modalViewController setDisplayProgramme:displayProgramme];
+    
+    // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
+    [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+    
+    // Present the modalViewController with a horizontal flip
+    [self presentModalViewController:modalViewController animated:YES];
+    [modalViewController release];
+
 }
 
 @end
