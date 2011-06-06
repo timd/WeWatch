@@ -243,7 +243,8 @@
                                                                      andTitle:title 
                                                                   andSubtitle:subtitle 
                                                                    andChannel:channel 
-                                                                      andTime:startTime 
+                                                                      andTime:startTime
+                                                                  andFullTime:startTimeFromJSON
                                                                   andTimeslot:timeSlot 
                                                                andDescription:description 
                                                                   andDuration:duration 
