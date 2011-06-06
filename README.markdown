@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.4
-### Branch          :   moved_twitter_login
-### Branched from   :   move_twitter_login
-### Merged from     :   n/a
-### Date            :   05/06/2011
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   moved_twitter_login
+### Date            :   06/06/2011
 
 ===================================================
 
@@ -36,9 +36,10 @@ http://www.wewatch.co.uk
 - retrieval & display of friends who are watching
 - implemented Reachability on data retrieval methods
 - mark programmes I'm flagged as watching
+- move Twitter login out into better place
 
 ### In progress:
-- move Twitter login out into better place
+
 
 ### Todo:
 
