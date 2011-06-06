@@ -1,4 +1,4 @@
-# WeWatchTabled
+# WeWatch
 
 Table-driven version of the WeWatch iPhone app.
 http://www.wewatch.co.uk
@@ -6,8 +6,8 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.5
-### Branch          :   notifications
-### Branched from   :   master
+### Branch          :   master
+### Branched from   :   notifications
 ### Merged from     :   
 ### Date            :   06/06/2011
 
@@ -37,10 +37,9 @@ http://www.wewatch.co.uk
 - implemented Reachability on data retrieval methods
 - mark programmes I'm flagged as watching
 - move Twitter login out into better place
+- creating reminder notifications (currently in test mode)
 
 ### In progress:
-- creating reminder notifications
-
 
 ### Todo:
 
