@@ -16,6 +16,40 @@
 @synthesize providedProgrammeImage;
 
 #pragma mark -
+#pragma mark Notification methods
+
+-(void)setNotification {
+
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+
+    if (localNotification == nil) {
+        return;
+    }
+    
+    NSDate *timeNow = [NSDate date];
+    NSLog(@"timeNow = %@", timeNow);
+    
+    NSDate *fireTime = [timeNow addTimeInterval:10];
+    NSLog(@"fireDate = %@", fireTime);
+    
+    // Specify custom data for the notification
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    localNotification.userInfo = infoDict;
+    
+    localNotification.fireDate = fireTime;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    localNotification.alertBody = [NSString stringWithFormat:@"%@ will start in 20 secs", [displayProgramme title]];
+    localNotification.alertAction = NSLocalizedString(@"Show me", nil);
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    
+    NSLog(@"Setting reminder");
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+}
+
+#pragma mark -
 #pragma mark RestKit delegate methods
 
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
@@ -40,6 +74,8 @@
 }
 
 -(IBAction)watchProgramme{
+    
+    // Action to handle flagging a programme as being watched, and setting a notification
     
     NSLog(@"Firing the watchProgramme action");
     NSLog(@"Tweet text = %@", tweetText.text);
@@ -74,6 +110,9 @@
                               otherButtonTitles:nil];
         [alert show];
         [alert release];
+        
+        // Fire the createNotification action
+        [self setNotification];
         
         //[self dismissView];
     } else {

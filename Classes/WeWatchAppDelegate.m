@@ -33,7 +33,21 @@
 	// Create the operation queue
 	self.operationQueue = [[NSOperationQueue alloc] init];
     
+    // Set up notification handling
+    application.applicationIconBadgeNumber = 0;
+    
+    // Handle launching from a notification
+    UILocalNotification *localNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif) {
+        NSLog(@"Received Notification %@",localNotif);
+    }
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
+    // Handle the notificaton when the app is running
+    NSLog(@"Recieved Notification %@",notif);
 }
 
 
@@ -66,6 +80,9 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
+    // Clear any notification badges that might have been set
+    application.applicationIconBadgeNumber = 0;
     
     NSLog(@"applicationDidBecomeActive fired");
 }
