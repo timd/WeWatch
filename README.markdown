@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.4
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   moved_twitter_login
+### Version         :   0.5
+### Branch          :   notifications
+### Branched from   :   master
+### Merged from     :   
 ### Date            :   06/06/2011
 
 ===================================================
@@ -39,6 +39,7 @@ http://www.wewatch.co.uk
 - move Twitter login out into better place
 
 ### In progress:
+- creating reminder notifications
 
 
 ### Todo:
