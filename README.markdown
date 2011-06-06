@@ -7,8 +7,8 @@ http://www.wewatch.co.uk
 
 ### Version         :   0.5
 ### Branch          :   master
-### Branched from   :   notifications
-### Merged from     :   
+### Branched from   :   n/a
+### Merged from     :   notifications
 ### Date            :   06/06/2011
 
 ===================================================
