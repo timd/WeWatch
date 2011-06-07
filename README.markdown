@@ -20,6 +20,8 @@ http://www.wewatch.co.uk
   - created new scheme from scratch, then reimported ad-hoc distribution certificate
   - created archive as per normal
 
+- created new ad-hoc profile from scratch
+
 ### Completed:
 
 - initial commit to project
@@ -38,11 +40,16 @@ http://www.wewatch.co.uk
 - mark programmes I'm flagged as watching
 - move Twitter login out into better place
 - creating reminder notifications (currently in test mode)
+- implemented modal settings window
 
 ### In progress:
-- implementing modal settings window
+
 
 ### Todo:
+- tidy up api watch actions
+- tidy up refreshing of root view and detail view
+- tidy up login/out process
+- implement unwatch process
 
 - flag programme as watching via the app
 - WIP:  implement in-app watching
