@@ -327,6 +327,9 @@
                 // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
                 [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
                 
+                // Pass in the current Twitter user
+                [modalViewController setTwitterUser:[twitterEngine username]];
+                
                 // Present the modalViewController with a horizontal flip
                 [self presentModalViewController:modalViewController animated:YES];
                 [modalViewController release];
