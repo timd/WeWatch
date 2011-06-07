@@ -65,32 +65,13 @@
     self.title = @"WeWatch";
     
     // Set up a right-hand button on the nav bar
-    //UIImage *buttonImage = [UIImage imageWithContentsOfFile:@"gearButton.png"];
-    
-    NSString *titleString;
-    
-    if ([_engine isAuthorized]) {
-        titleString = [NSString stringWithFormat:@"Log out"];
-    } else {
-        titleString = [NSString stringWithFormat:@"Log in"];
-    }
-    
-    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
-                                   initWithTitle:titleString
-                                   style:UIBarButtonItemStyleBordered 
-                                   target:self 
-                                   action:@selector(changeTwitterLoginStatus)];
-    
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
                                                                        style:UIBarButtonItemStylePlain 
                                                                       target:self 
                                                                       action:@selector(displaySettingsModalWindow)];
     self.navigationItem.rightBarButtonItem = settingsButton;
     [settingsButton release];
-    
-    self.navigationItem.leftBarButtonItem = loginButton;
-    [loginButton release];
-    
+        
     Reachable *reachable = [[Reachable alloc] init];
     
     if ([reachable isReachable]) {

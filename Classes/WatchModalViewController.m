@@ -97,11 +97,23 @@
     
     //if ([response isOK]) {  
         
-    NSLog(@"Response received");
+        NSLog(@"Response received");
         NSLog(@"Response = %d", response.statusCode);
         NSLog(@"URL = %@", response.URL);
         NSLog(@"Request = %@", request.resourcePath);
-    //}
+    
+    NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
+    // Set up the string with the username in it
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Watching..."
+                          message: messageString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+    [self dismissView];
     
 }
 
@@ -145,18 +157,6 @@
         // Get rid of the keyboard
         [tweetText resignFirstResponder];
         
-        // As an interim measure, pop up an alert
-        NSString *alertString = [NSString stringWithFormat:@"No built yet..."];
-        
-        // Set up the string with the username in it
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Watching..."
-                              message: alertString
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
         
         // Fire the createNotification action if the switch is set
         if (reminderSwitch.on) {
