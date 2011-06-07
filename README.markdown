@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.6
-### Branch          :   settings_page
-### Branched from   :   master
+### Version         :   0.7
+### Branch          :   watch_via_api
+### Branched from   :   settings_page
 ### Merged from     :   n/a
-### Date            :   06/06/2011
+### Date            :   07/06/2011
 
 ===================================================
 
