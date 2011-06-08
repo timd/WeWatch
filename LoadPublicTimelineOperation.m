@@ -159,7 +159,7 @@
             // iterate across the friends array
             NSMutableArray *localNamesArray = [[NSMutableArray alloc] initWithObjects: nil];
             
-            if ([watcherNamesHolder count] == 0) {
+            if ( [watcherNamesHolder count] == 0 ) {
                 // Nobody's watching this programme
                 [localNamesArray addObject:@"None of your friends are currently planning to watch this programme."];
             } else {

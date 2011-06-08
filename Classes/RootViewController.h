@@ -48,6 +48,9 @@
 -(BOOL)sendTweet:(NSString *)tweetText;
 -(void)displaySettingsModalWindow;
 
+-(void)didReceiveWatchProgrammeMessage;
+-(void)didReceiveUnwatchProgrammeMessage;
+
 @end
 
 

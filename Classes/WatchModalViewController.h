@@ -42,6 +42,8 @@
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 @property (nonatomic, retain) NSString *twitterUser;
 
+extern NSString * const didWatchProgrammeNotification;
+
 -(IBAction)dismissView;
 -(IBAction)resignTextViewFirstResponder;
 -(IBAction)watchProgramme;

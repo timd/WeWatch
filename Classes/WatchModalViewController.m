@@ -17,6 +17,8 @@
 @synthesize twitterEngine;
 @synthesize twitterUser;
 
+NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
+
 #pragma mark -
 #pragma mark Notification methods
 
@@ -157,13 +159,17 @@
         // Get rid of the keyboard
         [tweetText resignFirstResponder];
         
-        
         // Fire the createNotification action if the switch is set
         if (reminderSwitch.on) {
             [self setNotification:[self displayProgramme]];
         }
         
+        // Fire off the didWatchProgramme message to the notification centre so that
+        // the listening classes know that they need to refresh their data
+        [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
+        
         //[self dismissView];
+        
     } else {
         NSLog(@"Dammit, the network's not available :(");
         
