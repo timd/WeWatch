@@ -93,5 +93,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 - Aral Balkan's ActivityIndicator
 - QuartzCore
 - RestKit (http://restkit.org/ & https://github.com/twotoasters/RestKit)
+- SVProgressHUD (https://github.com/samvermette/SVProgressHUD)
 
 ===================================================

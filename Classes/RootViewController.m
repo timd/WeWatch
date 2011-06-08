@@ -13,6 +13,7 @@
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 #import "SettingsModalViewController.h"
+#import "SVProgressHUD.h"
 
 @implementation RootViewController
 
@@ -175,6 +176,29 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
  */
+
+#pragma mark -
+#pragma mark Throbber methods
+
+- (IBAction)showThrobber {
+   	[SVProgressHUD showInView:self.view];
+}
+
+- (IBAction)showThrobberWithStatus {
+    // TODO: implement
+}
+
+- (IBAction)dismissThrobber {
+	[SVProgressHUD dismiss];
+}
+
+- (IBAction)dismissThrobberWithSuccess{
+    // TODO: implement    
+}
+
+- (IBAction)dismissThrobberWithError {
+    // TODO: implement    
+}
 
 
 #pragma mark -
@@ -438,6 +462,10 @@
 	self.scheduleArray = thePublicTimeline;
 	
 	[self.tableView reloadData];
+    
+    // Stop any running throbbers
+    [SVProgressHUD dismiss];
+    
 }
 
 #pragma mark -
@@ -473,6 +501,8 @@
     if ([reachable isReachable]) {
         
         NSLog(@"Checking - the username is %@", [_engine username]);
+        
+        [self showThrobber];
         
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
         self.loadPublicTimelineOperation.delegate = self;
