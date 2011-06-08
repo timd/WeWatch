@@ -1,0 +1,2 @@
+- Throbber HUD location is relative to the top of the table; it's scrolled off the view if the table is near the bottom
+- watcher number on ProgrammeDetailView doesn't update after watching a programme

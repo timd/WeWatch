@@ -37,6 +37,7 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
+		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
 		226B4B72139BDBC800BBBB31 /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B6D139BDBC800BBBB31 /* libRestKitJSONParserYAJL.a */; };
 		226B4B73139BDBC800BBBB31 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B6E139BDBC800BBBB31 /* libRestKitNetwork.a */; };
 		226B4B74139BDBC800BBBB31 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B6F139BDBC800BBBB31 /* libRestKitObjectMapping.a */; };
@@ -256,6 +257,7 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
+		2269946C139FCD1D00DC74CB /* Buglist.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buglist.markdown; sourceTree = "<group>"; };
 		226B4B6C139BDBC800BBBB31 /* libRestKitCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitCoreData.a; sourceTree = SOURCE_ROOT; };
 		226B4B6D139BDBC800BBBB31 /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
 		226B4B6E139BDBC800BBBB31 /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
@@ -691,10 +693,11 @@
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
 				22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
+				2269946C139FCD1D00DC74CB /* Buglist.markdown */,
 				2272BC68139FC5F900515CC7 /* Libraries */,
 				2217899C1374211F009656A7 /* Notes */,
-				A7F23D5211F8599300E3722F /* Operations */,
 				A7F23C2A11F74DFC00E3722F /* Libraries */,
+				A7F23D5211F8599300E3722F /* Operations */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				22BB5AE51369D495004B299B /* Nib files */,
@@ -996,6 +999,7 @@
 				2272BC37139FBCCA00515CC7 /* refresh.png in Resources */,
 				2272BC39139FBD8E00515CC7 /* refresh@2x.png in Resources */,
 				2272BC3B139FBDA400515CC7 /* gear@2x.png in Resources */,
+				2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

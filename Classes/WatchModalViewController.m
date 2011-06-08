@@ -135,13 +135,10 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Action to handle flagging a programme as being watched, and setting a notification
     
-    NSLog(@"Firing the watchProgramme action");
-    NSLog(@"Tweet text = %@", tweetText.text);
-    NSLog(@"Programme ID = %d", displayProgramme.programmeID);
-    NSLog(@"Twitter user = %@", twitterUser);
-    
-    // First off, create a RestKit reachability observer based on the RKClient singleton
-    // RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
+    //NSLog(@"Firing the watchProgramme action");
+    //NSLog(@"Tweet text = %@", tweetText.text);
+    //NSLog(@"Programme ID = %d", displayProgramme.programmeID);
+    //NSLog(@"Twitter user = %@", twitterUser);
     
     // Check if we can see the network before we try and update anything
     Reachable *reachable = [[Reachable alloc] init];
