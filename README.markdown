@@ -41,9 +41,10 @@ http://www.wewatch.co.uk
 - move Twitter login out into better place
 - creating reminder notifications (currently in test mode)
 - implemented modal settings window
+- implemented autoupdating of views after watching programme
 
 ### In progress:
-
+-
 
 ### Todo:
 - tidy up api watch actions
