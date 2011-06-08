@@ -6,9 +6,9 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.8
-### Branch          :   improved_throbbers
-### Branched from   :   master
-### Merged from     :   n/a
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   improved throbbers
 ### Date            :   08/06/2011
 
 ===================================================
