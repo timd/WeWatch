@@ -1143,7 +1143,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83827FF6-C7B1-4604-AC0E-057D949358A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A0BA139F-1B55-48FE-9719-C276DE3B53AB";
 				SDKROOT = iphoneos;
 			};
 			name = AdHoc;
