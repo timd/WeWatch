@@ -22,6 +22,7 @@
 @synthesize twitterEngine;
 @synthesize loadProgrammeImageOperation;
 @synthesize retrievedProgrammeImage;
+@synthesize forceDataReload;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -176,6 +177,18 @@
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     
+    // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveWatchProgrammeMessage) 
+                                                 name:@"didWatchProgramme" 
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveUnwatchProgrammeMessage) 
+                                                 name:@"didUnwatchProgramme" 
+                                               object:nil];
+
+    
 }
 
 - (void)viewDidUnload
@@ -248,6 +261,26 @@
     
     [self flipModalWatchPage];
     
+}
+
+
+#pragma mark -
+#pragma mark Notification methods
+
+// Received a didWatchProgramme or didUnwatchProgramme essage via the 
+// notification centre, so we need to set the forceDataReload flag to 
+// ensure that the data gets refreshed when the view reappears
+
+-(void)didReceiveWatchProgrammeMessage {
+    NSLog(@"*** ProgrammeDetailViewController didReceiveWatchProgrammeMessage");
+    self.forceDataReload = YES;
+    [displayProgramme setAmWatching:YES];
+}
+
+-(void)didReceiveUnwatchProgrammeMessage {
+    // TODO: implement
+    NSLog(@"*** ProgrammeDetailViewController didReceiveUnwatchProgrammeMessage");
+    [displayProgramme setAmWatching:NO];
 }
 
 #pragma mark -
@@ -326,6 +359,9 @@
                 
                 // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
                 [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+                
+                // Pass in the current Twitter user
+                [modalViewController setTwitterUser:[twitterEngine username]];
                 
                 // Present the modalViewController with a horizontal flip
                 [self presentModalViewController:modalViewController animated:YES];

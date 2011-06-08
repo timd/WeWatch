@@ -42,16 +42,24 @@
     
     LoadProgrammeImageOperation *loadProgrammeImageOperation;
     
+    // ivar to hold flag to force data reload
+    BOOL forceDataReload;
+    
 }
 
 @property (nonatomic, assign) Programme *displayProgramme;
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 @property (nonatomic, retain) LoadProgrammeImageOperation *loadProgrammeImageOperation;
+@property (nonatomic) BOOL forceDataReload;
 
 // ivar to hold the programme image (so that it can be passed into the modal view controller)
 @property (nonatomic, retain) UIImage *retrievedProgrammeImage;
 
 -(IBAction)watchProgramme;
 -(void)flipModalWatchPage;
+
+// Notification methods
+-(void)didReceiveWatchProgrammeMessage;
+-(void)didReceiveUnwatchProgrammeMessage;
 
 @end

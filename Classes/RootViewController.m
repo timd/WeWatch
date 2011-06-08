@@ -12,6 +12,7 @@
 #import "WeWatchAppDelegate.h"
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
+#import "SettingsModalViewController.h"
 
 @implementation RootViewController
 
@@ -53,6 +54,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveWatchProgrammeMessage) 
+                                                 name:@"didWatchProgramme" 
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveUnwatchProgrammeMessage) 
+                                                 name:@"didUnwatchProgramme" 
+                                               object:nil];
+     
+    
     // Fire up Twitter OAuth engine, if it's not already in existence
     if (!_engine) {
         _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
@@ -64,30 +77,19 @@
     self.title = @"WeWatch";
     
     // Set up a right-hand button on the nav bar
-    //UIImage *buttonImage = [UIImage imageWithContentsOfFile:@"gearButton.png"];
-    
-    NSString *titleString;
-    
-    if ([_engine isAuthorized]) {
-        titleString = [NSString stringWithFormat:@"Log out"];
-    } else {
-        titleString = [NSString stringWithFormat:@"Log in"];
-    }
-    
-    UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
-                                   initWithTitle:titleString
-                                   style:UIBarButtonItemStyleBordered 
-                                   target:self 
-                                   action:@selector(changeTwitterLoginStatus)];
-    
-    //    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(showTwitterUser)];
-    
-    self.navigationItem.rightBarButtonItem = loginButton;
-    [loginButton release];
-    
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
+                                                                       style:UIBarButtonItemStylePlain 
+                                                                      target:self 
+                                                                      action:@selector(displaySettingsModalWindow)];
+    self.navigationItem.rightBarButtonItem = settingsButton;
+    [settingsButton release];
+        
     Reachable *reachable = [[Reachable alloc] init];
     
+    // Check if the network is reachable
     if ([reachable isReachable]) {
+        
+        // If the network's available, then load the timeline
         NSLog(@"Reachable");
         NSLog(@"Twitter name = %@", [_engine username]);
         
@@ -109,6 +111,7 @@
         
     } else {
         
+        // The network's not available, so fail with a message
         NSLog(@"Not Reachable");
         
         NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
@@ -141,20 +144,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    
-    // Check if the correct title is being displayed
-    
-    // if the title is 'Log out' and the engine isn't authorised, then something's changed
-    // Need to force a reload of data
-    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"Log out"] && ![_engine isAuthorized] ) {
-        // Something has changed, need to update the title and force a data reload
-        self.navigationItem.rightBarButtonItem.title = @"Log in";
+    // Check if the forceReload flag has been set: if yes, reload the data
+    if (forceDataReload) {
+        // Force a refresh
         [self refresh];
-    }
-
-    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"Log in"] && [_engine isAuthorized] ) {
-        self.navigationItem.rightBarButtonItem.title = @"Log out";
-        [self refresh];
+        
+        // Reset the flag
+        [self setForceDataReload:NO];
+        
     }
     
 }
@@ -444,7 +441,22 @@
 }
 
 #pragma mark -
-#pragma mark PullRefresh methods
+#pragma mark WeWatch methods
+
+// Received a didWatchProgramme or didUnwatchProgramme essage via the 
+// notification centre, so we need to set the forceDataReload flag to 
+// ensure that the data gets refreshed when the view reappears
+
+-(void)didReceiveWatchProgrammeMessage {
+    NSLog(@"*** RootViewController didReceiveWatchProgrammeMessage");
+    self.forceDataReload = YES;
+}
+
+-(void)didReceiveUnwatchProgrammeMessage {
+    NSLog(@"*** RootViewController didReceiveUnwatchProgrammeMessage");
+    self.forceDataReload = YES;
+}
+
 
 -(void)refresh{
     
@@ -492,6 +504,21 @@
     }
     
     [reachable release];
+    
+}
+
+-(void)displaySettingsModalWindow {
+    NSLog(@"Firing displaySettingsModalWindow");
+    
+    // Create the modal view controller
+    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+    settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [settingsModalViewController setTwitterEngine:_engine];
+    
+    // Present the modalViewController with a horizontal flip
+    [self presentModalViewController:settingsModalViewController animated:YES];
+    [settingsModalViewController release];
     
 }
 

@@ -14,6 +14,10 @@
 
 @synthesize displayProgramme;
 @synthesize providedProgrammeImage;
+@synthesize twitterEngine;
+@synthesize twitterUser;
+
+NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 
 #pragma mark -
 #pragma mark Notification methods
@@ -93,12 +97,25 @@
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
     // Delegate method for RestKit to handle responses
     
-    if ([response isOK]) {  
+    //if ([response isOK]) {  
         
+        NSLog(@"Response received");
         NSLog(@"Response = %d", response.statusCode);
         NSLog(@"URL = %@", response.URL);
         NSLog(@"Request = %@", request.resourcePath);
-    }
+    
+    NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
+    // Set up the string with the username in it
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Watching..."
+                          message: messageString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+    [self dismissView];
     
 }
 
@@ -117,6 +134,9 @@
     
     NSLog(@"Firing the watchProgramme action");
     NSLog(@"Tweet text = %@", tweetText.text);
+    NSLog(@"Programme ID = %d", displayProgramme.programmeID);
+    NSLog(@"Twitter user = %@", twitterUser);
+    
     
     // First off, create a RestKit reachability observer based on the RKClient singleton
     // RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
@@ -126,9 +146,12 @@
     
     if ([reachable isReachable]) {
         NSLog(@"Huzzah, we can see the network!");
+        
+        // Cast the programme id int into an NSNumber so it'll go into the dictionary
+        NSNumber *programmeIDasNSNumber = [NSNumber numberWithInt:displayProgramme.programmeID];
 
         // Set up some temporary params to fire at the wewatch end
-        NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:@"44997", @"intention[broadcast_id]", @"timd", @"username", @"", @"intention[comment]", @"0", @"intention[tweet]", nil];
+        NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:programmeIDasNSNumber, @"intention[broadcast_id]", twitterUser, @"username", tweetText.text, @"intention[comment]", @"0", @"intention[tweet]", nil];
         
         // Hit the wewatch server with a POST
         [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
@@ -136,27 +159,17 @@
         // Get rid of the keyboard
         [tweetText resignFirstResponder];
         
-        // As an interim measure, pop up an alert
-        NSString *alertString = [NSString stringWithFormat:@"No built yet..."];
-        
-        // Set up the string with the username in it
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Watching..."
-                              message: alertString
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-        
         // Fire the createNotification action if the switch is set
         if (reminderSwitch.on) {
             [self setNotification:[self displayProgramme]];
         }
         
-
+        // Fire off the didWatchProgramme message to the notification centre so that
+        // the listening classes know that they need to refresh their data
+        [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
         
         //[self dismissView];
+        
     } else {
         NSLog(@"Dammit, the network's not available :(");
         

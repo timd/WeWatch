@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.5
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   notifications
-### Date            :   06/06/2011
+### Version         :   0.7
+### Branch          :   watch_via_api
+### Branched from   :   settings_page
+### Merged from     :   n/a
+### Date            :   07/06/2011
 
 ===================================================
 
@@ -19,6 +19,8 @@ http://www.wewatch.co.uk
   - installed RestKit as per instructions at http://liebke.github.com/restkit-github-client-example/
   - created new scheme from scratch, then reimported ad-hoc distribution certificate
   - created archive as per normal
+
+- created new ad-hoc profile from scratch
 
 ### Completed:
 
@@ -38,10 +40,17 @@ http://www.wewatch.co.uk
 - mark programmes I'm flagged as watching
 - move Twitter login out into better place
 - creating reminder notifications (currently in test mode)
+- implemented modal settings window
+- implemented autoupdating of views after watching programme
 
 ### In progress:
+-
 
 ### Todo:
+- tidy up api watch actions
+- tidy up refreshing of root view and detail view
+- tidy up login/out process
+- implement unwatch process
 
 - flag programme as watching via the app
 - WIP:  implement in-app watching
