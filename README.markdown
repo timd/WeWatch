@@ -6,9 +6,9 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.9
-### Branch          :   implement_unwatch
-### Branched from   :   master
-### Merged from     :   n/a
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   implement_unwatch
 ### Date            :   08/06/2011
 
 ===================================================
@@ -41,9 +41,9 @@ http://www.wewatch.co.uk
 - implemented modal settings window
 - implemented autoupdating of views after watching programme
 - added basic HUB throbbers for reload in RootViewController
+- implemented api-based unwatch
 
 ### In progress:
-- implementing api-based unwatch
 
 ### Todo:
 - tidy up api watch actions
@@ -95,5 +95,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 - QuartzCore
 - RestKit (http://restkit.org/ & https://github.com/twotoasters/RestKit)
 - SVProgressHUD (https://github.com/samvermette/SVProgressHUD)
+- ASIHTTPRequest (https://github.com/pokeb/asi-http-request/tree)
 
 ===================================================

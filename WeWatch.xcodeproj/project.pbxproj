@@ -585,6 +585,31 @@
 			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
+		2272BC68139FC5F900515CC7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				226B4B6C139BDBC800BBBB31 /* libRestKitCoreData.a */,
+				226B4B6D139BDBC800BBBB31 /* libRestKitJSONParserYAJL.a */,
+				226B4B6E139BDBC800BBBB31 /* libRestKitNetwork.a */,
+				226B4B6F139BDBC800BBBB31 /* libRestKitObjectMapping.a */,
+				226B4B70139BDBC800BBBB31 /* libRestKitSupport.a */,
+				22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */,
+				22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */,
+				22E450A6139A6B39000D31A8 /* libRestKitObjectMapping.a */,
+				22E450A7139A6B39000D31A8 /* libRestKitSupport.a */,
+				22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */,
+				22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */,
+				22E450AC139A6B39000D31A8 /* CFNetwork.framework */,
+				226B4B77139BDBC800BBBB31 /* SystemConfiguration.framework */,
+				226B4B76139BDBC800BBBB31 /* CoreData.framework */,
+				2272BC30139FAAD700515CC7 /* CFNetwork.framework */,
+				2272BC31139FAAF100515CC7 /* SystemConfiguration.framework */,
+				2272BC32139FAAFA00515CC7 /* MobileCoreServices.framework */,
+				2272BC33139FAB0600515CC7 /* CoreGraphics.framework */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		22BB5AE01369BF8D004B299B /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,26 +689,9 @@
 			isa = PBXGroup;
 			children = (
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
-				2272BC33139FAB0600515CC7 /* CoreGraphics.framework */,
-				2272BC32139FAAFA00515CC7 /* MobileCoreServices.framework */,
-				2272BC31139FAAF100515CC7 /* SystemConfiguration.framework */,
-				2272BC30139FAAD700515CC7 /* CFNetwork.framework */,
-				226B4B76139BDBC800BBBB31 /* CoreData.framework */,
-				226B4B77139BDBC800BBBB31 /* SystemConfiguration.framework */,
-				226B4B6C139BDBC800BBBB31 /* libRestKitCoreData.a */,
-				226B4B6D139BDBC800BBBB31 /* libRestKitJSONParserYAJL.a */,
-				226B4B6E139BDBC800BBBB31 /* libRestKitNetwork.a */,
-				226B4B6F139BDBC800BBBB31 /* libRestKitObjectMapping.a */,
-				226B4B70139BDBC800BBBB31 /* libRestKitSupport.a */,
-				22E450AC139A6B39000D31A8 /* CFNetwork.framework */,
-				22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */,
-				22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */,
-				22E450A4139A6B39000D31A8 /* libRestKitJSONParserYAJL.a */,
-				22E450A5139A6B39000D31A8 /* libRestKitNetwork.a */,
-				22E450A6139A6B39000D31A8 /* libRestKitObjectMapping.a */,
-				22E450A7139A6B39000D31A8 /* libRestKitSupport.a */,
 				22E45079139A6A3D000D31A8 /* RestKit.xcodeproj */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
+				2272BC68139FC5F900515CC7 /* Libraries */,
 				2217899C1374211F009656A7 /* Notes */,
 				A7F23D5211F8599300E3722F /* Operations */,
 				A7F23C2A11F74DFC00E3722F /* Libraries */,
