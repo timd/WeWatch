@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.7
-### Branch          :   watch_via_api
-### Branched from   :   settings_page
-### Merged from     :   n/a
-### Date            :   07/06/2011
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   watch_via_api
+### Date            :   08/06/2011
 
 ===================================================
 
@@ -19,8 +19,6 @@ http://www.wewatch.co.uk
   - installed RestKit as per instructions at http://liebke.github.com/restkit-github-client-example/
   - created new scheme from scratch, then reimported ad-hoc distribution certificate
   - created archive as per normal
-
-- created new ad-hoc profile from scratch
 
 ### Completed:
 
