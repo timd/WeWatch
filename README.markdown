@@ -40,9 +40,10 @@ http://www.wewatch.co.uk
 - creating reminder notifications (currently in test mode)
 - implemented modal settings window
 - implemented autoupdating of views after watching programme
+- added basic HUB throbbers for reload in RootViewController
 
 ### In progress:
-- improving the throbbers
+
 
 ### Todo:
 - tidy up api watch actions

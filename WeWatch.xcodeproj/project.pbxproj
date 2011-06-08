@@ -520,7 +520,6 @@
 		22BB5AE01369BF8D004B299B /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
-				22318278136ADA590027F597 /* Pull Refresh */,
 				22BB5AD71369BF89004B299B /* GTMNSString+HTML.h */,
 				22BB5AD81369BF89004B299B /* GTMNSString+HTML.m */,
 				22BB5AD91369BF89004B299B /* NSString+HTML.h */,
@@ -716,6 +715,7 @@
 		A7F23C2A11F74DFC00E3722F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				22318278136ADA590027F597 /* Pull Refresh */,
 				2272BBD9139F90BD00515CC7 /* SVProgressHUD */,
 				22EEA9E7137827FA00435B7F /* Reachability.h */,
 				22EEA9E8137827FA00435B7F /* Reachability.m */,
