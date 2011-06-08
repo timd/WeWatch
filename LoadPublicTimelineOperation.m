@@ -179,6 +179,14 @@
                 }
             }
             
+            // Set watch ID
+            NSInteger watchingID;
+            
+            if ([currentProgrammesFromJSON objectForKey:@"watching_id"] != nil) {
+                watchingID = [[currentProgrammesFromJSON objectForKey:@"watching_id"] intValue];
+                NSLog(@"*** Watching ID = %d", watchingID);
+            }
+            
             // Set start time & timeslot
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
             
@@ -251,7 +259,8 @@
                                                                   andWatchers:watchers 
                                                                      andImage:programmeImage
                                                               andWatcherNames:localNamesArray
-                                                                andAmWatching:amWatching];
+                                                                andAmWatching:amWatching
+                                                                andWatchingID:watchingID];
             
             // Release the local objects we created
             [localNamesArray release];

@@ -35,4 +35,7 @@
 -(IBAction)changeTwitterLoginStatus;
 -(IBAction)dismissView;
 
+// Set up notification handlers
+extern NSString * const didChangeTwitterLoginStatusNotification;
+
 @end

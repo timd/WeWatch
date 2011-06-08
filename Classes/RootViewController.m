@@ -44,6 +44,14 @@
 -(id)init {
 
     [super init];    
+    
+    // Fire up Twitter OAuth engine, if it's not already in existence
+    if (!_engine) {
+        _engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+        _engine.consumerKey = kOAuthConsumerKey;
+        _engine.consumerSecret = kOAuthConsumerSecret;
+    }
+    
     return self;
     
 }
@@ -65,7 +73,12 @@
                                              selector:@selector(didReceiveUnwatchProgrammeMessage) 
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
-     
+
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveUnwatchProgrammeMessage) 
+                                                 name:@"didChangeTwitterLoginStatus" 
+                                               object:nil];
+
     
     // Fire up Twitter OAuth engine, if it's not already in existence
     if (!_engine) {
@@ -84,6 +97,14 @@
                                                                       action:@selector(displaySettingsModalWindow)];
     self.navigationItem.rightBarButtonItem = settingsButton;
     [settingsButton release];
+    
+    // Set up a left button as a refresh indicator
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] 
+                                                                       style:UIBarButtonItemStylePlain 
+                                                                      target:self 
+                                                                      action:@selector(refresh)];
+    self.navigationItem.leftBarButtonItem = refreshButton;
+    [refreshButton release];
         
     Reachable *reachable = [[Reachable alloc] init];
     
@@ -91,8 +112,15 @@
     if ([reachable isReachable]) {
         
         // If the network's available, then load the timeline
+        
+        NSLog(@"Twitter engine = %@", _engine);
+        NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
+        
         NSLog(@"Reachable");
         NSLog(@"Twitter name = %@", [_engine username]);
+        
+        // Start the throbber going
+        [self showThrobber];
         
         // Load public timeline from the web.
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
@@ -485,6 +513,10 @@
     self.forceDataReload = YES;
 }
 
+-(void)didReceiveChangeTwitterLoginStatusMessage {
+    NSLog(@"*** RootViewController didReceiveChangeTwitterLoginStatusMessage");
+    self.forceDataReload = YES;
+}
 
 -(void)refresh{
     

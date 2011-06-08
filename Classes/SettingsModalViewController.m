@@ -12,6 +12,8 @@
 
 @synthesize twitterEngine;
 
+NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLoginStatus";
+
 #pragma mark -
 #pragma mark Custom methods
 
@@ -46,6 +48,10 @@
             }
             // NSLog(@"Finished with oAuth");
             
+            // Fire off the didChangeTwitterLoginStatus message to the notification centre so that
+            // the listening classes know that they need to refresh their data
+            [[NSNotificationCenter defaultCenter] postNotificationName:didChangeTwitterLoginStatusNotification object:self];
+            
         } else {
             
             // There IS a valid twitter user around
@@ -57,6 +63,10 @@
             // Change the text of the login button
             twitterLoginButton.titleLabel.text = @"Login";
             twitterLogo.image = [UIImage imageWithContentsOfFile:@"twitter_logo_grey.png"];
+            
+            // Fire off the didChangeTwitterLoginStatus message to the notification centre so that
+            // the listening classes know that they need to refresh their data
+            [[NSNotificationCenter defaultCenter] postNotificationName:didChangeTwitterLoginStatusNotification object:self];
             
         }
         

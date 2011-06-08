@@ -50,6 +50,7 @@
 
 -(void)didReceiveWatchProgrammeMessage;
 -(void)didReceiveUnwatchProgrammeMessage;
+-(void)didReceiveChangeTwitterLoginStatusMessage;
 
 // Throbber methods
 - (IBAction)showThrobber;

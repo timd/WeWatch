@@ -15,12 +15,13 @@
 #import "SA_OAuthTwitterController.h"
 #import "SA_OAuthTwitterEngine.h"
 #import "Reachable.h"
+#import "ASIHTTPRequest.h"
 
 @class LoadProgrammeImageOperation;
 @class SA_OAuthTwitterController;
 @class Programme;
 
-@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, LoadProgrammeImageOperationDelegate> {
+@interface ProgrammeDetailViewController : UIViewController <SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, LoadProgrammeImageOperationDelegate, ASIHTTPRequestDelegate> {
     
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -45,6 +46,9 @@
     // ivar to hold flag to force data reload
     BOOL forceDataReload;
     
+    // ivar to hold the ASIHTTPRequest object
+    ASIHTTPRequest *requestMade;
+    
 }
 
 @property (nonatomic, assign) Programme *displayProgramme;
@@ -55,11 +59,15 @@
 // ivar to hold the programme image (so that it can be passed into the modal view controller)
 @property (nonatomic, retain) UIImage *retrievedProgrammeImage;
 
+extern NSString * const didUnwatchProgrammeNotification;
+
 -(IBAction)watchProgramme;
 -(void)flipModalWatchPage;
 
 // Notification methods
 -(void)didReceiveWatchProgrammeMessage;
 -(void)didReceiveUnwatchProgrammeMessage;
+
+-(void)dismissCurrentView;
 
 @end

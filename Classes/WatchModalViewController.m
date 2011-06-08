@@ -103,6 +103,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSLog(@"Response = %d", response.statusCode);
         NSLog(@"URL = %@", response.URL);
         NSLog(@"Request = %@", request.resourcePath);
+    /*
     
     NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
     // Set up the string with the username in it
@@ -115,6 +116,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [alert show];
     [alert release];
     
+    */
+     
     [self dismissView];
     
 }
@@ -136,7 +139,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSLog(@"Tweet text = %@", tweetText.text);
     NSLog(@"Programme ID = %d", displayProgramme.programmeID);
     NSLog(@"Twitter user = %@", twitterUser);
-    
     
     // First off, create a RestKit reachability observer based on the RKClient singleton
     // RKReachabilityObserver *networkStatusObserver = [[RKClient sharedClient] baseURLReachabilityObserver];
