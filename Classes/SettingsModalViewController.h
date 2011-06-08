@@ -20,6 +20,7 @@
 @interface SettingsModalViewController : UIViewController <SA_OAuthTwitterControllerDelegate> {
     
     IBOutlet UIButton *twitterLoginButton;
+    IBOutlet UILabel *twitterUsername;
     IBOutlet UIImageView *twitterLogo;
     IBOutlet UISwitch *enableTestNotifications;
     IBOutlet UISwitch *enableDebugMode;

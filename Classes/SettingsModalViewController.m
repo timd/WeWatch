@@ -52,6 +52,11 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
             // the listening classes know that they need to refresh their data
             [[NSNotificationCenter defaultCenter] postNotificationName:didChangeTwitterLoginStatusNotification object:self];
             
+            // We're logged in, display the blue logo and update the text
+            twitterLoginButton.hidden = YES;
+            twitterUsername.text = [NSString stringWithFormat:@"You are logged as %@", [twitterEngine username]];
+            twitterUsername.hidden = NO;
+            
         } else {
             
             // There IS a valid twitter user around
@@ -155,11 +160,17 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
     if ([self checkTwitterLoginStatus]) {
         // We're logged in, display the blue logo and update the text
         [twitterLogo initWithImage:[UIImage imageWithContentsOfFile:@"twitter_logo.png"]];
-        twitterLoginButton.titleLabel.text = @"Logout";
+        
+        twitterLoginButton.hidden = YES;
+        twitterUsername.text = [NSString stringWithFormat:@"You are logged as %@", [twitterEngine username]];
+        twitterUsername.hidden = NO;
+        
     } else {
         // Not logged in, display the grey one and update the text
         [twitterLogo initWithImage:[UIImage imageWithContentsOfFile:@"twitter_logo_grey.png"]];
+        twitterLoginButton.hidden = NO;
         twitterLoginButton.titleLabel.text = @"Login";
+        twitterUsername.hidden = YES;
     }
  
 }
