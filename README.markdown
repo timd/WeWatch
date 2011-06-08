@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.8
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   improved throbbers
+### Version         :   0.9
+### Branch          :   implement_unwatch
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   08/06/2011
 
 ===================================================
@@ -43,7 +43,7 @@ http://www.wewatch.co.uk
 - added basic HUB throbbers for reload in RootViewController
 
 ### In progress:
-
+- implementing api-based unwatch
 
 ### Todo:
 - tidy up api watch actions
