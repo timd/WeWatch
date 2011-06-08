@@ -51,6 +51,15 @@
 -(void)didReceiveWatchProgrammeMessage;
 -(void)didReceiveUnwatchProgrammeMessage;
 
+// Throbber methods
+- (IBAction)showThrobber;
+- (IBAction)showThrobberWithStatus;
+- (IBAction)dismissThrobber;
+- (IBAction)dismissThrobberWithSuccess;
+- (IBAction)dismissThrobberWithError;
+
+
+
 @end
 
 
