@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.7
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   watch_via_api
+### Version         :   0.8
+### Branch          :   improved_throbbers
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   08/06/2011
 
 ===================================================
@@ -42,17 +42,12 @@ http://www.wewatch.co.uk
 - implemented autoupdating of views after watching programme
 
 ### In progress:
--
+- improving the throbbers
 
 ### Todo:
 - tidy up api watch actions
-- tidy up refreshing of root view and detail view
 - tidy up login/out process
 - implement unwatch process
-
-- flag programme as watching via the app
-- WIP:  implement in-app watching
-        implement in-app unwatching
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]

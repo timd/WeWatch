@@ -41,6 +41,8 @@
 		226B4B73139BDBC800BBBB31 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B6E139BDBC800BBBB31 /* libRestKitNetwork.a */; };
 		226B4B74139BDBC800BBBB31 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B6F139BDBC800BBBB31 /* libRestKitObjectMapping.a */; };
 		226B4B75139BDBC800BBBB31 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 226B4B70139BDBC800BBBB31 /* libRestKitSupport.a */; };
+		2272BBDD139F90BD00515CC7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */; };
+		2272BBDE139F90BD00515CC7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BBDC139F90BD00515CC7 /* SVProgressHUD.m */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -249,6 +251,9 @@
 		226B4B70139BDBC800BBBB31 /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
 		226B4B76139BDBC800BBBB31 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		226B4B77139BDBC800BBBB31 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		2272BBDB139F90BD00515CC7 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		2272BBDC139F90BD00515CC7 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -502,6 +507,16 @@
 			path = SAOAuthTwitterEngine;
 			sourceTree = "<group>";
 		};
+		2272BBD9139F90BD00515CC7 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */,
+				2272BBDB139F90BD00515CC7 /* SVProgressHUD.h */,
+				2272BBDC139F90BD00515CC7 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		22BB5AE01369BF8D004B299B /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +716,7 @@
 		A7F23C2A11F74DFC00E3722F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2272BBD9139F90BD00515CC7 /* SVProgressHUD */,
 				22EEA9E7137827FA00435B7F /* Reachability.h */,
 				22EEA9E8137827FA00435B7F /* Reachability.m */,
 				223182DE136AF0E30027F597 /* libxml2.dylib */,
@@ -891,6 +907,7 @@
 				22E081D3139CEDA900D1099B /* SettingsModalViewController.xib in Resources */,
 				22E081D5139CEEC600D1099B /* twitter_logo.png in Resources */,
 				22E081D7139CFC5B00D1099B /* twitter_logo_grey.png in Resources */,
+				2272BBDD139F90BD00515CC7 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +961,7 @@
 				22D3642013992C6500093989 /* WatchModalViewController.m in Sources */,
 				22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */,
 				22E081D2139CEDA900D1099B /* SettingsModalViewController.m in Sources */,
+				2272BBDE139F90BD00515CC7 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
