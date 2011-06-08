@@ -24,6 +24,8 @@
 @synthesize retrievedProgrammeImage;
 @synthesize forceDataReload;
 
+NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -187,7 +189,6 @@
                                              selector:@selector(didReceiveUnwatchProgrammeMessage) 
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
-
     
 }
 
@@ -332,25 +333,36 @@
             
             if ([displayProgramme amWatching] == TRUE) {
                 
-                // TODO: Build the watch action
+                /*
+                 *  UNWATCH METHOD
+                 *  
+                 *  Don't need to check if the network's available, that's already been done...
+                 *
+                 */
                 
-                NSLog(@"Firing the unwatch action");
+                // grab the programme watch_id
+                NSNumber *watch_id = [NSNumber numberWithInt:displayProgramme.watchingID];
                 
-                NSString *alertString = [NSString stringWithFormat:@"Not built yet..."];
+                NSString *requestURLString = [NSString stringWithFormat:@"http://wewatch.co.uk/intentions/%@.json?username=%@", watch_id, [twitterEngine username]];
+                //NSLog(@"*** Unwatch URL = %@", requestURLString);
                 
-                // Set up the string with the username in it
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle: @"Unwatching..."
-                                      message: alertString
-                                      delegate: nil
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-                [alert show];
-                [alert release];
+                NSURL *requestURL = [NSURL URLWithString:requestURLString];
+
+                __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:requestURL];
+                [request setDelegate:self];
+                [request setRequestMethod:@"DELETE"]; 
+                [request startAsynchronous];
+                
+                NSLog(@">>> REQUEST = %@", request);
+                requestMade = request;
+                
+                // Fire off the didWatchProgramme message to the notification centre so that
+                // the listening classes know that they need to refresh their data
+                [[NSNotificationCenter defaultCenter] postNotificationName:didUnwatchProgrammeNotification object:self];        
                 
             } else {
                 
-                // Create the modal view controller
+                // Create the Watch modal view controller
                 WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
                 modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 
@@ -373,6 +385,7 @@
         }
         
     } else  {
+        
         // Unable to reach Twitter - display an error
         NSString *alertString = [NSString stringWithFormat:@"I couldn't reach Twitter to sign you in. Please try later..."];
         
@@ -408,6 +421,62 @@
     [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
 
+}
+
+- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
+    // Delegate method for RestKit to handle responses
+    
+    //if ([response isOK]) {  
+    
+    NSLog(@"Response received");
+    NSLog(@"Response = %d", response.statusCode);
+    NSLog(@"URL = %@", response.URL);
+    NSLog(@"Request = %@", request.resourcePath);
+    
+    NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
+    // Set up the string with the username in it
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Watching..."
+                          message: messageString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+    //[self dismissView];
+    
+}
+
+// ASIHTTPRequest delegate methods
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    // Use when fetching text data
+    //NSString *responseString = [request responseString];
+    if ( [request isEqual:requestMade] ) {
+        // We've received a response from the DELETE request, therefore it's safe to
+        // go about updating the UI
+        
+        // TODO: check with the API that the unwatch request has worked
+        
+        NSLog(@"Unwatching shit");
+        [self dismissCurrentView];
+        
+        // Hide the check flag and change the button to 'watch'
+        //        watchingFlag.hidden = YES;
+        //        watchButton.titleLabel.text = @"Watch";
+    }
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+    NSLog(@"ASIHTTPRequest failed with error: %@", error);
+}
+
+-(void)dismissCurrentView {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

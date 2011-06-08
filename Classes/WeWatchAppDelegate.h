@@ -15,6 +15,9 @@
     UINavigationController *navigationController;
     
 	NSOperationQueue *operationQueue;
+    
+    // Shared client for RestKit
+    RKClient* client;
 
 }
 

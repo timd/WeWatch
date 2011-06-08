@@ -23,6 +23,7 @@
 @synthesize programmeImage;
 @synthesize watcherNames;
 @synthesize amWatching;
+@synthesize watchingID;
 
 // Create and return a programme with fully-populated attributes
 - (id)initWithProgrammeID:(int)iProgrammeID 
@@ -38,6 +39,7 @@
                  andImage:(NSString *)iProgrammeImage
           andWatcherNames:(NSArray *)iWatcherNames
             andAmWatching:(Boolean)iAmWatching
+            andWatchingID:(int)iWatchingID
 {
 	// Call the superclass's designated initializer 
 	self = [super init];
@@ -60,6 +62,7 @@
     [self setProgrammeImage:iProgrammeImage];
     [self setWatcherNames:iWatcherNames];
     [self setAmWatching:iAmWatching];
+    [self setWatchingID:iWatchingID];
 	
 	// Return the address of the newly initialized object
 	return self;
