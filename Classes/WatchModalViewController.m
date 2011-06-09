@@ -68,7 +68,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // NSDate *fireTime = [fireDateTime addTimeInterval:(-(5*60))];
     
     // Create a dummy time 10 secs in the future for testing purposes
-    NSDate *fireTime = [timeNow addTimeInterval:10];
+    NSDate *fireTime = [timeNow dateByAddingTimeInterval:10];
     NSLog(@"timeNow = %@", timeNow);
     NSLog(@"fireDate = %@", fireTime);
     
