@@ -54,9 +54,8 @@
     if ([self twitterName]) {
         weWatchURL = [weWatchURL stringByAppendingString:[NSString stringWithFormat:@"?username=%@", [self twitterName]]];
     }
-    
-    
-    NSLog(@"URL = %@", weWatchURL);
+
+    // NSLog(@"URL = %@", weWatchURL);
     
 	NSData *json = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:weWatchURL]];
 	

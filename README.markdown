@@ -46,16 +46,13 @@ http://www.wewatch.co.uk
 ### In progress:
 
 ### Todo:
-- tidy up api watch actions
-- tidy up login/out process
-- implement unwatch process
+- amend table methods so empty timeslots aren't displayed
+- implement tweeting
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
-- move Twitter login to Login button on RootView [REQUIRES ONLINE TESTING]
 - amend display of friends names 
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
-- add data refresh method to appDidEnterForeground (check in Programming iOS4 book)
 - cleaning up title labels
 - update class diagrams
 - clean up Twitter login:
