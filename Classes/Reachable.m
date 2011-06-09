@@ -5,6 +5,7 @@
 //  Created by Tim Duckett on 04/06/2011.
 //  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
 //
+//  Code from 
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Reachable.h"
@@ -63,7 +64,7 @@
     NSString *addressString = [self getIPAddressForHost:theHost];
     if (!addressString)
       {
-        printf("Error recovering IP address from host name\n");
+        NSLog(@"Error recovering IP address from host name");
         return NO;
       }
     
@@ -72,7 +73,7 @@
     
     if (!gotAddress)
       {
-		printf("Error recovering sockaddr address from %s\n", [addressString UTF8String]);
+		NSLog(@"Error recovering sockaddr address from %s\n", [addressString UTF8String]);
         return NO;
       }
     
@@ -84,7 +85,7 @@
     
     if (!didRetrieveFlags)
       {
-        printf("Error. Could not recover network reachability flags\n");
+        NSLog(@"Error. Could not recover network reachability flags\n");
         return NO;
       }
     
