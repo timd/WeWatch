@@ -5,20 +5,15 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.9
-### Branch          :   WatchModalVC_tweaks
-### Branched from   :   master
+### Version         :   0.9a
+### Branch          :   removing-restkit
+### Branched from   :   WatchModalVC_tweaks
 ### Merged from     :   n/a
 ### Date            :   09/06/2011
 
 ===================================================
 
 # NOTES
-
-- appears to have fixed the compilation problems:
-  - installed RestKit as per instructions at http://liebke.github.com/restkit-github-client-example/
-  - created new scheme from scratch, then reimported ad-hoc distribution certificate
-  - created archive as per normal
 
 ### Completed:
 
@@ -45,6 +40,8 @@ http://www.wewatch.co.uk
 - moved watch & cancel buttons to toolbar
 - added generic content to text box
 - added 'tweet this' option
+- removed RestKit and replaced with ASIHTTPRequest
+- updated reachability code
 
 ### In progress:
 
@@ -93,7 +90,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/
 - TouchJSON
 - Aral Balkan's ActivityIndicator
 - QuartzCore
-- RestKit (http://restkit.org/ & https://github.com/twotoasters/RestKit)
 - SVProgressHUD (https://github.com/samvermette/SVProgressHUD)
 - ASIHTTPRequest (https://github.com/pokeb/asi-http-request/tree)
 
