@@ -8,7 +8,7 @@ http://www.wewatch.co.uk
 ### Version         :   0.9
 ### Branch          :   master
 ### Branched from   :   n/a
-### Merged from     :   implement_unwatch
+### Merged from     :   implement_tweeting
 ### Date            :   08/06/2011
 
 ===================================================
