@@ -131,7 +131,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [self dismissView];
     
 }
-
+/*
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
     // Delegate method for RestKit to handle responses
     
@@ -141,7 +141,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSLog(@"Response = %d", response.statusCode);
         NSLog(@"URL = %@", response.URL);
         NSLog(@"Request = %@", request.resourcePath);
-    /*
     
     NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
     // Set up the string with the username in it
@@ -153,12 +152,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
                           otherButtonTitles:nil];
     [alert show];
     [alert release];
-    
-    */
      
     [self dismissView];
     
 }
+*/
 
 #pragma mark -
 #pragma mark Custom methods
