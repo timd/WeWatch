@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.9
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   implement_tweeting
-### Date            :   08/06/2011
+### Branch          :   WatchModalVC_tweaks
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   09/06/2011
 
 ===================================================
 
@@ -42,6 +42,9 @@ http://www.wewatch.co.uk
 - implemented autoupdating of views after watching programme
 - added basic HUB throbbers for reload in RootViewController
 - implemented api-based unwatch
+- moved watch & cancel buttons to toolbar
+- added generic content to text box
+- added 'tweet this' option
 
 ### In progress:
 

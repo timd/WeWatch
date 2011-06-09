@@ -67,6 +67,8 @@
 		22BB5AE71369D5D8004B299B /* upperBackgroundView.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE61369D5D8004B299B /* upperBackgroundView.png */; };
 		22BB5AEA1369D979004B299B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE81369D979004B299B /* Icon.png */; };
 		22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE91369D979004B299B /* Icon@2x.png */; };
+		22BF0BF013A0D419006B1961 /* cancelBarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BF0BEF13A0D419006B1961 /* cancelBarButton.png */; };
+		22BF0BF213A0D622006B1961 /* watchBarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BF0BF113A0D622006B1961 /* watchBarButton.png */; };
 		22D364171399290C00093989 /* button_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364161399290C00093989 /* button_bar.png */; };
 		22D3641A13992A2F00093989 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641913992A2F00093989 /* green_button.png */; };
 		22D3642013992C6500093989 /* WatchModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D3641E13992C6500093989 /* WatchModalViewController.m */; };
@@ -313,6 +315,8 @@
 		22BB5AE61369D5D8004B299B /* upperBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upperBackgroundView.png; sourceTree = "<group>"; };
 		22BB5AE81369D979004B299B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		22BB5AE91369D979004B299B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		22BF0BEF13A0D419006B1961 /* cancelBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBarButton.png; sourceTree = "<group>"; };
+		22BF0BF113A0D622006B1961 /* watchBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchBarButton.png; sourceTree = "<group>"; };
 		22D364161399290C00093989 /* button_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar.png; sourceTree = "<group>"; };
 		22D3641913992A2F00093989 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		22D3641D13992C6500093989 /* WatchModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchModalViewController.h; sourceTree = "<group>"; };
@@ -720,6 +724,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22BF0BF113A0D622006B1961 /* watchBarButton.png */,
+				22BF0BEF13A0D419006B1961 /* cancelBarButton.png */,
 				2272BC36139FBCCA00515CC7 /* refresh.png */,
 				2272BC38139FBD8E00515CC7 /* refresh@2x.png */,
 				22E081D6139CFC5B00D1099B /* twitter_logo_grey.png */,
@@ -1000,6 +1006,8 @@
 				2272BC39139FBD8E00515CC7 /* refresh@2x.png in Resources */,
 				2272BC3B139FBDA400515CC7 /* gear@2x.png in Resources */,
 				2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */,
+				22BF0BF013A0D419006B1961 /* cancelBarButton.png in Resources */,
+				22BF0BF213A0D622006B1961 /* watchBarButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

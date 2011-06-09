@@ -135,11 +135,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Action to handle flagging a programme as being watched, and setting a notification
     
-    //NSLog(@"Firing the watchProgramme action");
-    //NSLog(@"Tweet text = %@", tweetText.text);
-    //NSLog(@"Programme ID = %d", displayProgramme.programmeID);
-    //NSLog(@"Twitter user = %@", twitterUser);
-    
     // Check if we can see the network before we try and update anything
     Reachable *reachable = [[Reachable alloc] init];
     
@@ -166,6 +161,16 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // Fire off the didWatchProgramme message to the notification centre so that
         // the listening classes know that they need to refresh their data
         [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
+        
+        // Send tweet if the switch is set
+        
+        NSLog(@"*** Checking whether to tweet");
+        NSLog(@"State of tweet switch is: %d", tweetSwitch.on);
+        if (tweetSwitch.on) {
+            // tweetSwitch is set on
+            [twitterEngine sendUpdate:tweetText.text];
+            NSLog(@"*** Tweet sent!");
+        }
         
         //[self dismissView];
         
@@ -227,7 +232,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [timeLabel release];
     [durationLabel release];
     [programmeImage release];
-    [watchingFlag release];
+    [tweetText release];
+    [reminderSwitch release];
+    [tweetSwitch release];
     
     [super dealloc];
 }
@@ -239,6 +246,25 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+#pragma mark -
+#pragma mark TextViewDelegate methods
+
+- (void)textViewDidChange:(UITextView *)textView {
+    int maxChars = 140;
+    int charCount = [textView.text length];
+    int charsLeft = maxChars - charCount;
+    
+    textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
+    
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    //tweetText.text = @"";
+    [tweetText setFont:[UIFont fontWithName:@"Helvetica" size:15.0f]];
+    tweetText.textColor = [UIColor blackColor];
+}
+
 
 #pragma mark - View lifecycle
 
@@ -265,9 +291,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Set the image view to display the image that was passed in
     [programmeImage setImage:providedProgrammeImage];
-    
-    NSLog(@"The modal view has finished loading!");
 
+    // Set up the text for the tweet box
+    NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
+    tweetText.text = defaultTweetText;
+    
 }
 
 - (void)viewDidUnload
@@ -282,5 +310,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

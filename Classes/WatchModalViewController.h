@@ -11,6 +11,7 @@
 #import <RestKit/RestKit.h>
 #import "SA_OAuthTwitterController.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "MGTwitterEngine.h"
 
 @class Programme;
 
@@ -22,9 +23,10 @@
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *durationLabel;
     IBOutlet UIImageView *programmeImage;
-    IBOutlet UIImageView *watchingFlag;
     IBOutlet UITextView *tweetText;
     IBOutlet UISwitch *reminderSwitch;
+    IBOutlet UISwitch *tweetSwitch;
+    IBOutlet UILabel *textCount;
     
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

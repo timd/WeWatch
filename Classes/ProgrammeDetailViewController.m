@@ -375,6 +375,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 // Pass in the current Twitter user
                 [modalViewController setTwitterUser:[twitterEngine username]];
                 
+                // Pass in the current Twitter engine
+                [modalViewController setTwitterEngine:twitterEngine];
+                
                 // Present the modalViewController with a horizontal flip
                 [self presentModalViewController:modalViewController animated:YES];
                 [modalViewController release];
