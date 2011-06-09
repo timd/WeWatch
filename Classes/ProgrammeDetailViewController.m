@@ -426,31 +426,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 }
 
-- (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
-    // Delegate method for RestKit to handle responses
-    
-    //if ([response isOK]) {  
-    
-    NSLog(@"Response received");
-    NSLog(@"Response = %d", response.statusCode);
-    NSLog(@"URL = %@", response.URL);
-    NSLog(@"Request = %@", request.resourcePath);
-    
-    NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
-    // Set up the string with the username in it
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Watching..."
-                          message: messageString
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-    
-    //[self dismissView];
-    
-}
-
 // ASIHTTPRequest delegate methods
 
 - (void)requestFinished:(ASIHTTPRequest *)request
