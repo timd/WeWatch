@@ -12,10 +12,12 @@
 #import "SA_OAuthTwitterController.h"
 #import "SA_OAuthTwitterEngine.h"
 #import "MGTwitterEngine.h"
+#import "ASIHTTPRequest.h"
+
 
 @class Programme;
 
-@interface WatchModalViewController : UIViewController <UITextViewDelegate, RKRequestDelegate,SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate> {
+@interface WatchModalViewController : UIViewController <UITextViewDelegate, RKRequestDelegate,SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate> {
  
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
