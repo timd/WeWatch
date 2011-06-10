@@ -88,7 +88,7 @@
     }
     
 	// Set the title of the nav bar
-    self.title = @"WeWatch";
+    self.title = @"We Watch";
     
     // Set up a right-hand button on the nav bar
     UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
@@ -505,7 +505,7 @@
 
 -(void)didReceiveWatchProgrammeMessage {
     NSLog(@"*** RootViewController didReceiveWatchProgrammeMessage");
-    self.forceDataReload = YES;
+    //self.forceDataReload = YES;
 }
 
 -(void)didReceiveUnwatchProgrammeMessage {

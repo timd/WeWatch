@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Reachable.h"
 #import "GTMNSString+HTML.h"
+#import "SVProgressHUD.h"
 
 @implementation WatchModalViewController
 
@@ -109,6 +110,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSString *responseString = [request responseString];
     NSLog(@"ASIHTTPRequest Response received: %@", responseString);
     
+    [SVProgressHUD dismiss];
+    
     [self dismissView];
 }
 
@@ -163,7 +166,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 
 -(IBAction)dismissView {
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    //    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
@@ -197,8 +201,14 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSString *comment = [NSString stringWithFormat:@"intention[comment]=%@",encodedComment];
         NSString *username = [NSString stringWithFormat:@"username=%@", twitterUser];
         NSString *broadcast = [NSString stringWithFormat:@"intention[broadcast_id]=%@", programmeIDasNSNumber];
-        NSString *intention = @"intention[tweet]=0";
         
+        NSString *intention;
+        if (tweetSwitch.on) {
+            intention = @"intention[tweet]=1";
+        } else {
+            intention = @"intention[tweet]=0";
+        }
+
         NSString *queryString = [NSString stringWithFormat:@"%@&%@&%@&%@", comment, username, broadcast, intention];
 
         //        NSString *escapedQueryString = [queryString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -213,7 +223,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         [request setDelegate:self];
         [request setRequestMethod:@"POST"];
         [request startAsynchronous];
-        
         
         // Set up some temporary params to fire at the wewatch end
         // NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:programmeIDasNSNumber, @"intention[broadcast_id]", twitterUser, @"username", tweetText.text, @"intention[comment]", @"0", @"intention[tweet]", nil];
@@ -232,17 +241,21 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // Fire off the didWatchProgramme message to the notification centre so that
         // the listening classes know that they need to refresh their data
         [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
+
+        [SVProgressHUD showInView:self.view];
         
+/*        
         // Send tweet if the switch is set
-        
-        NSLog(@"*** Checking whether to tweet");
+
+         NSLog(@"*** Checking whether to tweet");
         NSLog(@"State of tweet switch is: %d", tweetSwitch.on);
         if (tweetSwitch.on) {
             // tweetSwitch is set on
             [twitterEngine sendUpdate:tweetText.text];
             NSLog(@"*** Tweet sent!");
+ 
         }
-        
+*/        
         //[self dismissView];
         
     } else {
@@ -322,7 +335,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 #pragma mark TextViewDelegate methods
 
 - (void)textViewDidChange:(UITextView *)textView {
-    int maxChars = 140;
+    tweetText.text = @"";
+    int maxChars = 100;
     int charCount = [textView.text length];
     int charsLeft = maxChars - charCount;
     
@@ -349,7 +363,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     tweetText.layer.backgroundColor = [[UIColor whiteColor] CGColor];
     tweetText.layer.borderColor = [[UIColor grayColor] CGColor];
-    tweetText.layer.cornerRadius = 8.0f;
+    //tweetText.layer.cornerRadius = 8.0f;
     tweetText.layer.borderWidth = 1.0f;
     tweetText.layer.masksToBounds = YES;
     
@@ -366,6 +380,14 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Set up the text for the tweet box
     NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
     tweetText.text = defaultTweetText;
+    
+    UIBarButtonItem *watchButton = [[UIBarButtonItem alloc] initWithTitle:@"Watch" 
+                                                                    style:UIBarButtonItemStylePlain 
+                                                                   target:self 
+                                                                   action:@selector(watchProgramme)];
+    self.navigationItem.rightBarButtonItem = watchButton;
+    [watchButton release];
+
     
 }
 

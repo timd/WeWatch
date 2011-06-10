@@ -33,7 +33,6 @@
     IBOutlet UIImageView *programmeImage;
     IBOutlet UILabel *watchersNamesLabel;
     IBOutlet UIImageView *watchingFlag;
-    IBOutlet UIButton *watchButton;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

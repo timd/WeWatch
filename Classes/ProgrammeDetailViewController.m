@@ -95,12 +95,12 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         watchingFlag.hidden = FALSE;
         
         // Set the text of the 'watch' button
-        [watchButton setTitle:@"Unwatch" forState:UIControlStateNormal];
+        self.navigationItem.rightBarButtonItem.title = @"Unwatch";
         
     } else {
         watchingFlag.hidden = TRUE;
         // Set the text of the 'watch' button
-        [watchButton setTitle:@"Watch" forState:UIControlStateNormal];
+        self.navigationItem.rightBarButtonItem.title = @"Watch";
     }
 
     // Set the programme image to the generic one, so that when the detail view loads
@@ -226,10 +226,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [watchingFlag release];
     watchingFlag = nil;
-    
-    [watchButton release];
-    watchButton = nil;
-
     
 }
 
@@ -379,7 +375,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 [modalViewController setTwitterEngine:twitterEngine];
                 
                 // Present the modalViewController with a horizontal flip
-                [self presentModalViewController:modalViewController animated:YES];
+                [self.navigationController pushViewController:modalViewController animated:YES];
+                //                [self presentModalViewController:modalViewController animated:YES];
                 [modalViewController release];
  
             }
