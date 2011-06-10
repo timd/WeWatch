@@ -11,7 +11,6 @@
 #import "PullRefreshTableViewController.h"
 #import "SA_OAuthTwitterController.h"
 #import "SA_OAuthTwitterEngine.h"
-#import <RestKit/RestKit.h>
 #import "Reachable.h"
 
 @class LoadPublicTimelineOperation;

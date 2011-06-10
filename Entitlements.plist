@@ -3,8 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>get-task-allow</key>
-	<true/>
-	<key>application-identifier</key>
-	<string>NQYHS44EZR.com.charismaticmegafauna.wewatch</string>
+	<false/>
 </dict>
 </plist>

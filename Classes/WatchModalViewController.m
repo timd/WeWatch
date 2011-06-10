@@ -9,6 +9,7 @@
 #import "WatchModalViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Reachable.h"
+#import "GTMNSString+HTML.h"
 
 @implementation WatchModalViewController
 
@@ -48,29 +49,37 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSDate *timeNow = [NSDate date];
     
     // Figure out the time for the programme
-    NSLog(@"Prog time = %@", programme.fullTime);
+    // NSLog(@"Prog time = %@", programme.fullTime);
 
-    // Fix the date colon issue
-    NSString *fixedDateString = [self applyTimezoneFixForDate:programme.fullTime];
-    NSLog(@"Fixed prog time = %@", fixedDateString);
     
     // Create a date formatter to create a date from the string
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
 
+    /*
+     
+     5 MIN SCHEDULE METHOD - NOT USED CURRENTLY
+
+     // Fix the date colon issue
+     // NSString *fixedDateString = [self applyTimezoneFixForDate:programme.fullTime];
+     // NSLog(@"Fixed prog time = %@", fixedDateString);
+
+     
     // Create the fireDateTime object, and release the formatter
-    NSDate* fireDateTime = [formatter dateFromString:fixedDateString];
-    [formatter release];
+    // NSDate* fireDateTime = [formatter dateFromString:fixedDateString];
+    // [formatter release];
     
-    NSLog(@"Actual prog time = %@", fireDateTime);
+    // NSLog(@"Actual prog time = %@", fireDateTime);
     
     // Create a time 5 mins before the prog start time
     // NSDate *fireTime = [fireDateTime addTimeInterval:(-(5*60))];
+     
+    */
     
     // Create a dummy time 10 secs in the future for testing purposes
     NSDate *fireTime = [timeNow dateByAddingTimeInterval:10];
-    NSLog(@"timeNow = %@", timeNow);
-    NSLog(@"fireDate = %@", fireTime);
+    //NSLog(@"timeNow = %@", timeNow);
+    //NSLog(@"fireDate = %@", fireTime);
     
     // Specify custom data for the notification
     NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
@@ -84,7 +93,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.applicationIconBadgeNumber = 1;
     
-    NSLog(@"Setting reminder");
+    //NSLog(@"Setting reminder");
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
     [localNotification release];
@@ -92,8 +101,37 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 }
 
 #pragma mark -
-#pragma mark RestKit delegate methods
+#pragma mark ASIHTTPRequest delegate methods
 
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    // Use when fetching text data
+    NSString *responseString = [request responseString];
+    NSLog(@"ASIHTTPRequest Response received: %@", responseString);
+    
+    [self dismissView];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+    NSLog(@"ASIHTTPRequest error: %@", error);
+    
+    NSString *messageString = [NSString stringWithFormat:@"Unfortunately something has gone wrong. The error code from WeWatch is %d. Please try again later.", error];
+    // Set up the string with the username in it
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Problem"
+                          message: messageString
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
+    
+    [self dismissView];
+    
+}
+/*
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response {  
     // Delegate method for RestKit to handle responses
     
@@ -103,7 +141,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSLog(@"Response = %d", response.statusCode);
         NSLog(@"URL = %@", response.URL);
         NSLog(@"Request = %@", request.resourcePath);
-    /*
     
     NSString *messageString = [NSString stringWithFormat:@"WeWatch message:%d", response.statusCode];
     // Set up the string with the username in it
@@ -115,12 +152,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
                           otherButtonTitles:nil];
     [alert show];
     [alert release];
-    
-    */
      
     [self dismissView];
     
 }
+*/
 
 #pragma mark -
 #pragma mark Custom methods
@@ -135,25 +171,55 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Action to handle flagging a programme as being watched, and setting a notification
     
-    //NSLog(@"Firing the watchProgramme action");
-    //NSLog(@"Tweet text = %@", tweetText.text);
-    //NSLog(@"Programme ID = %d", displayProgramme.programmeID);
-    //NSLog(@"Twitter user = %@", twitterUser);
-    
     // Check if we can see the network before we try and update anything
     Reachable *reachable = [[Reachable alloc] init];
     
     if ([reachable isReachable]) {
         NSLog(@"Huzzah, we can see the network!");
         
+        // Set up the URL of the WeWatch API
+        // Will be in the form
+        //
+        //      http://wewatch.co.uk/intentions.json?intention[comment]=comment&broadcast_id=XXXXX&username=NNNNNN&intention[comment]=tweetcontent&intention[tweet]=0
+        //
+        
         // Cast the programme id int into an NSNumber so it'll go into the dictionary
         NSNumber *programmeIDasNSNumber = [NSNumber numberWithInt:displayProgramme.programmeID];
+        
+        NSString *baseString = @"http://wewatch.co.uk/intentions.json?";
+        
+        
+        NSString * encodedComment = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)tweetText.text,
+                                                                                        NULL,
+                                                                                        (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                        kCFStringEncodingUTF8);
+        
+        NSString *comment = [NSString stringWithFormat:@"intention[comment]=%@",encodedComment];
+        NSString *username = [NSString stringWithFormat:@"username=%@", twitterUser];
+        NSString *broadcast = [NSString stringWithFormat:@"intention[broadcast_id]=%@", programmeIDasNSNumber];
+        NSString *intention = @"intention[tweet]=0";
+        
+        NSString *queryString = [NSString stringWithFormat:@"%@&%@&%@&%@", comment, username, broadcast, intention];
 
+        //        NSString *escapedQueryString = [queryString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString *fullURLString = [NSString stringWithFormat:@"%@%@", baseString, queryString];
+        
+        NSLog(@"Query = %@", queryString);
+        NSLog(@"URL = %@", fullURLString);
+        
+        NSURL *url = [NSURL URLWithString:fullURLString];
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        [request setDelegate:self];
+        [request setRequestMethod:@"POST"];
+        [request startAsynchronous];
+        
+        
         // Set up some temporary params to fire at the wewatch end
-        NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:programmeIDasNSNumber, @"intention[broadcast_id]", twitterUser, @"username", tweetText.text, @"intention[comment]", @"0", @"intention[tweet]", nil];
+        // NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:programmeIDasNSNumber, @"intention[broadcast_id]", twitterUser, @"username", tweetText.text, @"intention[comment]", @"0", @"intention[tweet]", nil];
         
         // Hit the wewatch server with a POST
-        [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
+        // [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
 
         // Get rid of the keyboard
         [tweetText resignFirstResponder];
@@ -166,6 +232,16 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // Fire off the didWatchProgramme message to the notification centre so that
         // the listening classes know that they need to refresh their data
         [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
+        
+        // Send tweet if the switch is set
+        
+        NSLog(@"*** Checking whether to tweet");
+        NSLog(@"State of tweet switch is: %d", tweetSwitch.on);
+        if (tweetSwitch.on) {
+            // tweetSwitch is set on
+            [twitterEngine sendUpdate:tweetText.text];
+            NSLog(@"*** Tweet sent!");
+        }
         
         //[self dismissView];
         
@@ -227,7 +303,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [timeLabel release];
     [durationLabel release];
     [programmeImage release];
-    [watchingFlag release];
+    [tweetText release];
+    [reminderSwitch release];
+    [tweetSwitch release];
     
     [super dealloc];
 }
@@ -239,6 +317,25 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Release any cached data, images, etc that aren't in use.
 }
+
+#pragma mark -
+#pragma mark TextViewDelegate methods
+
+- (void)textViewDidChange:(UITextView *)textView {
+    int maxChars = 140;
+    int charCount = [textView.text length];
+    int charsLeft = maxChars - charCount;
+    
+    textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
+    
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    //tweetText.text = @"";
+    [tweetText setFont:[UIFont fontWithName:@"Helvetica" size:15.0f]];
+    tweetText.textColor = [UIColor blackColor];
+}
+
 
 #pragma mark - View lifecycle
 
@@ -265,9 +362,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Set the image view to display the image that was passed in
     [programmeImage setImage:providedProgrammeImage];
-    
-    NSLog(@"The modal view has finished loading!");
 
+    // Set up the text for the tweet box
+    NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
+    tweetText.text = defaultTweetText;
+    
 }
 
 - (void)viewDidUnload
@@ -282,5 +381,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

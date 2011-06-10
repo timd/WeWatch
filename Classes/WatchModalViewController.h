@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Programme.h"
-#import <RestKit/RestKit.h>
 #import "SA_OAuthTwitterController.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "MGTwitterEngine.h"
+#import "ASIHTTPRequest.h"
+
 
 @class Programme;
 
-@interface WatchModalViewController : UIViewController <UITextViewDelegate, RKRequestDelegate,SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate> {
+@interface WatchModalViewController : UIViewController <UITextViewDelegate, SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate> {
  
     IBOutlet UILabel *titleLabel;
     IBOutlet UILabel *subtitleLabel;
@@ -22,9 +24,10 @@
     IBOutlet UILabel *timeLabel;
     IBOutlet UILabel *durationLabel;
     IBOutlet UIImageView *programmeImage;
-    IBOutlet UIImageView *watchingFlag;
     IBOutlet UITextView *tweetText;
     IBOutlet UISwitch *reminderSwitch;
+    IBOutlet UISwitch *tweetSwitch;
+    IBOutlet UILabel *textCount;
     
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

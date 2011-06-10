@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RestKit/RestKit.h>
+
+@class Reachability;
 
 @interface Reachable : NSObject {
     
+    Reachability* internetReachable;
+    Reachability* hostReachable;
 }
 
 -(BOOL)isReachable;
+-(BOOL)hostAvailable:(NSString *)theHost;
 
 @end
