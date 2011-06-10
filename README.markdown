@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.9a
-### Branch          :   removing-restkit
-### Branched from   :   WatchModalVC_tweaks
-### Merged from     :   n/a
-### Date            :   09/06/2011
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   removing-restkit
+### Date            :   10/06/2011
 
 ===================================================
 
