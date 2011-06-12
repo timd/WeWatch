@@ -321,6 +321,7 @@
     
     // Configure the programme blurb
     descriptionLabel.text = p.description;
+    descriptionLabel.backgroundColor = [UIColor clearColor];
     
     // Configure the channel
     channelLabel.text = [p channel];
@@ -374,7 +375,7 @@
     if ([p amWatching]) {
         cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
     }
-
+    
 }
 
 /*
