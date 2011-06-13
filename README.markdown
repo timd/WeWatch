@@ -46,6 +46,19 @@ http://www.wewatch.co.uk
 ### In progress:
 
 ### Todo:
+- fix watch/unwatch wording
+
+- Gowalla-style watch view
+- grey-out past programmes
+- lose empty timeslots in the tableview
+- cache images
+- add throbber to unwatch action
+- move main throbber to fixed location
+- add clock icon to watched programmes and link to unremind
+- send tweet via wewatch site
+
+- refresh RootViewController without hitting API after a 'watch programme'?
+
 - amend table methods so empty timeslots aren't displayed
 - implement tweeting
 - amend programme image load to cancel if detail view is removed
