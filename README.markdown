@@ -43,9 +43,10 @@ http://www.wewatch.co.uk
 - removed RestKit and replaced with ASIHTTPRequest
 - updated reachability code
 - lose empty timeslots in the tableview
+- moved throbber to top windpw
 
 ### In progress:
-- centre throbber in window
+=
 
 ### Todo:
 
