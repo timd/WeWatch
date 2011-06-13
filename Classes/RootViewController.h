@@ -33,9 +33,13 @@
     // ivar to hold flag to force data reload
     BOOL forceDataReload;
     
+    NSMutableArray *scheduleArray;
+    NSArray *cleanScheduleArray;
+    NSMutableArray *sectionTitlesArray;
+    
 }
 
-@property (nonatomic, retain) NSArray *scheduleArray;
+@property (nonatomic, retain) NSMutableArray *scheduleArray;
 @property (nonatomic, retain) NSArray *cleanScheduleArray;
 @property (nonatomic, retain) LoadPublicTimelineOperation *loadPublicTimelineOperation;
 

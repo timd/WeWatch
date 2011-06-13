@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.9a
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   removing-restkit
-### Date            :   10/06/2011
+### Version         :   0.91
+### Branch          :   gowalla_watch
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   13/06/2011
 
 ===================================================
 
@@ -42,6 +42,7 @@ http://www.wewatch.co.uk
 - added 'tweet this' option
 - removed RestKit and replaced with ASIHTTPRequest
 - updated reachability code
+- lose empty timeslots in the tableview
 
 ### In progress:
 
@@ -50,7 +51,7 @@ http://www.wewatch.co.uk
 
 - Gowalla-style watch view
 - grey-out past programmes
-- lose empty timeslots in the tableview
+
 - cache images
 - add throbber to unwatch action
 - move main throbber to fixed location
