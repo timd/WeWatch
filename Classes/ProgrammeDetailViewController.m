@@ -95,12 +95,13 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         watchingFlag.hidden = FALSE;
         
         // Set the text of the 'watch' button
-        self.navigationItem.rightBarButtonItem.title = @"Unwatch";
+        watchButtonLabel.text = @"Unwatch";
         
     } else {
         watchingFlag.hidden = TRUE;
         // Set the text of the 'watch' button
-        self.navigationItem.rightBarButtonItem.title = @"Watch";
+        watchButtonLabel.text = @"Watch";
+
     }
 
     // Set the programme image to the generic one, so that when the detail view loads

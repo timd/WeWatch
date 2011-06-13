@@ -114,7 +114,7 @@
         // If the network's available, then load the timeline
         
         //NSLog(@"Twitter engine = %@", _engine);
-        //NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
+        NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
         
         //NSLog(@"Reachable");
         //NSLog(@"Twitter name = %@", [_engine username]);
@@ -128,7 +128,7 @@
         
         // Check if there's a valid Twitter name; if so, set the twitterName ivar
         if ([_engine username]) {
-            //NSLog(@"RootViewController: twitter name = %@", [_engine username]);
+            NSLog(@"RootViewController: twitter name = %@", [_engine username]);
         } else {
             //NSLog(@"Can't retrieve twitter name");
         }
@@ -209,7 +209,14 @@
 #pragma mark Throbber methods
 
 - (IBAction)showThrobber {
-   	[SVProgressHUD showInView:self.view];
+    throbberView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [throbberView setBackgroundColor:[UIColor blackColor]];
+    [throbberView setAlpha:0.5f];
+    [throbberView setTag:101];
+
+    [self.view addSubview:throbberView];
+    
+   	[SVProgressHUD showInView:throbberView];
 }
 
 - (IBAction)showThrobberWithStatus {
@@ -217,7 +224,10 @@
 }
 
 - (IBAction)dismissThrobber {
+    NSLog(@"Calling dismissThrobber");
 	[SVProgressHUD dismiss];
+    [throbberView removeFromSuperview];
+    
 }
 
 - (IBAction)dismissThrobberWithSuccess{
@@ -507,7 +517,10 @@
 	[self.tableView reloadData];
     
     // Stop any running throbbers
-    [SVProgressHUD dismiss];
+    if (throbberView) {
+        [self dismissThrobber];
+    }
+    //[SVProgressHUD dismiss];
     
 }
 

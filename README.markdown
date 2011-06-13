@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.91
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   empty_timeslots
+### Version         :   0.92
+### Branch          :   move_throbber
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   13/06/2011
 
 ===================================================
@@ -45,13 +45,13 @@ http://www.wewatch.co.uk
 - lose empty timeslots in the tableview
 
 ### In progress:
+- centre throbber in window
 
 ### Todo:
 - fix watch/unwatch wording
 
 - Gowalla-style watch view
 - grey-out past programmes
-
 - cache images
 - add throbber to unwatch action
 - move main throbber to fixed location
