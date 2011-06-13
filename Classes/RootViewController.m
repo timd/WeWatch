@@ -13,6 +13,7 @@
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 #import "SettingsModalViewController.h"
+#import "ModalThrobberViewController.h"
 #import "SVProgressHUD.h"
 
 @implementation RootViewController
@@ -209,33 +210,27 @@
 #pragma mark Throbber methods
 
 - (IBAction)showThrobber {
-    throbberView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [throbberView setBackgroundColor:[UIColor blackColor]];
-    [throbberView setAlpha:0.5f];
-    [throbberView setTag:101];
-
-    [self.view addSubview:throbberView];
     
-   	[SVProgressHUD showInView:throbberView];
+    // Get main window reference
+    UIWindow* mainWindow = (((WeWatchAppDelegate*) [UIApplication sharedApplication].delegate).window);
+    
+    // Create a full-screen view
+    throbberView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    
+    throbberView.backgroundColor = [UIColor whiteColor];
+    throbberView.alpha = 0.5f;
+    
+    [SVProgressHUD showInView:throbberView status:@"Loading..."];
+    
+    [mainWindow addSubview:throbberView];
 }
 
-- (IBAction)showThrobberWithStatus {
-    // TODO: implement
-}
 
 - (IBAction)dismissThrobber {
     NSLog(@"Calling dismissThrobber");
-	[SVProgressHUD dismiss];
+    //	[SVProgressHUD dismiss];
     [throbberView removeFromSuperview];
     
-}
-
-- (IBAction)dismissThrobberWithSuccess{
-    // TODO: implement    
-}
-
-- (IBAction)dismissThrobberWithError {
-    // TODO: implement    
 }
 
 
@@ -516,11 +511,11 @@
     // Force a table reload
 	[self.tableView reloadData];
     
-    // Stop any running throbbers
     if (throbberView) {
+        [SVProgressHUD dismiss];
         [self dismissThrobber];
     }
-    //[SVProgressHUD dismiss];
+    
     
 }
 
@@ -561,9 +556,11 @@
     if ([reachable isReachable]) {
         
         NSLog(@"Checking - the username is %@", [_engine username]);
-        
+
+        // Show the modal throbber
         [self showThrobber];
-        
+         
+        // Fire off the loadPublicTimeline
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
         self.loadPublicTimelineOperation.delegate = self;
         //self.loadPublicTimelineOperation.twitterName = [_engine username];

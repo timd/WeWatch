@@ -45,6 +45,9 @@
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
 		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
+		226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */; };
+		226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */; };
+		226A74FB13A691E400F6E63C /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */; };
 		2272BBDD139F90BD00515CC7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */; };
 		2272BBDE139F90BD00515CC7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BBDC139F90BD00515CC7 /* SVProgressHUD.m */; };
 		2272BC28139FAA6300515CC7 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC15139FAA6300515CC7 /* ASIAuthenticationDialog.m */; };
@@ -55,7 +58,6 @@
 		2272BC2D139FAA6300515CC7 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC20139FAA6300515CC7 /* ASIHTTPRequest.m */; };
 		2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC24139FAA6300515CC7 /* ASIInputStream.m */; };
 		2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC26139FAA6300515CC7 /* ASINetworkQueue.m */; };
-		2272BC35139FAB1A00515CC7 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */; };
 		2272BC37139FBCCA00515CC7 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2272BC36139FBCCA00515CC7 /* refresh.png */; };
 		2272BC39139FBD8E00515CC7 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2272BC38139FBD8E00515CC7 /* refresh@2x.png */; };
 		2272BC3B139FBDA400515CC7 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2272BC3A139FBDA400515CC7 /* gear@2x.png */; };
@@ -190,6 +192,10 @@
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
 		2269946C139FCD1D00DC74CB /* Buglist.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buglist.markdown; sourceTree = "<group>"; };
+		226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalThrobberViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.h; sourceTree = "<group>"; };
+		226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalThrobberViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.m; sourceTree = "<group>"; };
+		226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ModalThrobberViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.xib; sourceTree = "<group>"; };
+		226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		226B4B76139BDBC800BBBB31 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		226B4B77139BDBC800BBBB31 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -314,7 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2272BC35139FAB1A00515CC7 /* libz.1.2.3.dylib in Frameworks */,
+				226A74FB13A691E400F6E63C /* libz.1.2.3.dylib in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */,
 				22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */,
@@ -337,6 +343,8 @@
 				22BB5ACF1369BA63004B299B /* Programme.m */,
 				22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */,
 				22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */,
+				226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */,
+				226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* WeWatchAppDelegate.h */,
@@ -540,6 +548,7 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */,
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
 				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
 				2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */,
@@ -585,6 +594,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */,
 				22D65AF113A1202D00B92D82 /* Entitlements.plist */,
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
@@ -831,6 +841,7 @@
 				2201E07A13A61B0A000085FC /* BBCFour.png in Resources */,
 				2201E07B13A61B0A000085FC /* BBCHD.png in Resources */,
 				2201E07C13A61B0A000085FC /* Channel4.png in Resources */,
+				226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,6 +904,7 @@
 				2272BC2D139FAA6300515CC7 /* ASIHTTPRequest.m in Sources */,
 				2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */,
 				2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */,
+				226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

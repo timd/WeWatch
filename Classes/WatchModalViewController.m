@@ -338,7 +338,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 #pragma mark TextViewDelegate methods
 
 - (void)textViewDidChange:(UITextView *)textView {
-    tweetText.text = @"";
+    //tweetText.text = @"";
     int maxChars = 100;
     int charCount = [textView.text length];
     int charsLeft = maxChars - charCount;
