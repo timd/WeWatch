@@ -458,14 +458,14 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Present the modalViewController with a horizontal flip
     [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
-
+    
 }
 
 -(void)showModalWatchPage{
     
+
     // Create the Watch modal view controller
-    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
-    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"NewWatchModalViewController" bundle:nil];
     
     // Pass in the Programme to the modalViewController
     [modalViewController setDisplayProgramme:displayProgramme];

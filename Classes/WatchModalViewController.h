@@ -25,9 +25,10 @@
     IBOutlet UILabel *durationLabel;
     IBOutlet UIImageView *programmeImage;
     IBOutlet UITextView *tweetText;
-    IBOutlet UISwitch *reminderSwitch;
-    IBOutlet UISwitch *tweetSwitch;
+    IBOutlet UIImageView *reminderButton;
+    IBOutlet UIImageView *tweetButton;
     IBOutlet UILabel *textCount;
+    IBOutlet UIImageView *channelLogo;
     
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

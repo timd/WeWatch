@@ -206,11 +206,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSString *broadcast = [NSString stringWithFormat:@"intention[broadcast_id]=%@", programmeIDasNSNumber];
         
         NSString *intention;
-        if (tweetSwitch.on) {
-            intention = @"intention[tweet]=1";
-        } else {
-            intention = @"intention[tweet]=0";
-        }
+        //        if (tweetSwitch.on) {
+        //            intention = @"intention[tweet]=1";
+        //        } else {
+                    intention = @"intention[tweet]=0";
+        //        }
 
         NSString *queryString = [NSString stringWithFormat:@"%@&%@&%@&%@", comment, username, broadcast, intention];
 
@@ -237,9 +237,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         [tweetText resignFirstResponder];
         
         // Fire the createNotification action if the switch is set
-        if (reminderSwitch.on) {
-            [self setNotification:[self displayProgramme]];
-        }
+        //        if (reminderSwitch.on) {
+        //            [self setNotification:[self displayProgramme]];
+        //        }
         
         // Fire off the didWatchProgramme message to the notification centre so that
         // the listening classes know that they need to refresh their data
@@ -320,8 +320,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [durationLabel release];
     [programmeImage release];
     [tweetText release];
-    [reminderSwitch release];
-    [tweetSwitch release];
+    [reminderButton release];
+    [tweetButton release];
     
     [super dealloc];
 }
@@ -364,21 +364,25 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Set up the tweet textArea
     [tweetText setDelegate:self];
     
-    tweetText.layer.backgroundColor = [[UIColor whiteColor] CGColor];
-    tweetText.layer.borderColor = [[UIColor grayColor] CGColor];
-    //tweetText.layer.cornerRadius = 8.0f;
-    tweetText.layer.borderWidth = 1.0f;
-    tweetText.layer.masksToBounds = YES;
+    //    tweetText.layer.backgroundColor = [[UIColor whiteColor] CGColor];
+    //    tweetText.layer.borderColor = [[UIColor grayColor] CGColor];
+    //    tweetText.layer.cornerRadius = 8.0f;
+    //    tweetText.layer.borderWidth = 1.0f;
+    //    tweetText.layer.masksToBounds = YES;
     
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
-    [subtitleLabel setText:[displayProgramme subtitle]];
-    [channelLabel setText:[displayProgramme channel]];
-    [timeLabel setText:[displayProgramme time]];
-    [durationLabel setText:[displayProgramme duration]];
+    //    [subtitleLabel setText:[displayProgramme subtitle]];
+    //    [channelLabel setText:[displayProgramme channel]];
+    //    [timeLabel setText:[displayProgramme time]];
+    //    [durationLabel setText:[displayProgramme duration]];
+    
+    // Set up the channel logo
+    [channelLogo setImage:[UIImage imageWithContentsOfFile:@"BBCOne.png"]];
+     
     
     // Set the image view to display the image that was passed in
-    [programmeImage setImage:providedProgrammeImage];
+    //    [programmeImage setImage:providedProgrammeImage];
 
     // Set up the text for the tweet box
     NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
