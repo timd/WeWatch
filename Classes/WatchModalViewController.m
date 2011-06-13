@@ -199,6 +199,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
                                                                                         kCFStringEncodingUTF8);
         
         NSString *comment = [NSString stringWithFormat:@"intention[comment]=%@",encodedComment];
+        
+        [encodedComment release];
+        
         NSString *username = [NSString stringWithFormat:@"username=%@", twitterUser];
         NSString *broadcast = [NSString stringWithFormat:@"intention[broadcast_id]=%@", programmeIDasNSNumber];
         

@@ -331,6 +331,7 @@
     }
                                   
     NSLog(@"Finished parseSchedules");    
+    [tempScheduleArray release];
 
     // Add the timeslots array into the FIRST element of the cleanScheduleArray
     [cleanScheduleArray insertObject:timeslots atIndex:0];

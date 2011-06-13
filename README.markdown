@@ -42,6 +42,7 @@ http://www.wewatch.co.uk
 - added 'tweet this' option
 - removed RestKit and replaced with ASIHTTPRequest
 - updated reachability code
+- lose empty timeslots in the tableview
 
 ### In progress:
 
@@ -50,7 +51,7 @@ http://www.wewatch.co.uk
 
 - Gowalla-style watch view
 - grey-out past programmes
-- lose empty timeslots in the tableview
+
 - cache images
 - add throbber to unwatch action
 - move main throbber to fixed location
