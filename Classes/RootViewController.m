@@ -113,11 +113,11 @@
         
         // If the network's available, then load the timeline
         
-        NSLog(@"Twitter engine = %@", _engine);
-        NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
+        //NSLog(@"Twitter engine = %@", _engine);
+        //NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
         
-        NSLog(@"Reachable");
-        NSLog(@"Twitter name = %@", [_engine username]);
+        //NSLog(@"Reachable");
+        //NSLog(@"Twitter name = %@", [_engine username]);
         
         // Start the throbber going
         [self showThrobber];
@@ -128,20 +128,20 @@
         
         // Check if there's a valid Twitter name; if so, set the twitterName ivar
         if ([_engine username]) {
-            NSLog(@"RootViewController: twitter name = %@", [_engine username]);
+            //NSLog(@"RootViewController: twitter name = %@", [_engine username]);
         } else {
-            NSLog(@"Can't retrieve twitter name");
+            //NSLog(@"Can't retrieve twitter name");
         }
         
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
         [operationQueue addOperation:self.loadPublicTimelineOperation];
         
-        NSLog(@"RootViewController::OPERATION QUEUE = %@", operationQueue);
+        //NSLog(@"RootViewController::OPERATION QUEUE = %@", operationQueue);
         
     } else {
         
         // The network's not available, so fail with a message
-        NSLog(@"Not Reachable");
+        //NSLog(@"Not Reachable");
         
         NSString *alertString = [NSString stringWithFormat:@"I couldn't reach WeWatch to retrieve the programme information.\n Please try later..."];
         
@@ -236,31 +236,32 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     // Number of sections is dependent on the number of timeslot arrays in the cleanScheduleArray
-    
-    //NSLog(@"There are %d sections in scheduleArray", [scheduleArray count]);
+    //NSLog(@"There are %d sections in scheduleArray", [self.scheduleArray count]);
     return [scheduleArray count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+
     // This depends on which section we're dealing with (numbered from 0 to n)
     // The rows come from the number of elements in the nth array in the programmeSchedule array
     
     // Get the nth array from programmeSchedule
     NSArray *nthElement = [scheduleArray objectAtIndex:section];
     
+    //NSLog(@"There are %d elements in section %d", [nthElement count], section);
+    
+    //NSLog(@"nthElement = %@", nthElement);
+    
     // Count how many elements are in this nth array, and return it
     return [nthElement count];    
-    
-    //return [self.scheduleArray count];
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     // Check for a reusable cell first, and use that if it exists
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgrammeCell"];
     
@@ -275,14 +276,10 @@
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     
     // the section is the nth array, where n is the section number
-    NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
-    
-    // Sort the nthArray so that it's in channel order
-    //NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"Programme.channel" ascending:YES];
-    //[nthMutableArray sortUsingDescriptors:[NSArray arrayWithObject:sorter]];
+    NSArray *nthArray = [scheduleArray objectAtIndex:indexPath.section];
     
     // and the programme is the mth element in the nth array, where m is the row
-    Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
+    Programme *p = [nthArray objectAtIndex:indexPath.row];
     //NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
     //NSLog(@"Programme title = %@", p.title);
     //NSLog(@"Programme timeslot = %d", p.timeSlot);
@@ -362,11 +359,13 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"%@", [HEADING_ARRAY objectAtIndex:section]];
+
+    // Check the timeslot value from the relevant element of the sectionTitlesArray
+    return [NSString stringWithFormat:@"%@pm", [sectionTitlesArray objectAtIndex:section]];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     // Grab the current cell for row at index path
     NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
     Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
@@ -484,12 +483,27 @@
 #pragma mark -
 #pragma mark LoadPublicTimelineOperationDelegate methods
 
--(void)loadPublicTimelineOperation:(NSOperation *)theOperation publicTimelineDidLoad:(NSArray *)thePublicTimeline
+-(void)loadPublicTimelineOperation:(NSOperation *)theOperation publicTimelineDidLoad:(NSMutableArray *)thePublicTimeline
 {
-	//NSLog(@"Tweets: %@", thePublicTimeline);
-	
-	self.scheduleArray = thePublicTimeline;
-	
+    self.scheduleArray = thePublicTimeline;
+
+    // Grab the first element of the sechedule array, which contains the section titles
+    NSArray *sectionTitles = [self.scheduleArray objectAtIndex:0];
+
+    // Create a set to get only the unique values
+    NSSet *sectionTitlesSet = [NSSet setWithArray:sectionTitles];
+    
+    // Now create a temp array from the set and sort it
+    NSMutableArray *tempSortedArray = [[NSMutableArray alloc] initWithArray:[sectionTitlesSet allObjects]];
+    [tempSortedArray sortUsingSelector:@selector(compare:)];
+    
+    // Now assign tempSortedArray to sectionTitleSsArray ivar
+    sectionTitlesArray = tempSortedArray;
+    
+    // Remove the first object of the schedule array
+    [self.scheduleArray removeObjectAtIndex:0];
+    
+    // Force a table reload
 	[self.tableView reloadData];
     
     // Stop any running throbbers
@@ -506,7 +520,7 @@
 
 -(void)didReceiveWatchProgrammeMessage {
     NSLog(@"*** RootViewController didReceiveWatchProgrammeMessage");
-    //self.forceDataReload = YES;
+    self.forceDataReload = YES;
 }
 
 -(void)didReceiveUnwatchProgrammeMessage {

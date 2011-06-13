@@ -11,6 +11,13 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2201E06F13A610BA000085FC /* NewWatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */; };
+		2201E07713A61B0A000085FC /* BBCOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07113A61B0A000085FC /* BBCOne.png */; };
+		2201E07813A61B0A000085FC /* BBCTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07213A61B0A000085FC /* BBCTwo.png */; };
+		2201E07913A61B0A000085FC /* BBCThree.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07313A61B0A000085FC /* BBCThree.png */; };
+		2201E07A13A61B0A000085FC /* BBCFour.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07413A61B0A000085FC /* BBCFour.png */; };
+		2201E07B13A61B0A000085FC /* BBCHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07513A61B0A000085FC /* BBCHD.png */; };
+		2201E07C13A61B0A000085FC /* Channel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07613A61B0A000085FC /* Channel4.png */; };
 		2217899F13742140009656A7 /* JSON example source in Resources */ = {isa = PBXBuildFile; fileRef = 2217899E13742140009656A7 /* JSON example source */; };
 		2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231827B136ADA730027F597 /* PullRefreshTableViewController.m */; };
 		2231827E136ADA870027F597 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2231827D136ADA870027F597 /* arrow.png */; };
@@ -112,6 +119,13 @@
 		1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = WeWatchAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		1D6058910D05DD3D006BFB54 /* WeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewWatchModalViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/NewWatchModalViewController.xib; sourceTree = "<group>"; };
+		2201E07113A61B0A000085FC /* BBCOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCOne.png; sourceTree = "<group>"; };
+		2201E07213A61B0A000085FC /* BBCTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCTwo.png; sourceTree = "<group>"; };
+		2201E07313A61B0A000085FC /* BBCThree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCThree.png; sourceTree = "<group>"; };
+		2201E07413A61B0A000085FC /* BBCFour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCFour.png; sourceTree = "<group>"; };
+		2201E07513A61B0A000085FC /* BBCHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCHD.png; sourceTree = "<group>"; };
+		2201E07613A61B0A000085FC /* Channel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Channel4.png; sourceTree = "<group>"; };
 		2217899E13742140009656A7 /* JSON example source */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON example source"; sourceTree = "<group>"; };
 		2231827A136ADA730027F597 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		2231827B136ADA730027F597 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
@@ -528,6 +542,7 @@
 			children = (
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
 				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
+				2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */,
 				22BB5AD11369BA71004B299B /* BaseCell.xib */,
 				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -600,6 +615,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2201E07113A61B0A000085FC /* BBCOne.png */,
+				2201E07213A61B0A000085FC /* BBCTwo.png */,
+				2201E07313A61B0A000085FC /* BBCThree.png */,
+				2201E07413A61B0A000085FC /* BBCFour.png */,
+				2201E07513A61B0A000085FC /* BBCHD.png */,
+				2201E07613A61B0A000085FC /* Channel4.png */,
 				22BF0BF113A0D622006B1961 /* watchBarButton.png */,
 				22BF0BEF13A0D419006B1961 /* cancelBarButton.png */,
 				2272BC36139FBCCA00515CC7 /* refresh.png */,
@@ -803,6 +824,13 @@
 				22BF0BF013A0D419006B1961 /* cancelBarButton.png in Resources */,
 				22BF0BF213A0D622006B1961 /* watchBarButton.png in Resources */,
 				22D65AF213A1202D00B92D82 /* Entitlements.plist in Resources */,
+				2201E06F13A610BA000085FC /* NewWatchModalViewController.xib in Resources */,
+				2201E07713A61B0A000085FC /* BBCOne.png in Resources */,
+				2201E07813A61B0A000085FC /* BBCTwo.png in Resources */,
+				2201E07913A61B0A000085FC /* BBCThree.png in Resources */,
+				2201E07A13A61B0A000085FC /* BBCFour.png in Resources */,
+				2201E07B13A61B0A000085FC /* BBCHD.png in Resources */,
+				2201E07C13A61B0A000085FC /* Channel4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

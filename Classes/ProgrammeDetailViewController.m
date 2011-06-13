@@ -317,6 +317,37 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 [self presentModalViewController:OAuthController animated:YES];
             }
             NSLog(@"Finished with oAuth");
+
+            // Twitter login is now complete, so show the modalWatch page
+            
+            NSLog(@"Twitter name = %@", [twitterEngine username]);
+            
+            // [self showModalWatchPage];
+            
+            /*
+            // Create the Watch modal view controller
+            WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
+            modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+            
+            // Pass in the Programme to the modalViewController
+            [modalViewController setDisplayProgramme:displayProgramme];
+            
+            // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
+            [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+            
+            // Pass in the current Twitter user
+            [modalViewController setTwitterUser:[twitterEngine username]];
+            
+            // Pass in the current Twitter engine
+            [modalViewController setTwitterEngine:twitterEngine];
+            
+            // Present the modalViewController with a horizontal flip
+            [self.navigationController pushViewController:modalViewController animated:YES];
+            //                [self presentModalViewController:modalViewController animated:YES];
+            [modalViewController release];
+             
+            */
+
  
         } else {
             
@@ -358,6 +389,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 
             } else {
                 
+                /*
+                
                 // Create the Watch modal view controller
                 WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
                 modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -378,6 +411,10 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 [self.navigationController pushViewController:modalViewController animated:YES];
                 //                [self presentModalViewController:modalViewController animated:YES];
                 [modalViewController release];
+                 
+                */
+                
+                [self showModalWatchPage];
  
             }
 
@@ -421,6 +458,31 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
 
+}
+
+-(void)showModalWatchPage{
+    
+    // Create the Watch modal view controller
+    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
+    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    // Pass in the Programme to the modalViewController
+    [modalViewController setDisplayProgramme:displayProgramme];
+    
+    // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
+    [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
+    
+    // Pass in the current Twitter user
+    [modalViewController setTwitterUser:[twitterEngine username]];
+    
+    // Pass in the current Twitter engine
+    [modalViewController setTwitterEngine:twitterEngine];
+    
+    // Present the modalViewController with a horizontal flip
+    [self.navigationController pushViewController:modalViewController animated:YES];
+    //                [self presentModalViewController:modalViewController animated:YES];
+    [modalViewController release];
+    
 }
 
 // ASIHTTPRequest delegate methods

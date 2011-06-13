@@ -93,6 +93,10 @@
     NSMutableArray *timeslot8 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     NSMutableArray *timeslot9 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
     NSMutableArray *timeslot10 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
+    NSMutableArray *timeslot11 = [[[NSMutableArray alloc] initWithObjects: nil] autorelease];
+    
+    // Create an array to hold the timeslots that get retrieved
+    NSMutableArray *timeslots = [[[NSMutableArray alloc] initWithObjects:nil] autorelease];
     
     // Display the tweets that we've got
     // NSLog(@"Raw schedules = %@", rawData);
@@ -190,7 +194,6 @@
             NSString *startTimeFromJSON = [currentProgrammesFromJSON objectForKey:@"start"];
             
             NSInteger timeSlot = [[startTimeFromJSON substringWithRange:NSMakeRange(11, 2)] intValue] - 12;
-            //NSLog(@"Timeslot = %d", timeSlot);
             
             NSString *startMin = [startTimeFromJSON substringWithRange:NSMakeRange(14, 2)];
             NSString *startTime = [NSString stringWithFormat:@"%@:%@pm",[NSString stringWithFormat:@"%d", timeSlot], startMin]; 
@@ -268,18 +271,45 @@
             if (timeSlot == 6) {
                 // put the programme object in array 6
                 [timeslot6 addObject:tempProgramme];
+                
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+                
             } else if (timeSlot == 7) {
                 // put the programme object in array 7
                 [timeslot7 addObject:tempProgramme];
+                
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+
             } else if (timeSlot == 8) {
                 // put the programme object in array 8
                 [timeslot8 addObject:tempProgramme];
+                
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+
             } else if (timeSlot == 9) {
                 // put the programme object in array 9
                 [timeslot9 addObject:tempProgramme];
-            } else {
+                
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+
+            } else if (timeSlot == 10) {
                 // must be 10, put the programme object in array 10
                 [timeslot10 addObject:tempProgramme];
+                
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+
+            } else {
+                // must be 11, put the programme object in array 11
+                [timeslot11 addObject:tempProgramme];
+               
+                // Add a timeslot into the timeslots array
+                [timeslots addObject:[NSNumber numberWithInt:timeSlot]];
+                
             }
             
             // Release the tempProgramme object, we don't need it any more
@@ -288,17 +318,36 @@
         }
     
     // Load up the timeslot arrays into the schedule array ready for return
-    NSArray *cleanScheduleArray = [[[NSMutableArray alloc] initWithObjects:timeslot6, timeslot7, timeslot8, timeslot9, timeslot10, nil] autorelease];
     
+    // Create a temporary array of all the timeslot arrays
+    NSArray *tempScheduleArray = [[NSMutableArray alloc] initWithObjects:timeslot6, timeslot7, timeslot8, timeslot9, timeslot10, timeslot11, nil];
+    NSMutableArray *cleanScheduleArray = [[[NSMutableArray alloc] init] autorelease];
+    
+    // Step across the tempScheduleArray and check if each one is empty. If it isn't, stuff it into the cleanScheduleArray
+    for (NSArray *element in tempScheduleArray) {
+        if ( !(element == nil || element.count == 0) ) {
+            [cleanScheduleArray addObject:element];
+        }
+    }
+                                  
     NSLog(@"Finished parseSchedules");    
 
+    // Add the timeslots array into the FIRST element of the cleanScheduleArray
+    [cleanScheduleArray insertObject:timeslots atIndex:0];
+    
     // Return the schedule array to the calling function
-    return cleanScheduleArray;
+    
+    // Cast from NSArray to NSMutableArray
+    NSMutableArray *returnArray = [NSMutableArray arrayWithArray:cleanScheduleArray];
+    return returnArray;
 
 }
 
 -(void)publicTimelineDidLoad:(NSArray *)publicTimeline
 {
+    
+    NSLog(@"LoadPublicTimelineOperation::publicTimelineDidLoad called");
+    
 	if (![self isCancelled])
 	{
 		[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
