@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.9a
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   removing-restkit
-### Date            :   10/06/2011
+### Version         :   0.91
+### Branch          :   gowalla_watch
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   13/06/2011
 
 ===================================================
 
