@@ -13,6 +13,12 @@ http://www.wewatch.co.uk
 
 ===================================================
 
+RELEASE NOTES
+
+### Build           :   0.93
+### Purpose         :   Beta testing via TestFlight
+
+===================================================
 # NOTES
 
 ### Completed:
