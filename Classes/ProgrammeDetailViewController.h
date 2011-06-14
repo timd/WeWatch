@@ -33,6 +33,7 @@
     IBOutlet UIImageView *programmeImage;
     IBOutlet UILabel *watchersNamesLabel;
     IBOutlet UIImageView *watchingFlag;
+    IBOutlet UILabel *watchButtonLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
@@ -70,5 +71,6 @@ extern NSString * const didUnwatchProgrammeNotification;
 -(void)didReceiveUnwatchProgrammeMessage;
 
 -(void)dismissCurrentView;
+-(void)alterWatchersNumberBy:(int)incValue;
 
 @end

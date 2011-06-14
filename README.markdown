@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.91
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   empty_timeslots
+### Version         :   0.92
+### Branch          :   move_throbber
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   13/06/2011
 
 ===================================================
@@ -43,36 +43,25 @@ http://www.wewatch.co.uk
 - removed RestKit and replaced with ASIHTTPRequest
 - updated reachability code
 - lose empty timeslots in the tableview
+- moved throbber to top windpw
 
 ### In progress:
+=
 
 ### Todo:
-- fix watch/unwatch wording
 
 - Gowalla-style watch view
 - grey-out past programmes
-
 - cache images
 - add throbber to unwatch action
-- move main throbber to fixed location
 - add clock icon to watched programmes and link to unremind
-- send tweet via wewatch site
-
 - refresh RootViewController without hitting API after a 'watch programme'?
-
-- amend table methods so empty timeslots aren't displayed
-- implement tweeting
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
 - amend display of friends names 
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
-- cleaning up title labels
 - update class diagrams
-- clean up Twitter login:
-  - add some narrative to explain what's going on
-  - handle failure to authenticate more gracefully
-- improve text handling in alert views
 
 ===================================================
 

@@ -37,6 +37,7 @@
     NSArray *cleanScheduleArray;
     NSMutableArray *sectionTitlesArray;
     
+    UIView *throbberView;   // ivar to hold throbber's full-screen view
 }
 
 @property (nonatomic, retain) NSMutableArray *scheduleArray;
@@ -57,12 +58,7 @@
 
 // Throbber methods
 - (IBAction)showThrobber;
-- (IBAction)showThrobberWithStatus;
 - (IBAction)dismissThrobber;
-- (IBAction)dismissThrobberWithSuccess;
-- (IBAction)dismissThrobberWithError;
-
-
 
 @end
 

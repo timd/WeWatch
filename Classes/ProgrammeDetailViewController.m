@@ -95,12 +95,13 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         watchingFlag.hidden = FALSE;
         
         // Set the text of the 'watch' button
-        self.navigationItem.rightBarButtonItem.title = @"Unwatch";
+        watchButtonLabel.text = @"Unwatch";
         
     } else {
         watchingFlag.hidden = TRUE;
         // Set the text of the 'watch' button
-        self.navigationItem.rightBarButtonItem.title = @"Watch";
+        watchButtonLabel.text = @"Watch";
+
     }
 
     // Set the programme image to the generic one, so that when the detail view loads
@@ -260,6 +261,19 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
+-(void)alterWatchersNumberBy:(int)incValue {
+
+    // Update the watchers total : grab the current watcher's text
+    int currentWatchers = [displayProgramme watchers];
+    NSLog(@"CURRENTLY WATCJING: %d", displayProgramme.watchers);
+    
+    // Increment the watchers number by 1
+    currentWatchers = currentWatchers + incValue;
+    
+    [displayProgramme setWatchers:currentWatchers];
+    NSLog(@"NOW WATCHIN: %d", displayProgramme.watchers);
+
+}
 
 #pragma mark -
 #pragma mark Notification methods
@@ -270,12 +284,19 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 -(void)didReceiveWatchProgrammeMessage {
     NSLog(@"*** ProgrammeDetailViewController didReceiveWatchProgrammeMessage");
+    
+    [self alterWatchersNumberBy:1];
+    
     self.forceDataReload = YES;
     [displayProgramme setAmWatching:YES];
 }
 
 -(void)didReceiveUnwatchProgrammeMessage {
-    // TODO: implement
+
+    if (displayProgramme.watchers != 0) {
+        [self alterWatchersNumberBy:-1];
+    }
+    
     NSLog(@"*** ProgrammeDetailViewController didReceiveUnwatchProgrammeMessage");
     [displayProgramme setAmWatching:NO];
 }
@@ -457,14 +478,14 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Present the modalViewController with a horizontal flip
     [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
-
+    
 }
 
 -(void)showModalWatchPage{
     
+
     // Create the Watch modal view controller
-    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
-    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"NewWatchModalViewController" bundle:nil];
     
     // Pass in the Programme to the modalViewController
     [modalViewController setDisplayProgramme:displayProgramme];

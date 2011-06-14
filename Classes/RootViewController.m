@@ -13,6 +13,7 @@
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 #import "SettingsModalViewController.h"
+#import "ModalThrobberViewController.h"
 #import "SVProgressHUD.h"
 
 @implementation RootViewController
@@ -114,7 +115,7 @@
         // If the network's available, then load the timeline
         
         //NSLog(@"Twitter engine = %@", _engine);
-        //NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
+        NSLog(@"Twitter auth status = %d", [_engine isAuthorized]);
         
         //NSLog(@"Reachable");
         //NSLog(@"Twitter name = %@", [_engine username]);
@@ -128,7 +129,7 @@
         
         // Check if there's a valid Twitter name; if so, set the twitterName ivar
         if ([_engine username]) {
-            //NSLog(@"RootViewController: twitter name = %@", [_engine username]);
+            NSLog(@"RootViewController: twitter name = %@", [_engine username]);
         } else {
             //NSLog(@"Can't retrieve twitter name");
         }
@@ -209,23 +210,27 @@
 #pragma mark Throbber methods
 
 - (IBAction)showThrobber {
-   	[SVProgressHUD showInView:self.view];
+    
+    // Get main window reference
+    UIWindow* mainWindow = (((WeWatchAppDelegate*) [UIApplication sharedApplication].delegate).window);
+    
+    // Create a full-screen view
+    throbberView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    
+    throbberView.backgroundColor = [UIColor whiteColor];
+    throbberView.alpha = 0.5f;
+    
+    [SVProgressHUD showInView:throbberView status:@"Loading..."];
+    
+    [mainWindow addSubview:throbberView];
 }
 
-- (IBAction)showThrobberWithStatus {
-    // TODO: implement
-}
 
 - (IBAction)dismissThrobber {
-	[SVProgressHUD dismiss];
-}
-
-- (IBAction)dismissThrobberWithSuccess{
-    // TODO: implement    
-}
-
-- (IBAction)dismissThrobberWithError {
-    // TODO: implement    
+    NSLog(@"Calling dismissThrobber");
+    //	[SVProgressHUD dismiss];
+    [throbberView removeFromSuperview];
+    
 }
 
 
@@ -506,8 +511,11 @@
     // Force a table reload
 	[self.tableView reloadData];
     
-    // Stop any running throbbers
-    [SVProgressHUD dismiss];
+    if (throbberView) {
+        [SVProgressHUD dismiss];
+        [self dismissThrobber];
+    }
+    
     
 }
 
@@ -548,9 +556,11 @@
     if ([reachable isReachable]) {
         
         NSLog(@"Checking - the username is %@", [_engine username]);
-        
+
+        // Show the modal throbber
         [self showThrobber];
-        
+         
+        // Fire off the loadPublicTimeline
         self.loadPublicTimelineOperation = [[LoadPublicTimelineOperation alloc] initWithTwitterName:[_engine username]];
         self.loadPublicTimelineOperation.delegate = self;
         //self.loadPublicTimelineOperation.twitterName = [_engine username];
