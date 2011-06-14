@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.92
-### Branch          :   move_throbber
-### Branched from   :   master
-### Merged from     :   n/a
-### Date            :   13/06/2011
+### Version         :   0.93
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   update_modal_watch
+### Date            :   14/06/2011
 
 ===================================================
 
@@ -44,14 +44,13 @@ http://www.wewatch.co.uk
 - updated reachability code
 - lose empty timeslots in the tableview
 - moved throbber to top windpw
+- Gowalla-style watch view
 
 ### In progress:
-=
+
 
 ### Todo:
 
-- Gowalla-style watch view
-- grey-out past programmes
 - cache images
 - add throbber to unwatch action
 - add clock icon to watched programmes and link to unremind
