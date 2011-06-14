@@ -25,8 +25,8 @@
     IBOutlet UILabel *durationLabel;
     IBOutlet UIImageView *programmeImage;
     IBOutlet UITextView *tweetText;
-    IBOutlet UIImageView *reminderButton;
-    IBOutlet UIImageView *tweetButton;
+    IBOutlet UIButton *reminderButton;
+    IBOutlet UIButton *tweetButton;
     IBOutlet UILabel *textCount;
     IBOutlet UIImageView *channelLogo;
     
@@ -38,6 +38,10 @@
     
     // ivar to hold Twitter username
     NSString *twitterUser;
+    
+    // ivars to hold tweet and schedule state
+    BOOL tweetState;
+    BOOL remindState;
 
 }
 

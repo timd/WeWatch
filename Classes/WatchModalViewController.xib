@@ -270,7 +270,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">140</string>
+						<string key="IBUIText">999</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">13</double>
@@ -291,7 +291,7 @@
 						<string key="NSFrame">{{207, 164}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="592955022"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -303,6 +303,7 @@
 						<string key="NSFrame">{{0, 201}, {320, 215}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
@@ -314,7 +315,7 @@
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
+				<reference key="NSNextKeyView" ref="769172057"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -654,27 +655,29 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>channelLabel</string>
+							<string>channelLogo</string>
 							<string>durationLabel</string>
 							<string>programmeImage</string>
-							<string>reminderSwitch</string>
+							<string>reminderButton</string>
 							<string>subtitleLabel</string>
 							<string>textCount</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
-							<string>tweetSwitch</string>
+							<string>tweetButton</string>
 							<string>tweetText</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UILabel</string>
+							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UIImageView</string>
-							<string>UISwitch</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
-							<string>UISwitch</string>
+							<string>UIButton</string>
 							<string>UITextView</string>
 						</object>
 					</object>
@@ -683,14 +686,15 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>channelLabel</string>
+							<string>channelLogo</string>
 							<string>durationLabel</string>
 							<string>programmeImage</string>
-							<string>reminderSwitch</string>
+							<string>reminderButton</string>
 							<string>subtitleLabel</string>
 							<string>textCount</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
-							<string>tweetSwitch</string>
+							<string>tweetButton</string>
 							<string>tweetText</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -698,6 +702,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">channelLabel</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">channelLogo</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">durationLabel</string>
@@ -708,8 +716,8 @@
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">reminderSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
+								<string key="name">reminderButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">subtitleLabel</string>
@@ -728,8 +736,8 @@
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">tweetSwitch</string>
-								<string key="candidateClassName">UISwitch</string>
+								<string key="name">tweetButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">tweetText</string>

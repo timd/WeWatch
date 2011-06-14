@@ -171,6 +171,47 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 
 }
 
+-(IBAction)toggleRemindState {
+    // If the reminder state is on
+    NSLog(@"Firing toggleRemindState");
+    if (remindState) {
+        
+        NSLog(@"remindState = YES");
+        remindState = NO;
+        UIImage *btnImage = [UIImage imageNamed:@"remindOffButton.png"];
+        [reminderButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        NSLog(@"remindState = NO");
+        remindState = YES;
+        UIImage *btnImage = [UIImage imageNamed:@"remindOnButton.png"];
+        [reminderButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+    }
+}
+
+-(IBAction)toggleTweetState {
+    // If the reminder state is on
+    NSLog(@"Firing toggleRemindState");
+    if (tweetState) {
+        
+        NSLog(@"tweetState = YES");
+        tweetState = NO;
+        UIImage *btnImage = [UIImage imageNamed:@"tweetOffButton.png"];
+        [tweetButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+    } else {
+        
+        NSLog(@"tweetState = NO");
+        tweetState = YES;
+        UIImage *btnImage = [UIImage imageNamed:@"tweetOnButton.png"];
+        [tweetButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+        
+    }
+    
+}
+
 -(IBAction)watchProgramme{
     
     // Action to handle flagging a programme as being watched, and setting a notification
@@ -205,13 +246,17 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSString *username = [NSString stringWithFormat:@"username=%@", twitterUser];
         NSString *broadcast = [NSString stringWithFormat:@"intention[broadcast_id]=%@", programmeIDasNSNumber];
         
+        // Set up switch for tweeting via WeWatch
         NSString *intention;
-        //        if (tweetSwitch.on) {
-        //            intention = @"intention[tweet]=1";
-        //        } else {
-                    intention = @"intention[tweet]=0";
-        //        }
+        if (tweetState) {
+            // If tweetState is YES, send a 1
+            intention = @"intention[tweet]=1";
+        } else {
+            // otherwise send a zero and don't tweet
+            intention = @"intention[tweet]=0";
+        }
 
+        // Build API query
         NSString *queryString = [NSString stringWithFormat:@"%@&%@&%@&%@", comment, username, broadcast, intention];
 
         //        NSString *escapedQueryString = [queryString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -221,6 +266,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         NSLog(@"Query = %@", queryString);
         NSLog(@"URL = %@", fullURLString);
         
+        // Fire query at API
         NSURL *url = [NSURL URLWithString:fullURLString];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         [request setDelegate:self];
@@ -234,7 +280,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
 
         // Get rid of the keyboard
-        [tweetText resignFirstResponder];
+        // [tweetText resignFirstResponder];
         
         // Fire the createNotification action if the switch is set
         //        if (reminderSwitch.on) {
@@ -247,18 +293,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 
         [SVProgressHUD showInView:self.view];
         
-/*        
-        // Send tweet if the switch is set
-
-         NSLog(@"*** Checking whether to tweet");
-        NSLog(@"State of tweet switch is: %d", tweetSwitch.on);
-        if (tweetSwitch.on) {
-            // tweetSwitch is set on
-            [twitterEngine sendUpdate:tweetText.text];
-            NSLog(@"*** Tweet sent!");
- 
-        }
-*/        
         //[self dismissView];
         
     } else {
@@ -364,29 +398,28 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Set up the tweet textArea
     [tweetText setDelegate:self];
     
-    //    tweetText.layer.backgroundColor = [[UIColor whiteColor] CGColor];
-    //    tweetText.layer.borderColor = [[UIColor grayColor] CGColor];
-    //    tweetText.layer.cornerRadius = 8.0f;
-    //    tweetText.layer.borderWidth = 1.0f;
-    //    tweetText.layer.masksToBounds = YES;
-    
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
-    //    [subtitleLabel setText:[displayProgramme subtitle]];
-    //    [channelLabel setText:[displayProgramme channel]];
-    //    [timeLabel setText:[displayProgramme time]];
-    //    [durationLabel setText:[displayProgramme duration]];
     
-    // Set up the channel logo
-    [channelLogo setImage:[UIImage imageWithContentsOfFile:@"BBCOne.png"]];
-     
+    // Set up tweet and remind button states
+    tweetState = NO;
+    remindState = NO;
+    [reminderButton setBackgroundImage:[UIImage imageNamed:@"remindOffButton.png"] forState:UIControlStateNormal];
+    [tweetButton setBackgroundImage:[UIImage imageNamed:@"tweetOffButton.png"] forState:UIControlStateNormal];
     
-    // Set the image view to display the image that was passed in
-    //    [programmeImage setImage:providedProgrammeImage];
+    //Set the image view to display the image that was passed in
+    NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
+    NSLog(@"imageName = %@", imageName);
+    [channelLogo setImage:[UIImage imageNamed:imageName]];
 
     // Set up the text for the tweet box
     NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
     tweetText.text = defaultTweetText;
+    
+    // Set number of characters in text box
+    int charsLeft = 100 - [tweetText.text length];
+    textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
+
     
     UIBarButtonItem *watchButton = [[UIBarButtonItem alloc] initWithTitle:@"Watch" 
                                                                     style:UIBarButtonItemStylePlain 
@@ -394,6 +427,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
                                                                    action:@selector(watchProgramme)];
     self.navigationItem.rightBarButtonItem = watchButton;
     [watchButton release];
+    
+    // Make the textarea first responder to lift the keyboard
+    [tweetText becomeFirstResponder];
 
     
 }
