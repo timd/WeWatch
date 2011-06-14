@@ -82,6 +82,7 @@
 		22D353FF13A7749500437E84 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D353FD13A7749500437E84 /* refresh@2x.png */; };
 		22D3540213A7754A00437E84 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3540013A7754A00437E84 /* gear.png */; };
 		22D3540313A7754A00437E84 /* gear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3540113A7754A00437E84 /* gear@2x.png */; };
+		22D3540513A777A600437E84 /* infoBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3540413A777A600437E84 /* infoBox.png */; };
 		22D364171399290C00093989 /* button_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364161399290C00093989 /* button_bar.png */; };
 		22D3641A13992A2F00093989 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641913992A2F00093989 /* green_button.png */; };
 		22D3642013992C6500093989 /* WatchModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D3641E13992C6500093989 /* WatchModalViewController.m */; };
@@ -262,6 +263,7 @@
 		22D353FD13A7749500437E84 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		22D3540013A7754A00437E84 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		22D3540113A7754A00437E84 /* gear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear@2x.png"; sourceTree = "<group>"; };
+		22D3540413A777A600437E84 /* infoBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoBox.png; sourceTree = "<group>"; };
 		22D364161399290C00093989 /* button_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar.png; sourceTree = "<group>"; };
 		22D3641913992A2F00093989 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		22D3641D13992C6500093989 /* WatchModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchModalViewController.h; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				22D3540013A7754A00437E84 /* gear.png */,
+				22D3540413A777A600437E84 /* infoBox.png */,
 				22D3540113A7754A00437E84 /* gear@2x.png */,
 				22D353FC13A7749500437E84 /* refresh.png */,
 				22D353FD13A7749500437E84 /* refresh@2x.png */,
@@ -866,6 +869,7 @@
 				22D353FF13A7749500437E84 /* refresh@2x.png in Resources */,
 				22D3540213A7754A00437E84 /* gear.png in Resources */,
 				22D3540313A7754A00437E84 /* gear@2x.png in Resources */,
+				22D3540513A777A600437E84 /* infoBox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

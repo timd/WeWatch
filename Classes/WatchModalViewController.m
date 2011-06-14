@@ -259,8 +259,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // Build API query
         NSString *queryString = [NSString stringWithFormat:@"%@&%@&%@&%@", comment, username, broadcast, intention];
 
-        //        NSString *escapedQueryString = [queryString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
         NSString *fullURLString = [NSString stringWithFormat:@"%@%@", baseString, queryString];
         
         NSLog(@"Query = %@", queryString);
@@ -273,29 +271,14 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         [request setRequestMethod:@"POST"];
         [request startAsynchronous];
         
-        // Set up some temporary params to fire at the wewatch end
-        // NSDictionary *watchParams = [NSDictionary dictionaryWithObjectsAndKeys:programmeIDasNSNumber, @"intention[broadcast_id]", twitterUser, @"username", tweetText.text, @"intention[comment]", @"0", @"intention[tweet]", nil];
-        
-        // Hit the wewatch server with a POST
-        // [[RKClient sharedClient] post:@"/intentions.json" params:watchParams delegate:self];
-
-        // Get rid of the keyboard
-        // [tweetText resignFirstResponder];
-        
-        // Fire the createNotification action if the switch is set
-        //        if (reminderSwitch.on) {
-        //            [self setNotification:[self displayProgramme]];
-        //        }
-        
         // Fire off the didWatchProgramme message to the notification centre so that
         // the listening classes know that they need to refresh their data
         [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
 
         [SVProgressHUD showInView:self.view];
         
-        //[self dismissView];
-        
     } else {
+
         NSLog(@"Dammit, the network's not available :(");
         
         // As an interim measure, pop up an alert

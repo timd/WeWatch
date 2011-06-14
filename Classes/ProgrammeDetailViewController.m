@@ -261,6 +261,19 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
+-(void)alterWatchersNumberBy:(int)incValue {
+
+    // Update the watchers total : grab the current watcher's text
+    int currentWatchers = [displayProgramme watchers];
+    NSLog(@"CURRENTLY WATCJING: %d", displayProgramme.watchers);
+    
+    // Increment the watchers number by 1
+    currentWatchers = currentWatchers + incValue;
+    
+    [displayProgramme setWatchers:currentWatchers];
+    NSLog(@"NOW WATCHIN: %d", displayProgramme.watchers);
+
+}
 
 #pragma mark -
 #pragma mark Notification methods
@@ -271,12 +284,19 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 -(void)didReceiveWatchProgrammeMessage {
     NSLog(@"*** ProgrammeDetailViewController didReceiveWatchProgrammeMessage");
+    
+    [self alterWatchersNumberBy:1];
+    
     self.forceDataReload = YES;
     [displayProgramme setAmWatching:YES];
 }
 
 -(void)didReceiveUnwatchProgrammeMessage {
-    // TODO: implement
+
+    if (displayProgramme.watchers != 0) {
+        [self alterWatchersNumberBy:-1];
+    }
+    
     NSLog(@"*** ProgrammeDetailViewController didReceiveUnwatchProgrammeMessage");
     [displayProgramme setAmWatching:NO];
 }

@@ -71,5 +71,6 @@ extern NSString * const didUnwatchProgrammeNotification;
 -(void)didReceiveUnwatchProgrammeMessage;
 
 -(void)dismissCurrentView;
+-(void)alterWatchersNumberBy:(int)incValue;
 
 @end
