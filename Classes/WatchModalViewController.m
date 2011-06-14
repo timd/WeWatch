@@ -76,10 +76,10 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSLog(@"fireDate = %@", fireTime);
     
     // Specify custom data for the notification
-    // NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
     
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:displayProgramme.title, displayProgramme.programmeID, nil] 
-                                                         forKeys:[NSArray arrayWithObjects:@"ProgrammeTitle", @"ProgrammeID", nil]];
+    //NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:displayProgramme.title, displayProgramme.programmeID, nil] 
+    //                                                     forKeys:[NSArray arrayWithObjects:@"ProgrammeTitle", @"ProgrammeID", nil]];
                               
     localNotification.userInfo = infoDict;
     
