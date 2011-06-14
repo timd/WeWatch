@@ -19,6 +19,7 @@
 		2201E07B13A61B0A000085FC /* BBCHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07513A61B0A000085FC /* BBCHD.png */; };
 		2201E07C13A61B0A000085FC /* Channel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07613A61B0A000085FC /* Channel4.png */; };
 		2217899F13742140009656A7 /* JSON example source in Resources */ = {isa = PBXBuildFile; fileRef = 2217899E13742140009656A7 /* JSON example source */; };
+		222FD7D413A7C2920056DBF6 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 222FD7D313A7C2920056DBF6 /* libz.1.2.5.dylib */; };
 		2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231827B136ADA730027F597 /* PullRefreshTableViewController.m */; };
 		2231827E136ADA870027F597 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2231827D136ADA870027F597 /* arrow.png */; };
 		22318280136ADA970027F597 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2231827F136ADA970027F597 /* QuartzCore.framework */; };
@@ -47,7 +48,6 @@
 		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
 		226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */; };
 		226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */; };
-		226A74FB13A691E400F6E63C /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */; };
 		2272BBDD139F90BD00515CC7 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */; };
 		2272BBDE139F90BD00515CC7 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BBDC139F90BD00515CC7 /* SVProgressHUD.m */; };
 		2272BC28139FAA6300515CC7 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC15139FAA6300515CC7 /* ASIAuthenticationDialog.m */; };
@@ -136,6 +136,7 @@
 		2201E07513A61B0A000085FC /* BBCHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCHD.png; sourceTree = "<group>"; };
 		2201E07613A61B0A000085FC /* Channel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Channel4.png; sourceTree = "<group>"; };
 		2217899E13742140009656A7 /* JSON example source */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON example source"; sourceTree = "<group>"; };
+		222FD7D313A7C2920056DBF6 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		2231827A136ADA730027F597 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		2231827B136ADA730027F597 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		2231827D136ADA870027F597 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
@@ -202,7 +203,6 @@
 		226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalThrobberViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.h; sourceTree = "<group>"; };
 		226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalThrobberViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.m; sourceTree = "<group>"; };
 		226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ModalThrobberViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.xib; sourceTree = "<group>"; };
-		226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		226B4B76139BDBC800BBBB31 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		226B4B77139BDBC800BBBB31 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2272BBDA139F90BD00515CC7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 		2272BC31139FAAF100515CC7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2272BC32139FAAFA00515CC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2272BC33139FAB0600515CC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -334,7 +333,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226A74FB13A691E400F6E63C /* libz.1.2.3.dylib in Frameworks */,
+				222FD7D413A7C2920056DBF6 /* libz.1.2.5.dylib in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */,
 				22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */,
@@ -608,9 +607,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */,
+				222FD7D313A7C2920056DBF6 /* libz.1.2.5.dylib */,
 				22D65AF113A1202D00B92D82 /* Entitlements.plist */,
-				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
 				2269946C139FCD1D00DC74CB /* Buglist.markdown */,
 				2272BC68139FC5F900515CC7 /* Libraries */,
