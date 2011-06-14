@@ -103,6 +103,11 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         watchButtonLabel.text = @"Watch";
 
     }
+    
+    // Set up the reminder flag if there's a reminder set
+    //    if (displayProgramme.reminder) {
+    //        [remindButton setHidden:NO];
+    //    }
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
@@ -303,6 +308,18 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 #pragma mark -
 #pragma mark Watch programme methods
+
+-(IBAction)removeReminder{
+    // Method to turn reminder off
+
+    // Get reminder
+    
+    // Clear reminder from application queue
+    
+    // remove button
+    [remindButton setHidden:YES];
+
+}
 
 -(void)watchProgramme{
     NSLog(@"Fired watchProgramme method");

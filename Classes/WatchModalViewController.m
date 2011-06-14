@@ -52,7 +52,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Figure out the time for the programme
     // NSLog(@"Prog time = %@", programme.fullTime);
 
-    
     // Create a date formatter to create a date from the string
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
@@ -93,6 +92,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     //NSLog(@"Setting reminder");
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    // Assign the localNotification into the displayProgramme that we're dealing with
+    [displayProgramme setReminder:localNotification];
     
     [localNotification release];
     
@@ -277,7 +279,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // the listening classes know that they need to refresh their data
         [[NSNotificationCenter defaultCenter] postNotificationName:didWatchProgrammeNotification object:self];        
 
+        // Show the Progress HUD
         [SVProgressHUD showInView:self.view];
+        
         
     } else {
 
