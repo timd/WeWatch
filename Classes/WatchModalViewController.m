@@ -57,33 +57,30 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
 
-    /*
-     
-     5 MIN SCHEDULE METHOD - NOT USED CURRENTLY
+    //Fix the date colon issue
+    NSString *fixedDateString = [self applyTimezoneFixForDate:programme.fullTime];
+    NSLog(@"Fixed prog time = %@", fixedDateString);
 
-     // Fix the date colon issue
-     // NSString *fixedDateString = [self applyTimezoneFixForDate:programme.fullTime];
-     // NSLog(@"Fixed prog time = %@", fixedDateString);
-
-     
     // Create the fireDateTime object, and release the formatter
-    // NSDate* fireDateTime = [formatter dateFromString:fixedDateString];
-    // [formatter release];
+    NSDate* fireDateTime = [formatter dateFromString:fixedDateString];
+    [formatter release];
     
-    // NSLog(@"Actual prog time = %@", fireDateTime);
+    NSLog(@"Actual prog time = %@", fireDateTime);
     
     // Create a time 5 mins before the prog start time
-    // NSDate *fireTime = [fireDateTime addTimeInterval:(-(5*60))];
+    NSDate *fireTime = [fireDateTime dateByAddingTimeInterval:(-(5*60))];
      
-    */
-    
     // Create a dummy time 10 secs in the future for testing purposes
-    NSDate *fireTime = [timeNow dateByAddingTimeInterval:10];
-    //NSLog(@"timeNow = %@", timeNow);
-    //NSLog(@"fireDate = %@", fireTime);
+    // NSDate *fireTime = [timeNow dateByAddingTimeInterval:10];
+    NSLog(@"timeNow = %@", timeNow);
+    NSLog(@"fireDate = %@", fireTime);
     
     // Specify custom data for the notification
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    // NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:displayProgramme.title, displayProgramme.programmeID, nil] 
+                                                         forKeys:[NSArray arrayWithObjects:@"ProgrammeTitle", @"ProgrammeID", nil]];
+                              
     localNotification.userInfo = infoDict;
     
     localNotification.fireDate = fireTime;
@@ -254,6 +251,11 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         } else {
             // otherwise send a zero and don't tweet
             intention = @"intention[tweet]=0";
+        }
+        
+        // Set up inbuilt reminder
+        if (remindState) {
+            [self setNotification:displayProgramme];
         }
 
         // Build API query
