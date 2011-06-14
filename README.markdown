@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.93
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   update_modal_watch
+### Version         :   0.94
+### Branch          :   local_notifications
+### Branched from   :   master
+### Merged from     :   
 ### Date            :   14/06/2011
 
 ===================================================

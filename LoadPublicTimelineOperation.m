@@ -247,7 +247,7 @@
             BOOL amWatching = [val boolValue];
             
             //NSLog(@"amWatchingFlag = %d", amWatching);
-                      
+            
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
                                                                      andTitle:title 
@@ -262,8 +262,9 @@
                                                                      andImage:programmeImage
                                                               andWatcherNames:localNamesArray
                                                                 andAmWatching:amWatching
-                                                                andWatchingID:watchingID];
-            
+                                                                andWatchingID:watchingID
+                                                                  andReminder:nil];
+
             // Release the local objects we created
             [localNamesArray release];
             
