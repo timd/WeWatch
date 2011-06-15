@@ -394,7 +394,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     //Set the image view to display the image that was passed in
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
-    NSLog(@"imageName = %@", imageName);
     [channelLogo setImage:[UIImage imageNamed:imageName]];
 
     // Set up the text for the tweet box

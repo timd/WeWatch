@@ -34,6 +34,7 @@
     IBOutlet UILabel *watchersNamesLabel;
     IBOutlet UIImageView *watchingFlag;
     IBOutlet UILabel *watchButtonLabel;
+    IBOutlet UIImageView *channelIcon;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

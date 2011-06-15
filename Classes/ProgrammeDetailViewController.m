@@ -88,6 +88,10 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
     
+    //Set the image view to display the image that was passed in
+    NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
+    [channelIcon setImage:[UIImage imageNamed:imageName]];
+    
     // Set up the watching flag, depending on whether I'm going to watch the programme or not
     if ([displayProgramme amWatching] == TRUE) {
 
@@ -227,6 +231,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [watchingFlag release];
     watchingFlag = nil;
+    
+    [channelIcon release];
+    channelIcon = nil;
     
 }
 
