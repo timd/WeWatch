@@ -15,8 +15,8 @@ http://www.wewatch.co.uk
 
 RELEASE NOTES
 
-### Build           :   
-### Purpose         :   
+### Build           :   0.95
+### Purpose         :   Final test before App Store submission
 
 ===================================================
 # NOTES
