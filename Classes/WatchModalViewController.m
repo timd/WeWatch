@@ -69,6 +69,10 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     
     // Create a time 5 mins before the prog start time
     NSDate *fireTime = [fireDateTime dateByAddingTimeInterval:(-(5*60))];
+    
+    // Create a temporary firetime
+    // NSDate *currentDate = [NSDate date];
+    // NSDate *fireTime = [currentDate dateByAddingTimeInterval:30];
      
     // Create a dummy time 10 secs in the future for testing purposes
     // NSDate *fireTime = [timeNow dateByAddingTimeInterval:10];
