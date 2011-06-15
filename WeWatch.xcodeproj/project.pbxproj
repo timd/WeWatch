@@ -59,6 +59,7 @@
 		2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC24139FAA6300515CC7 /* ASIInputStream.m */; };
 		2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC26139FAA6300515CC7 /* ASINetworkQueue.m */; };
 		22A1782A13A8D4E00000FDA6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A1782913A8D4E00000FDA6 /* CoreData.framework */; };
+		22A1782F13A8D5590000FDA6 /* WeWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A1782D13A8D5590000FDA6 /* WeWatch.xcdatamodeld */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -235,6 +236,7 @@
 		2272BC33139FAB0600515CC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		22A1782913A8D4E00000FDA6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22A1782E13A8D5590000FDA6 /* WeWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeWatch.xcdatamodel; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				22A1782C13A8D52B0000FDA6 /* Core Data */,
 				22BB5ACE1369BA63004B299B /* Programme.h */,
 				22BB5ACF1369BA63004B299B /* Programme.m */,
 				22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */,
@@ -546,6 +549,14 @@
 				2272BC33139FAB0600515CC7 /* CoreGraphics.framework */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		22A1782C13A8D52B0000FDA6 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				22A1782D13A8D5590000FDA6 /* WeWatch.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		22BB5AE01369BF8D004B299B /* MWFeedParser */ = {
@@ -937,6 +948,7 @@
 				2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */,
 				2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */,
 				226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */,
+				22A1782F13A8D5590000FDA6 /* WeWatch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,6 +1123,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22A1782D13A8D5590000FDA6 /* WeWatch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22A1782E13A8D5590000FDA6 /* WeWatch.xcdatamodel */,
+			);
+			currentVersion = 22A1782E13A8D5590000FDA6 /* WeWatch.xcdatamodel */;
+			name = WeWatch.xcdatamodeld;
+			path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/WeWatch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }
