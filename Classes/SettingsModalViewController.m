@@ -1,4 +1,4 @@
-//
+    //
 //  SettingsModalViewController.m
 //  WeWatch
 //
@@ -172,7 +172,22 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
         twitterLoginButton.titleLabel.text = @"Login";
         twitterUsername.hidden = YES;
     }
- 
+  
+    // Write out a list of the notifications as a bug check
+    
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    for (UILocalNotification *notification in notifications) {  
+        
+        NSDictionary *userInfo = notification.userInfo;
+        
+        NSString *programmeTitle = [userInfo valueForKey:@"programmeTitle"];
+        NSString *programmeID = [userInfo valueForKey:@"programmeID"];
+        
+        NSLog(@"Title = %@ / ID = %@", programmeTitle, programmeID);
+        
+    }
+    
 }
 
 - (void)viewDidUnload

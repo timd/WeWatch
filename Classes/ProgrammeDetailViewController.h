@@ -35,6 +35,7 @@
     IBOutlet UIImageView *watchingFlag;
     IBOutlet UILabel *watchButtonLabel;
     IBOutlet UIImageView *channelIcon;
+    IBOutlet UIButton *reminderButton;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
@@ -73,5 +74,8 @@ extern NSString * const didUnwatchProgrammeNotification;
 
 -(void)dismissCurrentView;
 -(void)alterWatchersNumberBy:(int)incValue;
+
+// Action to switch off the reminder
+-(IBAction)killReminder;
 
 @end

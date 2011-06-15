@@ -76,10 +76,18 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSLog(@"fireDate = %@", fireTime);
     
     // Specify custom data for the notification
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:[displayProgramme title] forKey:@"ProgrammeTitle"];
+    // Create array of keys
+    NSArray *keysArray = [[NSArray alloc] initWithObjects:@"programmeTitle", @"programmeID", nil];
     
-    //NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:displayProgramme.title, displayProgramme.programmeID, nil] 
-    //                                                     forKeys:[NSArray arrayWithObjects:@"ProgrammeTitle", @"ProgrammeID", nil]];
+    // Create values for the keys
+    NSString *programmeTitleValue = [displayProgramme title];
+    NSNumber *programmeIDValue = [NSNumber numberWithInt:[displayProgramme programmeID]];
+    
+    NSArray *valuesArray = [[NSArray alloc] initWithObjects:programmeTitleValue, programmeIDValue, nil];
+    
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:valuesArray forKeys:keysArray];
+    
+    [valuesArray release];
                               
     localNotification.userInfo = infoDict;
     
@@ -91,9 +99,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.applicationIconBadgeNumber = 1;
     
-    //NSLog(@"Setting reminder");
+    NSLog(@"Setting reminder");
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
+     
     [localNotification release];
     
 }
