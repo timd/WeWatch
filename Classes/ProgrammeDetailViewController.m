@@ -107,6 +107,37 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         watchButtonLabel.text = @"Watch";
 
     }
+    
+    // Check if there's a reminder set for this programme; if there is
+    // then make the "unremind" button available for use
+    
+    // Check to see if this programme exists within the notifications
+    // and cancel if it does
+    NSArray *setNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    // Force the reminder flag to the default of NO
+    [displayProgramme setReminderFlag:NO];
+    
+    for (UILocalNotification *notification in setNotifications) {
+        // Grab the user info dictionary
+        NSDictionary *userInfo = notification.userInfo;
+        NSNumber *notificationProgrammeID = [userInfo valueForKey:@"programmeID"];
+        
+        NSNumber *currentProgrammeID = [NSNumber numberWithInt:[displayProgramme programmeID]];
+        
+        if ( [notificationProgrammeID isEqualToNumber:currentProgrammeID] ) {
+            // We have found a reminder for this programme
+            [displayProgramme setReminderFlag:YES];
+        }
+    }
+    
+    // Switch on or off the reminder button
+    if ( [displayProgramme reminderFlag] ) {
+        [reminderButton setHidden:NO];
+    } else {
+        [reminderButton setHidden:YES];
+    }
+    
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
@@ -234,6 +265,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [channelIcon release];
     channelIcon = nil;
+    
+    [reminderButton release];
+    reminderButton = nil;
     
 }
 
@@ -414,6 +448,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 // Fire off the didWatchProgramme message to the notification centre so that
                 // the listening classes know that they need to refresh their data
                 [[NSNotificationCenter defaultCenter] postNotificationName:didUnwatchProgrammeNotification object:self];        
+
+                [self killReminder];
                 
             } else {
                 
@@ -542,6 +578,35 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 -(void)dismissCurrentView {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(IBAction)killReminder {
+    // Action to find and kill the reminder for the current programme
+    // Check to see if this programme exists within the notifications
+    // and cancel if it does
+    NSArray *setNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    for (UILocalNotification *notification in setNotifications) {
+        // Grab the user info dictionary
+        NSDictionary *userInfo = notification.userInfo;
+        NSNumber *notificationProgrammeID = [userInfo valueForKey:@"programmeID"];
+        
+        NSNumber *currentProgrammeID = [NSNumber numberWithInt:[displayProgramme programmeID]];
+        
+        if ( [notificationProgrammeID isEqualToNumber:currentProgrammeID] ) {
+            // We're looking at the notification for the current programme
+            [[UIApplication sharedApplication] cancelLocalNotification:notification];
+            NSLog(@"Cancelled");
+        }
+        
+    }
+    
+    // if the watch icon button is showing, switch it off
+    if ( ![reminderButton isHidden] ) {
+        // It's showing, toggle it
+        [reminderButton setHidden:YES];
+    }
+
 }
 
 @end

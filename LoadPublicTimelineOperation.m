@@ -262,7 +262,8 @@
                                                                      andImage:programmeImage
                                                               andWatcherNames:localNamesArray
                                                                 andAmWatching:amWatching
-                                                                andWatchingID:watchingID];
+                                                                andWatchingID:watchingID
+                                                              andReminderFlag:NO];
             
             // Release the local objects we created
             [localNamesArray release];

@@ -28,6 +28,7 @@
     NSArray *watcherNames;     // Array of Twitter contacts who are watching this programme
     Boolean amWatching;        // Flag to indicate I'm watching the programme
     int watchingID;             // ID of watching flag
+    Boolean reminderFlag;          // Flag to indicate that there's a reminder set
 }
 
 @property (nonatomic) int programmeID;
@@ -44,6 +45,7 @@
 @property (nonatomic, copy) NSArray *watcherNames;
 @property (nonatomic) Boolean amWatching;
 @property (nonatomic) int watchingID;
+@property (nonatomic) Boolean reminderFlag; 
 
 - (id)initWithProgrammeID:(int)programmeID
                  andTitle:(NSString *)iTitle
@@ -58,6 +60,7 @@
                  andImage:(NSString *)programmeImage
           andWatcherNames:(NSArray *)watcherNames
             andAmWatching:(Boolean)iAmWatching
-            andWatchingID:(int)watchingID;
+            andWatchingID:(int)watchingID
+          andReminderFlag:(Boolean)reminderFlag;
 
 @end

@@ -58,6 +58,7 @@
 		2272BC2D139FAA6300515CC7 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC20139FAA6300515CC7 /* ASIHTTPRequest.m */; };
 		2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC24139FAA6300515CC7 /* ASIInputStream.m */; };
 		2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2272BC26139FAA6300515CC7 /* ASINetworkQueue.m */; };
+		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -233,6 +234,7 @@
 		2272BC32139FAAFA00515CC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2272BC33139FAB0600515CC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				228D987113A8F81300785D5A /* microRemindOnButton.png */,
 				22D3540013A7754A00437E84 /* gear.png */,
 				22D3540413A777A600437E84 /* infoBox.png */,
 				22D3540113A7754A00437E84 /* gear@2x.png */,
@@ -870,6 +873,7 @@
 				22D3540213A7754A00437E84 /* gear.png in Resources */,
 				22D3540313A7754A00437E84 /* gear@2x.png in Resources */,
 				22D3540513A777A600437E84 /* infoBox.png in Resources */,
+				228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

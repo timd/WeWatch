@@ -5,18 +5,18 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.93
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   update_modal_watch
-### Date            :   14/06/2011
+### Version         :   0.95
+### Branch          :   persistent_notifications
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   15/06/2011
 
 ===================================================
 
 RELEASE NOTES
 
-### Build           :   0.93
-### Purpose         :   Beta testing via TestFlight
+### Build           :   
+### Purpose         :   
 
 ===================================================
 # NOTES
@@ -53,6 +53,7 @@ RELEASE NOTES
 - Gowalla-style watch view
 
 ### In progress:
+- simple hack to provide persistent notifications
 
 
 ### Todo:
