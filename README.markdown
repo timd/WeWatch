@@ -5,18 +5,18 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.93
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   update_modal_watch
+### Version         :   0.94
+### Branch          :   add_coredata
+### Branched from   :   Master
+### Merged from     :   n/a
 ### Date            :   14/06/2011
 
 ===================================================
 
 RELEASE NOTES
 
-### Build           :   0.93
-### Purpose         :   Beta testing via TestFlight
+### Build           :   
+### Purpose         :   
 
 ===================================================
 # NOTES
@@ -53,13 +53,14 @@ RELEASE NOTES
 - Gowalla-style watch view
 
 ### In progress:
-
+- adding CoreData support
 
 ### Todo:
+- add persistent notifications
+- add clock icon to watched programmes and link to unremind
 
 - cache images
 - add throbber to unwatch action
-- add clock icon to watched programmes and link to unremind
 - refresh RootViewController without hitting API after a 'watch programme'?
 - amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
