@@ -6,9 +6,9 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.95
-### Branch          :   persistent_notifications
-### Branched from   :   master
-### Merged from     :   n/a
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   persistent_notifications
 ### Date            :   15/06/2011
 
 ===================================================
@@ -51,21 +51,18 @@ RELEASE NOTES
 - lose empty timeslots in the tableview
 - moved throbber to top windpw
 - Gowalla-style watch view
+- implemented persistent local notifications
+- implemented notification cancellation from programme detail view
+- implemented notification cancellation from unwatch action
 
 ### In progress:
-- simple hack to provide persistent notifications
-
 
 ### Todo:
 
 - cache images
 - add throbber to unwatch action
-- add clock icon to watched programmes and link to unremind
-- refresh RootViewController without hitting API after a 'watch programme'?
-- amend programme image load to cancel if detail view is removed
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
-- amend display of friends names 
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - update class diagrams
 
