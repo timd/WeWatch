@@ -15,6 +15,11 @@
 @synthesize navigationController;
 @synthesize operationQueue;
 
+@synthesize managedObjectContext;
+@synthesize managedObjectModel;
+@synthesize pStoreCoordinator;
+
+
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -40,6 +45,8 @@
     if (localNotif) {
         NSLog(@"Received Notification %@",localNotif);
     }
+    
+    // Set up Core Data stuff
     
     return YES;
 }
@@ -92,6 +99,42 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+    
+    NSError *error;
+    
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // handle error
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Core Data utility methods
+-(NSString *)applicationDocumentsDirectory {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ( [paths count] > 0 ? [paths objectAtIndex:0] : nil );
+    return basePath;
+    
+}
+
+-(void)setupPersistentStore {
+    NSString *docDir = [self applicationDocumentsDirectory];
+    NSString *pathToDB = [docDir stringByAppendingPathComponent:@"WeWatch.sqlite"];
+    NSURL *urlForPath = [NSURL fileURLWithPath:pathToDB];
+    
+    NSError *error;
+    
+    pStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+    if (![pStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType 
+                                         configuration:nil 
+                                                   URL:urlForPath 
+                                               options:nil 
+                                                 error:&error]) {
+        //handle error
+    }
 }
 
 
