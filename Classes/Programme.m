@@ -24,6 +24,7 @@
 @synthesize watcherNames;
 @synthesize amWatching;
 @synthesize watchingID;
+@synthesize programmeURL;
 @synthesize reminderFlag;
 
 // Create and return a programme with fully-populated attributes
@@ -41,6 +42,7 @@
           andWatcherNames:(NSArray *)iWatcherNames
             andAmWatching:(Boolean)iAmWatching
             andWatchingID:(int)iWatchingID
+          andProgrammeURL:(NSString *)iprogrammeURL
           andReminderFlag:(Boolean)iReminderFlag
 {
 	// Call the superclass's designated initializer 
@@ -65,6 +67,7 @@
     [self setWatcherNames:iWatcherNames];
     [self setAmWatching:iAmWatching];
     [self setWatchingID:iWatchingID];
+    [self setProgrammeURL:iprogrammeURL];
     [self setReminderFlag:iReminderFlag];
 	
 	// Return the address of the newly initialized object

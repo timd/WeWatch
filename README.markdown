@@ -54,9 +54,10 @@ RELEASE NOTES
 - implemented persistent local notifications
 - implemented notification cancellation from programme detail view
 - implemented notification cancellation from unwatch action
+- added open-in-Safari code to detail page; also implemented unused webview
 
 ### In progress:
-- adding open-in-Safari view to detail page
+
 
 ### Todo:
 

@@ -11,6 +11,7 @@
 #import "SA_OAuthTwitterEngine.h"
 #import "LoadProgrammeImageOperation.h"
 #import "WeWatchAppDelegate.h"
+#import "ProgrammeSiteViewController.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -66,7 +67,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 {
 	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
     NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
-    [programmeImage setImage:retrievedImage];
+    // [programmeImage setImage:retrievedImage];
+    [webButton setBackgroundImage:retrievedImage forState:UIControlStateNormal];
     
     // Set the ivar for the programme image to the retrieved one
     retrievedProgrammeImage = retrievedImage;
@@ -141,7 +143,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
-    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+    //    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+    [webButton setBackgroundImage:[UIImage imageNamed:@"wewatch.png"] forState:UIControlStateNormal];
     
     // Set the programme image held in the ivar to the default
     retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
@@ -173,7 +176,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         // Can't get to the network; use a canned image
         NSLog(@"Unable to download the image");
         // [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
-        [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+        //        [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+        [webButton setBackgroundImage:[UIImage imageNamed:@"wewatch.png"] forState:UIControlStateNormal];
     }
     
     [reachable release];
@@ -269,6 +273,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [reminderButton release];
     reminderButton = nil;
     
+    [webButton release];
+    webButton = nil;
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -276,6 +283,46 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+//=============================================================================================================================
+#pragma mark -
+#pragma mark Web View methods
+
+-(IBAction)pushWebView {
+    
+    // Load the URL in Safari 
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [displayProgramme programmeURL]]];
+    
+    /*
+    // Check if the programmeURL is empty - if it is, do nowt
+    if ( [displayProgramme programmeURL] != nil ) {
+    
+        // Create the web view controller
+        ProgrammeSiteViewController *siteViewController = [[ProgrammeSiteViewController alloc] initWithNibName:@"ProgrammeSiteViewController" bundle:nil];
+        
+        // Pass in the Programme's URL to the siteViewController
+        [siteViewController setProgrammeSiteURL:[displayProgramme programmeURL]];
+        
+        // Present the web view controller:
+        [self.navigationController pushViewController:siteViewController animated:YES];
+        
+        // Release the view controller
+        [siteViewController release];
+        
+        return;
+        
+    } else {
+        
+        // Don't do anything because there's no programme URL
+        return;
+        
+    }
+    */
+    
+     return;
+    
+}
+
 
 //=============================================================================================================================
 #pragma mark -
