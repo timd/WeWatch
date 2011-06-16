@@ -45,6 +45,8 @@
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
 		2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8313A9FD1200D8B828 /* Default@2x.png */; };
+		2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */; };
+		2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */; };
 		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
 		226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */; };
 		226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */; };
@@ -201,6 +203,9 @@
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
 		2238EA8313A9FD1200D8B828 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2238EA8A13AA089000D8B828 /* ProgrammeSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgrammeSiteViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.h; sourceTree = "<group>"; };
+		2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgrammeSiteViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.m; sourceTree = "<group>"; };
+		2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeSiteViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.xib; sourceTree = "<group>"; };
 		2269946C139FCD1D00DC74CB /* Buglist.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buglist.markdown; sourceTree = "<group>"; };
 		226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalThrobberViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.h; sourceTree = "<group>"; };
 		226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalThrobberViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.m; sourceTree = "<group>"; };
@@ -373,6 +378,8 @@
 				22E450B2139A8F5A000D31A8 /* Reachable.m */,
 				22E081CF139CEDA900D1099B /* SettingsModalViewController.h */,
 				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
+				2238EA8A13AA089000D8B828 /* ProgrammeSiteViewController.h */,
+				2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -566,6 +573,7 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */,
 				226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */,
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
 				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
@@ -878,6 +886,7 @@
 				22D3540513A777A600437E84 /* infoBox.png in Resources */,
 				228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */,
 				2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */,
+				2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +950,7 @@
 				2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */,
 				2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */,
 				226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */,
+				2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,7 +1004,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = "";
@@ -1012,6 +1023,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -1021,7 +1033,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Tim Duckett";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WeWatch_Prefix.pch;
@@ -1034,7 +1046,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = WeWatch;
-				PROVISIONING_PROFILE = "4387A435-E8D7-431E-8212-19BE28E08B9F";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
 			};
@@ -1044,7 +1056,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = "";
@@ -1061,6 +1073,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1069,7 +1082,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = "";
@@ -1087,6 +1100,7 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

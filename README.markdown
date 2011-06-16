@@ -5,18 +5,18 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.95
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   persistent_notifications
-### Date            :   15/06/2011
+### Version         :   0.96
+### Branch          :   add_safari_view
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   16/06/2011
 
 ===================================================
 
 RELEASE NOTES
 
-### Build           :   0.95
-### Purpose         :   Final test before App Store submission
+### Build           :   
+### Purpose         :   
 
 ===================================================
 # NOTES
@@ -54,8 +54,10 @@ RELEASE NOTES
 - implemented persistent local notifications
 - implemented notification cancellation from programme detail view
 - implemented notification cancellation from unwatch action
+- added open-in-Safari code to detail page; also implemented unused webview
 
 ### In progress:
+
 
 ### Todo:
 

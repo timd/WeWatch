@@ -247,6 +247,19 @@
             BOOL amWatching = [val boolValue];
             
             //NSLog(@"amWatchingFlag = %d", amWatching);
+            
+            // Set programme URL if available
+            NSString *programmeURL;
+            
+            if ([currentProgrammesFromJSON objectForKey:@"link"] != nil) {
+                // Retrieve the value that's been brought down 
+                programmeURL = [currentProgrammesFromJSON objectForKey:@"link"];
+            } else {
+                // The subtitle value is empty, therefore we need to pad it with an empty string
+                programmeURL = @"";
+            }
+
+            
                       
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
@@ -263,6 +276,7 @@
                                                               andWatcherNames:localNamesArray
                                                                 andAmWatching:amWatching
                                                                 andWatchingID:watchingID
+                                                              andProgrammeURL:programmeURL
                                                               andReminderFlag:NO];
             
             // Release the local objects we created
