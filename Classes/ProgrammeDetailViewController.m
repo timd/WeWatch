@@ -290,36 +290,43 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 -(IBAction)pushWebView {
     
-    // Load the URL in Safari 
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [displayProgramme programmeURL]]];
-    
-    /*
     // Check if the programmeURL is empty - if it is, do nowt
     if ( [displayProgramme programmeURL] != nil ) {
     
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: [displayProgramme programmeURL]]];
+     
         // Create the web view controller
-        ProgrammeSiteViewController *siteViewController = [[ProgrammeSiteViewController alloc] initWithNibName:@"ProgrammeSiteViewController" bundle:nil];
+        // ProgrammeSiteViewController *siteViewController = [[ProgrammeSiteViewController alloc] initWithNibName:@"ProgrammeSiteViewController" bundle:nil];
         
         // Pass in the Programme's URL to the siteViewController
-        [siteViewController setProgrammeSiteURL:[displayProgramme programmeURL]];
+        // [siteViewController setProgrammeSiteURL:[displayProgramme programmeURL]];
         
         // Present the web view controller:
-        [self.navigationController pushViewController:siteViewController animated:YES];
+        // [self.navigationController pushViewController:siteViewController animated:YES];
         
         // Release the view controller
-        [siteViewController release];
+        // [siteViewController release];
         
         return;
         
     } else {
         
-        // Don't do anything because there's no programme URL
+        // Pop up an alert to say sorry, no can do
+        NSString *alertString = @"  I don't know the web address for this programme :(";
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry..." 
+                                                        message:alertString 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        [alert release];
+        
         return;
         
     }
-    */
     
-     return;
     
 }
 
