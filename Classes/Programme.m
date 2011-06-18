@@ -26,6 +26,7 @@
 @synthesize watchingID;
 @synthesize programmeURL;
 @synthesize reminderFlag;
+@synthesize isFilm;
 
 // Create and return a programme with fully-populated attributes
 - (id)initWithProgrammeID:(int)iProgrammeID 
@@ -44,6 +45,7 @@
             andWatchingID:(int)iWatchingID
           andProgrammeURL:(NSString *)iprogrammeURL
           andReminderFlag:(Boolean)iReminderFlag
+                andIsFilm:(Boolean)iIsFilm
 {
 	// Call the superclass's designated initializer 
 	self = [super init];
@@ -69,6 +71,7 @@
     [self setWatchingID:iWatchingID];
     [self setProgrammeURL:iprogrammeURL];
     [self setReminderFlag:iReminderFlag];
+    [self setIsFilm:iIsFilm];
 	
 	// Return the address of the newly initialized object
 	return self;

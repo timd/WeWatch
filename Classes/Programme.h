@@ -30,6 +30,7 @@
     int watchingID;             // ID of watching flag
     Boolean reminderFlag;          // Flag to indicate that there's a reminder set
     NSString *programmeURL;     // broadcast site URL
+    Boolean isFilm;                 // flag for film
 }
 
 @property (nonatomic) int programmeID;
@@ -48,6 +49,7 @@
 @property (nonatomic) int watchingID;
 @property (nonatomic) Boolean reminderFlag;
 @property (nonatomic, retain) NSString *programmeURL;
+@property (nonatomic) Boolean isFilm;
 
 - (id)initWithProgrammeID:(int)programmeID
                  andTitle:(NSString *)iTitle
@@ -64,6 +66,7 @@
             andAmWatching:(Boolean)iAmWatching
             andWatchingID:(int)watchingID
           andProgrammeURL:(NSString *)programmeURL
-          andReminderFlag:(Boolean)reminderFlag;
+          andReminderFlag:(Boolean)reminderFlag
+                andIsFilm:(Boolean)isFilm;
 
 @end

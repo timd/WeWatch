@@ -35,6 +35,7 @@
 #define PROG_WATCHERS_LABEL ((UILabel *)[cell viewWithTag:1060])
 #define PROG_WATCHING_FLAG ((UIImageView *)[cell viewWithTag:1070])
 #define PROG_CHANNEL_ICON ((UIImageView *)[cell viewWithTag:1080])
+#define PROG_FILM_FLAG ((UIImageView *)[cell viewWithTag:1090])
 
 // Define table section headers
 #define HEADING_ARRAY [NSArray arrayWithObjects:@"6pm", @"7pm", @"8pm", @"9pm", @"10pm", nil]
@@ -317,6 +318,7 @@
     UILabel *watchersLabel = PROG_WATCHERS_LABEL;
     UIImageView *watchingFlagImage = PROG_WATCHING_FLAG;
     UIImageView *channelIcon = PROG_CHANNEL_ICON;
+    UIImageView *filmFlag = PROG_FILM_FLAG;
 
     // Configure the programme title
     //titleLabel.numberOfLines=0;
@@ -351,6 +353,12 @@
         // Need to explicitly state that image should be hidden,
         // otherwise it'll show up if the cell gets reused
         watchingFlagImage.hidden = TRUE;
+    }
+    
+    if (p.isFilm == YES) {
+        filmFlag.hidden = FALSE;
+    } else {
+        filmFlag.hidden = TRUE;
     }
     
     // Set up the correct channel icon

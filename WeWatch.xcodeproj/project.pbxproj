@@ -100,6 +100,8 @@
 		22E450AF139A6B39000D31A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AC139A6B39000D31A8 /* CFNetwork.framework */; };
 		22E450B0139A6B39000D31A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E450AD139A6B39000D31A8 /* MobileCoreServices.framework */; };
 		22E450B3139A8F5A000D31A8 /* Reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E450B2139A8F5A000D31A8 /* Reachable.m */; };
+		22EA06D313AB9D0300710EA8 /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EA06D113AB9D0300710EA8 /* film.png */; };
+		22EA06D413AB9D0300710EA8 /* film@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EA06D213AB9D0300710EA8 /* film@2x.png */; };
 		22EEA9E5137827B900435B7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EEA9E4137827B900435B7F /* SystemConfiguration.framework */; };
 		22EEA9E9137827FA00435B7F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9E8137827FA00435B7F /* Reachability.m */; };
 		22EEA9F7137846C200435B7F /* LoadProgrammeImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */; };
@@ -290,6 +292,8 @@
 		22E450AE139A6B39000D31A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22E450B1139A8F5A000D31A8 /* Reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachable.h; sourceTree = "<group>"; };
 		22E450B2139A8F5A000D31A8 /* Reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachable.m; sourceTree = "<group>"; };
+		22EA06D113AB9D0300710EA8 /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film.png; sourceTree = "<group>"; };
+		22EA06D213AB9D0300710EA8 /* film@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "film@2x.png"; sourceTree = "<group>"; };
 		22EEA9E4137827B900435B7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22EEA9E7137827FA00435B7F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Libraries/Reachability/Classes/Reachability.h; sourceTree = "<group>"; };
 		22EEA9E8137827FA00435B7F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Libraries/Reachability/Classes/Reachability.m; sourceTree = "<group>"; };
@@ -651,6 +655,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22EA06D113AB9D0300710EA8 /* film.png */,
+				22EA06D213AB9D0300710EA8 /* film@2x.png */,
 				2238EA8313A9FD1200D8B828 /* Default@2x.png */,
 				228D987113A8F81300785D5A /* microRemindOnButton.png */,
 				22D3540013A7754A00437E84 /* gear.png */,
@@ -887,6 +893,8 @@
 				228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */,
 				2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */,
 				2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */,
+				22EA06D313AB9D0300710EA8 /* film.png in Resources */,
+				22EA06D413AB9D0300710EA8 /* film@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
