@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.96
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   add_safari_view
-### Date            :   16/06/2011
+### Version         :   0.97
+### Branch          :   cached_images
+### Branched from   :   master
+### Merged from     :   n/a
+### Date            :   20/06/2011
 
 ===================================================
 
@@ -57,6 +57,7 @@ RELEASE NOTES
 - added open-in-Safari code to detail page; also implemented unused webview
 
 ### In progress:
+- caching images
 
 
 ### Todo:
