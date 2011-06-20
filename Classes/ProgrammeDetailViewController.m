@@ -71,6 +71,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Set the ivar for the programme image to the retrieved one
     retrievedProgrammeImage = retrievedImage;
+    
+    [spinner stopAnimating];
 
 }
 
@@ -148,6 +150,23 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Set the programme image held in the ivar to the default
     retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
+    
+/*
+    // Grab the frame of the UIButton
+    CGRect buttonFrame = [webButton frame];
+    NSLog(@"Button X = %f", buttonFrame.origin.x);
+    NSLog(@"Button Y = %f", buttonFrame.origin.y);
+    NSLog(@"Button H = %f", buttonFrame.size.height);
+    NSLog(@"Button W = %f", buttonFrame.size.width);
+    
+    // Create a view to slap over the button
+    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(buttonFrame.origin.x, buttonFrame.origin.y, buttonFrame.size.width, buttonFrame.size.height)];
+    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(57, 23, 40, 40)];
+    
+    [buttonView addSubview:spinner];
+    [spinner startAnimating];
+    [self.view addSubview:buttonView];
+*/
     
     // Check if the network is reachable:
     Reachable *reachable = [[Reachable alloc] init];

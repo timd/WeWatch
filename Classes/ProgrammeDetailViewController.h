@@ -53,6 +53,9 @@
     // ivar to hold the ASIHTTPRequest object
     ASIHTTPRequest *requestMade;
     
+    // ivar to hold the activity view
+    UIActivityIndicatorView *spinner;
+    
 }
 
 @property (nonatomic, assign) Programme *displayProgramme;

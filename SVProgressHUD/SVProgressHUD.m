@@ -74,7 +74,7 @@ static SVProgressHUD *sharedView = nil;
 		view = [UIApplication sharedApplication].keyWindow;
 	
 	if(posY == -1)
-		posY = floor(CGRectGetHeight(view.bounds)/2)-100;
+		posY = floor(CGRectGetHeight(view.bounds)/2)-150;
 
 	[[SVProgressHUD sharedView] showInView:view status:string networkIndicator:show posY:posY];
 }
