@@ -6,9 +6,9 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.97
-### Branch          :   cached_images
-### Branched from   :   master
-### Merged from     :   n/a
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   cached_images
 ### Date            :   20/06/2011
 
 ===================================================
@@ -55,10 +55,9 @@ RELEASE NOTES
 - implemented notification cancellation from programme detail view
 - implemented notification cancellation from unwatch action
 - added open-in-Safari code to detail page; also implemented unused webview
+- implemented image caching
 
 ### In progress:
-- caching images
-
 
 ### Todo:
 
