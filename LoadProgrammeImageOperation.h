@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LoadProgrammeImageOperationDelegate.h"
+#import "ASIHTTPRequest.h"
 
 @interface LoadProgrammeImageOperation : NSOperation {
     

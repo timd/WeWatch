@@ -47,6 +47,7 @@
 		2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8313A9FD1200D8B828 /* Default@2x.png */; };
 		2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */; };
 		2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */; };
+		223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F356D13AF2F6E005DE433 /* LoadImage.m */; };
 		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
 		226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */; };
 		226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */; };
@@ -206,6 +207,9 @@
 		2238EA8A13AA089000D8B828 /* ProgrammeSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgrammeSiteViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.h; sourceTree = "<group>"; };
 		2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgrammeSiteViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.m; sourceTree = "<group>"; };
 		2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeSiteViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.xib; sourceTree = "<group>"; };
+		223F356C13AF2F6D005DE433 /* LoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadImage.h; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.h; sourceTree = "<group>"; };
+		223F356D13AF2F6E005DE433 /* LoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadImage.m; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.m; sourceTree = "<group>"; };
+		223F357013AF34A9005DE433 /* LoadImageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadImageDelegate.h; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImageDelegate.h; sourceTree = "<group>"; };
 		2269946C139FCD1D00DC74CB /* Buglist.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buglist.markdown; sourceTree = "<group>"; };
 		226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalThrobberViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.h; sourceTree = "<group>"; };
 		226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalThrobberViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.m; sourceTree = "<group>"; };
@@ -593,6 +597,9 @@
 				22EEA9F5137846C200435B7F /* LoadProgrammeImageOperation.h */,
 				22EEA9F6137846C200435B7F /* LoadProgrammeImageOperation.m */,
 				22EEA9F81378470100435B7F /* LoadProgrammeImageOperationDelegate.h */,
+				223F356C13AF2F6D005DE433 /* LoadImage.h */,
+				223F356D13AF2F6E005DE433 /* LoadImage.m */,
+				223F357013AF34A9005DE433 /* LoadImageDelegate.h */,
 			);
 			name = "Programme image load";
 			sourceTree = "<group>";
@@ -951,6 +958,7 @@
 				2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */,
 				226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */,
 				2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */,
+				223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

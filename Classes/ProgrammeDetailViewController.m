@@ -10,6 +10,7 @@
 #import "Programme.h"
 #import "SA_OAuthTwitterEngine.h"
 #import "LoadProgrammeImageOperation.h"
+#import "LoadImage.h"
 #import "WeWatchAppDelegate.h"
 #import "ProgrammeSiteViewController.h"
 
@@ -21,7 +22,7 @@
 
 @synthesize displayProgramme;
 @synthesize twitterEngine;
-@synthesize loadProgrammeImageOperation;
+@synthesize loadImageOperation;
 @synthesize retrievedProgrammeImage;
 @synthesize forceDataReload;
 
@@ -61,17 +62,16 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 
 #pragma mark -
-#pragma mark LoadProgrammeImageOperationDelegate methods
+#pragma mark LoadImageDelegate methods
 
--(void)LoadProgrammeImageOperation:(NSOperation *)theProgrammeImageOperation didLoadProgrammeImage:(UIImage *)retrievedImage;
-{
-	// Programme image has been successfully loaded, so set the programme image to the one which was retrieved
-    NSLog(@"LoadProgrammeImageOperation completed, and called delegate method");
-    // [programmeImage setImage:retrievedImage];
+-(void)didLoadImage:(UIImage *)retrievedImage {
+
+    // Programme image has been successfully loaded by LoadImage, so set the programme image to the one which was retrieved
     [webButton setBackgroundImage:retrievedImage forState:UIControlStateNormal];
     
     // Set the ivar for the programme image to the retrieved one
     retrievedProgrammeImage = retrievedImage;
+
 }
 
 #pragma mark - View lifecycle
@@ -158,14 +158,19 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         
         [NSURL URLWithString:[displayProgramme programmeImage]];
 
-        // Fire off loadProgrammeImageOperation
-        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
+        // Fire off loadImage 
+        self.loadImageOperation = [[LoadImage alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
         
-        self.loadProgrammeImageOperation.delegate = self;
+        self.loadImageOperation.delegate = self;
+        
+        // Fire off loadProgrammeImageOperation
+        //        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
+        
+        //        self.loadProgrammeImageOperation.delegate = self;
         
         // Create queue and add retrieval job
         NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
-        [operationQueue addOperation:self.loadProgrammeImageOperation];
+        [operationQueue addOperation:self.loadImageOperation];
         
         NSLog(@"Called queued image retrieval");
         
