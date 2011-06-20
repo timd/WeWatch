@@ -327,6 +327,14 @@
     CGSize textSize = [[titleLabel text] sizeWithFont:[titleLabel font]];
     
     // Position film flag
+    if ([p isFilm] == 1) {
+        NSLog(@"Showing film icon");
+        // Calculate text width
+        CGFloat textWidth = textSize.width;
+        CGFloat iconPosition = textWidth + 20.0f;
+        filmFlag.frame = CGRectMake(iconPosition, 9.0f, 20.0f, 20.0f);
+        filmFlag.hidden = NO;
+    }
     
     // Calculate text width
     CGFloat textWidth = textSize.width;

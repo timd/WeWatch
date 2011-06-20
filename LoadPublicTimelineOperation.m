@@ -258,8 +258,14 @@
                 // The subtitle value is empty, therefore we need to pad it with an empty string
                 programmeURL = @"";
             }
-
             
+            // Set the film flag
+            Boolean isFilm;
+            if ([currentProgrammesFromJSON objectForKey:@"channel"] == @"BBC Two") {
+                isFilm = YES;
+            } else {
+                isFilm = NO;
+            }
                       
             // Create a Programme object from each NSDictionary
             Programme *tempProgramme = [[Programme alloc] initWithProgrammeID:programmeID 
@@ -277,7 +283,8 @@
                                                                 andAmWatching:amWatching
                                                                 andWatchingID:watchingID
                                                               andProgrammeURL:programmeURL
-                                                              andReminderFlag:NO];
+                                                              andReminderFlag:NO
+                                                                    andIsFilm:isFilm];
             
             // Release the local objects we created
             [localNamesArray release];

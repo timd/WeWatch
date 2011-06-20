@@ -248,7 +248,7 @@
 							</object>
 							<object class="IBUIImageView" id="558034464">
 								<reference key="NSNextResponder" ref="43732404"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{221, 9}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="43732404"/>
 								<reference key="NSWindow"/>
