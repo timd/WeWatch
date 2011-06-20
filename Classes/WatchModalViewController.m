@@ -92,6 +92,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:valuesArray forKeys:keysArray];
     
     [valuesArray release];
+    [keysArray release];
                               
     localNotification.userInfo = infoDict;
     
