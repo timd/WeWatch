@@ -57,14 +57,14 @@ RELEASE NOTES
 - added open-in-Safari code to detail page; also implemented unused webview
 - implemented image caching
 - updated placeholder text in comment box
+- implemented film flag
 
 ### In progress:
 
 
 ### Todo:
 
-- cache images
-- add throbber to unwatch action
+- add throbber to loading of images
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
