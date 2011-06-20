@@ -354,6 +354,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [tweetText release];
     [reminderButton release];
     [tweetButton release];
+    [backgroundTextLabel release];
     
     [super dealloc];
 }
@@ -370,7 +371,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 #pragma mark TextViewDelegate methods
 
 - (void)textViewDidChange:(UITextView *)textView {
-    //tweetText.text = @"";
+    backgroundTextLabel.hidden = YES;
     int maxChars = 100;
     int charCount = [textView.text length];
     int charsLeft = maxChars - charCount;
@@ -380,11 +381,9 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    //tweetText.text = @"";
     [tweetText setFont:[UIFont fontWithName:@"Helvetica" size:15.0f]];
     tweetText.textColor = [UIColor blackColor];
 }
-
 
 #pragma mark - View lifecycle
 
@@ -409,15 +408,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
     [channelLogo setImage:[UIImage imageNamed:imageName]];
 
-    // Set up the text for the tweet box
-    NSString *defaultTweetText = [NSString stringWithFormat:@"I'm planning to watch %@ on %@ at %@!", [displayProgramme title], [displayProgramme channel], [displayProgramme time]];
-    tweetText.text = defaultTweetText;
-    
-    // Set number of characters in text box
-    int charsLeft = 100 - [tweetText.text length];
-    textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
-
-    
     UIBarButtonItem *watchButton = [[UIBarButtonItem alloc] initWithTitle:@"Watch" 
                                                                     style:UIBarButtonItemStylePlain 
                                                                    target:self 
@@ -425,9 +415,13 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     self.navigationItem.rightBarButtonItem = watchButton;
     [watchButton release];
     
+    // Set number of characters in text box
+    int charsLeft = 100 - [tweetText.text length];
+    textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
+    tweetText.backgroundColor = [UIColor clearColor];
+    
     // Make the textarea first responder to lift the keyboard
     [tweetText becomeFirstResponder];
-
     
 }
 

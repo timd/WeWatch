@@ -29,6 +29,7 @@
     IBOutlet UIButton *tweetButton;
     IBOutlet UILabel *textCount;
     IBOutlet UIImageView *channelLogo;
+    IBOutlet UILabel *backgroundTextLabel;
     
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
