@@ -44,7 +44,6 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
-		2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8313A9FD1200D8B828 /* Default@2x.png */; };
 		2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */; };
 		2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */; };
 		223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F356D13AF2F6E005DE433 /* LoadImage.m */; };
@@ -203,7 +202,6 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
-		2238EA8313A9FD1200D8B828 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2238EA8A13AA089000D8B828 /* ProgrammeSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgrammeSiteViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.h; sourceTree = "<group>"; };
 		2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgrammeSiteViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.m; sourceTree = "<group>"; };
 		2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeSiteViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.xib; sourceTree = "<group>"; };
@@ -658,7 +656,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2238EA8313A9FD1200D8B828 /* Default@2x.png */,
 				228D987113A8F81300785D5A /* microRemindOnButton.png */,
 				22D3540013A7754A00437E84 /* gear.png */,
 				22D3540413A777A600437E84 /* infoBox.png */,
@@ -892,7 +889,6 @@
 				22D3540313A7754A00437E84 /* gear@2x.png in Resources */,
 				22D3540513A777A600437E84 /* infoBox.png in Resources */,
 				228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */,
-				2238EA8413A9FD1200D8B828 /* Default@2x.png in Resources */,
 				2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
