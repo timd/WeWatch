@@ -35,6 +35,7 @@
 #define PROG_WATCHERS_LABEL ((UILabel *)[cell viewWithTag:1060])
 #define PROG_WATCHING_FLAG ((UIImageView *)[cell viewWithTag:1070])
 #define PROG_CHANNEL_ICON ((UIImageView *)[cell viewWithTag:1080])
+#define PROG_FILM_FLAG ((UIImageView *)[cell viewWithTag:1090])
 
 // Define table section headers
 #define HEADING_ARRAY [NSArray arrayWithObjects:@"6pm", @"7pm", @"8pm", @"9pm", @"10pm", nil]
@@ -317,11 +318,21 @@
     UILabel *watchersLabel = PROG_WATCHERS_LABEL;
     UIImageView *watchingFlagImage = PROG_WATCHING_FLAG;
     UIImageView *channelIcon = PROG_CHANNEL_ICON;
-
+    UIImageView *filmFlag = PROG_FILM_FLAG;
+    
     // Configure the programme title
     //titleLabel.numberOfLines=0;
     titleLabel.text = p.title;
-    //[titleLabel sizeToFit];
+    
+    CGSize textSize = [[titleLabel text] sizeWithFont:[titleLabel font]];
+    
+    // Position film flag
+    
+    // Calculate text width
+    CGFloat textWidth = textSize.width;
+    CGFloat iconPosition = textWidth + 20.0f;
+    filmFlag.frame = CGRectMake(iconPosition, 9.0f, 20.0f, 20.0f);
+    
     
     // Configure the programme blurb
     descriptionLabel.text = p.description;

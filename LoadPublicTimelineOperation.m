@@ -183,7 +183,7 @@
             }
             
             // Set watch ID
-            NSInteger watchingID;
+            NSInteger watchingID = 0;
             
             if ([currentProgrammesFromJSON objectForKey:@"watching_id"] != nil) {
                 watchingID = [[currentProgrammesFromJSON objectForKey:@"watching_id"] intValue];

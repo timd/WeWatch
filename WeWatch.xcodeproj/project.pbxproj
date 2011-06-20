@@ -47,6 +47,9 @@
 		2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */; };
 		2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */; };
 		223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F356D13AF2F6E005DE433 /* LoadImage.m */; };
+		223F359213AF8056005DE433 /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 223F359013AF8056005DE433 /* movie.png */; };
+		223F359313AF8056005DE433 /* movie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 223F359113AF8056005DE433 /* movie@2x.png */; };
+		223F359613AF80C9005DE433 /* circle-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 223F359513AF80C9005DE433 /* circle-o.png */; };
 		2269946D139FCD1D00DC74CB /* Buglist.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2269946C139FCD1D00DC74CB /* Buglist.markdown */; };
 		226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */; };
 		226A74F813A68E3800F6E63C /* ModalThrobberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */; };
@@ -208,6 +211,9 @@
 		223F356C13AF2F6D005DE433 /* LoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadImage.h; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.h; sourceTree = "<group>"; };
 		223F356D13AF2F6E005DE433 /* LoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadImage.m; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.m; sourceTree = "<group>"; };
 		223F357013AF34A9005DE433 /* LoadImageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadImageDelegate.h; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImageDelegate.h; sourceTree = "<group>"; };
+		223F359013AF8056005DE433 /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
+		223F359113AF8056005DE433 /* movie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movie@2x.png"; sourceTree = "<group>"; };
+		223F359513AF80C9005DE433 /* circle-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-o.png"; sourceTree = "<group>"; };
 		2269946C139FCD1D00DC74CB /* Buglist.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buglist.markdown; sourceTree = "<group>"; };
 		226A74F413A68E3800F6E63C /* ModalThrobberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalThrobberViewController.h; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.h; sourceTree = "<group>"; };
 		226A74F513A68E3800F6E63C /* ModalThrobberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalThrobberViewController.m; path = ../../../../../Dropbox/Code/WW/WeWatch/Classes/ModalThrobberViewController.m; sourceTree = "<group>"; };
@@ -656,6 +662,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				223F359513AF80C9005DE433 /* circle-o.png */,
+				223F359013AF8056005DE433 /* movie.png */,
+				223F359113AF8056005DE433 /* movie@2x.png */,
 				228D987113A8F81300785D5A /* microRemindOnButton.png */,
 				22D3540013A7754A00437E84 /* gear.png */,
 				22D3540413A777A600437E84 /* infoBox.png */,
@@ -890,6 +899,9 @@
 				22D3540513A777A600437E84 /* infoBox.png in Resources */,
 				228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */,
 				2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */,
+				223F359213AF8056005DE433 /* movie.png in Resources */,
+				223F359313AF8056005DE433 /* movie@2x.png in Resources */,
+				223F359613AF80C9005DE433 /* circle-o.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
