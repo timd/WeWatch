@@ -55,6 +55,7 @@
     
     // Switch on caching
     [request setDownloadCache:[ASIDownloadCache sharedCache]];
+    [request setDownloadCache:ASIUseDefaultCachePolicy];
     
     // Fire off request using ASIHTTPRequest's asynchronicity
     [request startAsynchronous];

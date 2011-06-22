@@ -101,6 +101,14 @@
     self.navigationItem.rightBarButtonItem = settingsButton;
     [settingsButton release];
     
+    /* Code to customise nav bar header
+     
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
+     
+    */
+    
     // Set up a left button as a refresh indicator
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] 
                                                                        style:UIBarButtonItemStylePlain 
@@ -408,6 +416,28 @@
     
 }
 
+/*
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section 
+{
+    UIView *headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 60)] autorelease];
+ 
+    self.tableView.sectionHeaderHeight = 60;
+    
+    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 3, tableView.bounds.size.width - 10, 18)] autorelease];
+    label.text = @"Section Header Text Here";
+    label.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.75];
+    label.backgroundColor = [UIColor clearColor];
+    [headerView addSubview:label];
+    
+    
+    if (section == 1)
+        [headerView setBackgroundColor:[UIColor redColor]];
+    else 
+        [headerView setBackgroundColor:[UIColor clearColor]];
+    return headerView;
+}
+*/
+ 
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

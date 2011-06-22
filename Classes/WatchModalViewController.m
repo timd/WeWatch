@@ -414,7 +414,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
                                                                    action:@selector(watchProgramme)];
     self.navigationItem.rightBarButtonItem = watchButton;
     [watchButton release];
-    
+
     // Set number of characters in text box
     int charsLeft = 100 - [tweetText.text length];
     textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
