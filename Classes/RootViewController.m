@@ -101,13 +101,11 @@
     self.navigationItem.rightBarButtonItem = settingsButton;
     [settingsButton release];
     
-    /* Code to customise nav bar header
+    /* Code to customise nav bar header */
      
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
-     
-    */
+    //self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.54 green:0.68 blue:0.73 alpha:1];
     
     // Set up a left button as a refresh indicator
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] 
@@ -409,10 +407,18 @@
     NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
     Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
 
+    UILabel *timeLabel = PROG_TIME_LABEL;
+    UIColor *cellBackgroundColour = [UIColor colorWithRed:0.94 green:0.95 blue:0.95 alpha:1.0];    
+
     // Check whether I'm watching this programme
     if ([p amWatching]) {
-        cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
+        cellBackgroundColour = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
     }
+    
+    cell.backgroundColor = cellBackgroundColour;
+    timeLabel.backgroundColor = cellBackgroundColour;
+
+    
     
 }
 
