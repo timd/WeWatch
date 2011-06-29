@@ -9,6 +9,18 @@
 #import "WeWatchAppDelegate.h"
 #import "RootViewController.h"
 
+// UINavBar category to override default image
+
+@implementation UINavigationBar (CustomImage)
+
+- (void)drawRect:(CGRect)rect {
+    UIImage *image = [UIImage imageNamed:@"customNavBar"];
+    [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+}
+
+@end
+
+
 @implementation WeWatchAppDelegate
 
 @synthesize window;

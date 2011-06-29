@@ -13,10 +13,13 @@
 #import "LoadImage.h"
 #import "WeWatchAppDelegate.h"
 #import "ProgrammeSiteViewController.h"
+#import "DetailViewNavigationBar.h"
+#import "CommentDetailViewController.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
 #define kOAuthConsumerSecret @"sL2E2nX1RWvHLaCOmLYXkoqgiHl7CxanhCLq2PGDtk"
+
 
 @implementation ProgrammeDetailViewController
 
@@ -67,10 +70,11 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 -(void)didLoadImage:(UIImage *)retrievedImage {
 
     // Programme image has been successfully loaded by LoadImage, so set the programme image to the one which was retrieved
-    [webButton setBackgroundImage:retrievedImage forState:UIControlStateNormal];
+    UIImage *webButtonBackground = [self imageWithBorderFromImage:retrievedImage];
+    [webButton setBackgroundImage:webButtonBackground forState:UIControlStateNormal];
     
     // Set the ivar for the programme image to the retrieved one
-    retrievedProgrammeImage = retrievedImage;
+    retrievedProgrammeImage = webButtonBackground;
     
     [spinner stopAnimating];
 
@@ -82,7 +86,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Call the superclass method
     [super viewWillAppear:animated];
-
+    
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
     [subtitleLabel setText:[displayProgramme subtitle]];
@@ -91,6 +95,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
+    
+    //commentCountLabel.hidden = YES;
     
     //Set the image view to display the image that was passed in
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
@@ -146,7 +152,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
     //    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
-    [webButton setBackgroundImage:[UIImage imageNamed:@"wewatch.png"] forState:UIControlStateNormal];
+    UIImage *webButtonBackground = [self imageWithBorderFromImage:[UIImage imageNamed:@"wewatch.png"]];
+    [webButton setBackgroundImage:webButtonBackground forState:UIControlStateNormal];
     
     // Set the programme image held in the ivar to the default
     retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
@@ -240,6 +247,15 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Set up the image in the navigation bar
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)];
+    [imgView setImage:[UIImage imageWithContentsOfFile:@"detailNavBar"]];
+    [self.navigationController.navigationBar insertSubview:imgView atIndex:0];
+    NSLog(@"Changing navbar image");
+    
+    [imgView release];
+
+    
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     
@@ -300,6 +316,15 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [webButton release];
     webButton = nil;
     
+    [detailsButton release];
+    detailsButton = nil;
+    
+    [commentsButton release];
+    commentsButton = nil;
+    
+    [commentCountLabel release];
+    commentCountLabel = nil;
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -354,6 +379,31 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
+-(IBAction)showDetailsView{
+    NSLog(@"showDetailsView button pressed");
+}
+
+-(IBAction)showCommentsView{
+    NSLog(@"showCommentsView button pressed");
+    
+    //CommentDetailViewController *cdVC = [[CommentDetailViewController alloc] initWithNibName:@"CommentDetailView" bundle:nil];
+    //[self presentModalViewController:cdVC animated:NO];
+}
+
+-(UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+    CGSize size = [source size];
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+    CGContextStrokeRect(context, rect);
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return testImg;
+}
 
 //=============================================================================================================================
 #pragma mark -
@@ -376,7 +426,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     NSLog(@"Fired OAuthTwitterController:authenticatedWithUsername:");
 	NSLog(@"Authenticated with user %@", username);
     
-    [self flipModalWatchPage];
+    //[self flipModalWatchPage];
     
 }
 
@@ -584,27 +634,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
--(void)flipModalWatchPage {
-
-    // Create the modal view controller
-    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
-    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
-    // Pass in the Programme to the modalViewController
-    [modalViewController setDisplayProgramme:displayProgramme];
-    
-    // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
-    [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
-    
-    // Present the modalViewController with a horizontal flip
-    [self presentModalViewController:modalViewController animated:YES];
-    [modalViewController release];
-    
-}
-
 -(void)showModalWatchPage{
     
-
     // Create the Watch modal view controller
     WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"NewWatchModalViewController" bundle:nil];
     
@@ -622,7 +653,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Present the modalViewController with a horizontal flip
     [self.navigationController pushViewController:modalViewController animated:YES];
-    //                [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
     
 }

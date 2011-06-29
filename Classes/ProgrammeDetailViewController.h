@@ -38,6 +38,10 @@
     IBOutlet UIImageView *channelIcon;
     IBOutlet UIButton *reminderButton;
     IBOutlet UIButton *webButton;
+    IBOutlet UIImageView *tabBar;
+    IBOutlet UIButton *detailsButton;
+    IBOutlet UIButton *commentsButton;
+    IBOutlet UILabel *commentCountLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;
@@ -69,7 +73,6 @@
 extern NSString * const didUnwatchProgrammeNotification;
 
 -(IBAction)watchProgramme;
--(void)flipModalWatchPage;
 
 -(void)showModalWatchPage;
 
@@ -81,6 +84,11 @@ extern NSString * const didUnwatchProgrammeNotification;
 -(void)alterWatchersNumberBy:(int)incValue;
 
 -(IBAction)pushWebView;
+
+-(IBAction)showCommentsView;
+-(IBAction)showDetailsView;
+
+-(UIImage *)imageWithBorderFromImage:(UIImage *)source; 
 
 // Action to switch off the reminder
 -(IBAction)killReminder;

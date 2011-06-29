@@ -94,28 +94,33 @@
     self.title = @"We Watch";
     
     // Set up a right-hand button on the nav bar
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
-                                                                       style:UIBarButtonItemStylePlain 
-                                                                      target:self 
-                                                                      action:@selector(displaySettingsModalWindow)];
-    self.navigationItem.rightBarButtonItem = settingsButton;
-    [settingsButton release];
     
-    /* Code to customise nav bar header
+    // Create custom watch button from image
+    UIButton *info = [UIButton buttonWithType:UIButtonTypeCustom];  
+    UIImage *infoImage = [UIImage imageNamed:@"info-icon"];
+    
+    [info setBackgroundImage:infoImage forState:UIControlStateNormal];
+    [info addTarget:self action:@selector(displaySettingsModalWindow) forControlEvents:UIControlEventTouchUpInside];  
+    info.frame = CGRectMake(0, 0, 30, 31);  
+    UIBarButtonItem *infoButton = [[[UIBarButtonItem alloc] initWithCustomView:info] autorelease];  
+    
+    self.navigationItem.rightBarButtonItem = infoButton;
+    
+    /* Code to customise nav bar header */
      
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.7 green:0.5 blue:0.2 alpha:1];
-     
-    */
+    //self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.54 green:0.68 blue:0.73 alpha:1];
     
     // Set up a left button as a refresh indicator
+    /*
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] 
                                                                        style:UIBarButtonItemStylePlain 
                                                                       target:self 
                                                                       action:@selector(refresh)];
     self.navigationItem.leftBarButtonItem = refreshButton;
     [refreshButton release];
+    */
         
     Reachable *reachable = [[Reachable alloc] init];
     
@@ -409,10 +414,18 @@
     NSMutableArray *nthMutableArray = [scheduleArray objectAtIndex:indexPath.section];
     Programme *p = [nthMutableArray objectAtIndex:indexPath.row];
 
+    UILabel *timeLabel = PROG_TIME_LABEL;
+    UIColor *cellBackgroundColour = [UIColor colorWithRed:0.94 green:0.95 blue:0.95 alpha:1.0];    
+
     // Check whether I'm watching this programme
     if ([p amWatching]) {
-        cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
+        cellBackgroundColour = [UIColor colorWithRed:1.0 green:1.0 blue:0.85 alpha:1.0];
     }
+    
+    cell.backgroundColor = cellBackgroundColour;
+    timeLabel.backgroundColor = cellBackgroundColour;
+
+    
     
 }
 
@@ -653,15 +666,25 @@
 -(void)displaySettingsModalWindow {
     NSLog(@"Firing displaySettingsModalWindow");
     
-    // Create the modal view controller
-    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
-    settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	SettingsModalViewController *settingsMVC = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+
+    [settingsMVC setTwitterEngine:_engine];
     
-    [settingsModalViewController setTwitterEngine:_engine];
+    // Push the view controller onto the stack
+    [self.navigationController pushViewController:settingsMVC animated:YES];
+    
+    //[programmeDetailViewController release];
+
+    
+    // Create the modal view controller
+    //    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+    //settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+
     
     // Present the modalViewController with a horizontal flip
-    [self presentModalViewController:settingsModalViewController animated:YES];
-    [settingsModalViewController release];
+    //[self presentModalViewController:settingsModalViewController animated:YES];
+    //[settingsModalViewController release];
     
 }
 
