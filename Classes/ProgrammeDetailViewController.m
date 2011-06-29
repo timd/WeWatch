@@ -96,7 +96,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
     
-    commentCountLabel.hidden = YES;
+    //commentCountLabel.hidden = YES;
     
     //Set the image view to display the image that was passed in
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
@@ -426,7 +426,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     NSLog(@"Fired OAuthTwitterController:authenticatedWithUsername:");
 	NSLog(@"Authenticated with user %@", username);
     
-    [self flipModalWatchPage];
+    //[self flipModalWatchPage];
     
 }
 
@@ -634,27 +634,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
--(void)flipModalWatchPage {
-
-    // Create the modal view controller
-    WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"WatchModalViewController" bundle:nil];
-    modalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
-    // Pass in the Programme to the modalViewController
-    [modalViewController setDisplayProgramme:displayProgramme];
-    
-    // Pass in the retrieved Programme image so we don't have to bugger about loading it in the modal view controller...
-    [modalViewController setProvidedProgrammeImage:retrievedProgrammeImage];
-    
-    // Present the modalViewController with a horizontal flip
-    [self presentModalViewController:modalViewController animated:YES];
-    [modalViewController release];
-    
-}
-
 -(void)showModalWatchPage{
     
-
     // Create the Watch modal view controller
     WatchModalViewController *modalViewController = [[WatchModalViewController alloc] initWithNibName:@"NewWatchModalViewController" bundle:nil];
     
@@ -672,7 +653,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Present the modalViewController with a horizontal flip
     [self.navigationController pushViewController:modalViewController animated:YES];
-    //                [self presentModalViewController:modalViewController animated:YES];
     [modalViewController release];
     
 }

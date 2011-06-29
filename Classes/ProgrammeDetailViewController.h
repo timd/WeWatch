@@ -73,7 +73,6 @@
 extern NSString * const didUnwatchProgrammeNotification;
 
 -(IBAction)watchProgramme;
--(void)flipModalWatchPage;
 
 -(void)showModalWatchPage;
 
