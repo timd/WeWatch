@@ -94,12 +94,17 @@
     self.title = @"We Watch";
     
     // Set up a right-hand button on the nav bar
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info-icon"] 
-                                                                       style:UIBarButtonItemStyleBordered 
-                                                                      target:self 
-                                                                      action:@selector(displaySettingsModalWindow)];
-    self.navigationItem.rightBarButtonItem = settingsButton;
-    [settingsButton release];
+    
+    // Create custom watch button from image
+    UIButton *info = [UIButton buttonWithType:UIButtonTypeCustom];  
+    UIImage *infoImage = [UIImage imageNamed:@"info-icon"];
+    
+    [info setBackgroundImage:infoImage forState:UIControlStateNormal];
+    [info addTarget:self action:@selector(displaySettingsModalWindow) forControlEvents:UIControlEventTouchUpInside];  
+    info.frame = CGRectMake(0, 0, 30, 31);  
+    UIBarButtonItem *infoButton = [[[UIBarButtonItem alloc] initWithCustomView:info] autorelease];  
+    
+    self.navigationItem.rightBarButtonItem = infoButton;
     
     /* Code to customise nav bar header */
      

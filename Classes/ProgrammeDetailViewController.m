@@ -69,10 +69,11 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 -(void)didLoadImage:(UIImage *)retrievedImage {
 
     // Programme image has been successfully loaded by LoadImage, so set the programme image to the one which was retrieved
-    [webButton setBackgroundImage:retrievedImage forState:UIControlStateNormal];
+    UIImage *webButtonBackground = [self imageWithBorderFromImage:retrievedImage];
+    [webButton setBackgroundImage:webButtonBackground forState:UIControlStateNormal];
     
     // Set the ivar for the programme image to the retrieved one
-    retrievedProgrammeImage = retrievedImage;
+    retrievedProgrammeImage = webButtonBackground;
     
     [spinner stopAnimating];
 
@@ -148,7 +149,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Set the programme image to the generic one, so that when the detail view loads
     // it doesn't load with the previously-viewed programme's image
     //    [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
-    [webButton setBackgroundImage:[UIImage imageNamed:@"wewatch.png"] forState:UIControlStateNormal];
+    UIImage *webButtonBackground = [self imageWithBorderFromImage:[UIImage imageNamed:@"wewatch.png"]];
+    [webButton setBackgroundImage:webButtonBackground forState:UIControlStateNormal];
     
     // Set the programme image held in the ivar to the default
     retrievedProgrammeImage = [UIImage imageNamed:@"wewatch.png"];
@@ -311,6 +313,12 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [webButton release];
     webButton = nil;
     
+    [detailsButton release];
+    detailsButton = nil;
+    
+    [commentsButton release];
+    commentsButton = nil;
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -365,6 +373,28 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
+-(IBAction)showDetailsView{
+    NSLog(@"showDetailsView button pressed");
+}
+
+-(IBAction)showCommentsView{
+    NSLog(@"showCommentsView button pressed");    
+}
+
+-(UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+    CGSize size = [source size];
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+    CGContextStrokeRect(context, rect);
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return testImg;
+}
 
 //=============================================================================================================================
 #pragma mark -

@@ -68,6 +68,10 @@
 		22862CFE13B4D9410082269E /* Channel5.png in Resources */ = {isa = PBXBuildFile; fileRef = 22862CFD13B4D9410082269E /* Channel5.png */; };
 		22862D0013B4DC6B0082269E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22862CFF13B4DC6B0082269E /* Default.png */; };
 		22862D0213B4DD540082269E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22862D0113B4DD540082269E /* Default@2x.png */; };
+		2286FC7E13BB445A00A8550A /* twitter-bird-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC7C13BB445A00A8550A /* twitter-bird-icon.png */; };
+		2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC7D13BB445A00A8550A /* alarm-clock.png */; };
+		2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8313BB488B00A8550A /* textViewGradient.png */; };
+		2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8513BB560F00A8550A /* small-watch-button.png */; };
 		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
@@ -272,6 +276,10 @@
 		22862CFD13B4D9410082269E /* Channel5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Channel5.png; sourceTree = "<group>"; };
 		22862CFF13B4DC6B0082269E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		22862D0113B4DD540082269E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2286FC7C13BB445A00A8550A /* twitter-bird-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-icon.png"; sourceTree = "<group>"; };
+		2286FC7D13BB445A00A8550A /* alarm-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-clock.png"; sourceTree = "<group>"; };
+		2286FC8313BB488B00A8550A /* textViewGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textViewGradient.png; sourceTree = "<group>"; };
+		2286FC8513BB560F00A8550A /* small-watch-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-watch-button.png"; sourceTree = "<group>"; };
 		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
@@ -706,6 +714,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2286FC8513BB560F00A8550A /* small-watch-button.png */,
+				2286FC8313BB488B00A8550A /* textViewGradient.png */,
+				2286FC7C13BB445A00A8550A /* twitter-bird-icon.png */,
+				2286FC7D13BB445A00A8550A /* alarm-clock.png */,
 				22DC34AF13BB3D26001CBA60 /* info-icon.png */,
 				22DC34AD13BB3CC3001CBA60 /* dark-green-eye.png */,
 				22DC34AB13BB3C59001CBA60 /* light-green-eye.png */,
@@ -979,6 +991,10 @@
 				22DC34AC13BB3C59001CBA60 /* light-green-eye.png in Resources */,
 				22DC34AE13BB3CC3001CBA60 /* dark-green-eye.png in Resources */,
 				22DC34B013BB3D26001CBA60 /* info-icon.png in Resources */,
+				2286FC7E13BB445A00A8550A /* twitter-bird-icon.png in Resources */,
+				2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */,
+				2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */,
+				2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

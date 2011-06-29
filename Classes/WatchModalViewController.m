@@ -181,46 +181,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 
 }
 
--(IBAction)toggleRemindState {
-    // If the reminder state is on
-    NSLog(@"Firing toggleRemindState");
-    if (remindState) {
-        
-        NSLog(@"remindState = YES");
-        remindState = NO;
-        UIImage *btnImage = [UIImage imageNamed:@"remindOffButton.png"];
-        [reminderButton setBackgroundImage:btnImage forState:UIControlStateNormal];
-        
-    } else {
-        
-        NSLog(@"remindState = NO");
-        remindState = YES;
-        UIImage *btnImage = [UIImage imageNamed:@"remindOnButton.png"];
-        [reminderButton setBackgroundImage:btnImage forState:UIControlStateNormal];
-        
-    }
-}
-
--(IBAction)toggleTweetState {
-    // If the reminder state is on
-    NSLog(@"Firing toggleRemindState");
-    if (tweetState) {
-        
-        NSLog(@"tweetState = YES");
-        tweetState = NO;
-        UIImage *btnImage = [UIImage imageNamed:@"tweetOffButton.png"];
-        [tweetButton setBackgroundImage:btnImage forState:UIControlStateNormal];
-        
-    } else {
-        
-        NSLog(@"tweetState = NO");
-        tweetState = YES;
-        UIImage *btnImage = [UIImage imageNamed:@"tweetOnButton.png"];
-        [tweetButton setBackgroundImage:btnImage forState:UIControlStateNormal];
-        
-    }
-    
-}
 
 -(IBAction)watchProgramme{
     
@@ -243,7 +203,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         
         NSString *baseString = @"http://wewatch.co.uk/intentions.json?";
         
-        
         NSString * encodedComment = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)tweetText.text,
                                                                                         NULL,
                                                                                         (CFStringRef)@"!*'();:@&=+$,/?%#[]",
@@ -258,7 +217,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         
         // Set up switch for tweeting via WeWatch
         NSString *intention;
-        if (tweetState) {
+        if (tweetSwitch.on) {
             // If tweetState is YES, send a 1
             intention = @"intention[tweet]=1";
         } else {
@@ -267,7 +226,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         }
         
         // Set up inbuilt reminder
-        if (remindState) {
+        if (reminderSwitch.on) {
             [self setNotification:displayProgramme];
         }
 
@@ -352,9 +311,8 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     [durationLabel release];
     [programmeImage release];
     [tweetText release];
-    [reminderButton release];
-    [tweetButton release];
-    [backgroundTextLabel release];
+    [reminderSwitch release];
+    [tweetSwitch release];
     
     [super dealloc];
 }
@@ -371,7 +329,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
 #pragma mark TextViewDelegate methods
 
 - (void)textViewDidChange:(UITextView *)textView {
-    backgroundTextLabel.hidden = YES;
+    backgroundText.hidden = YES;
     int maxChars = 100;
     int charCount = [textView.text length];
     int charsLeft = maxChars - charCount;
@@ -398,27 +356,40 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
     
-    // Set up tweet and remind button states
-    tweetState = NO;
-    remindState = NO;
-    [reminderButton setBackgroundImage:[UIImage imageNamed:@"remindOffButton.png"] forState:UIControlStateNormal];
-    [tweetButton setBackgroundImage:[UIImage imageNamed:@"tweetOffButton.png"] forState:UIControlStateNormal];
-    
     //Set the image view to display the image that was passed in
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
     [channelLogo setImage:[UIImage imageNamed:imageName]];
+    
+    // Create custom watch button from image
+    UIButton *watch = [UIButton buttonWithType:UIButtonTypeCustom];  
+    UIImage *watchImage = [UIImage imageNamed:@"small-watch-button"];
+                           
+    [watch setBackgroundImage:watchImage forState:UIControlStateNormal];
+    [watch addTarget:self action:@selector(watchProgramme) forControlEvents:UIControlEventTouchUpInside];  
+    watch.frame = CGRectMake(0, 0, 84, 36);  
+    UIBarButtonItem *watchButton = [[[UIBarButtonItem alloc] initWithCustomView:watch] autorelease];  
 
-    UIBarButtonItem *watchButton = [[UIBarButtonItem alloc] initWithTitle:@"Watch" 
-                                                                    style:UIBarButtonItemStylePlain 
-                                                                   target:self 
-                                                                   action:@selector(watchProgramme)];
     self.navigationItem.rightBarButtonItem = watchButton;
-    [watchButton release];
+    
+    // Set up the background image of the text box
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"textViewGradient"]];
+    [tweetText addSubview: imgView];
+    [tweetText sendSubviewToBack: imgView];
 
     // Set number of characters in text box
     int charsLeft = 100 - [tweetText.text length];
     textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
     tweetText.backgroundColor = [UIColor clearColor];
+    
+    // Set up background text
+    backgroundText = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, 300, 21)];
+    //    UILabel *backgroundText = [[UILabel alloc] initWithFrame:[tweetText frame]];
+    backgroundText.text = @"Why are you watching (optional)...";
+    backgroundText.backgroundColor = [UIColor clearColor];
+    backgroundText.font = [UIFont fontWithName:@"Helvetica" size:15];
+    backgroundText.textColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0];
+    [tweetText addSubview:backgroundText];
+    [tweetText bringSubviewToFront:backgroundText];
     
     // Make the textarea first responder to lift the keyboard
     [tweetText becomeFirstResponder];
