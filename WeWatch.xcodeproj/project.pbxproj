@@ -78,6 +78,8 @@
 		2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8E13BB64F800A8550A /* commentHeader.png */; };
 		2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9213BB672D00A8550A /* watchersBlob.png */; };
 		2286FC9513BB68A300A8550A /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9413BB68A300A8550A /* stripes.png */; };
+		2286FC9713BB806800A8550A /* settingsTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9613BB806800A8550A /* settingsTopBar.png */; };
+		2286FC9913BB81DC00A8550A /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9813BB81DC00A8550A /* twitterLoginButton.png */; };
 		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
@@ -291,6 +293,8 @@
 		2286FC8E13BB64F800A8550A /* commentHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentHeader.png; sourceTree = "<group>"; };
 		2286FC9213BB672D00A8550A /* watchersBlob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchersBlob.png; sourceTree = "<group>"; };
 		2286FC9413BB68A300A8550A /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
+		2286FC9613BB806800A8550A /* settingsTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsTopBar.png; sourceTree = "<group>"; };
+		2286FC9813BB81DC00A8550A /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
@@ -725,6 +729,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2286FC9813BB81DC00A8550A /* twitterLoginButton.png */,
+				2286FC9613BB806800A8550A /* settingsTopBar.png */,
 				2286FC9413BB68A300A8550A /* stripes.png */,
 				2286FC9213BB672D00A8550A /* watchersBlob.png */,
 				2286FC8E13BB64F800A8550A /* commentHeader.png */,
@@ -1012,6 +1018,8 @@
 				2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */,
 				2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */,
 				2286FC9513BB68A300A8550A /* stripes.png in Resources */,
+				2286FC9713BB806800A8550A /* settingsTopBar.png in Resources */,
+				2286FC9913BB81DC00A8550A /* twitterLoginButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

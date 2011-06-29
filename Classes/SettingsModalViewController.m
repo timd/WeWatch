@@ -37,7 +37,7 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
         
         if (![self checkTwitterLoginStatus]) {
             
-            // NSLog(@"No authorised Twitter user found");
+            NSLog(@"No authorised Twitter user found");
             
             // There isn't an authorised user, so it makes sense to present the Twitter login page
             UIViewController *OAuthController = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:twitterEngine delegate:self];
@@ -54,8 +54,11 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
             
             // We're logged in, display the blue logo and update the text
             twitterLoginButton.hidden = YES;
-            twitterUsername.text = [NSString stringWithFormat:@"You are logged as %@", [twitterEngine username]];
+            twitterLabel.hidden = NO;
             twitterUsername.hidden = NO;
+            twitterUsername.text = [NSString stringWithFormat:@"%@", [twitterEngine username]];
+            
+            [self.navigationController popViewControllerAnimated:YES];
             
         } else {
             
@@ -67,7 +70,6 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
             
             // Change the text of the login button
             twitterLoginButton.titleLabel.text = @"Login";
-            twitterLogo.image = [UIImage imageWithContentsOfFile:@"twitter_logo_grey.png"];
             
             // Fire off the didChangeTwitterLoginStatus message to the notification centre so that
             // the listening classes know that they need to refresh their data
@@ -148,6 +150,7 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationController.title = @"About";
     
     
     if (!twitterEngine) {
@@ -159,19 +162,22 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
     NSLog(@"Twitter status = %d", [self.twitterEngine isAuthorized]);
     // Check the twitter login status and update the twitter logo accordingly
     if ([self checkTwitterLoginStatus]) {
-        // We're logged in, display the blue logo and update the text
-        [twitterLogo initWithImage:[UIImage imageWithContentsOfFile:@"twitter_logo.png"]];
-        
+        // We're logged in, display the username
         twitterLoginButton.hidden = YES;
-        twitterUsername.text = [NSString stringWithFormat:@"You are logged as %@", [twitterEngine username]];
+        twitterUsername.text = [NSString stringWithFormat:@"%@", [twitterEngine username]];
         twitterUsername.hidden = NO;
+        twitterLabel.hidden = NO;
         
     } else {
         // Not logged in, display the grey one and update the text
-        [twitterLogo initWithImage:[UIImage imageWithContentsOfFile:@"twitter_logo_grey.png"]];
-        twitterLoginButton.hidden = NO;
-        twitterLoginButton.titleLabel.text = @"Login";
         twitterUsername.hidden = YES;
+        twitterLabel.hidden = YES;
+        
+        UIImage *buttonImage = [UIImage imageNamed:@"twitterLoginButton"];
+        [twitterLoginButton setImage:buttonImage forState:UIControlStateNormal];
+
+        twitterLoginButton.hidden = NO;
+
     }
   
     // Write out a list of the notifications as a bug check

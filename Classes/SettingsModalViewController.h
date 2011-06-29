@@ -20,9 +20,7 @@
     
     IBOutlet UIButton *twitterLoginButton;
     IBOutlet UILabel *twitterUsername;
-    IBOutlet UIImageView *twitterLogo;
-    IBOutlet UISwitch *enableTestNotifications;
-    IBOutlet UISwitch *enableDebugMode;
+    IBOutlet UILabel *twitterLabel;
     
     // ivar to hold reference to Twitter OAuth engine
     SA_OAuthTwitterEngine *twitterEngine;

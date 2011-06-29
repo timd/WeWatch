@@ -666,15 +666,25 @@
 -(void)displaySettingsModalWindow {
     NSLog(@"Firing displaySettingsModalWindow");
     
-    // Create the modal view controller
-    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
-    settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	SettingsModalViewController *settingsMVC = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+
+    [settingsMVC setTwitterEngine:_engine];
     
-    [settingsModalViewController setTwitterEngine:_engine];
+    // Push the view controller onto the stack
+    [self.navigationController pushViewController:settingsMVC animated:YES];
+    
+    //[programmeDetailViewController release];
+
+    
+    // Create the modal view controller
+    //    SettingsModalViewController *settingsModalViewController = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+    //settingsModalViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+
     
     // Present the modalViewController with a horizontal flip
-    [self presentModalViewController:settingsModalViewController animated:YES];
-    [settingsModalViewController release];
+    //[self presentModalViewController:settingsModalViewController animated:YES];
+    //[settingsModalViewController release];
     
 }
 
