@@ -64,6 +64,7 @@
 						<string key="NSFrame">{{0, 281}, {320, 99}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="517559343"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -77,7 +78,7 @@
 						<string key="NSFrame">{{22, 134}, {287, 33}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="965236909"/>
+						<reference key="NSNextKeyView" ref="421627781"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -105,7 +106,7 @@
 						<string key="NSFrame">{{20, 182}, {280, 61}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="517559343"/>
+						<reference key="NSNextKeyView" ref="331755267"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -132,7 +133,7 @@
 						<string key="NSFrame">{{22, 290}, {83, 22}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="825981556"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -322,7 +323,7 @@
 						<string key="NSFrame">{{171, 76}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="847285005"/>
+						<reference key="NSNextKeyView" ref="321675416"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -341,12 +342,12 @@
 						<string key="NSFrame">{{171, 101}, {24, 16}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="847285005"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">watchingEye.png</string>
+							<string key="NSResourceName">light-green-eye.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="331755267">
@@ -355,6 +356,7 @@
 						<string key="NSFrame">{{22, 164}, {155, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1072323223"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -373,6 +375,7 @@
 						<string key="NSFrame">{{210, 76}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="965236909"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -388,23 +391,27 @@
 					<object class="IBUIImageView" id="235413647">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{321, 42}</string>
+						<string key="NSFrameSize">{320, 42}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="516307649"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">tabBar1.png</string>
+							<string key="NSResourceName">tabBarDetails.png</string>
 						</object>
 					</object>
 				</object>
-				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
+				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="516307649"/>
+				<reference key="NSNextKeyView" ref="235413647"/>
 				<reference key="IBUIBackgroundColor" ref="243308145"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
+					<bool key="IBUIPrompted">NO</bool>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -516,6 +523,14 @@
 						<reference key="destination" ref="321675416"/>
 					</object>
 					<int key="connectionID">94</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tabBar</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="235413647"/>
+					</object>
+					<int key="connectionID">99</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -734,7 +749,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">97</int>
+			<int key="maxID">99</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -792,6 +807,7 @@
 							<string>programmeImage</string>
 							<string>reminderButton</string>
 							<string>subtitleLabel</string>
+							<string>tabBar</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
 							<string>watchButtonLabel</string>
@@ -809,6 +825,7 @@
 							<string>UIImageView</string>
 							<string>UIButton</string>
 							<string>UILabel</string>
+							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -829,6 +846,7 @@
 							<string>programmeImage</string>
 							<string>reminderButton</string>
 							<string>subtitleLabel</string>
+							<string>tabBar</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
 							<string>watchButtonLabel</string>
@@ -866,6 +884,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">subtitleLabel</string>
 								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">tabBar</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">timeLabel</string>
@@ -919,18 +941,18 @@
 				<string>bottomBackgroundView.png</string>
 				<string>button_bar.png</string>
 				<string>green_button.png</string>
-				<string>tabBar1.png</string>
+				<string>light-green-eye.png</string>
+				<string>tabBarDetails.png</string>
 				<string>upperBackgroundView.png</string>
-				<string>watchingEye.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 99}</string>
 				<string>{320, 52}</string>
 				<string>{97, 33}</string>
+				<string>{26, 19}</string>
 				<string>{320, 42}</string>
 				<string>{320, 240}</string>
-				<string>{24, 16}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">300</string>

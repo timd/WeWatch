@@ -38,6 +38,7 @@
     IBOutlet UIImageView *channelIcon;
     IBOutlet UIButton *reminderButton;
     IBOutlet UIButton *webButton;
+    IBOutlet UIImageView *tabBar;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

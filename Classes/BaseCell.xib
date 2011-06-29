@@ -82,7 +82,6 @@
 								<string key="NSFrame">{{13, 58}, {298, 50}}</string>
 								<reference key="NSSuperview" ref="43732404"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
@@ -212,7 +211,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">watchingEye.png</string>
+									<string key="NSResourceName">dark-green-eye.png</string>
 								</object>
 							</object>
 							<object class="IBUIImageView" id="760735256">
@@ -455,15 +454,15 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>Channel4.png</string>
 				<string>circle-o.png</string>
+				<string>dark-green-eye.png</string>
 				<string>watchersBlob.png</string>
-				<string>watchingEye.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{64, 35}</string>
 				<string>{28, 28}</string>
+				<string>{26, 19}</string>
 				<string>{27, 16}</string>
-				<string>{24, 16}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">300</string>

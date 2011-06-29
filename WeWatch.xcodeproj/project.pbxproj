@@ -105,6 +105,16 @@
 		22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641F13992C6500093989 /* WatchModalViewController.xib */; };
 		22D364231399343600093989 /* fake_nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364221399343600093989 /* fake_nav_bar.png */; };
 		22D65AF213A1202D00B92D82 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D65AF113A1202D00B92D82 /* Entitlements.plist */; };
+		22DC349313BB2A54001CBA60 /* detailNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC349213BB2A54001CBA60 /* detailNavBar.png */; };
+		22DC349513BB2AF2001CBA60 /* detailNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC349413BB2AF2001CBA60 /* detailNavBar.png */; };
+		22DC34A013BB2FA0001CBA60 /* DetailViewNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DC349F13BB2FA0001CBA60 /* DetailViewNavigationBar.m */; };
+		22DC34A213BB30D9001CBA60 /* DetailViewNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */; };
+		22DC34A613BB36EB001CBA60 /* customNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34A513BB36EB001CBA60 /* customNavBar.png */; };
+		22DC34A913BB39F8001CBA60 /* tabBarComments.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34A713BB39F8001CBA60 /* tabBarComments.png */; };
+		22DC34AA13BB39F8001CBA60 /* tabBarDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34A813BB39F8001CBA60 /* tabBarDetails.png */; };
+		22DC34AC13BB3C59001CBA60 /* light-green-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34AB13BB3C59001CBA60 /* light-green-eye.png */; };
+		22DC34AE13BB3CC3001CBA60 /* dark-green-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34AD13BB3CC3001CBA60 /* dark-green-eye.png */; };
+		22DC34B013BB3D26001CBA60 /* info-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC34AF13BB3D26001CBA60 /* info-icon.png */; };
 		22E081D2139CEDA900D1099B /* SettingsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E081D0139CEDA900D1099B /* SettingsModalViewController.m */; };
 		22E081D3139CEDA900D1099B /* SettingsModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */; };
 		22E081D5139CEEC600D1099B /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E081D4139CEEC600D1099B /* twitter_logo.png */; };
@@ -306,6 +316,17 @@
 		22D3641F13992C6500093989 /* WatchModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WatchModalViewController.xib; path = Classes/WatchModalViewController.xib; sourceTree = "<group>"; };
 		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D65AF113A1202D00B92D82 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		22DC349213BB2A54001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailNavBar.png; path = ../../../../../Users/Tim/Desktop/detailNavBar.png; sourceTree = "<group>"; };
+		22DC349413BB2AF2001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailNavBar.png; sourceTree = "<group>"; };
+		22DC349E13BB2FA0001CBA60 /* DetailViewNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewNavigationBar.h; sourceTree = "<group>"; };
+		22DC349F13BB2FA0001CBA60 /* DetailViewNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewNavigationBar.m; sourceTree = "<group>"; };
+		22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewNavigationBar.xib; sourceTree = "<group>"; };
+		22DC34A513BB36EB001CBA60 /* customNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customNavBar.png; sourceTree = "<group>"; };
+		22DC34A713BB39F8001CBA60 /* tabBarComments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarComments.png; sourceTree = "<group>"; };
+		22DC34A813BB39F8001CBA60 /* tabBarDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarDetails.png; sourceTree = "<group>"; };
+		22DC34AB13BB3C59001CBA60 /* light-green-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-green-eye.png"; sourceTree = "<group>"; };
+		22DC34AD13BB3CC3001CBA60 /* dark-green-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-green-eye.png"; sourceTree = "<group>"; };
+		22DC34AF13BB3D26001CBA60 /* info-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info-icon.png"; sourceTree = "<group>"; };
 		22E081CF139CEDA900D1099B /* SettingsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsModalViewController.h; sourceTree = "<group>"; };
 		22E081D0139CEDA900D1099B /* SettingsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsModalViewController.m; sourceTree = "<group>"; };
 		22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsModalViewController.xib; path = Classes/SettingsModalViewController.xib; sourceTree = "<group>"; };
@@ -406,6 +427,8 @@
 				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
 				2238EA8A13AA089000D8B828 /* ProgrammeSiteViewController.h */,
 				2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */,
+				22DC349E13BB2FA0001CBA60 /* DetailViewNavigationBar.h */,
+				22DC349F13BB2FA0001CBA60 /* DetailViewNavigationBar.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -609,6 +632,7 @@
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */,
+				22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */,
 			);
 			name = "Nib files";
 			sourceTree = "<group>";
@@ -682,6 +706,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22DC34AF13BB3D26001CBA60 /* info-icon.png */,
+				22DC34AD13BB3CC3001CBA60 /* dark-green-eye.png */,
+				22DC34AB13BB3C59001CBA60 /* light-green-eye.png */,
+				22DC34A713BB39F8001CBA60 /* tabBarComments.png */,
+				22DC34A813BB39F8001CBA60 /* tabBarDetails.png */,
+				22DC34A513BB36EB001CBA60 /* customNavBar.png */,
+				22DC349413BB2AF2001CBA60 /* detailNavBar.png */,
 				22862CFD13B4D9410082269E /* Channel5.png */,
 				22862CFA13B4D80B0082269E /* ITV1.png */,
 				22BCE63613B37EA800AD5206 /* bottomBackgroundView.png */,
@@ -699,6 +730,7 @@
 				22D3540113A7754A00437E84 /* gear@2x.png */,
 				22D353FC13A7749500437E84 /* refresh.png */,
 				22D353FD13A7749500437E84 /* refresh@2x.png */,
+				22DC349213BB2A54001CBA60 /* detailNavBar.png */,
 				22D353FA13A76A8E00437E84 /* remindOnButton.png */,
 				22D353F813A7694100437E84 /* remindOffButton.png */,
 				22D353EC13A762A200437E84 /* tweetOffButton.png */,
@@ -938,6 +970,15 @@
 				22862CFE13B4D9410082269E /* Channel5.png in Resources */,
 				22862D0013B4DC6B0082269E /* Default.png in Resources */,
 				22862D0213B4DD540082269E /* Default@2x.png in Resources */,
+				22DC349313BB2A54001CBA60 /* detailNavBar.png in Resources */,
+				22DC349513BB2AF2001CBA60 /* detailNavBar.png in Resources */,
+				22DC34A213BB30D9001CBA60 /* DetailViewNavigationBar.xib in Resources */,
+				22DC34A613BB36EB001CBA60 /* customNavBar.png in Resources */,
+				22DC34A913BB39F8001CBA60 /* tabBarComments.png in Resources */,
+				22DC34AA13BB39F8001CBA60 /* tabBarDetails.png in Resources */,
+				22DC34AC13BB3C59001CBA60 /* light-green-eye.png in Resources */,
+				22DC34AE13BB3CC3001CBA60 /* dark-green-eye.png in Resources */,
+				22DC34B013BB3D26001CBA60 /* info-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1044,7 @@
 				226A74F713A68E3800F6E63C /* ModalThrobberViewController.m in Sources */,
 				2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */,
 				223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */,
+				22DC34A013BB2FA0001CBA60 /* DetailViewNavigationBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

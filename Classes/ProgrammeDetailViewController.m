@@ -13,6 +13,7 @@
 #import "LoadImage.h"
 #import "WeWatchAppDelegate.h"
 #import "ProgrammeSiteViewController.h"
+#import "DetailViewNavigationBar.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -83,7 +84,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     // Call the superclass method
     [super viewWillAppear:animated];
-
+    
     // Set the label values for the detail view
     [titleLabel setText:[displayProgramme title]];
     [subtitleLabel setText:[displayProgramme subtitle]];
@@ -240,6 +241,15 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set up the image in the navigation bar
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)];
+    [imgView setImage:[UIImage imageWithContentsOfFile:@"detailNavBar"]];
+    [self.navigationController.navigationBar insertSubview:imgView atIndex:0];
+    NSLog(@"Changing navbar image");
+    
+    [imgView release];
+
     
     // Set the background to match the table view
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];

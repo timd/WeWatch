@@ -94,8 +94,8 @@
     self.title = @"We Watch";
     
     // Set up a right-hand button on the nav bar
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear.png"] 
-                                                                       style:UIBarButtonItemStylePlain 
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"info-icon"] 
+                                                                       style:UIBarButtonItemStyleBordered 
                                                                       target:self 
                                                                       action:@selector(displaySettingsModalWindow)];
     self.navigationItem.rightBarButtonItem = settingsButton;
@@ -108,12 +108,14 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.54 green:0.68 blue:0.73 alpha:1];
     
     // Set up a left button as a refresh indicator
+    /*
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"] 
                                                                        style:UIBarButtonItemStylePlain 
                                                                       target:self 
                                                                       action:@selector(refresh)];
     self.navigationItem.leftBarButtonItem = refreshButton;
     [refreshButton release];
+    */
         
     Reachable *reachable = [[Reachable alloc] init];
     
