@@ -14,6 +14,7 @@
 #import "WeWatchAppDelegate.h"
 #import "ProgrammeSiteViewController.h"
 #import "DetailViewNavigationBar.h"
+#import "CommentDetailViewController.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -94,6 +95,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [timeLabel setText:[displayProgramme time]];
     [durationLabel setText:[displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [displayProgramme watchers]]];
+    
+    commentCountLabel.hidden = YES;
     
     //Set the image view to display the image that was passed in
     NSString *imageName = [[[displayProgramme channel] stringByReplacingOccurrencesOfString:@" " withString:@""] stringByAppendingString:@".png"];
@@ -319,6 +322,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [commentsButton release];
     commentsButton = nil;
     
+    [commentCountLabel release];
+    commentCountLabel = nil;
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -378,7 +384,10 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 }
 
 -(IBAction)showCommentsView{
-    NSLog(@"showCommentsView button pressed");    
+    NSLog(@"showCommentsView button pressed");
+    
+    //CommentDetailViewController *cdVC = [[CommentDetailViewController alloc] initWithNibName:@"CommentDetailView" bundle:nil];
+    //[self presentModalViewController:cdVC animated:NO];
 }
 
 -(UIImage*)imageWithBorderFromImage:(UIImage*)source;

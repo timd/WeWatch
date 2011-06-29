@@ -149,6 +149,7 @@ NSString * const didChangeTwitterLoginStatusNotification = @"didChangeTwitterLog
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     if (!twitterEngine) {
         twitterEngine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
         twitterEngine.consumerKey = kOAuthConsumerKey;

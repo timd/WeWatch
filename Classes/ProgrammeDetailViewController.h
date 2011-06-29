@@ -41,6 +41,7 @@
     IBOutlet UIImageView *tabBar;
     IBOutlet UIButton *detailsButton;
     IBOutlet UIButton *commentsButton;
+    IBOutlet UILabel *commentCountLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
     Programme *displayProgramme;

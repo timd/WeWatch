@@ -334,6 +334,14 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     int charCount = [textView.text length];
     int charsLeft = maxChars - charCount;
     
+    if ( (charsLeft <= 10) && (charsLeft >= 0) ) {
+        textCount.textColor = [UIColor colorWithRed:1.0 green:0.44 blue:0 alpha:1.0];
+    } else if (charsLeft < 0) {
+        textCount.textColor = [UIColor redColor];
+    } else {
+        textCount.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+    }
+    
     textCount.text = [NSString stringWithFormat:@"%d", charsLeft];
     
 }

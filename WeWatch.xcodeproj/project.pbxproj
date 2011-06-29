@@ -72,6 +72,12 @@
 		2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC7D13BB445A00A8550A /* alarm-clock.png */; };
 		2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8313BB488B00A8550A /* textViewGradient.png */; };
 		2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8513BB560F00A8550A /* small-watch-button.png */; };
+		2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8713BB62C300A8550A /* CommentDetailView.xib */; };
+		2286FC8B13BB62F100A8550A /* CommentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2286FC8A13BB62F100A8550A /* CommentDetailViewController.m */; };
+		2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8C13BB63C900A8550A /* comments-icon.png */; };
+		2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8E13BB64F800A8550A /* commentHeader.png */; };
+		2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9213BB672D00A8550A /* watchersBlob.png */; };
+		2286FC9513BB68A300A8550A /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9413BB68A300A8550A /* stripes.png */; };
 		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
@@ -83,7 +89,6 @@
 		22BB5AE41369D40B004B299B /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE31369D40B004B299B /* README.markdown */; };
 		22BB5AEA1369D979004B299B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE81369D979004B299B /* Icon.png */; };
 		22BB5AEB1369D979004B299B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AE91369D979004B299B /* Icon@2x.png */; };
-		22BCE62D13B368F200AD5206 /* watchersBlob.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BCE62C13B368F200AD5206 /* watchersBlob.png */; };
 		22BCE62F13B36B8900AD5206 /* watchingEye.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BCE62E13B36B8900AD5206 /* watchingEye.png */; };
 		22BCE63213B3762300AD5206 /* tabBar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BCE63013B3762300AD5206 /* tabBar1.png */; };
 		22BCE63313B3762300AD5206 /* tabBar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BCE63113B3762300AD5206 /* tabBar2.png */; };
@@ -106,7 +111,6 @@
 		22D364171399290C00093989 /* button_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364161399290C00093989 /* button_bar.png */; };
 		22D3641A13992A2F00093989 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641913992A2F00093989 /* green_button.png */; };
 		22D3642013992C6500093989 /* WatchModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D3641E13992C6500093989 /* WatchModalViewController.m */; };
-		22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3641F13992C6500093989 /* WatchModalViewController.xib */; };
 		22D364231399343600093989 /* fake_nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D364221399343600093989 /* fake_nav_bar.png */; };
 		22D65AF213A1202D00B92D82 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D65AF113A1202D00B92D82 /* Entitlements.plist */; };
 		22DC349313BB2A54001CBA60 /* detailNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DC349213BB2A54001CBA60 /* detailNavBar.png */; };
@@ -280,6 +284,13 @@
 		2286FC7D13BB445A00A8550A /* alarm-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-clock.png"; sourceTree = "<group>"; };
 		2286FC8313BB488B00A8550A /* textViewGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textViewGradient.png; sourceTree = "<group>"; };
 		2286FC8513BB560F00A8550A /* small-watch-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-watch-button.png"; sourceTree = "<group>"; };
+		2286FC8713BB62C300A8550A /* CommentDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDetailView.xib; sourceTree = "<group>"; };
+		2286FC8913BB62F100A8550A /* CommentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentDetailViewController.h; sourceTree = "<group>"; };
+		2286FC8A13BB62F100A8550A /* CommentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentDetailViewController.m; sourceTree = "<group>"; };
+		2286FC8C13BB63C900A8550A /* comments-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments-icon.png"; sourceTree = "<group>"; };
+		2286FC8E13BB64F800A8550A /* commentHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentHeader.png; sourceTree = "<group>"; };
+		2286FC9213BB672D00A8550A /* watchersBlob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchersBlob.png; sourceTree = "<group>"; };
+		2286FC9413BB68A300A8550A /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
 		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
@@ -297,7 +308,6 @@
 		22BB5AE31369D40B004B299B /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		22BB5AE81369D979004B299B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		22BB5AE91369D979004B299B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		22BCE62C13B368F200AD5206 /* watchersBlob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchersBlob.png; sourceTree = "<group>"; };
 		22BCE62E13B36B8900AD5206 /* watchingEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchingEye.png; sourceTree = "<group>"; };
 		22BCE63013B3762300AD5206 /* tabBar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar1.png; sourceTree = "<group>"; };
 		22BCE63113B3762300AD5206 /* tabBar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar2.png; sourceTree = "<group>"; };
@@ -321,7 +331,6 @@
 		22D3641913992A2F00093989 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		22D3641D13992C6500093989 /* WatchModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchModalViewController.h; sourceTree = "<group>"; };
 		22D3641E13992C6500093989 /* WatchModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchModalViewController.m; sourceTree = "<group>"; };
-		22D3641F13992C6500093989 /* WatchModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WatchModalViewController.xib; path = Classes/WatchModalViewController.xib; sourceTree = "<group>"; };
 		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D65AF113A1202D00B92D82 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		22DC349213BB2A54001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailNavBar.png; path = ../../../../../Users/Tim/Desktop/detailNavBar.png; sourceTree = "<group>"; };
@@ -437,6 +446,8 @@
 				2238EA8B13AA089000D8B828 /* ProgrammeSiteViewController.m */,
 				22DC349E13BB2FA0001CBA60 /* DetailViewNavigationBar.h */,
 				22DC349F13BB2FA0001CBA60 /* DetailViewNavigationBar.m */,
+				2286FC8913BB62F100A8550A /* CommentDetailViewController.h */,
+				2286FC8A13BB62F100A8550A /* CommentDetailViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -633,7 +644,6 @@
 				2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */,
 				226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */,
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
-				22D3641F13992C6500093989 /* WatchModalViewController.xib */,
 				2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */,
 				22BB5AD11369BA71004B299B /* BaseCell.xib */,
 				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
@@ -641,6 +651,7 @@
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */,
 				22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */,
+				2286FC8713BB62C300A8550A /* CommentDetailView.xib */,
 			);
 			name = "Nib files";
 			sourceTree = "<group>";
@@ -714,6 +725,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2286FC9413BB68A300A8550A /* stripes.png */,
+				2286FC9213BB672D00A8550A /* watchersBlob.png */,
+				2286FC8E13BB64F800A8550A /* commentHeader.png */,
+				2286FC8C13BB63C900A8550A /* comments-icon.png */,
 				2286FC8513BB560F00A8550A /* small-watch-button.png */,
 				2286FC8313BB488B00A8550A /* textViewGradient.png */,
 				2286FC7C13BB445A00A8550A /* twitter-bird-icon.png */,
@@ -732,7 +747,6 @@
 				22BCE63013B3762300AD5206 /* tabBar1.png */,
 				22BCE63113B3762300AD5206 /* tabBar2.png */,
 				22BCE62E13B36B8900AD5206 /* watchingEye.png */,
-				22BCE62C13B368F200AD5206 /* watchersBlob.png */,
 				223F359513AF80C9005DE433 /* circle-o.png */,
 				223F359013AF8056005DE433 /* movie.png */,
 				223F359113AF8056005DE433 /* movie@2x.png */,
@@ -936,7 +950,6 @@
 				22F21E3F139917CC00F77712 /* listview-arrow.png in Resources */,
 				22D364171399290C00093989 /* button_bar.png in Resources */,
 				22D3641A13992A2F00093989 /* green_button.png in Resources */,
-				22D3642113992C6500093989 /* WatchModalViewController.xib in Resources */,
 				22D364231399343600093989 /* fake_nav_bar.png in Resources */,
 				22FB8BC813993A6700DC5A4B /* wewatch.png in Resources */,
 				22E081D3139CEDA900D1099B /* SettingsModalViewController.xib in Resources */,
@@ -972,7 +985,6 @@
 				223F359213AF8056005DE433 /* movie.png in Resources */,
 				223F359313AF8056005DE433 /* movie@2x.png in Resources */,
 				223F359613AF80C9005DE433 /* circle-o.png in Resources */,
-				22BCE62D13B368F200AD5206 /* watchersBlob.png in Resources */,
 				22BCE62F13B36B8900AD5206 /* watchingEye.png in Resources */,
 				22BCE63213B3762300AD5206 /* tabBar1.png in Resources */,
 				22BCE63313B3762300AD5206 /* tabBar2.png in Resources */,
@@ -995,6 +1007,11 @@
 				2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */,
 				2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */,
 				2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */,
+				2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */,
+				2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */,
+				2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */,
+				2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */,
+				2286FC9513BB68A300A8550A /* stripes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,6 +1078,7 @@
 				2238EA8D13AA089100D8B828 /* ProgrammeSiteViewController.m in Sources */,
 				223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */,
 				22DC34A013BB2FA0001CBA60 /* DetailViewNavigationBar.m in Sources */,
+				2286FC8B13BB62F100A8550A /* CommentDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
