@@ -5,11 +5,11 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.98
+### Version         :   0.99
 ### Branch          :   master
 ### Branched from   :   
-### Merged from     :   revised_placeholder_text
-### Date            :   20/06/2011
+### Merged from     :   design_v2
+### Date            :   29/06/2011
 
 ===================================================
 
@@ -57,13 +57,12 @@ RELEASE NOTES
 - added open-in-Safari code to detail page; also implemented unused webview
 - implemented image caching
 - updated placeholder text in comment box
-- implemented film flag
+- implemented Andrew's v2 design changes
 
 ### In progress:
 
-
 ### Todo:
-
+- reimplement film flag
 - add throbber to loading of images
 - need to check async cancel format [REQUIRES TESTING]
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
