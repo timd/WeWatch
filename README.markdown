@@ -8,8 +8,8 @@ http://www.wewatch.co.uk
 ### Version         :   0.99
 ### Branch          :   master
 ### Branched from   :   
-### Merged from     :   design_v2
-### Date            :   29/06/2011
+### Merged from     :   amend_throbbers
+### Date            :   30/06/2011
 
 ===================================================
 
@@ -58,6 +58,7 @@ RELEASE NOTES
 - implemented image caching
 - updated placeholder text in comment box
 - implemented Andrew's v2 design changes
+- removed modal window from throbber
 
 ### In progress:
 
