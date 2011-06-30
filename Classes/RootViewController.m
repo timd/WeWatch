@@ -226,25 +226,14 @@
 
 - (IBAction)showThrobber {
     
-    // Get main window reference
-    UIWindow* mainWindow = (((WeWatchAppDelegate*) [UIApplication sharedApplication].delegate).window);
+    [SVProgressHUD show];
     
-    // Create a full-screen view
-    throbberView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    
-    throbberView.backgroundColor = [UIColor whiteColor];
-    throbberView.alpha = 0.5f;
-    
-    [SVProgressHUD showInView:throbberView status:@"Loading..."];
-    
-    [mainWindow addSubview:throbberView];
 }
 
 
 - (IBAction)dismissThrobber {
-    NSLog(@"Calling dismissThrobber");
-    //	[SVProgressHUD dismiss];
-    [throbberView removeFromSuperview];
+
+    [SVProgressHUD dismiss];
     
 }
 
@@ -496,6 +485,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSLog(@"Table offset = %f", tableView.contentOffset.y);
+    
+    
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     // the section is the nth array, where n is the section number
     NSArray *nthArray = [scheduleArray objectAtIndex:indexPath.section];
@@ -580,11 +572,7 @@
     // Force a table reload
 	[self.tableView reloadData];
     
-    if (throbberView) {
-        [SVProgressHUD dismiss];
-        [self dismissThrobber];
-    }
-    
+    [self dismissThrobber];
     
 }
 
