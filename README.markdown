@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.99
-### Branch          :   master
-### Branched from   :   
-### Merged from     :   amend_throbbers
+### Version         :   0.992
+### Branch          :   comments
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   30/06/2011
 
 ===================================================
@@ -61,6 +61,10 @@ RELEASE NOTES
 - removed modal window from throbber
 
 ### In progress:
+- implement comments retrieval class
+- retrofit programme detail into view
+- add comment view
+- implement programme detail/comment view switching
 
 ### Todo:
 - reimplement film flag
