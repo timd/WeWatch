@@ -44,6 +44,10 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
+		2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */; };
+		2238D36F13BCEE9600752F45 /* ProgrammeTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */; };
+		2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */; };
+		2238D37413BCEEBD00752F45 /* ProgrammeCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238D37213BCEEBD00752F45 /* ProgrammeCommentViewController.xib */; };
 		2238EA8E13AA089100D8B828 /* ProgrammeSiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */; };
 		223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 223F356D13AF2F6E005DE433 /* LoadImage.m */; };
 		223F359213AF8056005DE433 /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 223F359013AF8056005DE433 /* movie.png */; };
@@ -229,6 +233,12 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
+		2238D36B13BCEE9600752F45 /* ProgrammeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeTabViewController.h; sourceTree = "<group>"; };
+		2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeTabViewController.m; sourceTree = "<group>"; };
+		2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeTabViewController.xib; path = Classes/ProgrammeTabViewController.xib; sourceTree = "<group>"; };
+		2238D37013BCEEBD00752F45 /* ProgrammeCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeCommentViewController.h; sourceTree = "<group>"; };
+		2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeCommentViewController.m; sourceTree = "<group>"; };
+		2238D37213BCEEBD00752F45 /* ProgrammeCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeCommentViewController.xib; path = Classes/ProgrammeCommentViewController.xib; sourceTree = "<group>"; };
 		2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeSiteViewController.xib; path = ../../../../Dropbox/Code/WW/WeWatch/Classes/ProgrammeSiteViewController.xib; sourceTree = "<group>"; };
 		223F356C13AF2F6D005DE433 /* LoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadImage.h; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.h; sourceTree = "<group>"; };
 		223F356D13AF2F6E005DE433 /* LoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadImage.m; path = ../../../../Dropbox/Code/WW/WeWatch/LoadImage.m; sourceTree = "<group>"; };
@@ -547,14 +557,18 @@
 		2238D36A13BCE67700752F45 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				2238D36B13BCEE9600752F45 /* ProgrammeTabViewController.h */,
+				2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */,
+				22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */,
+				22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */,
+				2238D37013BCEEBD00752F45 /* ProgrammeCommentViewController.h */,
+				2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */,
 				22D3641D13992C6500093989 /* WatchModalViewController.h */,
 				22D3641E13992C6500093989 /* WatchModalViewController.m */,
 				22E081CF139CEDA900D1099B /* SettingsModalViewController.h */,
 				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */,
-				22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -629,6 +643,8 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				2238D37213BCEEBD00752F45 /* ProgrammeCommentViewController.xib */,
+				2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */,
 				2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */,
 				226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */,
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
@@ -993,6 +1009,8 @@
 				2286FC9513BB68A300A8550A /* stripes.png in Resources */,
 				2286FC9713BB806800A8550A /* settingsTopBar.png in Resources */,
 				2286FC9913BB81DC00A8550A /* twitterLoginButton.png in Resources */,
+				2238D36F13BCEE9600752F45 /* ProgrammeTabViewController.xib in Resources */,
+				2238D37413BCEEBD00752F45 /* ProgrammeCommentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1073,8 @@
 				2272BC2E139FAA6300515CC7 /* ASIInputStream.m in Sources */,
 				2272BC2F139FAA6300515CC7 /* ASINetworkQueue.m in Sources */,
 				223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */,
+				2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */,
+				2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
