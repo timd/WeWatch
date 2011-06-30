@@ -34,13 +34,9 @@
     IBOutlet UIImageView *programmeImage;
     IBOutlet UILabel *watchersNamesLabel;
     IBOutlet UIImageView *watchingFlag;
-    IBOutlet UILabel *watchButtonLabel;
     IBOutlet UIImageView *channelIcon;
     IBOutlet UIButton *reminderButton;
     IBOutlet UIButton *webButton;
-    IBOutlet UIImageView *tabBar;
-    IBOutlet UIButton *detailsButton;
-    IBOutlet UIButton *commentsButton;
     IBOutlet UILabel *commentCountLabel;
 
     // ivar to hold the programme object that gets passed into the view controller
