@@ -59,6 +59,7 @@ RELEASE NOTES
 - updated placeholder text in comment box
 - implemented Andrew's v2 design changes
 - removed modal window from throbber
+- wired up views
 
 ### In progress:
 - implement programme detail tabbed view controller
