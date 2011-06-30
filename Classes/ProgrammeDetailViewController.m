@@ -12,9 +12,6 @@
 #import "LoadProgrammeImageOperation.h"
 #import "LoadImage.h"
 #import "WeWatchAppDelegate.h"
-#import "ProgrammeSiteViewController.h"
-#import "DetailViewNavigationBar.h"
-#import "CommentDetailViewController.h"
 
 // Define Twitter OAuth settings
 #define kOAuthConsumerKey @"eQ0gA08Yl4uSrrhny0vew"
@@ -385,9 +382,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 
 -(IBAction)showCommentsView{
     NSLog(@"showCommentsView button pressed");
-    
-    //CommentDetailViewController *cdVC = [[CommentDetailViewController alloc] initWithNibName:@"CommentDetailView" bundle:nil];
-    //[self presentModalViewController:cdVC animated:NO];
 }
 
 -(UIImage*)imageWithBorderFromImage:(UIImage*)source;

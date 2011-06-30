@@ -13,7 +13,6 @@
 #import "Programme.h"
 #import "ProgrammeDetailViewController.h"
 #import "SettingsModalViewController.h"
-#import "ModalThrobberViewController.h"
 #import "SVProgressHUD.h"
 
 @implementation RootViewController
