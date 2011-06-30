@@ -11,10 +11,6 @@
 
 @interface ProgrammeTabViewController : UIViewController {
     
-    IBOutlet UIButton *watchButton;
-    IBOutlet UIButton *detailButton;
-    IBOutlet UIButton *commentButton;
-    IBOutlet UILabel *watchButtonLabel;
 }
 
 @end

@@ -105,9 +105,13 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         // Set the watching flag status
         watchingFlag.hidden = FALSE;
         
+        // Set the text of the 'watch' button
+        watchButtonLabel.text = @"Unwatch";
+        
     } else {
-
         watchingFlag.hidden = TRUE;
+        // Set the text of the 'watch' button
+        watchButtonLabel.text = @"Watch";
 
     }
     
@@ -308,6 +312,12 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [webButton release];
     webButton = nil;
+    
+    [detailsButton release];
+    detailsButton = nil;
+    
+    [commentsButton release];
+    commentsButton = nil;
     
     [commentCountLabel release];
     commentCountLabel = nil;
