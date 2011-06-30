@@ -46,6 +46,18 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    [watchButton release];
+    watchButton = nil;
+    
+    [detailButton release];
+    detailButton = nil;
+    
+    [commentButton release];
+    commentButton = nil;
+    
+    [watchButtonLabel release];
+    watchButtonLabel = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

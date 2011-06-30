@@ -11,6 +11,12 @@
 
 @interface ProgrammeCommentViewController : UIViewController {
     
+    // UI outlets
+    
+    IBOutlet UILabel *titleLabel;
+    IBOutlet UIScrollView *textScroller;
+    IBOutlet UIImageView *backgroundImage;
+    
 }
 
 @end
