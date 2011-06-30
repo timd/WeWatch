@@ -644,13 +644,13 @@
 			isa = PBXGroup;
 			children = (
 				2238D37213BCEEBD00752F45 /* ProgrammeCommentViewController.xib */,
+				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
 				2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */,
 				2238EA8C13AA089100D8B828 /* ProgrammeSiteViewController.xib */,
 				226A74F613A68E3800F6E63C /* ModalThrobberViewController.xib */,
 				22E081D1139CEDA900D1099B /* SettingsModalViewController.xib */,
 				2201E06E13A610BA000085FC /* NewWatchModalViewController.xib */,
 				22BB5AD11369BA71004B299B /* BaseCell.xib */,
-				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */,
