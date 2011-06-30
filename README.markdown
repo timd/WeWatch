@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.99
-### Branch          :   master
-### Branched from   :   
-### Merged from     :   amend_throbbers
+### Version         :   0.992
+### Branch          :   comment_tabs
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   30/06/2011
 
 ===================================================
@@ -61,6 +61,11 @@ RELEASE NOTES
 - removed modal window from throbber
 
 ### In progress:
+- implement programme detail tabbed view controller
+- move existing programme detail view controller into subview of tabbed view
+- add comment retrieval
+- build comment detail view as subview of tabbed view
+- implement live comment counts
 
 ### Todo:
 - reimplement film flag

@@ -337,7 +337,7 @@
 		22D3641E13992C6500093989 /* WatchModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchModalViewController.m; sourceTree = "<group>"; };
 		22D364221399343600093989 /* fake_nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_nav_bar.png; sourceTree = "<group>"; };
 		22D65AF113A1202D00B92D82 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		22DC349213BB2A54001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = detailNavBar.png; path = ../../../../../Users/Tim/Desktop/detailNavBar.png; sourceTree = "<group>"; };
+		22DC349213BB2A54001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailNavBar.png; sourceTree = "<group>"; };
 		22DC349413BB2AF2001CBA60 /* detailNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailNavBar.png; sourceTree = "<group>"; };
 		22DC349E13BB2FA0001CBA60 /* DetailViewNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewNavigationBar.h; sourceTree = "<group>"; };
 		22DC349F13BB2FA0001CBA60 /* DetailViewNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewNavigationBar.m; sourceTree = "<group>"; };
@@ -698,6 +698,7 @@
 			children = (
 				22862D0113B4DD540082269E /* Default@2x.png */,
 				22862CFF13B4DC6B0082269E /* Default.png */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */,
 				22D65AF113A1202D00B92D82 /* Entitlements.plist */,
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
@@ -708,7 +709,6 @@
 				A7F23C2A11F74DFC00E3722F /* Libraries */,
 				A7F23D5211F8599300E3722F /* Operations */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				22BB5AE51369D495004B299B /* Nib files */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
