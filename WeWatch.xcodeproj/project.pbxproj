@@ -84,7 +84,8 @@
 		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
 		22AAD2BC13BDF787006633A4 /* tabBar-comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD2BA13BDF787006633A4 /* tabBar-comments.png */; };
 		22AAD2BD13BDF787006633A4 /* tabBar-details.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD2BB13BDF787006633A4 /* tabBar-details.png */; };
-		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
+		22AAD2DA13BE1ED1006633A4 /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AAD2D913BE1ED1006633A4 /* ProgrammeDetailViewController.m */; };
+		22BB5ACB1369BA57004B299B /* OldProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* OldProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
 		22BB5AD21369BA71004B299B /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5AD11369BA71004B299B /* BaseCell.xib */; };
@@ -299,8 +300,11 @@
 		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
 		22AAD2BA13BDF787006633A4 /* tabBar-comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-comments.png"; sourceTree = "<group>"; };
 		22AAD2BB13BDF787006633A4 /* tabBar-details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-details.png"; sourceTree = "<group>"; };
-		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
-		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
+		22AAD2D413BE185C006633A4 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		22AAD2D813BE1ED1006633A4 /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
+		22AAD2D913BE1ED1006633A4 /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
+		22BB5AC81369BA57004B299B /* OldProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldProgrammeDetailViewController.h; sourceTree = "<group>"; };
+		22BB5AC91369BA57004B299B /* OldProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
 		22BB5ACE1369BA63004B299B /* Programme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Programme.h; sourceTree = "<group>"; };
 		22BB5ACF1369BA63004B299B /* Programme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Programme.m; sourceTree = "<group>"; };
@@ -435,6 +439,7 @@
 				1D3623250D0F684500981E51 /* WeWatchAppDelegate.m */,
 				22E450B1139A8F5A000D31A8 /* Reachable.h */,
 				22E450B2139A8F5A000D31A8 /* Reachable.m */,
+				22AAD2D413BE185C006633A4 /* Constants.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -565,8 +570,10 @@
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				2238D36B13BCEE9600752F45 /* ProgrammeTabViewController.h */,
 				2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */,
-				22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */,
-				22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */,
+				22AAD2D813BE1ED1006633A4 /* ProgrammeDetailViewController.h */,
+				22AAD2D913BE1ED1006633A4 /* ProgrammeDetailViewController.m */,
+				22BB5AC81369BA57004B299B /* OldProgrammeDetailViewController.h */,
+				22BB5AC91369BA57004B299B /* OldProgrammeDetailViewController.m */,
 				2238D37013BCEEBD00752F45 /* ProgrammeCommentViewController.h */,
 				2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */,
 				22D3641D13992C6500093989 /* WatchModalViewController.h */,
@@ -1044,7 +1051,7 @@
 				A7F23C2811F74DF400E3722F /* CSerializedJSONData.m in Sources */,
 				A7F23DDB11F8866D00E3722F /* LoadPublicTimelineOperation.m in Sources */,
 				A7F23E0511F8959400E3722F /* NSOperation+ActivityIndicator.m in Sources */,
-				22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */,
+				22BB5ACB1369BA57004B299B /* OldProgrammeDetailViewController.m in Sources */,
 				22BB5AD01369BA63004B299B /* Programme.m in Sources */,
 				22BB5ADD1369BF89004B299B /* GTMNSString+HTML.m in Sources */,
 				22BB5ADE1369BF89004B299B /* NSString+HTML.m in Sources */,
@@ -1083,6 +1090,7 @@
 				223F356E13AF2F6E005DE433 /* LoadImage.m in Sources */,
 				2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */,
 				2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */,
+				22AAD2DA13BE1ED1006633A4 /* ProgrammeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
