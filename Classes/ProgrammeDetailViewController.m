@@ -75,6 +75,17 @@
 {
     [super viewDidLoad];
     
+    // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveWatchProgrammeMessage) 
+                                                 name:@"didWatchProgramme" 
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveUnwatchProgrammeMessage) 
+                                                 name:@"didUnwatchProgramme" 
+                                               object:nil];
+    
     NSLog(@"Firing viewDidLoad");
     
     // Set the label values for the detail view
@@ -181,6 +192,31 @@
     }
 
     [reachable release];
+}
+
+#pragma mark -
+#pragma mark Watch notification methods
+
+-(void)didReceiveWatchProgrammeMessage {
+    NSLog(@"ProgrammeDetailViewController::didReceiveWatchProgrammeMessage");
+    watchingFlag.hidden = NO;
+    
+    // Update the watchers count by 1
+    int watchersCount = [watchersLabel.text intValue]; 
+    watchersCount++;
+    watchersLabel.text = [NSString stringWithFormat:@"%d", watchersCount];
+    
+}
+
+-(void)didReceiveUnwatchProgrammeMessage {
+    NSLog(@"ProgrammeDetailViewController::didReceiveUnwatchProgrammeMessage");
+    // Clean up watching artifacts
+    watchingFlag.hidden = YES;    
+    
+    // Update the watchers count by -1
+    int watchersCount = [watchersLabel.text intValue]; 
+    watchersCount--;
+    watchersLabel.text = [NSString stringWithFormat:@"%d", watchersCount];
 }
 
 

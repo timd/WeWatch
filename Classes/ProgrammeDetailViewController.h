@@ -47,4 +47,9 @@
 -(void)didLoadImage:(UIImage *)retrievedImage;
 -(UIImage*)imageWithBorderFromImage:(UIImage*)source;
 
+// Notification methods
+-(void)didReceiveWatchProgrammeMessage;
+-(void)didReceiveUnwatchProgrammeMessage;
+
+
 @end

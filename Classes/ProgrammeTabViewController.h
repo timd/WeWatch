@@ -28,6 +28,7 @@
     IBOutlet UIButton *detailButton;
     IBOutlet UIButton *commentButton;
     IBOutlet UILabel *watchButtonLabel;
+    IBOutlet UILabel *commentCount;
     
     IBOutlet UIImageView *tabBarImage;
     
@@ -36,6 +37,9 @@
     
     // ivar to hold the ASIHTTPRequest object
     ASIHTTPRequest *_requestMade;
+    
+    // ivar to hold an unwatched flag
+    BOOL unwatched;
     
     // ivar to hold the activity view
     UIActivityIndicatorView *_spinner;
@@ -55,5 +59,9 @@
 -(IBAction)watchProgramme;
 
 -(IBAction)killReminder;
+
+// Notification methods
+-(void)didReceiveWatchProgrammeMessage;
+-(void)didReceiveUnwatchProgrammeMessage;
 
 @end

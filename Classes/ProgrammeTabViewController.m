@@ -84,13 +84,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // Sort out text on the watch button
-    if ([_displayProgramme amWatching] ) {
-        watchButtonLabel.text = @"Unwatch";
-    } else {
-        watchButtonLabel.text = @"Watch";
-    }
-    
     // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(didReceiveWatchProgrammeMessage) 
@@ -101,6 +94,17 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                                              selector:@selector(didReceiveUnwatchProgrammeMessage) 
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
+    
+    // Sort out text on the watch button
+    if ([_displayProgramme amWatching] ) {
+        watchButtonLabel.text = @"Unwatch";
+    } else {
+        watchButtonLabel.text = @"Watch";
+    }
+    
+    // Update the comment count label
+    // fixed at zero at the moment
+    commentCount.text = @"(0)";
     
     // Create the two subviews
     _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
@@ -133,6 +137,9 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [watchButtonLabel release];
     watchButtonLabel = nil;
+    
+    [commentCount release];
+    commentCount = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -216,7 +223,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
             NSLog(@"ProgrammeDetailViewController:: is logged into Twitter");
             
             // As there is an authorised user, we can fire the watch/unwatch methods
-            // Check to see if we're already watching the programme: if we are, fire off the unwatch action
+            // Check to see if we're already watching the programme - need to fire off the unwatch action if
+            // if we are, fire off the unwatch action
             // Otherwise, load the modal view
             
             if ([_displayProgramme amWatching] == TRUE) {
@@ -246,7 +254,10 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 
                 // Fire off the didWatchProgramme message to the notification centre so that
                 // the listening classes know that they need to refresh their data
-                // [[NSNotificationCenter defaultCenter] postNotificationName:didUnwatchProgrammeNotification object:self];        
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"didUnwatchProgramme" object:self];
+                
+                // 
+                
                 
                 [self killReminder];
                 
@@ -357,5 +368,30 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
 }
 
+#pragma mark -
+#pragma mark Watch notification methods
+
+-(void)didReceiveWatchProgrammeMessage {
+    NSLog(@"ProgrammeDetailViewController::didReceiveWatchProgrammeMessage");
+    watchButtonLabel.text = @"Unwatch";
+
+    // Reflag the current programme as being watched
+    [_displayProgramme setAmWatching:YES];
+    
+    [self.view setNeedsDisplay];
+
+}
+
+-(void)didReceiveUnwatchProgrammeMessage {
+    NSLog(@"ProgrammeDetailViewController::didReceiveUnwatchProgrammeMessage");
+    // Clean up watching artifacts
+    watchButtonLabel.text = @"Watch";
+    
+    // Reflag the current programme as not being watched
+    [_displayProgramme setAmWatching:NO];
+    
+    [self.view setNeedsDisplay];
+
+}
 
 @end
