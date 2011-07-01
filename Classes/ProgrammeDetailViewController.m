@@ -240,17 +240,11 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // Set up the image in the navigation bar
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)];
-    [imgView setImage:[UIImage imageWithContentsOfFile:@"detailNavBar"]];
-    [self.navigationController.navigationBar insertSubview:imgView atIndex:0];
-    NSLog(@"Changing navbar image");
+    NSLog(@"Programme = %@", self.displayProgramme);
     
-    [imgView release];
-
+    [titleLabel setText:[displayProgramme title]];
     
-    // Set the background to match the table view
-    [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    
     
     // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface ProgrammeCommentViewController : UIViewController {
     
     // UI outlets
@@ -17,6 +16,11 @@
     IBOutlet UIScrollView *textScroller;
     IBOutlet UIImageView *backgroundImage;
     
+    NSString *_programmeTitle;
+    
 }
+
+@property (nonatomic, retain) NSString *programmeTitle;
+
 
 @end

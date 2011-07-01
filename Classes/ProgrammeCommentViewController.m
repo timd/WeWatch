@@ -8,8 +8,9 @@
 
 #import "ProgrammeCommentViewController.h"
 
-
 @implementation ProgrammeCommentViewController
+
+@synthesize programmeTitle = _programmeTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +40,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set up view content
+    titleLabel.text = _programmeTitle;
 }
 
 - (void)viewDidUnload

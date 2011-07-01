@@ -27,12 +27,12 @@
 -(IBAction)swapViews:(id)sender {
     
     if ( [sender tag] == kDetailsButton ) {
-        NSLog(@"Firing swapViews for Details button");
-        
+
         // Check if the view controller already exists
         if (!_programmeDetailVC) {
             // Create it if not...
             _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
+            [_programmeDetailVC setDisplayProgramme:self.displayProgramme];
         }
         
         // Add the subview so it's visible
@@ -42,12 +42,12 @@
         tabBarImage.image = [UIImage imageNamed:@"tabBar-details"];
 
     } else if ( [sender tag] == kCommentsButton ) {
-        NSLog(@"Firing swapViews for Comments button");
 
         // check if the tab view controller already exists
         if (!_programmeCommentVC) {
             // Create it if it doesn't
-            _programmeCommentVC = [[ProgrammeCommentViewController alloc] initWithNibName:@"ProgrammeCommentViewController" bundle:nil];
+            _programmeCommentVC = [[ProgrammeCommentViewController alloc] init];
+            [_programmeCommentVC setProgrammeTitle:[self.displayProgramme title]];
         }
         
         // Add the subview so it's visible
@@ -93,6 +93,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    NSLog(@"ProgrammeTabVC: displayProgramme = %@", self.displayProgramme);
+    
+    // Load in the detail view controller as the default view
     // Check if the detail view controller already exists
     if (!_programmeDetailVC) {
         // Create it if not...

@@ -23,7 +23,7 @@
     IBOutlet UIImageView *tabBarImage;
     
     IBOutlet UIView *bodyView;
-    Programme *_displayProgramme;
+    //Programme *_displayProgramme;
     
     SA_OAuthTwitterEngine *_twitterEngine;
     
