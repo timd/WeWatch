@@ -46,8 +46,8 @@
 #pragma mark Custom methods
 
 -(void)downloadProgrammeImage:(NSURL *)imageURL {
-    
-   	[self setNetworkActivityIndicatorVisible:YES];
+
+    [self setNetworkActivityIndicatorVisible:YES];
     
     // Fire query at API
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:imageURL];
@@ -90,10 +90,11 @@
 - (void)requestFailed:(ASIHTTPRequest *)request {
     // Request didn't work
     NSError *error = [request error];
-    NSLog(@"Image retrieval failed with errror: %@", &error);
+    NSLog(@"Image retrieval failed with errror: %@", error);
     
     // Return a placeholder image
-    [self.delegate didLoadImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
+    UIImage *dummyImage = [UIImage imageNamed:@"wewatch.png"];
+    [self.delegate didLoadImage:dummyImage];
 }
 
 @end

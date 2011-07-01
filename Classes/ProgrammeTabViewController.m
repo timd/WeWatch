@@ -31,24 +31,18 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     if ( [sender tag] == kDetailsButton ) {
 
-        // Check if the view controller already exists
-        _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
-        [_programmeDetailVC setDisplayProgramme:self.displayProgramme];
-        
-        // Add the subview so it's visible
-        [bodyView addSubview:_programmeDetailVC.view];
+        // Hide the comments view, and show the details
+        _programmeDetailVC.view.hidden = NO;
+        _programmeCommentVC.view.hidden = YES;
         
         // Swap the tab bar image around
         tabBarImage.image = [UIImage imageNamed:@"tabBar-details"];
 
     } else if ( [sender tag] == kCommentsButton ) {
 
-        // check if the tab view controller already exists
-        _programmeCommentVC = [[ProgrammeCommentViewController alloc] init];
-        [_programmeCommentVC setProgrammeTitle:[self.displayProgramme title]];
-        
-        // Add the subview so it's visible
-        [bodyView addSubview:_programmeCommentVC.view];
+        // Hide the details view, and show the comments
+        _programmeDetailVC.view.hidden = YES;
+        _programmeCommentVC.view.hidden = NO;
         
         // Swap the tab bar image around
         tabBarImage.image = [UIImage imageNamed:@"tabBar-comments"];
@@ -90,6 +84,13 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Sort out text on the watch button
+    if ([_displayProgramme amWatching] ) {
+        watchButtonLabel.text = @"Unwatch";
+    } else {
+        watchButtonLabel.text = @"Watch";
+    }
+    
     // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(didReceiveWatchProgrammeMessage) 
@@ -101,14 +102,17 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
     
-    // Load in the detail view controller as the default view
-    // Check if the detail view controller already exists
+    // Create the two subviews
     _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
     [_programmeDetailVC setDisplayProgramme:_displayProgramme];
     
-    // Add the subview so it's visible
-    [bodyView addSubview:_programmeDetailVC.view];
+    _programmeCommentVC = [[ProgrammeCommentViewController alloc] init];
+    [_programmeCommentVC setProgrammeTitle:[self.displayProgramme title]];
     
+    // Add the subviews so they're visible - detail view goes in last
+    // so it's visible on the top
+    [bodyView addSubview:_programmeCommentVC.view];
+    [bodyView addSubview:_programmeDetailVC.view];
     
 }
 
@@ -137,7 +141,10 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(void)watchProgramme{
+#pragma mark -
+#pragma mark Watch/Unwatch code
+
+-(IBAction)watchProgramme{
     NSLog(@"Fired watchProgramme method");
     
     // Check to see if we're already logged into twitter - if yes, can present the modal window
@@ -239,7 +246,7 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                 
                 // Fire off the didWatchProgramme message to the notification centre so that
                 // the listening classes know that they need to refresh their data
-                [[NSNotificationCenter defaultCenter] postNotificationName:didUnwatchProgrammeNotification object:self];        
+                // [[NSNotificationCenter defaultCenter] postNotificationName:didUnwatchProgrammeNotification object:self];        
                 
                 [self killReminder];
                 
@@ -348,37 +355,6 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
         //        [reminderButton setHidden:YES];
         //    }
     
-}
-
-#pragma mark -
-#pragma mark LoadImageDelegate methods
-
--(void)didLoadImage:(UIImage *)retrievedImage {
-    
-    // Programme image has been successfully loaded by LoadImage, so set the programme image to the one which was retrieved
-    //    UIImage *webButtonBackground = [self imageWithBorderFromImage:retrievedImage];
-    //    [webButton setBackgroundImage:webButtonBackground forState:UIControlStateNormal];
-    
-    // Set the ivar for the programme image to the retrieved one
-    //    retrievedProgrammeImage = webButtonBackground;
-    
-    [_spinner stopAnimating];
-    
-}
-
--(UIImage*)imageWithBorderFromImage:(UIImage*)source;
-{
-    CGSize size = [source size];
-    UIGraphicsBeginImageContext(size);
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
-    CGContextStrokeRect(context, rect);
-    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return testImg;
 }
 
 

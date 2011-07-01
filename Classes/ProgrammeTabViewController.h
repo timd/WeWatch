@@ -12,7 +12,6 @@
 
 #import "SA_OAuthTwitterEngine.h"
 #import "Reachability.h"
-#import "LoadImageDelegate.h"
 #import "PullRefreshTableViewController.h"
 #import "WatchModalViewController.h"
 #import "SA_OAuthTwitterController.h"
@@ -23,7 +22,7 @@
 @class ProgrammeDetailViewController;
 @class ProgrammeCommentViewController;
 
-@interface ProgrammeTabViewController : UIViewController <SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate, LoadImageDelegate> {
+@interface ProgrammeTabViewController : UIViewController <SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate> {
     
     IBOutlet UIButton *watchButton;
     IBOutlet UIButton *detailButton;
@@ -53,10 +52,8 @@
 -(IBAction)swapViews:(id)sender;
 
 -(void)showModalWatchPage;
--(void)watchProgramme;
+-(IBAction)watchProgramme;
 
 -(IBAction)killReminder;
--(void)didLoadImage:(UIImage *)retrievedImage;
--(UIImage*)imageWithBorderFromImage:(UIImage*)source;
 
 @end

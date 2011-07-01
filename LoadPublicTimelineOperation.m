@@ -231,14 +231,13 @@
                 if ( [[imageHolder allKeys] containsObject:@"thumb"] ) {
                     
                     programmeImage = [NSString stringWithFormat:@"http://wewatch.co.uk%@", [imageHolder objectForKey:@"thumb"]];
-                    //NSLog(@"Prog image = %@", programmeImage);
                     
                 }
                 
             } else {
-                
-                programmeImage = @"http://www.adoptioncurve.net/wewatch.png";                        
-                //NSLog(@"Prog image = %@", programmeImage);
+                // There's no image url, presumably because it's a C4 programme
+                // send back something guaranteed to throw the retrieval process
+                programmeImage = @"LOCAL";                        
                 
             }
             

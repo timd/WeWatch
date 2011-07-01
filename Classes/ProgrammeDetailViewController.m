@@ -7,6 +7,10 @@
 //
 
 #import "ProgrammeDetailViewController.h"
+#import "Reachable.h"
+#import "LoadImage.h"
+#import "LoadProgrammeImageOperation.h"
+#import "WeWatchAppDelegate.h"
 
 
 @implementation ProgrammeDetailViewController
@@ -32,7 +36,6 @@
     [descriptionLabel release];
     [durationLabel release];
     [watchersLabel release];
-    [programmeImage release];
     [watchersNamesLabel release];
     [watchingFlag release];
     [reminderButton release];
@@ -41,6 +44,9 @@
     
     [_displayProgramme release];
     _displayProgramme = nil;
+    
+    [_programmeImage release];
+    _programmeImage = nil;
 
     [super dealloc];
 
@@ -69,6 +75,8 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"Firing viewDidLoad");
+    
     // Set the label values for the detail view
     [titleLabel setText:[_displayProgramme title]];
     [subtitleLabel setText:[_displayProgramme subtitle]];
@@ -77,6 +85,12 @@
     [timeLabel setText:[_displayProgramme time]];
     [durationLabel setText:[_displayProgramme duration]];
     [watchersLabel setText:[NSString stringWithFormat:@"%d", [_displayProgramme watchers]]];
+    
+    // Set up the default image
+    [webButton setImage:[UIImage imageNamed:@"wewatch"] forState:UIControlStateNormal];
+    
+    // Fire off the asynchronous image load
+    [self retrieveImageAsynchronously];
     
     // Extract the names from the watchers names array
     if ([[_displayProgramme watcherNames] count] != 0) {
@@ -102,6 +116,7 @@
         // Set the watching flag status
         watchingFlag.hidden = FALSE;
         
+        
     } else {
         
         watchingFlag.hidden = TRUE;
@@ -109,6 +124,9 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"Firing viewWillAppear");    
+}
 
 - (void)viewDidUnload
 {
@@ -122,5 +140,75 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+-(void)retrieveImageAsynchronously {
+    
+    // Fire off the asynchronous image retrieval process
+    // Check if the network is reachable:
+    Reachable *reachable = [[Reachable alloc] init];
+
+    if ([reachable isReachable]) {
+        
+        NSLog(@"Firing queued image retrieval");
+        
+        [NSURL URLWithString:[_displayProgramme programmeImage]];
+        
+        // Fire off loadImage 
+        _loadImageOperation = [[LoadImage alloc] initWithProgrammeImageURL:[NSURL URLWithString:[_displayProgramme programmeImage]]];
+        
+        _loadImageOperation.delegate = self;
+        
+        // Fire off loadProgrammeImageOperation
+        //        self.loadProgrammeImageOperation = [[LoadProgrammeImageOperation alloc] initWithProgrammeImageURL:[NSURL URLWithString:[displayProgramme programmeImage]]];
+        
+        //        self.loadProgrammeImageOperation.delegate = self;
+        
+        // Create queue and add retrieval job
+        NSOperationQueue *operationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [operationQueue addOperation:_loadImageOperation];
+        
+        NSLog(@"Called queued image retrieval");
+        
+        // Download the programme image
+        // [programmeImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[displayProgramme programmeImage]]]]];
+        
+    } else {
+        // Can't get to the network; use a canned image
+        NSLog(@"Unable to download the image");
+        // [programmeImage setImage:[UIImage imageWithContentsOfFile:@"wewatch.png"]];
+        //        [programmeImage setImage:[UIImage imageNamed:@"wewatch.png"]];
+        // [webButton setBackgroundImage:[UIImage imageNamed:@"wewatch.png"] forState:UIControlStateNormal];
+    }
+
+    [reachable release];
+}
+
+
+#pragma mark -
+#pragma mark LoadImageDelegate methods
+
+-(void)didLoadImage:(UIImage *)retrievedImage {
+    
+    NSLog(@"ProgrammeDetailViewController :: didLoadImage method fired");
+    // Programme image has been successfully loaded by LoadImage, so set the programme image to the one which was retrieved
+    [webButton setImage:retrievedImage forState:UIControlStateNormal];
+    
+}
+
+-(UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+    CGSize size = [source size];
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
+    CGContextStrokeRect(context, rect);
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return testImg;
+}
+
 
 @end
