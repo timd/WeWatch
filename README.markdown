@@ -61,10 +61,7 @@ RELEASE NOTES
 - removed modal window from throbber
 
 ### In progress:
-- implement programme detail tabbed view controller
-- move existing programme detail view controller into subview of tabbed view
 - add comment retrieval
-- build comment detail view as subview of tabbed view
 - implement live comment counts
 
 ### Todo:
