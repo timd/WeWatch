@@ -61,7 +61,7 @@
 					<object class="IBUIImageView" id="1072323223">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 239}, {320, 99}}</string>
+						<string key="NSFrame">{{0, 239}, {320, 86}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="517559343"/>
@@ -69,7 +69,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">bottomBackgroundView.png</string>
+							<string key="NSResourceName">stripes.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="847285005">
@@ -364,7 +364,7 @@
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 323}</string>
+				<string key="NSFrameSize">{320, 324}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="516307649"/>
@@ -414,14 +414,6 @@
 						<reference key="destination" ref="507209106"/>
 					</object>
 					<int key="connectionID">54</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">watchButtonLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1049036639"/>
-					</object>
-					<int key="connectionID">73</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -738,17 +730,13 @@
 							<string>channelIcon</string>
 							<string>channelLabel</string>
 							<string>commentCountLabel</string>
-							<string>commentsButton</string>
 							<string>descriptionLabel</string>
-							<string>detailsButton</string>
 							<string>durationLabel</string>
 							<string>programmeImage</string>
 							<string>reminderButton</string>
 							<string>subtitleLabel</string>
-							<string>tabBar</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
-							<string>watchButtonLabel</string>
 							<string>watchersLabel</string>
 							<string>watchersNamesLabel</string>
 							<string>watchingFlag</string>
@@ -759,14 +747,10 @@
 							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
-							<string>UIButton</string>
 							<string>UILabel</string>
-							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UIImageView</string>
 							<string>UIButton</string>
-							<string>UILabel</string>
-							<string>UIImageView</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
@@ -783,17 +767,13 @@
 							<string>channelIcon</string>
 							<string>channelLabel</string>
 							<string>commentCountLabel</string>
-							<string>commentsButton</string>
 							<string>descriptionLabel</string>
-							<string>detailsButton</string>
 							<string>durationLabel</string>
 							<string>programmeImage</string>
 							<string>reminderButton</string>
 							<string>subtitleLabel</string>
-							<string>tabBar</string>
 							<string>timeLabel</string>
 							<string>titleLabel</string>
-							<string>watchButtonLabel</string>
 							<string>watchersLabel</string>
 							<string>watchersNamesLabel</string>
 							<string>watchingFlag</string>
@@ -814,16 +794,8 @@
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">commentsButton</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
 								<string key="name">descriptionLabel</string>
 								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">detailsButton</string>
-								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">durationLabel</string>
@@ -842,19 +814,11 @@
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">tabBar</string>
-								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
 								<string key="name">timeLabel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">titleLabel</string>
-								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">watchButtonLabel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
@@ -894,15 +858,15 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>bottomBackgroundView.png</string>
 				<string>light-green-eye.png</string>
+				<string>stripes.png</string>
 				<string>upperBackgroundView.png</string>
 				<string>watchersBlob.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{320, 99}</string>
 				<string>{26, 19}</string>
+				<string>{320, 419}</string>
 				<string>{320, 240}</string>
 				<string>{27, 16}</string>
 			</object>

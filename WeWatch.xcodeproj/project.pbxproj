@@ -82,6 +82,8 @@
 		2286FC9713BB806800A8550A /* settingsTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9613BB806800A8550A /* settingsTopBar.png */; };
 		2286FC9913BB81DC00A8550A /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9813BB81DC00A8550A /* twitterLoginButton.png */; };
 		228D987213A8F81300785D5A /* microRemindOnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 228D987113A8F81300785D5A /* microRemindOnButton.png */; };
+		22AAD2BC13BDF787006633A4 /* tabBar-comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD2BA13BDF787006633A4 /* tabBar-comments.png */; };
+		22AAD2BD13BDF787006633A4 /* tabBar-details.png in Resources */ = {isa = PBXBuildFile; fileRef = 22AAD2BB13BDF787006633A4 /* tabBar-details.png */; };
 		22BB5ACB1369BA57004B299B /* ProgrammeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */; };
 		22BB5ACC1369BA57004B299B /* ProgrammeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */; };
 		22BB5AD01369BA63004B299B /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BB5ACF1369BA63004B299B /* Programme.m */; };
@@ -295,6 +297,8 @@
 		2286FC9613BB806800A8550A /* settingsTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsTopBar.png; sourceTree = "<group>"; };
 		2286FC9813BB81DC00A8550A /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		228D987113A8F81300785D5A /* microRemindOnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microRemindOnButton.png; sourceTree = "<group>"; };
+		22AAD2BA13BDF787006633A4 /* tabBar-comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-comments.png"; sourceTree = "<group>"; };
+		22AAD2BB13BDF787006633A4 /* tabBar-details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar-details.png"; sourceTree = "<group>"; };
 		22BB5AC81369BA57004B299B /* ProgrammeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeDetailViewController.h; sourceTree = "<group>"; };
 		22BB5AC91369BA57004B299B /* ProgrammeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeDetailViewController.m; sourceTree = "<group>"; };
 		22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeDetailViewController.xib; path = Classes/ProgrammeDetailViewController.xib; sourceTree = "<group>"; };
@@ -717,6 +721,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22AAD2BA13BDF787006633A4 /* tabBar-comments.png */,
+				22AAD2BB13BDF787006633A4 /* tabBar-details.png */,
 				22862D0113B4DD540082269E /* Default@2x.png */,
 				22862CFF13B4DC6B0082269E /* Default.png */,
 				2286FC9813BB81DC00A8550A /* twitterLoginButton.png */,
@@ -1011,6 +1017,8 @@
 				2286FC9913BB81DC00A8550A /* twitterLoginButton.png in Resources */,
 				2238D36F13BCEE9600752F45 /* ProgrammeTabViewController.xib in Resources */,
 				2238D37413BCEEBD00752F45 /* ProgrammeCommentViewController.xib in Resources */,
+				22AAD2BC13BDF787006633A4 /* tabBar-comments.png in Resources */,
+				22AAD2BD13BDF787006633A4 /* tabBar-details.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

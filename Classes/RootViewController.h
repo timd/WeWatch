@@ -16,6 +16,7 @@
 @class LoadPublicTimelineOperation;
 @class ProgrammeDetailViewController;
 @class SA_OAuthTwitterController;
+@class ProgrammeTabViewController;
 
 @interface RootViewController : PullRefreshTableViewController <LoadPublicTimelineOperationDelegate, SA_OAuthTwitterControllerDelegate, UIAlertViewDelegate> {
 	
@@ -23,6 +24,7 @@
     
     // ivar to hold reference to an ProgrammeDetailViewController
     ProgrammeDetailViewController *programmeDetailViewController;
+    ProgrammeTabViewController *programmeTabVC;
     
     // ivar to hold reference to a custom cell
     UITableViewCell *nibLoadedCell;

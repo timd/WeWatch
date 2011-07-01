@@ -7,9 +7,61 @@
 //
 
 #import "ProgrammeTabViewController.h"
+#import "SA_OAuthTwitterEngine.h"
+#import "Programme.h"
 
+#import "ProgrammeDetailViewController.h"
+#import "ProgrammeCommentViewController.h"
 
 @implementation ProgrammeTabViewController
+
+@synthesize displayProgramme = _displayProgramme;
+@synthesize twitterEngine = _twitterEngine;
+
+#define kDetailsButton 1010
+#define kCommentsButton 1020
+
+#pragma mark -
+#pragma mark Custom methods
+
+-(IBAction)swapViews:(id)sender {
+    
+    if ( [sender tag] == kDetailsButton ) {
+        NSLog(@"Firing swapViews for Details button");
+        
+        // Check if the view controller already exists
+        if (!_programmeDetailVC) {
+            // Create it if not...
+            _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
+        }
+        
+        // Add the subview so it's visible
+        [bodyView addSubview:_programmeDetailVC.view];
+        
+        // Swap the tab bar image around
+        tabBarImage.image = [UIImage imageNamed:@"tabBar-details"];
+
+    } else if ( [sender tag] == kCommentsButton ) {
+        NSLog(@"Firing swapViews for Comments button");
+
+        // check if the tab view controller already exists
+        if (!_programmeCommentVC) {
+            // Create it if it doesn't
+            _programmeCommentVC = [[ProgrammeCommentViewController alloc] initWithNibName:@"ProgrammeCommentViewController" bundle:nil];
+        }
+        
+        // Add the subview so it's visible
+        [bodyView addSubview:_programmeCommentVC.view];
+        
+        // Swap the tab bar image around
+        tabBarImage.image = [UIImage imageNamed:@"tabBar-comments"];
+    
+    }
+    
+}
+
+#pragma mark -
+#pragma mark Object methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,12 +85,22 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
+#pragma mark - 
+#pragma mark View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Check if the detail view controller already exists
+    if (!_programmeDetailVC) {
+        // Create it if not...
+        _programmeDetailVC = [[ProgrammeDetailViewController alloc] init];
+    }
+    
+    // Add the subview so it's visible
+    [bodyView addSubview:_programmeDetailVC.view];
 }
 
 - (void)viewDidUnload

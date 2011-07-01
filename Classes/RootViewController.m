@@ -15,6 +15,8 @@
 #import "SettingsModalViewController.h"
 #import "SVProgressHUD.h"
 
+#import "ProgrammeTabViewController.h"
+
 @implementation RootViewController
 
 @synthesize scheduleArray;
@@ -484,9 +486,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Table offset = %f", tableView.contentOffset.y);
-    
-    
     // Grab the instance of the programme object from appropriate element of the nth array in the programmeSchedule array
     // the section is the nth array, where n is the section number
     NSArray *nthArray = [scheduleArray objectAtIndex:indexPath.section];
@@ -494,25 +493,19 @@
     // and the programme is the mth element in the nth array, where m is the row
     Programme *p = [nthArray objectAtIndex:indexPath.row];
     
-    //NSLog(@"Section = %d / Row = %d", indexPath.section, indexPath.row);
-    //NSLog(@"Programme title = %@", p.title);
-    //NSLog(@"Programme timeslot = %d", p.timeSlot);
+    // Do I need to create the instance of ProgrammeTabViewController?
+    if (!programmeTabVC) {
+        programmeTabVC = [[ProgrammeTabViewController alloc] init];
+    }
     
-    // Do I need to create the instance of ItemDetailController?
-	if (!programmeDetailViewController) {
-		programmeDetailViewController = [[ProgrammeDetailViewController alloc] init];
-	}
-    
-    // Give the detail view controller a pointer to the programme object at this row
-    [programmeDetailViewController setDisplayProgramme:p];
+    // Give the tab view controller a pointer to the programme object at this row
+    [programmeTabVC setDisplayProgramme:p];
         
     // Pass in the current Twitter engine
-    [programmeDetailViewController setTwitterEngine:_engine];
+    [programmeTabVC setTwitterEngine:_engine];
     
     // Push the view controller onto the stack
-    [self.navigationController pushViewController:programmeDetailViewController animated:YES];
-    
-    //[programmeDetailViewController release];
+    [self.navigationController pushViewController:programmeTabVC animated:YES];
     
 }
 
