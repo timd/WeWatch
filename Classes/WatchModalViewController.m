@@ -383,6 +383,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"textViewGradient"]];
     [tweetText addSubview: imgView];
     [tweetText sendSubviewToBack: imgView];
+    [imgView release];
 
     // Set number of characters in text box
     int charsLeft = 100 - [tweetText.text length];

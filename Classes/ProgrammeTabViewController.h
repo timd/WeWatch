@@ -7,13 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SA_OAuthTwitterController.h"
+#import "ASIHTTPRequest.h"
+
+#import "SA_OAuthTwitterEngine.h"
+#import "Reachability.h"
+#import "LoadImageDelegate.h"
+#import "PullRefreshTableViewController.h"
+#import "WatchModalViewController.h"
+#import "SA_OAuthTwitterController.h"
+#import "Reachable.h"
 
 @class Programme;
 @class SA_OAuthTwitterEngine;
 @class ProgrammeDetailViewController;
 @class ProgrammeCommentViewController;
 
-@interface ProgrammeTabViewController : UIViewController {
+@interface ProgrammeTabViewController : UIViewController <SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate, LoadImageDelegate> {
     
     IBOutlet UIButton *watchButton;
     IBOutlet UIButton *detailButton;
@@ -25,6 +35,12 @@
     IBOutlet UIView *bodyView;
     //Programme *_displayProgramme;
     
+    // ivar to hold the ASIHTTPRequest object
+    ASIHTTPRequest *_requestMade;
+    
+    // ivar to hold the activity view
+    UIActivityIndicatorView *_spinner;
+    
     SA_OAuthTwitterEngine *_twitterEngine;
     
     ProgrammeDetailViewController *_programmeDetailVC;
@@ -35,5 +51,12 @@
 @property (nonatomic, retain) SA_OAuthTwitterEngine *twitterEngine;
 
 -(IBAction)swapViews:(id)sender;
+
+-(void)showModalWatchPage;
+-(void)watchProgramme;
+
+-(IBAction)killReminder;
+-(void)didLoadImage:(UIImage *)retrievedImage;
+-(UIImage*)imageWithBorderFromImage:(UIImage*)source;
 
 @end

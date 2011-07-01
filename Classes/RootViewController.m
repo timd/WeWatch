@@ -494,9 +494,7 @@
     Programme *p = [nthArray objectAtIndex:indexPath.row];
     
     // Do I need to create the instance of ProgrammeTabViewController?
-    if (!programmeTabVC) {
-        programmeTabVC = [[ProgrammeTabViewController alloc] init];
-    }
+    programmeTabVC = [[ProgrammeTabViewController alloc] init];
     
     // Give the tab view controller a pointer to the programme object at this row
     [programmeTabVC setDisplayProgramme:p];
@@ -646,7 +644,7 @@
 -(void)displaySettingsModalWindow {
     NSLog(@"Firing displaySettingsModalWindow");
     
-	SettingsModalViewController *settingsMVC = [[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil];
+	SettingsModalViewController *settingsMVC = [[[SettingsModalViewController alloc] initWithNibName:@"SettingsModalViewController" bundle:nil] autorelease];
 
     [settingsMVC setTwitterEngine:_engine];
     
