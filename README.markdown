@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.992
-### Branch          :   comment_tabs
-### Branched from   :   master
-### Merged from     :   n/a
-### Date            :   30/06/2011
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   comment_tabs
+### Date            :   01/07/2011
 
 ===================================================
 
