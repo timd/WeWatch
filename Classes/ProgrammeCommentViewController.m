@@ -52,14 +52,27 @@
     // Set up view content
     titleLabel.text = _programmeTitle;
     
-    // Load in the embedded table view controller
-    commentsTableVC = [[CommentsTableViewController alloc] initWithNibName:@"CommentsTableViewController" bundle:nil];    
-    
-    // Pass over the array of comments
-    [commentsTableVC setCommentsArray:_commentsArray];
+    // Check if there's any comments to work with
+    if ( [_commentsArray count] != 0 ) {
+        
+        // There are some comments, so    
+        // load in the embedded table view controller
+        commentsTableVC = [[CommentsTableViewController alloc] initWithNibName:@"CommentsTableViewController" bundle:nil];    
+        
+        // Pass over the array of comments
+        [commentsTableVC setCommentsArray:_commentsArray];
 
-    // Embed the table view into the view
-    [embeddedTableView addSubview:commentsTableVC.view];
+        // Embed the table view into the view
+        [embeddedTableView addSubview:commentsTableVC.view];
+        
+    } else {
+        
+        // There aren't any comments, so remove the table view to expose
+        // the label
+        
+        [embeddedTableView removeFromSuperview];
+        
+    }
 
     // Register to listen for the updateComments notification
     // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications

@@ -41,11 +41,11 @@
 	[self setNetworkActivityIndicatorVisible:YES];
 	
     // Create URL to retrieve comments from 
-    //    NSString *liveURL = [NSString stringWithFormat:@"http://wewatch.co.uk/broadcasts/%d.json", _programmeID];
-    //    NSLog(@"Live commentsURL = %@", liveURL);
+    NSString *liveURL = [NSString stringWithFormat:@"http://wewatch.co.uk/broadcasts/%d.json", _programmeID];
+    NSLog(@"Live commentsURL = %@", liveURL);
     
-    //    NSURL *commentsURL = [NSURL URLWithString:liveURL];
-    NSURL *commentsURL = [NSURL URLWithString:@"http://192.168.1.101/51641.json"];
+    NSURL *commentsURL = [NSURL URLWithString:liveURL];
+    //    NSURL *commentsURL = [NSURL URLWithString:@"http://192.168.1.101/51641.json"];
 
     // Pull down the JSON data
     NSData *json = [[NSData alloc] initWithContentsOfURL:commentsURL];
@@ -53,10 +53,20 @@
     // Deserialise into a raw comments array
 	NSDictionary *rawCommentsDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:json error:nil];
     
+    NSLog(@"dictionary = %@", rawCommentsDict);
+    
     [json release];
     
-    // Parse the raw schedule array into usable form
-    NSArray *commentsArray = [self parseRawCommentsWith:rawCommentsDict];
+    // Check if anything has been downloaded - if there's been a problem,
+    // the dictionary will be null
+    NSArray *commentsArray;
+    
+    if (rawCommentsDict) {
+        // Parse the raw schedule array into usable form
+        commentsArray = [self parseRawCommentsWith:rawCommentsDict];
+    } else {
+        commentsArray = [NSArray arrayWithObjects: nil];
+    }
     
     // Run this class's didLoadComments action
    	[self performSelectorOnMainThread:@selector(didLoadComments:) withObject:commentsArray waitUntilDone:YES];

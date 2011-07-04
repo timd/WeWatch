@@ -13,6 +13,15 @@
 
 @synthesize commentsArray = _commentsArray;
 
+// Define custom cell content identifiers
+#define COMMENT_NAME_LABEL ((UILabel *)[cell viewWithTag:1010])
+#define COMMENT_TEXT_LABEL ((UILabel *)[cell viewWithTag:1020])
+
+
+#pragma mark -
+#pragma Initialisation methods
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -35,7 +44,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
+#pragma mark -
+#pragma mark View lifecycle
 
 - (void)viewDidLoad
 {
@@ -86,7 +96,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
+#pragma mark - 
+#pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -103,17 +114,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"commentCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
+    
+    // Configure the cell...
     
     // Get the comment element
     NSArray *commentElement = [_commentsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [commentElement valueForKey:@"comment"];
+    // Get references to the cell view's labels
+    UILabel *nameLabel = COMMENT_NAME_LABEL;
+    UILabel *commentLabel = COMMENT_TEXT_LABEL;
+    
+    // Extract username, which is embedded
+    //    NSString *username = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
+    nameLabel.text = @"username";
+    
+    cell.textLabel.text = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
+    cell.detailTextLabel.text = [commentElement valueForKey:@"comment"];
+    
+    // Comment text is simple...
+    //    commentLabel.text = [commentElement valueForKey:@"comment"];
+    commentLabel.text = @"commentText";
     
     return cell;
 }
@@ -157,7 +183,8 @@
 }
 */
 
-#pragma mark - Table view delegate
+#pragma mark - 
+#pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

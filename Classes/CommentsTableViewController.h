@@ -14,6 +14,9 @@
     // iVar to hold the array of comments
     NSArray *_commentsArray;
     
+    // ivar to hold reference to a custom cell
+    UITableViewCell *nibLoadedCell;
+    
 }
 
 @property (nonatomic, retain) NSArray *commentsArray;
