@@ -7,22 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SA_OAuthTwitterController.h"
-#import "ASIHTTPRequest.h"
+#import "ASIHTTPRequestDelegate.h"
+#import "LoadCommentDelegate.h"
 
-#import "SA_OAuthTwitterEngine.h"
-#import "Reachability.h"
-#import "PullRefreshTableViewController.h"
-#import "WatchModalViewController.h"
-#import "SA_OAuthTwitterController.h"
-#import "Reachable.h"
-
-@class Programme;
 @class SA_OAuthTwitterEngine;
+@class ASIHTTPRequest;
+
 @class ProgrammeDetailViewController;
 @class ProgrammeCommentViewController;
 
-@interface ProgrammeTabViewController : UIViewController <SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate> {
+@class LoadCommentsOperation;
+
+@interface ProgrammeTabViewController : UIViewController <SA_OAuthTwitterControllerDelegate, ASIHTTPRequestDelegate, LoadCommentProtocol> {
     
     IBOutlet UIButton *watchButton;
     IBOutlet UIButton *detailButton;
@@ -48,6 +44,10 @@
     
     ProgrammeDetailViewController *_programmeDetailVC;
     ProgrammeCommentViewController *_programmeCommentVC;
+    
+    // ivar to hold comment retrieval object
+    LoadCommentsOperation *loadCommentsOperation;
+
 }
 
 @property (nonatomic, retain) Programme *displayProgramme;
@@ -63,5 +63,12 @@
 // Notification methods
 -(void)didReceiveWatchProgrammeMessage;
 -(void)didReceiveUnwatchProgrammeMessage;
+
+// Comment retrieval delegate method
+
+-(void)fireLoadCommentsJob;
+
+-(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments;
+-(void)didLoadComments:(NSArray *)retrievedComments;
 
 @end

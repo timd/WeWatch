@@ -32,7 +32,6 @@
         return nil;
     }
     
-    
     self.programmeImageURL = imageURL;
     
     return self;
@@ -73,6 +72,7 @@
         //[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
       }
 }
+
 -(void)dealloc {
     [programmeImageURL release];
     programmeImageURL = nil;

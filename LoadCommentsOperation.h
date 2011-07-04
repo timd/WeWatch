@@ -12,18 +12,23 @@
 #import "ASIHTTPRequestDelegate.h"
 #import "LoadCommentDelegate.h"
 
-@interface LoadComments : NSOperation <ASIHTTPRequestDelegate> {
+@interface LoadCommentsOperation : NSOperation <ASIHTTPRequestDelegate> {
     
     id <LoadCommentProtocol> delegate;
     
+    // ivar to hold programme id passed in from calling method
+    int _programmeID;
+    
+    // ivar to hold comments array
     NSArray *_commentsArray;
+    
 }
 
-@property (nonatomic, retain) NSArray *commentsArray;
 @property (nonatomic, assign) id <LoadCommentProtocol> delegate;
 
--(NSArray *)downloadProgrammeComments:(NSString *)programmeID;
+@property (nonatomic) int programmeID;
+@property (nonatomic, retain) NSArray *commentsArray;
 
-
+-(NSArray *)parseRawCommentsWith:(NSArray *)rawCommentsArray;
 
 @end

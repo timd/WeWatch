@@ -8,17 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface LoadCommentDelegate : NSObject {
-    
-}
-
-@end
-
 @protocol LoadCommentProtocol
 
 @required
 
--(void)didLoadComments:(NSArray *)commentsArray;
+-(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments;
 
 @end

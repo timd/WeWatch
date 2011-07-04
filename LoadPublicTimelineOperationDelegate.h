@@ -10,6 +10,7 @@
 
 @protocol LoadPublicTimelineOperationDelegate
 @required
+
 -(void)loadPublicTimelineOperation:(NSOperation *)theOperation publicTimelineDidLoad:(NSArray *)thePublicTimeline;
 
 @end

@@ -6,13 +6,24 @@
 //  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
 //
 
-#import "ProgrammeTabViewController.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
 #import "Programme.h"
 #import "Constants.h"
 
+#import "ProgrammeTabViewController.h"
 #import "ProgrammeDetailViewController.h"
 #import "ProgrammeCommentViewController.h"
+#import "WatchModalViewController.h"
+#import "PullRefreshTableViewController.h"
+
+#import "ASIHTTPRequest.h"
+#import "Reachability.h"
+#import "Reachable.h"
+
+#import "LoadCommentsOperation.h"
+#import "LoadImage.h"
+#import "WeWatchAppDelegate.h"
 
 @implementation ProgrammeTabViewController
 
@@ -94,13 +105,16 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                                              selector:@selector(didReceiveUnwatchProgrammeMessage) 
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
-    
+
     // Sort out text on the watch button
     if ([_displayProgramme amWatching] ) {
         watchButtonLabel.text = @"Unwatch";
     } else {
         watchButtonLabel.text = @"Watch";
     }
+    
+    // Fire off the asynchronous comment retrieval
+    //    [self fireLoadCommentsJob];
     
     // Update the comment count label
     // fixed at zero at the moment
@@ -393,5 +407,49 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     [self.view setNeedsDisplay];
 
 }
+
+#pragma mark -
+#pragma mark Comment retrieval delegate method
+
+-(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments{
+    
+    // Comments have been loaded, now do something with them...
+    
+}
+
+-(void)fireLoadCommentsJob {
+    
+    // Check if the network's available
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ( [reachable isReachable] ) {
+        
+        NSLog(@"ProgrammeTabVC: fireLoadCommentsJob : network reachable");
+        
+        // There is a network, can fire off the queued comment retreival
+        loadCommentsOperation = [[LoadCommentsOperation alloc] init];
+        loadCommentsOperation.delegate = self;
+        
+        // Send the job off to the queue
+        NSOperationQueue *commentsOperationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [commentsOperationQueue addOperation:loadCommentsOperation];
+        
+    } else {
+        // There isn't a network, can't get the comments
+        NSLog(@"ProgrammeTabVC: fireLoadCommentsJob : network NOT reachable");
+
+    }
+    
+    // Clean up
+    [reachable release];
+    
+}
+
+-(void)didLoadComments:(NSArray *)commentsArray {
+    
+    NSLog(@"ProgrammeTableVC: fired didLoadComments method");
+    
+}
+
 
 @end

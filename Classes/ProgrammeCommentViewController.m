@@ -7,6 +7,9 @@
 //
 
 #import "ProgrammeCommentViewController.h"
+#import "Reachable.h"
+#import "LoadCommentsOperation.h"
+#import "WeWatchAppDelegate.h"
 
 @implementation ProgrammeCommentViewController
 
@@ -43,6 +46,9 @@
     
     // Set up view content
     titleLabel.text = _programmeTitle;
+    
+    [self fireLoadCommentsJob];
+
 }
 
 - (void)viewDidUnload
@@ -66,5 +72,44 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark -
+#pragma mark Comment retrieval delegate method
+
+
+-(void)fireLoadCommentsJob {
+    
+    // Check if the network's available
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ( [reachable isReachable] ) {
+        
+        NSLog(@"ProgrammeCommentVC: fireLoadCommentsJob : network reachable");
+        
+        // There is a network, can fire off the queued comment retreival
+        loadCommentsOperation = [[LoadCommentsOperation alloc] init];
+        loadCommentsOperation.delegate = self;
+        
+        // Send the job off to the queue
+        NSOperationQueue *commentsOperationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [commentsOperationQueue addOperation:loadCommentsOperation];
+        
+    } else {
+        // There isn't a network, can't get the comments
+        NSLog(@"ProgrammeCommentVC: fireLoadCommentsJob : network NOT reachable");
+        
+    }
+    
+    // Clean up
+    [reachable release];
+    
+}
+
+-(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments{
+    
+    NSLog(@"ProgrammeCommentVC: fired didLoadComments method");
+    NSLog(@"Array = %@", retrievedComments);
+}
+
 
 @end

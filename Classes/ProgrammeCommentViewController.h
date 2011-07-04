@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadCommentDelegate.h"
 
-@interface ProgrammeCommentViewController : UIViewController {
+@class LoadCommentsOperation;
+
+@interface ProgrammeCommentViewController : UIViewController <LoadCommentProtocol> {
     
     // UI outlets
     
@@ -18,9 +21,13 @@
     
     NSString *_programmeTitle;
     
+    // ivar to hold comment retrieval object
+    LoadCommentsOperation *loadCommentsOperation;
+    
 }
 
 @property (nonatomic, retain) NSString *programmeTitle;
 
+-(void)fireLoadCommentsJob;
 
 @end

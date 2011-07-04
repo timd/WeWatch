@@ -375,6 +375,7 @@
 		[self.delegate loadPublicTimelineOperation:self publicTimelineDidLoad:publicTimeline];
 	}
 }
+
 -(void)dealloc {
     [twitterName release];
     twitterName = nil;

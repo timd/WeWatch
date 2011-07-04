@@ -16,6 +16,7 @@
 @implementation ProgrammeDetailViewController
 
 @synthesize displayProgramme = _displayProgramme;
+@synthesize programmeImage = _programmeImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -99,7 +100,7 @@
     
     // Set up the default image
     [webButton setImage:[UIImage imageNamed:@"wewatch"] forState:UIControlStateNormal];
-    
+
     // Fire off the asynchronous image load
     [self retrieveImageAsynchronously];
     

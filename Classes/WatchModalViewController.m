@@ -245,10 +245,6 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         [request setRequestMethod:@"POST"];
         [request startAsynchronous];
         
-        // Fire off the didWatchProgramme message to the notification centre so that
-        // the listening classes know that they need to refresh their data
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"didWatchProgramme" object:self];        
-
         [SVProgressHUD showInView:self.view];
         
     } else {
