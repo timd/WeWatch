@@ -44,6 +44,7 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
+		2233FD8413C1B33B00654092 /* LoadComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233FD8313C1B33B00654092 /* LoadComments.m */; };
 		2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */; };
 		2238D36F13BCEE9600752F45 /* ProgrammeTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */; };
 		2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */; };
@@ -236,6 +237,9 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
+		2233FD7F13C1B2C000654092 /* LoadCommentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCommentDelegate.h; sourceTree = "<group>"; };
+		2233FD8213C1B33B00654092 /* LoadComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadComments.h; sourceTree = "<group>"; };
+		2233FD8313C1B33B00654092 /* LoadComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadComments.m; sourceTree = "<group>"; };
 		2238D36B13BCEE9600752F45 /* ProgrammeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeTabViewController.h; sourceTree = "<group>"; };
 		2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeTabViewController.m; sourceTree = "<group>"; };
 		2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeTabViewController.xib; path = Classes/ProgrammeTabViewController.xib; sourceTree = "<group>"; };
@@ -563,6 +567,16 @@
 			path = SAOAuthTwitterEngine;
 			sourceTree = "<group>";
 		};
+		2233FD7D13C1B29900654092 /* Comment load */ = {
+			isa = PBXGroup;
+			children = (
+				2233FD7F13C1B2C000654092 /* LoadCommentDelegate.h */,
+				2233FD8213C1B33B00654092 /* LoadComments.h */,
+				2233FD8313C1B33B00654092 /* LoadComments.m */,
+			);
+			name = "Comment load";
+			sourceTree = "<group>";
+		};
 		2238D36A13BCE67700752F45 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +889,7 @@
 		A7F23D5211F8599300E3722F /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				2233FD7D13C1B29900654092 /* Comment load */,
 				22EEA9FC13784D4C00435B7F /* Timeline load */,
 				22EEA9FB13784D3900435B7F /* Programme image load */,
 			);
@@ -1091,6 +1106,7 @@
 				2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */,
 				2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */,
 				22AAD2DA13BE1ED1006633A4 /* ProgrammeDetailViewController.m in Sources */,
+				2233FD8413C1B33B00654092 /* LoadComments.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
