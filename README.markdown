@@ -59,15 +59,16 @@ RELEASE NOTES
 - updated placeholder text in comment box
 - implemented Andrew's v2 design changes
 - removed modal window from throbber
+- added comment retrieval
+- added live comment counts
 
 ### In progress:
-- add comment retrieval
-- implement live comment counts
+- implement custom comment table view
 
 ### Todo:
 - reimplement film flag
 - add throbber to loading of images
-- need to check async cancel format [REQUIRES TESTING]
+- fix line lengths
 - clean up display and formatting of multiple friend name [REQUIRES TESTING]
 - test with more watcher names [Need Frankie to add a test feed that returns more watcher names]
 - update class diagrams
