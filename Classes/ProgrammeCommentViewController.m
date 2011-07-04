@@ -14,6 +14,8 @@
 @implementation ProgrammeCommentViewController
 
 @synthesize programmeTitle = _programmeTitle;
+@synthesize programmeID = _programmeID;
+@synthesize commentsArray = _commentsArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +23,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -43,12 +46,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"ProgrammeCommentVC:viewDidLoad");
     
     // Set up view content
     titleLabel.text = _programmeTitle;
     
-    [self fireLoadCommentsJob];
+    // Register to listen for the updateComments notification
+    // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didReceiveUpdatedComments) 
+                                                 name:@"didUpdateComments" 
+                                               object:nil];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    NSLog(@"ProgrammeCommentVC:viewDidAppear");    
+    
+    NSLog(@"Comments array = %@", _commentsArray);
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    NSLog(@"ProgrammeCommentVC:viewWillAppear");    
+    
+    NSLog(@"Comments array = %@", _commentsArray);
+    
 }
 
 - (void)viewDidUnload
@@ -59,6 +82,9 @@
     
     [titleLabel release];
     titleLabel = nil;
+    
+    [_commentsArray release];
+    _commentsArray = nil;
     
     [textScroller release];
     textScroller = nil;
@@ -76,7 +102,7 @@
 #pragma mark -
 #pragma mark Comment retrieval delegate method
 
-
+/*
 -(void)fireLoadCommentsJob {
     
     // Check if the network's available
@@ -85,10 +111,12 @@
     if ( [reachable isReachable] ) {
         
         NSLog(@"ProgrammeCommentVC: fireLoadCommentsJob : network reachable");
+        NSLog(@"ProgrammeCommentVC: fireLoadCommentsJob : programmeID = %d", _programmeID);
         
         // There is a network, can fire off the queued comment retreival
         loadCommentsOperation = [[LoadCommentsOperation alloc] init];
-        loadCommentsOperation.delegate = self;
+        [loadCommentsOperation setProgrammeID:_programmeID];
+        [loadCommentsOperation setDelegate:self];
         
         // Send the job off to the queue
         NSOperationQueue *commentsOperationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
@@ -108,8 +136,23 @@
 -(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments{
     
     NSLog(@"ProgrammeCommentVC: fired didLoadComments method");
-    NSLog(@"Array = %@", retrievedComments);
+    
+    NSLog(@"retrievedComments = %@", retrievedComments);
+    
+    // Update comment number display
+    // get reference to parent controller
+    NSLog(@"%@", [self.view superview]);
+    
+    NSLog(@"comment count = %d", [retrievedComments count]);
+}
+*/
+ 
+-(void)didUpdateComments {
+    NSLog(@"Firing ProgrammeCommentViewController::didUpdateComments");
+    [self viewDidAppear:NO];
 }
 
+-(void)parseCommentsIntoText{
+}
 
 @end

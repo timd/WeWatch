@@ -47,6 +47,8 @@
     
     // ivar to hold comment retrieval object
     LoadCommentsOperation *loadCommentsOperation;
+    int _programmeID;
+    NSArray *_commentsArray;
 
 }
 
@@ -65,10 +67,6 @@
 -(void)didReceiveUnwatchProgrammeMessage;
 
 // Comment retrieval delegate method
-
 -(void)fireLoadCommentsJob;
-
--(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments;
--(void)didLoadComments:(NSArray *)retrievedComments;
 
 @end

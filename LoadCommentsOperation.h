@@ -29,6 +29,6 @@
 @property (nonatomic) int programmeID;
 @property (nonatomic, retain) NSArray *commentsArray;
 
--(NSArray *)parseRawCommentsWith:(NSArray *)rawCommentsArray;
+-(NSArray *)parseRawCommentsWith:(NSDictionary *)rawCommentsDict;
 
 @end
