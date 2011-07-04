@@ -11,6 +11,8 @@
 
 @implementation CommentsTableViewController
 
+@synthesize commentsArray = _commentsArray;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -38,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"CommentsTableCV viewDidLoad");
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,6 +55,9 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    
+    [_commentsArray release];
+    _commentsArray = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,16 +90,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"numberOfRowsInSection = %d", [_commentsArray count]);
+    return [_commentsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,7 +110,10 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    // Get the comment element
+    NSArray *commentElement = [_commentsArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [commentElement valueForKey:@"comment"];
     
     return cell;
 }

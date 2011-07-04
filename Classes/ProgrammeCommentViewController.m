@@ -10,6 +10,7 @@
 #import "Reachable.h"
 #import "LoadCommentsOperation.h"
 #import "WeWatchAppDelegate.h"
+#import "CommentsTableViewController.h"
 
 @implementation ProgrammeCommentViewController
 
@@ -51,6 +52,15 @@
     // Set up view content
     titleLabel.text = _programmeTitle;
     
+    // Load in the embedded table view controller
+    commentsTableVC = [[CommentsTableViewController alloc] initWithNibName:@"CommentsTableViewController" bundle:nil];    
+    
+    // Pass over the array of comments
+    [commentsTableVC setCommentsArray:_commentsArray];
+
+    // Embed the table view into the view
+    [embeddedTableView addSubview:commentsTableVC.view];
+
     // Register to listen for the updateComments notification
     // Register this class so that it can listen out for didWatchProgramme and didUnwatchProgramme notifications
     [[NSNotificationCenter defaultCenter] addObserver:self 

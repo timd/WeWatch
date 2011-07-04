@@ -11,6 +11,11 @@
 
 @interface CommentsTableViewController : UITableViewController {
     
+    // iVar to hold the array of comments
+    NSArray *_commentsArray;
+    
 }
+
+@property (nonatomic, retain) NSArray *commentsArray;
 
 @end
