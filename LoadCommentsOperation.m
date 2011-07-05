@@ -11,6 +11,8 @@
 #import "NSOperation+ActivityIndicator.h"
 #import "CJSONDeserializer.h"
 
+#import "Constants.h"
+
 @implementation LoadCommentsOperation
 
 @synthesize delegate;
@@ -44,8 +46,17 @@
     NSString *liveURL = [NSString stringWithFormat:@"http://wewatch.co.uk/broadcasts/%d.json", _programmeID];
     NSLog(@"Live commentsURL = %@", liveURL);
     
-    NSURL *commentsURL = [NSURL URLWithString:liveURL];
-    //    NSURL *commentsURL = [NSURL URLWithString:@"http://192.168.1.101/51641.json"];
+    NSURL *commentsURL;
+    
+    if (kUseLocalCommentsFeed == 1) {
+        NSLog(@"%d", kUseLocalCommentsFeed);
+        NSLog(@"Using local comments feed");
+        commentsURL = [NSURL URLWithString:@"http://192.168.1.101/51641.json"];
+    } else {
+        NSLog(@"%d", kUseLocalCommentsFeed);
+        NSLog(@"Using live comments feed");
+        commentsURL = [NSURL URLWithString:liveURL];
+    }
 
     // Pull down the JSON data
     NSData *json = [[NSData alloc] initWithContentsOfURL:commentsURL];

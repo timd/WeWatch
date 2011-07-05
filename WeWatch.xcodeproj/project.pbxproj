@@ -78,7 +78,6 @@
 		2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC7D13BB445A00A8550A /* alarm-clock.png */; };
 		2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8313BB488B00A8550A /* textViewGradient.png */; };
 		2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8513BB560F00A8550A /* small-watch-button.png */; };
-		2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8713BB62C300A8550A /* CommentDetailView.xib */; };
 		2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8C13BB63C900A8550A /* comments-icon.png */; };
 		2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8E13BB64F800A8550A /* commentHeader.png */; };
 		2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9213BB672D00A8550A /* watchersBlob.png */; };
@@ -301,7 +300,6 @@
 		2286FC7D13BB445A00A8550A /* alarm-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-clock.png"; sourceTree = "<group>"; };
 		2286FC8313BB488B00A8550A /* textViewGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textViewGradient.png; sourceTree = "<group>"; };
 		2286FC8513BB560F00A8550A /* small-watch-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-watch-button.png"; sourceTree = "<group>"; };
-		2286FC8713BB62C300A8550A /* CommentDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDetailView.xib; sourceTree = "<group>"; };
 		2286FC8C13BB63C900A8550A /* comments-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments-icon.png"; sourceTree = "<group>"; };
 		2286FC8E13BB64F800A8550A /* commentHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentHeader.png; sourceTree = "<group>"; };
 		2286FC9213BB672D00A8550A /* watchersBlob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchersBlob.png; sourceTree = "<group>"; };
@@ -337,6 +335,7 @@
 		22BCE63613B37EA800AD5206 /* bottomBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBackgroundView.png; sourceTree = "<group>"; };
 		22BF0BEF13A0D419006B1961 /* cancelBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBarButton.png; sourceTree = "<group>"; };
 		22BF0BF113A0D622006B1961 /* watchBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchBarButton.png; sourceTree = "<group>"; };
+		22CB83CE13C301DC00792604 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		22D353E513A757B500437E84 /* More4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = More4.png; sourceTree = "<group>"; };
 		22D353E813A75A5F00437E84 /* titleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleBackground.png; sourceTree = "<group>"; };
 		22D353EA13A75DFF00437E84 /* buttonBarSpacer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBarSpacer.png; sourceTree = "<group>"; };
@@ -690,7 +689,6 @@
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */,
 				22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */,
-				2286FC8713BB62C300A8550A /* CommentDetailView.xib */,
 				220A019813C218B300E988EA /* CommentCell.xib */,
 			);
 			name = "Nib files";
@@ -724,6 +722,7 @@
 			children = (
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */,
+				22CB83CE13C301DC00792604 /* Constants.h */,
 				22D65AF113A1202D00B92D82 /* Entitlements.plist */,
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
@@ -1041,7 +1040,6 @@
 				2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */,
 				2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */,
 				2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */,
-				2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */,
 				2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */,
 				2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */,
 				2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */,
