@@ -6,10 +6,10 @@ http://www.wewatch.co.uk
 ===================================================
 
 ### Version         :   0.993
-### Branch          :   retrieve_comments
-### Branched from   :   master
-### Merged from     :   
-### Date            :   01/07/2011
+### Branch          :   master
+### Branched from   :   n/a
+### Merged from     :   retrieve_comments
+### Date            :   05/07/2011
 
 ===================================================
 
@@ -63,9 +63,9 @@ RELEASE NOTES
 - added live comment counts
 
 ### In progress:
-- implement custom comment table view
 
 ### Todo:
+- implement custom comment table view
 - reimplement film flag
 - add throbber to loading of images
 - fix line lengths
