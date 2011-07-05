@@ -40,6 +40,7 @@
 }
 
 @property (nonatomic, retain) Programme *displayProgramme;
+@property (nonatomic, retain) UIImage *programmeImage;
 
 -(void)retrieveImageAsynchronously;
     

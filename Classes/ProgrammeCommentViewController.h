@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadCommentDelegate.h"
+
+@class LoadCommentsOperation;
+@class CommentsTableViewController;
 
 @interface ProgrammeCommentViewController : UIViewController {
     
@@ -15,12 +19,24 @@
     IBOutlet UILabel *titleLabel;
     IBOutlet UIScrollView *textScroller;
     IBOutlet UIImageView *backgroundImage;
+    IBOutlet UIView *embeddedTableView;
     
     NSString *_programmeTitle;
+    int _programmeID;
+    
+    // ivar to hold comment retrieval object
+    LoadCommentsOperation *loadCommentsOperation;
+    
+    // ivar to hold the array of comments
+    NSArray *_commentsArray;
+    
+    // ivar to hold a reference to the embedded table view
+    CommentsTableViewController *commentsTableVC;
     
 }
 
 @property (nonatomic, retain) NSString *programmeTitle;
-
+@property (nonatomic) int programmeID;
+@property (nonatomic, retain) NSArray *commentsArray;
 
 @end

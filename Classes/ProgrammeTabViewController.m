@@ -6,13 +6,24 @@
 //  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
 //
 
-#import "ProgrammeTabViewController.h"
 #import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
 #import "Programme.h"
 #import "Constants.h"
 
+#import "ProgrammeTabViewController.h"
 #import "ProgrammeDetailViewController.h"
 #import "ProgrammeCommentViewController.h"
+#import "WatchModalViewController.h"
+#import "PullRefreshTableViewController.h"
+
+#import "ASIHTTPRequest.h"
+#import "Reachability.h"
+#import "Reachable.h"
+
+#import "LoadCommentsOperation.h"
+#import "LoadImage.h"
+#import "WeWatchAppDelegate.h"
 
 @implementation ProgrammeTabViewController
 
@@ -30,19 +41,34 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
 -(IBAction)swapViews:(id)sender {
     
     if ( [sender tag] == kDetailsButton ) {
+        
+        NSLog(@"swap comment for detail");
 
+        [_programmeCommentVC.view removeFromSuperview];
+        
+        [bodyView addSubview:_programmeDetailVC.view];
+        [_programmeDetailVC viewDidAppear:NO];
+        
         // Hide the comments view, and show the details
-        _programmeDetailVC.view.hidden = NO;
-        _programmeCommentVC.view.hidden = YES;
+        //        _programmeDetailVC.view.hidden = NO;
+        
+        //        _programmeCommentVC.view.hidden = YES;
         
         // Swap the tab bar image around
         tabBarImage.image = [UIImage imageNamed:@"tabBar-details"];
 
     } else if ( [sender tag] == kCommentsButton ) {
+        
+        NSLog(@"swap detail for comment");
 
+        [_programmeDetailVC.view removeFromSuperview];
+        
+        [bodyView addSubview:_programmeCommentVC.view];
+        [_programmeCommentVC viewDidAppear:NO];
+        
         // Hide the details view, and show the comments
-        _programmeDetailVC.view.hidden = YES;
-        _programmeCommentVC.view.hidden = NO;
+        //        _programmeDetailVC.view.hidden = YES;
+        //        _programmeCommentVC.view.hidden = NO;
         
         // Swap the tab bar image around
         tabBarImage.image = [UIImage imageNamed:@"tabBar-comments"];
@@ -94,13 +120,16 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
                                              selector:@selector(didReceiveUnwatchProgrammeMessage) 
                                                  name:@"didUnwatchProgramme" 
                                                object:nil];
-    
+
     // Sort out text on the watch button
     if ([_displayProgramme amWatching] ) {
         watchButtonLabel.text = @"Unwatch";
     } else {
         watchButtonLabel.text = @"Watch";
     }
+    
+    // Fire off the asynchronous comment retrieval
+    [self fireLoadCommentsJob];
     
     // Update the comment count label
     // fixed at zero at the moment
@@ -112,10 +141,11 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     _programmeCommentVC = [[ProgrammeCommentViewController alloc] init];
     [_programmeCommentVC setProgrammeTitle:[self.displayProgramme title]];
+    [_programmeCommentVC setProgrammeID:[self.displayProgramme programmeID]];
     
     // Add the subviews so they're visible - detail view goes in last
     // so it's visible on the top
-    [bodyView addSubview:_programmeCommentVC.view];
+    //    [bodyView addSubview:_programmeCommentVC.view];
     [bodyView addSubview:_programmeDetailVC.view];
     
 }
@@ -392,6 +422,56 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     
     [self.view setNeedsDisplay];
 
+}
+
+#pragma mark -
+#pragma mark Comment retrieval delegate method
+
+-(void)fireLoadCommentsJob {
+    
+    // Check if the network's available
+    Reachable *reachable = [[Reachable alloc] init];
+    
+    if ( [reachable isReachable] ) {
+        
+        NSLog(@"ProgrammeTabVC: fireLoadCommentsJob : network reachable");
+        NSLog(@"ProgrammeTabVC: fireLoadCommentsJob : programmeID = %d", [_displayProgramme programmeID]);
+        
+        // There is a network, can fire off the queued comment retreival
+        loadCommentsOperation = [[LoadCommentsOperation alloc] init];
+        [loadCommentsOperation setProgrammeID:[_displayProgramme programmeID]];
+        [loadCommentsOperation setDelegate:self];
+        
+        // Send the job off to the queue
+        NSOperationQueue *commentsOperationQueue = [(WeWatchAppDelegate *)[[UIApplication sharedApplication] delegate] operationQueue];
+        [commentsOperationQueue addOperation:loadCommentsOperation];
+        
+    } else {
+        // There isn't a network, can't get the comments
+        NSLog(@"ProgrammeCommentVC: fireLoadCommentsJob : network NOT reachable");
+        
+    }
+    
+    // Clean up
+    [reachable release];
+    
+}
+
+-(void)LoadCommentsOperation:(NSOperation *)theProgrammeCommentOperation didLoadComments:(NSArray *)retrievedComments{
+    
+    NSLog(@"ProgrammeCommentVC: fired didLoadComments method");
+    
+    NSLog(@"retrievedComments = %@", retrievedComments);
+    
+    NSLog(@"comment count = %d", [retrievedComments count]);
+    commentCount.text = [NSString stringWithFormat:@"(%d)", [retrievedComments count]];
+    
+    // Push the retrieved comments across to the comments VC
+    [_programmeCommentVC setCommentsArray:retrievedComments];
+    
+    // Fire the commentVC's view update method
+    [_programmeCommentVC viewDidAppear:NO];
+    
 }
 
 @end

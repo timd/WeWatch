@@ -18,6 +18,9 @@
 		2201E07A13A61B0A000085FC /* BBCFour.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07413A61B0A000085FC /* BBCFour.png */; };
 		2201E07B13A61B0A000085FC /* BBCHD.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07513A61B0A000085FC /* BBCHD.png */; };
 		2201E07C13A61B0A000085FC /* Channel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2201E07613A61B0A000085FC /* Channel4.png */; };
+		220A019513C2122200E988EA /* CommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220A019313C2122200E988EA /* CommentsTableViewController.m */; };
+		220A019613C2122200E988EA /* CommentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220A019413C2122200E988EA /* CommentsTableViewController.xib */; };
+		220A019913C218B300E988EA /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220A019813C218B300E988EA /* CommentCell.xib */; };
 		2217899F13742140009656A7 /* JSON example source in Resources */ = {isa = PBXBuildFile; fileRef = 2217899E13742140009656A7 /* JSON example source */; };
 		2231827C136ADA730027F597 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2231827B136ADA730027F597 /* PullRefreshTableViewController.m */; };
 		2231827E136ADA870027F597 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2231827D136ADA870027F597 /* arrow.png */; };
@@ -44,6 +47,7 @@
 		223182DB136AEF750027F597 /* twitter_load.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182C7136AEF750027F597 /* twitter_load.png */; };
 		223182DF136AF0E30027F597 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 223182DE136AF0E30027F597 /* libxml2.dylib */; };
 		223182E1136AFBA30027F597 /* gearButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 223182E0136AFBA30027F597 /* gearButton.png */; };
+		2233FD8413C1B33B00654092 /* LoadCommentsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2233FD8313C1B33B00654092 /* LoadCommentsOperation.m */; };
 		2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */; };
 		2238D36F13BCEE9600752F45 /* ProgrammeTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */; };
 		2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2238D37113BCEEBD00752F45 /* ProgrammeCommentViewController.m */; };
@@ -74,7 +78,6 @@
 		2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC7D13BB445A00A8550A /* alarm-clock.png */; };
 		2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8313BB488B00A8550A /* textViewGradient.png */; };
 		2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8513BB560F00A8550A /* small-watch-button.png */; };
-		2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8713BB62C300A8550A /* CommentDetailView.xib */; };
 		2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8C13BB63C900A8550A /* comments-icon.png */; };
 		2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC8E13BB64F800A8550A /* commentHeader.png */; };
 		2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */ = {isa = PBXBuildFile; fileRef = 2286FC9213BB672D00A8550A /* watchersBlob.png */; };
@@ -173,6 +176,10 @@
 		2201E07413A61B0A000085FC /* BBCFour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCFour.png; sourceTree = "<group>"; };
 		2201E07513A61B0A000085FC /* BBCHD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BBCHD.png; sourceTree = "<group>"; };
 		2201E07613A61B0A000085FC /* Channel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Channel4.png; sourceTree = "<group>"; };
+		220A019213C2122200E988EA /* CommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewController.h; sourceTree = "<group>"; };
+		220A019313C2122200E988EA /* CommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewController.m; sourceTree = "<group>"; };
+		220A019413C2122200E988EA /* CommentsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsTableViewController.xib; path = Classes/CommentsTableViewController.xib; sourceTree = "<group>"; };
+		220A019813C218B300E988EA /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		2217899E13742140009656A7 /* JSON example source */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON example source"; sourceTree = "<group>"; };
 		2231827A136ADA730027F597 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		2231827B136ADA730027F597 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
@@ -236,6 +243,9 @@
 		223182DC136AEFAA0027F597 /* libxml2.2.7.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.7.3.dylib; path = usr/lib/libxml2.2.7.3.dylib; sourceTree = SDKROOT; };
 		223182DE136AF0E30027F597 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		223182E0136AFBA30027F597 /* gearButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gearButton.png; sourceTree = "<group>"; };
+		2233FD7F13C1B2C000654092 /* LoadCommentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCommentDelegate.h; sourceTree = "<group>"; };
+		2233FD8213C1B33B00654092 /* LoadCommentsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadCommentsOperation.h; sourceTree = "<group>"; };
+		2233FD8313C1B33B00654092 /* LoadCommentsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadCommentsOperation.m; sourceTree = "<group>"; };
 		2238D36B13BCEE9600752F45 /* ProgrammeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeTabViewController.h; sourceTree = "<group>"; };
 		2238D36C13BCEE9600752F45 /* ProgrammeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeTabViewController.m; sourceTree = "<group>"; };
 		2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProgrammeTabViewController.xib; path = Classes/ProgrammeTabViewController.xib; sourceTree = "<group>"; };
@@ -290,7 +300,6 @@
 		2286FC7D13BB445A00A8550A /* alarm-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-clock.png"; sourceTree = "<group>"; };
 		2286FC8313BB488B00A8550A /* textViewGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textViewGradient.png; sourceTree = "<group>"; };
 		2286FC8513BB560F00A8550A /* small-watch-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-watch-button.png"; sourceTree = "<group>"; };
-		2286FC8713BB62C300A8550A /* CommentDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDetailView.xib; sourceTree = "<group>"; };
 		2286FC8C13BB63C900A8550A /* comments-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments-icon.png"; sourceTree = "<group>"; };
 		2286FC8E13BB64F800A8550A /* commentHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentHeader.png; sourceTree = "<group>"; };
 		2286FC9213BB672D00A8550A /* watchersBlob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchersBlob.png; sourceTree = "<group>"; };
@@ -326,6 +335,7 @@
 		22BCE63613B37EA800AD5206 /* bottomBackgroundView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomBackgroundView.png; sourceTree = "<group>"; };
 		22BF0BEF13A0D419006B1961 /* cancelBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBarButton.png; sourceTree = "<group>"; };
 		22BF0BF113A0D622006B1961 /* watchBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchBarButton.png; sourceTree = "<group>"; };
+		22CB83CE13C301DC00792604 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		22D353E513A757B500437E84 /* More4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = More4.png; sourceTree = "<group>"; };
 		22D353E813A75A5F00437E84 /* titleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleBackground.png; sourceTree = "<group>"; };
 		22D353EA13A75DFF00437E84 /* buttonBarSpacer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBarSpacer.png; sourceTree = "<group>"; };
@@ -563,6 +573,16 @@
 			path = SAOAuthTwitterEngine;
 			sourceTree = "<group>";
 		};
+		2233FD7D13C1B29900654092 /* Comment load */ = {
+			isa = PBXGroup;
+			children = (
+				2233FD7F13C1B2C000654092 /* LoadCommentDelegate.h */,
+				2233FD8213C1B33B00654092 /* LoadCommentsOperation.h */,
+				2233FD8313C1B33B00654092 /* LoadCommentsOperation.m */,
+			);
+			name = "Comment load";
+			sourceTree = "<group>";
+		};
 		2238D36A13BCE67700752F45 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +600,8 @@
 				22D3641E13992C6500093989 /* WatchModalViewController.m */,
 				22E081CF139CEDA900D1099B /* SettingsModalViewController.h */,
 				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
+				220A019213C2122200E988EA /* CommentsTableViewController.h */,
+				220A019313C2122200E988EA /* CommentsTableViewController.m */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -654,6 +676,7 @@
 		22BB5AE51369D495004B299B /* Nib files */ = {
 			isa = PBXGroup;
 			children = (
+				220A019413C2122200E988EA /* CommentsTableViewController.xib */,
 				2238D37213BCEEBD00752F45 /* ProgrammeCommentViewController.xib */,
 				22BB5ACA1369BA57004B299B /* ProgrammeDetailViewController.xib */,
 				2238D36D13BCEE9600752F45 /* ProgrammeTabViewController.xib */,
@@ -666,7 +689,7 @@
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				A7F23C4811F7561500E3722F /* TweetDetailViewController.xib */,
 				22DC34A113BB30D9001CBA60 /* DetailViewNavigationBar.xib */,
-				2286FC8713BB62C300A8550A /* CommentDetailView.xib */,
+				220A019813C218B300E988EA /* CommentCell.xib */,
 			);
 			name = "Nib files";
 			sourceTree = "<group>";
@@ -699,6 +722,7 @@
 			children = (
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				226A74FA13A691E400F6E63C /* libz.1.2.3.dylib */,
+				22CB83CE13C301DC00792604 /* Constants.h */,
 				22D65AF113A1202D00B92D82 /* Entitlements.plist */,
 				2272BC34139FAB1A00515CC7 /* libz.1.2.3.dylib */,
 				22BB5AE31369D40B004B299B /* README.markdown */,
@@ -875,6 +899,7 @@
 		A7F23D5211F8599300E3722F /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				2233FD7D13C1B29900654092 /* Comment load */,
 				22EEA9FC13784D4C00435B7F /* Timeline load */,
 				22EEA9FB13784D3900435B7F /* Programme image load */,
 			);
@@ -1015,7 +1040,6 @@
 				2286FC7F13BB445A00A8550A /* alarm-clock.png in Resources */,
 				2286FC8413BB488B00A8550A /* textViewGradient.png in Resources */,
 				2286FC8613BB560F00A8550A /* small-watch-button.png in Resources */,
-				2286FC8813BB62C300A8550A /* CommentDetailView.xib in Resources */,
 				2286FC8D13BB63C900A8550A /* comments-icon.png in Resources */,
 				2286FC8F13BB64F800A8550A /* commentHeader.png in Resources */,
 				2286FC9313BB672D00A8550A /* watchersBlob.png in Resources */,
@@ -1026,6 +1050,8 @@
 				2238D37413BCEEBD00752F45 /* ProgrammeCommentViewController.xib in Resources */,
 				22AAD2BC13BDF787006633A4 /* tabBar-comments.png in Resources */,
 				22AAD2BD13BDF787006633A4 /* tabBar-details.png in Resources */,
+				220A019613C2122200E988EA /* CommentsTableViewController.xib in Resources */,
+				220A019913C218B300E988EA /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1117,8 @@
 				2238D36E13BCEE9600752F45 /* ProgrammeTabViewController.m in Sources */,
 				2238D37313BCEEBD00752F45 /* ProgrammeCommentViewController.m in Sources */,
 				22AAD2DA13BE1ED1006633A4 /* ProgrammeDetailViewController.m in Sources */,
+				2233FD8413C1B33B00654092 /* LoadCommentsOperation.m in Sources */,
+				220A019513C2122200E988EA /* CommentsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
