@@ -61,11 +61,14 @@ RELEASE NOTES
 - removed modal window from throbber
 - added comment retrieval
 - added live comment counts
+- implemented custom comment table view
 
 ### In progress:
-- implement custom comment table view
+
 
 ### Todo:
+- replace loadComments / Timeline / Image operations with ASIHTTPRequest version
+- add trapping for zero-length programme retrival
 - reimplement film flag
 - add throbber to loading of images
 - fix line lengths
