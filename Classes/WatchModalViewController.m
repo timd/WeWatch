@@ -241,6 +241,7 @@ NSString * const didWatchProgrammeNotification = @"didWatchProgramme";
         // Fire query at API
         NSURL *url = [NSURL URLWithString:fullURLString];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        [request setTimeOutSeconds:20];
         [request setDelegate:self];
         [request setRequestMethod:@"POST"];
         [request startAsynchronous];

@@ -6,5 +6,5 @@
 //  Copyright 2011 Charismatic Megafauna Ltd. All rights reserved.
 //
 
-#define kUseLocalCommentsFeed YES
-#define KUseLocalDataFeed YES
+#define kUseLocalCommentsFeed NO
+#define KUseLocalDataFeed NO
