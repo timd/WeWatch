@@ -408,6 +408,8 @@ NSString * const didUnwatchProgrammeNotification = @"didUnwatchProgramme";
     // Reflag the current programme as being watched
     [_displayProgramme setAmWatching:YES];
     
+    
+    
     [self.view setNeedsDisplay];
 
 }

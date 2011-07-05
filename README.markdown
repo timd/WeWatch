@@ -5,10 +5,10 @@ http://www.wewatch.co.uk
 
 ===================================================
 
-### Version         :   0.993
-### Branch          :   master
-### Branched from   :   n/a
-### Merged from     :   retrieve_comments
+### Version         :   0.994
+### Branch          :   custom_comment_cells
+### Branched from   :   master
+### Merged from     :   n/a
 ### Date            :   05/07/2011
 
 ===================================================
@@ -61,11 +61,14 @@ RELEASE NOTES
 - removed modal window from throbber
 - added comment retrieval
 - added live comment counts
+- implemented custom comment table view
 
 ### In progress:
 
+
 ### Todo:
-- implement custom comment table view
+- replace loadComments / Timeline / Image operations with ASIHTTPRequest version
+- add trapping for zero-length programme retrival
 - reimplement film flag
 - add throbber to loading of images
 - fix line lengths

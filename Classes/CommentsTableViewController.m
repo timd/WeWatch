@@ -7,6 +7,7 @@
 //
 
 #import "CommentsTableViewController.h"
+#import "CustomCell.h"
 
 
 @implementation CommentsTableViewController
@@ -52,6 +53,8 @@
     [super viewDidLoad];
     
     NSLog(@"CommentsTableCV viewDidLoad");
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -117,31 +120,109 @@
     static NSString *CellIdentifier = @"commentCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
+    cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
     
-    // Configure the cell...
-    
-    // Get the comment element
+    // Get the comment element for the current row
     NSArray *commentElement = [_commentsArray objectAtIndex:indexPath.row];
+
+    // Extract the username and comment
+    NSString *username = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
+    NSString *commentString = [commentElement valueForKey:@"comment"];
     
-    // Get references to the cell view's labels
-    UILabel *nameLabel = COMMENT_NAME_LABEL;
-    UILabel *commentLabel = COMMENT_TEXT_LABEL;
+    // Get the padded string
+    NSString *paddedCommentString = [self spacePaddedStringForUsername:username andComment:commentString];
     
-    // Extract username, which is embedded
-    //    NSString *username = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
-    nameLabel.text = @"username";
+    // Create a UILabel for the comment
+    UILabel *commentLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 25)] autorelease];
+    [commentLabel setLineBreakMode:UILineBreakModeWordWrap];
+    [commentLabel setNumberOfLines:0];
+    [commentLabel setFont:[UIFont systemFontOfSize:14.0f]];
+    [commentLabel setTextColor:[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:1.0]];
+    [commentLabel setBackgroundColor:[UIColor clearColor]];
+    [commentLabel setText:paddedCommentString];
     
-    cell.textLabel.text = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
-    cell.detailTextLabel.text = [commentElement valueForKey:@"comment"];
+    // Calculate the height of the comment label
+    CGSize expectedLabelSize = [self heightForLabelWithText:paddedCommentString andFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
     
-    // Comment text is simple...
-    //    commentLabel.text = [commentElement valueForKey:@"comment"];
-    commentLabel.text = @"commentText";
+    // Create a frame for the comment label
+    CGRect commentLabelFrame = commentLabel.frame;
+    commentLabelFrame.size.height = expectedLabelSize.height;
+    commentLabel.frame = commentLabelFrame;
+                                
+    // Create a UILabel for the name
+    UILabel *nameLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280, 50)] autorelease];
+    [nameLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14.0f]];
+    [nameLabel setBackgroundColor:[UIColor clearColor]];
+    [nameLabel setText:username];
+    [nameLabel sizeToFit];
+    
+    // Add the labels to the cell's view
+    [cell.contentView addSubview:commentLabel];
+    [cell.contentView addSubview:nameLabel];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    // Get the comment element for the current row
+    NSArray *commentElement = [_commentsArray objectAtIndex:indexPath.row];
+    
+    // Extract the username and comment
+    NSString *username = [[commentElement valueForKey:@"user"] valueForKey:@"username"];
+    NSString *commentString = [commentElement valueForKey:@"comment"];
+    
+    // Get the padded comment string
+    NSString *paddedCommentString = [self spacePaddedStringForUsername:username andComment:commentString];
+
+    // Calculate the height of the comment label
+    CGSize expectedLabelSize = [self heightForLabelWithText:paddedCommentString andFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+    
+    // Return the height of the expected label size, plus some padding
+    return expectedLabelSize.height + 10.0f;
+    
+}
+
+
+- (NSString *)spacePaddedStringForUsername:(NSString *)username andComment:(NSString *)theComment {
+    
+    // Set up padding for name
+    float namePadding = 5.0f;
+    
+    //  calculate the length of the username
+    float nameWidth = [username sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:14.0]].width + namePadding;
+    
+    // Calculate the width of the the average space
+    float tenSpaceWidth = [[NSString stringWithFormat:@"          "] sizeWithFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]].width;
+    float oneSpaceWidth = tenSpaceWidth / 10;
+    
+    // Calculate the width of the name & add in 1 space-worth of padding
+    float nameWidthInFractionalSpaces = nameWidth / oneSpaceWidth;
+    int nameWidthInSpaces = (int)(nameWidthInFractionalSpaces + 0.5 );
+    
+    NSMutableString *paddingString = [[NSMutableString alloc] init];
+    // Create a padding string with the requisite number of spaces
+    for (int i = 0; i < nameWidthInSpaces; i++) {
+        [paddingString appendString:@" "];
+    }
+    
+    // Create padded comment string
+    NSString *paddedCommentString = [NSString stringWithFormat:@"%@%@", paddingString, theComment];
+    [paddingString release];
+    
+    // Pass the padded comment string back
+    return paddedCommentString ;
+
+}
+
+-(CGSize)heightForLabelWithText:(NSString *)labelText andFont:(UIFont *)theFont {
+    
+    CGSize maxLabelSize = CGSizeMake(296,9999);
+    
+    CGSize expectedLabelSize = [labelText sizeWithFont:theFont constrainedToSize:maxLabelSize lineBreakMode:UILineBreakModeWordWrap];
+    
+    return expectedLabelSize;
+    
 }
 
 /*

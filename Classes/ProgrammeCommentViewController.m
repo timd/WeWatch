@@ -59,18 +59,24 @@
         // load in the embedded table view controller
         commentsTableVC = [[CommentsTableViewController alloc] initWithNibName:@"CommentsTableViewController" bundle:nil];    
         
+        // Hide the "no comments yet" label
+        noCommentLabel.hidden = YES;
+        
+        
         // Pass over the array of comments
         [commentsTableVC setCommentsArray:_commentsArray];
 
         // Embed the table view into the view
         [embeddedTableView addSubview:commentsTableVC.view];
+        embeddedTableView.backgroundColor = [UIColor clearColor];
         
     } else {
         
         // There aren't any comments, so remove the table view to expose
-        // the label
+        // the label, and make the label visible
         
         [embeddedTableView removeFromSuperview];
+        noCommentLabel.hidden = NO;
         
     }
 
@@ -84,16 +90,16 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    NSLog(@"ProgrammeCommentVC:viewDidAppear");    
+    //    NSLog(@"ProgrammeCommentVC:viewDidAppear");    
     
-    NSLog(@"Comments array = %@", _commentsArray);
+    //    NSLog(@"Comments array = %@", _commentsArray);
     
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    NSLog(@"ProgrammeCommentVC:viewWillAppear");    
+    //    NSLog(@"ProgrammeCommentVC:viewWillAppear");    
     
-    NSLog(@"Comments array = %@", _commentsArray);
+    //    NSLog(@"Comments array = %@", _commentsArray);
     
 }
 

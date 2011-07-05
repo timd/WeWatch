@@ -105,6 +105,7 @@
 		22BCE63713B37EA800AD5206 /* bottomBackgroundView.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BCE63613B37EA800AD5206 /* bottomBackgroundView.png */; };
 		22BF0BF013A0D419006B1961 /* cancelBarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BF0BEF13A0D419006B1961 /* cancelBarButton.png */; };
 		22BF0BF213A0D622006B1961 /* watchBarButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BF0BF113A0D622006B1961 /* watchBarButton.png */; };
+		22CB83DF13C3092100792604 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CB83DE13C3092100792604 /* CustomCell.m */; };
 		22D353E613A757B500437E84 /* More4.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D353E513A757B500437E84 /* More4.png */; };
 		22D353E913A75A5F00437E84 /* titleBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D353E813A75A5F00437E84 /* titleBackground.png */; };
 		22D353EB13A75DFF00437E84 /* buttonBarSpacer.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D353EA13A75DFF00437E84 /* buttonBarSpacer.png */; };
@@ -336,6 +337,8 @@
 		22BF0BEF13A0D419006B1961 /* cancelBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelBarButton.png; sourceTree = "<group>"; };
 		22BF0BF113A0D622006B1961 /* watchBarButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchBarButton.png; sourceTree = "<group>"; };
 		22CB83CE13C301DC00792604 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		22CB83DD13C3092100792604 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		22CB83DE13C3092100792604 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		22D353E513A757B500437E84 /* More4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = More4.png; sourceTree = "<group>"; };
 		22D353E813A75A5F00437E84 /* titleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleBackground.png; sourceTree = "<group>"; };
 		22D353EA13A75DFF00437E84 /* buttonBarSpacer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBarSpacer.png; sourceTree = "<group>"; };
@@ -602,6 +605,8 @@
 				22E081D0139CEDA900D1099B /* SettingsModalViewController.m */,
 				220A019213C2122200E988EA /* CommentsTableViewController.h */,
 				220A019313C2122200E988EA /* CommentsTableViewController.m */,
+				22CB83DD13C3092100792604 /* CustomCell.h */,
+				22CB83DE13C3092100792604 /* CustomCell.m */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -1119,6 +1124,7 @@
 				22AAD2DA13BE1ED1006633A4 /* ProgrammeDetailViewController.m in Sources */,
 				2233FD8413C1B33B00654092 /* LoadCommentsOperation.m in Sources */,
 				220A019513C2122200E988EA /* CommentsTableViewController.m in Sources */,
+				22CB83DF13C3092100792604 /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
