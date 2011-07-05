@@ -7,3 +7,4 @@
 //
 
 #define kUseLocalCommentsFeed YES
+#define KUseLocalDataFeed YES

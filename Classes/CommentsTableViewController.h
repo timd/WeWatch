@@ -21,4 +21,8 @@
 
 @property (nonatomic, retain) NSArray *commentsArray;
 
+-(CGSize)heightForLabelWithText:(NSString *)labelText andFont:(UIFont *)theFont;
+
+- (NSString *)spacePaddedStringForUsername:(NSString *)username andComment:(NSString *)theComment;
+
 @end

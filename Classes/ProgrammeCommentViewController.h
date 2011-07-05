@@ -20,6 +20,7 @@
     IBOutlet UIScrollView *textScroller;
     IBOutlet UIImageView *backgroundImage;
     IBOutlet UIView *embeddedTableView;
+    IBOutlet UILabel *noCommentLabel;
     
     NSString *_programmeTitle;
     int _programmeID;

@@ -12,6 +12,7 @@
 #import "NSString+HTML.h"
 #import "GTMNSString+HTML.h"
 #import "Programme.h"
+#import "Constants.h"
 
 @implementation LoadPublicTimelineOperation
 
@@ -48,7 +49,12 @@
 	[self setNetworkActivityIndicatorVisible:YES];
 	
     // Construct retrieval URL
-    NSString *weWatchURL = @"http://wewatch.co.uk/today.json";
+    NSString *weWatchURL;
+    if (KUseLocalDataFeed == 1) {
+        weWatchURL = @"http://192.168.1.101/today.json";
+    } else {
+        weWatchURL = @"http://wewatch.co.uk/today.json";
+    }
     
     // If there is a twitter name passed into the method, append this to the end of the URL
     if ([self twitterName]) {
